@@ -24,10 +24,9 @@ class ProductManager {
         data.stock.toString().trim()
       ) {
         if (fs.existsSync(this.path)) {
-          let products = fs.readFileSync(this.path, "utf-8");
-          products = JSON.parse(products);
+          let products = this.getProducts();
           const exists = this.products.find(
-            (element) => element.code === data.code
+            (p) => p.code === data.code
           );
           if (exists) {
             console.log(
@@ -59,9 +58,11 @@ class ProductManager {
   }
 
   getProducts() {
-    return fs.existsSync(this.path)
-      ? JSON.parse(fs.readFileSync(this.path, "utf-8"))
-      : [];
+    const exist = fs.existsSync(this.path);
+    if (exist) {
+      return JSON.parse(fs.readFileSync(this.path, "utf-8"));
+    }
+    return [];
   }
 
   getProductById(id) {
@@ -74,8 +75,9 @@ class ProductManager {
   }
 
   updateProducts(id, data) {
-    let products = fs.readFileSync(this.path, "utf-8");
-    products = JSON.parse(products);
+    let products = this.getProducts();
+    const product = products.find((p) => p.id === id);
+    if (!product) return console.log("El producto no encontrado");
     products = products.map((p) => {
       if (p.id === id) {
         return {
@@ -87,24 +89,23 @@ class ProductManager {
       return p;
     });
     fs.writeFileSync(this.path, JSON.stringify(products));
-    console.log('El producto fue actualizado exitosamente');
+    console.log("El producto fue actualizado exitosamente");
     return;
   }
+
   deleteProductById(id) {
-    let products = JSON.parse(fs.readFileSync(this.path, "utf-8"));
-    const product = products.find((element) => element.id === id);
-    if (!product) return console.log(`El producto no encontrado`);
+    let products = this.getProducts();
+    const product = products.find((p) => p.id === id);
+    if (!product) return console.log("El producto no encontrado");
     products = products.filter((p) => p.id !== id);
     fs.writeFileSync(this.path, JSON.stringify(products));
-    return console.log(
-      `El producto fue eliminado de manera exitosa`
-    );
+    return console.log(`El producto fue eliminado exitosamente`);
   }
 }
 
 //instanciando la clase
 const items = new ProductManager("products.json");
-console.log(items.getProducts()); // []
+console.table(items.getProducts()); // []
 console.log("==============>Agregando un nuevo producto<========");
 items.addProduct({
   title: "producto prueba",
@@ -160,6 +161,15 @@ items.addProduct({
   code: "",
   stock: 25,
 });
+console.log("==============>Actualizando el producto con id '8' para validar que el codigo no existe<========");
+items.updateProducts(8, {
+  title: "Producto Actualizado",
+  description: "Este es un producto actualizado",
+  price: 400,
+  thumbnail: "Imagen actualizada",
+  code: "abc123",
+  stock: 50,
+});
 console.log("==============>Actualizando el producto con id '0'<========");
 items.updateProducts(0, {
   title: "Producto Actualizado",
@@ -171,15 +181,14 @@ items.updateProducts(0, {
 });
 
 console.log("==============>buscando todos lod productos<========");
-console.log(items.getProducts());
+console.table(items.getProducts());
 console.log('==============>buscando producto por id "1"<========');
-console.log(items.getProductById(0));
-console.log(
-  "==============>Buscando un producto '5' para validar que el codigo no existe<========"
-);
-console.log(items.getProductById(5));
-
-console.log("==============>Eliminand Producto 1<========");
-items.deleteProductById(10);
+console.table(items.getProductById(1));
+console.log("==============>Buscando un producto '5' para validar que el codigo no existe<========");
+console.table(items.getProductById(5));
+console.log("==============>Eliminando Producto '9' para validar que el codigo no existe<========");
+items.deleteProductById(9);
+console.log("==============>Eliminand Producto '1'<========");
+items.deleteProductById(1);
 console.log("==============>buscando todos lod productos<========");
-console.log(items.getProducts());
+console.table(items.getProducts());
