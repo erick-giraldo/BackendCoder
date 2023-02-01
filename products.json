@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Producto Actualizado",
+    "description": "Este es un producto actualizado",
+    "price": 400,
+    "thumbnail": "Imagen actualizada",
+    "code": "abc123",
+    "stock": 50,
+    "id": 0
+  },
+  {
+    "title": "producto prueba",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "Sin imagen",
+    "code": "abc12345",
+    "stock": 25,
+    "id": 1
+  },
+  {
+    "title": "producto prueba",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "Sin imagen",
+    "code": "abc12345",
+    "stock": 25,
+    "id": 2
+  }
+]
