@@ -1,33 +1,38 @@
 import express from "express";
-import ProductManager from "./ProductManager.js";
+import cors from "cors";
+import ProductsControllers from "./productsController.js";
 const app = express();
+//enables cors
+app.use(
+  cors({
+    allowedHeaders: [
+      "sessionId",
+      "Content-Type",
+      "authorization",
+      "authorization_user_id",
+      "appsecret",
+    ],
+    exposedHeaders: ["sessionId"],
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+  })
+);
 
-app.get("/products", (req, res) => {
-  let limit = req.query.limit;
-  const items = new ProductManager("products.json");
-  let products = items.getProducts();
-  if (limit) {
-    res.send({
-      products: products.slice(0, limit),
-    });
-  } else {
-    res.send({
-      products: products,
-    });
-  }
-});
+app.use(
+  express.json({
+    limit: "50mb",
+  })
+);
+app.use(
+  express.urlencoded({ limit: "50mb", parameterLimit: 100000, extended: true })
+);
 
-app.get("/products/:pid", (req, res) => {
-  let id = JSON.parse(req.params.pid);
-  const items = new ProductManager("products.json");
-  let product = items.getProductById(id);
-  res.send({
-    product: product,
-  });
-});
+app.get("/products", ProductsControllers.getProducts);
+app.get("/products/:pid", ProductsControllers.getProductsById);
 
 const port = 3000;
 const server = app.listen(port, () => {
   console.log(`Servidor ejecutandose en http://localhost:${port}`);
 });
-server.on('error', error => console.log('Error en el servidor: ', error))
+server.on("error", (error) => console.log("Error en el servidor: ", error));
