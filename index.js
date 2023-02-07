@@ -2,31 +2,9 @@ import express from "express";
 import cors from "cors";
 import ProductsControllers from "./productsController.js";
 const app = express();
-//enables cors
-app.use(
-  cors({
-    allowedHeaders: [
-      "sessionId",
-      "Content-Type",
-      "authorization",
-      "authorization_user_id",
-      "appsecret",
-    ],
-    exposedHeaders: ["sessionId"],
-    origin: "*",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    preflightContinue: false,
-  })
-);
 
-app.use(
-  express.json({
-    limit: "50mb",
-  })
-);
-app.use(
-  express.urlencoded({ limit: "50mb", parameterLimit: 100000, extended: true })
-);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/products", ProductsControllers.getProducts);
 app.get("/products/:pid", ProductsControllers.getProductsById);
