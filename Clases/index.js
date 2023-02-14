@@ -1,5 +1,4 @@
 import express from "express";
-import cors from "cors";
 import ProductsControllers from "./productsController.js";
 const app = express();
 
