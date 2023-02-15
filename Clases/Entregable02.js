@@ -104,7 +104,7 @@ class ProductManager {
 }
 
 //instanciando la clase
-const items = new ProductManager("products.json");
+const items = new ProductManager(.json");
 console.table(items.getProducts()); // []
 console.log("==============>Agregando un nuevo producto<========");
 items.addProduct({

@@ -1,6 +1,6 @@
 import fs from "fs";
 
-class ProductManager {
+export default class ProductManager {
   constructor(path) {
     this.products = [];
     this.path = path;
@@ -102,7 +102,6 @@ class ProductManager {
     return console.log(`El producto fue eliminado exitosamente`);
   }
 }
-export default ProductManager;
 // //instanciando la clase
 // const items = new ProductManager("products.json");
 // console.table(items.getProducts()); // []
