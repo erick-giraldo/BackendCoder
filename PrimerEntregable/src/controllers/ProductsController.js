@@ -1,6 +1,7 @@
 import ProductManager from "../class/ProductManager.js";
 import { getEmptyProperties } from "../utils/index.js";
 import empty from "is-empty";
+
 const items = new ProductManager("products.json");
 export default class ProductsControllers {
   static async getProducts(req, res) {
@@ -18,11 +19,25 @@ export default class ProductsControllers {
   }
 
   static async getProductById(req, res) {
-    let id = JSON.parse(req.params.pid);
-    let product = await items.getProductById(id);
-    res.send({
-      product: product,
-    });
+    try {
+      let error = {};
+      let id = JSON.parse(req.params.pid);
+      let result = await items.getProductById(id);
+      if (!result) {
+        error = {
+          message: `No se encuentra Producto con el id ${id}`,
+        };
+        throw new Error(JSON.stringify({ error }));
+      }
+      return res.json({
+        message: result,
+      });
+    } catch (error) {
+      return res.status(400).json({
+        message: "Error al buscar Carrito",
+        error: JSON.parse(error.message),
+      });
+    }
   }
 
   static async addProduct(req, res) {

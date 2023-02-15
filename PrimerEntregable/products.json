@@ -1,1 +1,24 @@
-[{"title":"Laptop Lenovo Actualizado","description":"Laptop Lenovo i5 10511 actualizado","code":"abc123","price":400,"status":true,"stock":50,"category":"eeee","thumbnail":["imagen1","imagen2"],"id":0},{"title":"Laptop Lenovo Actualizado","description":"Laptop Lenovo i5 10511 actualizado","code":"abc1234","price":400,"status":true,"stock":50,"category":"eeee","thumbnail":["imagen1","imagen2"],"id":1}]
+[
+  {
+    "title": "Laptop Lenovo Actualizado",
+    "description": "Laptop Lenovo i5 10511 actualizado",
+    "code": "abc123",
+    "price": 400,
+    "status": true,
+    "stock": 50,
+    "category": "eeee",
+    "thumbnail": ["imagen1", "imagen2"],
+    "id": 0
+  },
+  {
+    "title": "Laptop Lenovo Actualizado",
+    "description": "Laptop Lenovo i5 10511 actualizado",
+    "code": "abc1234",
+    "price": 400,
+    "status": true,
+    "stock": 50,
+    "category": "eeee",
+    "thumbnail": ["imagen1", "imagen2"],
+    "id": 1
+  }
+]
