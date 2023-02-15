@@ -14,7 +14,7 @@ export default class CartController {
       let result = await cart.getCartById(id);
       if (!result) {
         error = {
-          message: `No se encuentra carrito con el id ${cid}`,
+          message: `No se encuentra carrito con el id ${id}`,
         };
         throw new Error(JSON.stringify({ error }));
       }
