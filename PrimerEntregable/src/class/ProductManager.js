@@ -20,12 +20,14 @@ class ProductManager {
     const getProductos = await this.getProducts();
     const product = getProductos.find((p) => p.id === id);
     if (empty(product)) {
-      return "Producto no encontrado";
+      return false;
     }
     return product;
   }
 
   async addProduct(data) {
+    const getProductos = await this.getProducts();
+    if(!empty(getProductos)) this.products = getProductos;
     data.id = this.idCount++;
     this.products.push(data);
     fs.writeFileSync(this.path, JSON.stringify(this.products));
