@@ -1,0 +1,36 @@
+<div>
+    <div>
+        <div>
+            <h2>Añadir Producto</h2>
+            <form id="productForm" name="productForm" onsubmit="event.preventDefault(); onSubmitForm();">
+                <label for="title">
+                    Título: <input type="text" name="title" required>
+                </label>
+                <label for="description">
+                    Descripción: <input type="text" name="description" required>
+                </label>
+                <label for="category">
+                    Categoría: <input type="text" name="category" required>
+                </label>
+                <label for="code">
+                    Código: <input type="text" name="code" required>
+                </label>
+                <label for="stock">
+                    stock: <input type="number" name="stock" min="1" required>
+                </label>
+                <label for="price">
+                    Precio: <input type="number" name="price" min="1" required>
+                </label>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+    </br>
+    <div>
+        <h2>Listado de Productos</h2>
+        <div class="main_home" id="containerProducts">
+        </div>
+    </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

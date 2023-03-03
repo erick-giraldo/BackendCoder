@@ -1,0 +1,48 @@
+{{!-- <div>
+    <h2>Listado de Productos</h2>
+    <div class="main_home">
+        {{#each products}}
+        <div class="product">
+            <h3>{{this.title}}</h3>
+            <p>Código: {{this.code}}</p>
+            <p>Categoría: {{this.category}}</p>
+            <p>Descripción: {{this.description}}</p>
+            {{#if this.status}}
+            <p>Stock: {{this.stock}}</p>
+            <p class="price">Precio: S/. {{this.price}}</p>
+            {{else}}
+            <p class="no_product">Producto no disponible</p>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+</div> --}}
+
+<div className="row nosotros-contenido">
+    <h1>Categorías</h1>
+    <div className="productos-container">
+       {{#each products}}
+        <div>
+            <p className="p-titulo">{{this.title}}</p>
+            <p>Descubre algunos de los modelos más recientes.</p>
+            <div className="row productos-section">
+                <div className="card col-lg-2 col-md-6 col-sm-12" style="width: 20rem">
+                    <img src={{this.image}} className="d-block w-100" alt={{this.name}}/>
+                    <div className="card-body">
+                        <h5 className="card-title card-name">{{this.name}}</h5>
+                        <p className="card-text">{{this.description}}</p>
+                        <div className="card-inv">
+                            <p className="card-title card-price">$ {{this.price}}</p>
+                            <p className="card-title card-stock">Stock: {{this.stock}}</p>
+                        </div>
+                        <Link type="button" className="btn btn-outline-dark" to="">
+                        Ver Detalles
+                        </Link>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+         {{/each}}
+    </div>
+</div>
