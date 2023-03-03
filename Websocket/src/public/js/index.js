@@ -1,17 +1,15 @@
 
 const socket = io();
 
-const generateId = () => {
-    const length = 8;
-    let id = '';
-    for (let i = 0; i < length; i++) {
-        id += Math.floor(Math.random() * 10);
-    }
-    return id;
+const generateToken = () => {
+    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    );
 }
 
+
 let user = '';
-user = generateId();
+user = generateToken();
 
 const onSubmitForm = () => {
     const title = document.forms["productForm"]["title"].value;
@@ -22,12 +20,14 @@ const onSubmitForm = () => {
     const price = Number(document.forms["productForm"]["price"].value);
     const product = {
         title,
-        description,
-        category,
-        code,
-        stock,
-        price,
-        status: true
+        data: [
+            name,
+            description,
+            image,
+            code,
+            stock,
+            price
+        ]
     };
     socket.emit('addProduct', {
         user,
@@ -35,36 +35,59 @@ const onSubmitForm = () => {
     })
 }
 
-const deleteProduct = (id) => {
+const deleteProduct = (title, id) => {
     socket.emit('deleteProduct', {
         user,
+        title,
         id
     })
 }
 
+const listItem = (title ,data )=> {
+    let textHtml = "";
+    for (let i = 0; i < data.length; i++) {
+        let listCards = ` <div class="card-container">
+        <div class="row productos-section">
+                <div class="card col-lg-2 col-md-6 col-sm-12" style="width: 20rem">
+                 <div class="delete" onclick='deleteProduct("${title}",${data[i].id})'>x</div>
+                    <img src=${data[i].image} class="d-block w-100" alt=${data[i].name} />
+                    <div class="card-body">
+                        <h5 class="card-title card-name">${data[i].name} </h5>
+                        <p class="card-text">${data[i].description}</p>
+                        <div class="card-inv">
+                            <p class="card-title card-price">$ ${data[i].price}</p>
+                            <p class="card-title card-stock">Stock: ${data[i].stock}</p>
+                        </div>
+                        <a type="button" class="btn btn-outline-dark" href="">Ver Detalles</a>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        `;
+        textHtml = textHtml + listCards;
+    }
+    return textHtml;
+}
+
+
 socket.on('products', data => {
-    console.log("🚀 ~ file: index.js:46 ~ data:", data)
     document.getElementById("productForm").reset();
     const productList = document.getElementById('containerProducts');
-    let elements = '';
-    data.forEach(product => {
-        elements = elements + `
-            <div class="product">
-                <div class="delete" onclick='deleteProduct(${product.id})'>x</div>
-                <h3>${product.title}</h3>
-                <p>Código: ${product.code}</p>
-                <p>Categoría: ${product.category}</p>
-                <p>Descripción: ${product.description}</p>
-                ${product.status ?
-                `<p>Stock: ${product.stock}</p>
-                    <p class="price">Precio: S/. ${product.price}</p>`
-                :
-                `<p class="no_product">Producto no disponible</p>`
-            }
-            </div>
-        `
+    let items = "";
+    data.map( (product) =>{
+       items = items + ` 
+        <div>
+            <p class="p-titulo">${product.title}</p>
+            <p>Descubre algunos de los modelos más recientes.</p>
+               ${listItem(product.title,product.data)}
+        </div>
+`
     })
-    productList.innerHTML = elements;
+    
+
+ 
+    productList.innerHTML = items;
 })
 
 socket.on('notification', data => {

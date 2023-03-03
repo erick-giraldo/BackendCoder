@@ -61,8 +61,9 @@ socketServer.on("connection", async (socket) => {
   });
 
   socket.on("deleteProduct", async (data) => {
-    const { user, id } = data;
-    await items.deleteProductById(id);
+    console.log("🚀 ~ file: server.js:64 ~ socket.on ~ data:", data)
+    const { user, title, id } = data;
+    await items.deleteProductById(title, id);
     products = await items.getProducts();
     socketServer.emit("products", products);
     socketServer.emit("notification", {
