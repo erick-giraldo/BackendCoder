@@ -29,13 +29,13 @@ class ProductManager {
     let products = [];
     const getProductos = await this.getProducts();
     if (!empty(getProductos)) products = getProductos;
-    const product = getProductos.find(element => element.code === code);
+    const product = getProductos.find((element) => element.code === code);
     return !empty(product) ? product : {};
-}
+  }
 
   async addProduct(data) {
     const getProductos = await this.getProducts();
-    if(!empty(getProductos)) this.products = getProductos;
+    if (!empty(getProductos)) this.products = getProductos;
     data.id = this.idCount++;
     this.products.push(data);
     fs.writeFileSync(this.path, JSON.stringify(this.products));
@@ -56,10 +56,16 @@ class ProductManager {
     return "El producto fue actualizado exitosamente";
   }
 
-  async deleteProductById(id) {
+  async deleteProductById(title, id) {
     let products = await this.getProducts();
-    products = products.filter((p) => p.id !== id);
-    await fs.writeFileSync(this.path, JSON.stringify(products));
+    products = products.map((p) => {
+      if (p.title !== title) return p;
+      return {  
+        title: p.title,
+        data: p.data.filter((item) => item.id !== id),
+      };
+    });
+     fs.writeFileSync(this.path, JSON.stringify(products));
     return `El producto fue eliminado exitosamente`;
   }
 }
