@@ -25,15 +25,27 @@ class ProductManager {
     return product;
   }
 
-  async findProductCode(code) {
+  async findProductCode(data) {
     let products = [];
+    let codigoRepetido;
     const getProductos = await this.getProducts();
-    if (!empty(getProductos)) products = getProductos;
-    const product = getProductos.find((element) => element.code === code);
-    return !empty(product) ? product : {};
+    const addCode = data
+      .map((p) => {
+        return p.code;
+      })
+      .toString();
+    for (let i = 0; i < getProductos.length; i++) {
+      for (let j = 0; j < getProductos[i].data.length; j++) {
+        const code = getProductos[i].data[j].code;
+        if (code === addCode) {
+          codigoRepetido = addCode;
+        }
+      }
+    }
+    return codigoRepetido;
   }
-
   async addProduct(data) {
+    console.log("🚀 ~ file: ProductManager.js:48 ~ ProductManager ~ addProduct ~ data:", data)
     const getProductos = await this.getProducts();
     if (!empty(getProductos)) this.products = getProductos;
     data.id = this.idCount++;
@@ -60,12 +72,12 @@ class ProductManager {
     let products = await this.getProducts();
     products = products.map((p) => {
       if (p.title !== title) return p;
-      return {  
+      return {
         title: p.title,
         data: p.data.filter((item) => item.id !== id),
       };
     });
-     fs.writeFileSync(this.path, JSON.stringify(products));
+    fs.writeFileSync(this.path, JSON.stringify(products));
     return `El producto fue eliminado exitosamente`;
   }
 }

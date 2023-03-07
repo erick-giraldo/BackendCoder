@@ -1,22 +1,25 @@
 <div>
     <div>
         <div>
-            <h2>Añadir Producto</h2>
-
+            <h3>Añadir Producto</h3>
             <form id="productForm" name="productForm" onsubmit="event.preventDefault(); onSubmitForm();">
                 <div class="form-group"> <!-- Full Name -->
-                    <label for="full_name_id" class="control-label">Título</label>
-                    <input type="text" class="form-control" id="full_name_id" name="title">
+                    <label for="title" class="control-label">Modelo</label>
+                    <select class="form-control" id="title" aria-label="Default select example" name="title">
+                        <option selected>Selecciona un Modelo</option>
+                        <option value="Sport">Sport</option>
+                        <option value="Grand American Touring">Grand American Touring</option>
+                        <option value="Cruiser">Cruiser</option>
+                    </select>
                 </div>
-
-                <div class="form-group"> <!-- Street 1 -->
+                <div class="form-group">
                     <label for="name" class="control-label">Nombre</label>
                     <input type="text" class="form-control" id="name" name="name">
                 </div>
 
-                <div class="form-group"> <!-- Street 2 -->
+                <div class="form-group">
                     <label for="description" class="control-label">Descripción</label>
-                    <input type="text" class="form-control" id="street2_id" name="description">
+                    <input type="text" class="form-control" id="description" name="description">
                 </div>
 
                 <div class="form-group"> <!-- City-->
@@ -28,17 +31,14 @@
                     <label for="code" class="control-label">Código</label>
                     <input type="text" class="form-control" id="code" name="code">
                 </div>
-
                 <div class="form-group"> <!-- Zip Code-->
                     <label for="stock" class="control-label">Stock</label>
                     <input type="text" class="form-control" id="stock" name="stock">
                 </div>
-
                 <div class="form-group"> <!-- Zip Code-->
                     <label for="price" class="control-label">Precio</label>
                     <input type="text" class="form-control" id="price" name="price">
                 </div>
-
                 <div class="form-group form-btn"> <!-- Submit Button -->
                     <button type="submit" class="btn btn-primary">Enviar!</button>
                 </div>
@@ -48,7 +48,6 @@
     </br>
     <div>
         <h2>Listado de Productos</h2>
-
         <div class="container-fluid padre">
             <div class="row hijo">
                 <div class="col-lg-10 col-md-12 col-sm-12 main-container">

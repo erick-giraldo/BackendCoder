@@ -2,15 +2,15 @@
   {
     "title": "Sport",
     "data": [
-      {
-        "id": 1,
-        "name": "Sportster™ S",
-        "image": "https://res.cloudinary.com/dwlf0cuu6/image/upload/v1670813526/blog/modelos/Sport/2022-sportster-s-f59-motorcycle-01_jj2zaq.webp",
-        "description": "Una categoría creada por la reconocida Sportster™. Diseño icónico, sonido auténtico.",
-        "code": "a12",
-        "stock": 10,
-        "price": 3500
-      },
+        {
+            "id": 1,
+            "name": "Sportster™ S",
+            "image": "https://res.cloudinary.com/dwlf0cuu6/image/upload/v1670813526/blog/modelos/Sport/2022-sportster-s-f59-motorcycle-01_jj2zaq.webp",
+            "description": "Una categoría creada por la reconocida Sportster™. Diseño icónico, sonido auténtico.",
+            "code":"a12",
+            "stock": 10,
+            "price": 3500
+          },
       {
         "id": 2,
         "name": "Cruiser™",
@@ -94,19 +94,5 @@
         "price": 3500
       }
     ]
-  },
-  {
-    "title": "Sport",
-    "data": [
-      {
-        "name": "Erick Giraldo",
-        "image": "aaasa",
-        "description": "wqwq",
-        "code": "02920",
-        "stock": 10,
-        "price": 212312
-      }
-    ],
-    "id": 0
   }
 ]

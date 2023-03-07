@@ -39,36 +39,35 @@ socketServer.on("connection", async (socket) => {
   }
 
   socketServer.emit("products", products);
-
+  
   socket.on("addProduct", async (data) => {
-    const { user, product: prod } = data;
-    const findProductCode = await items.findProductCode(prod.code);
-    if (!empty(findProductCode)) {
-      return socketServer.emit("notification", {
-        type: "error",
-        user,
-        message: `El código ${prod.code} ya se enccuentra registrado, porfavor verifique y intente nuevamente`,
-      });
+    const { token, product: prod } = data;
+    const productByCode = await items.findProductCode(prod.data);
+    if (!empty(productByCode)) {
+        return socketServer.emit('notification', {
+            type: 'error',
+            token,
+            message: `El código ${productByCode} ya se encuentra regitrado`
+        })
     }
     await items.addProduct(prod);
-    products = await items.getProducts();
-    socketServer.emit("products", products);
-    socketServer.emit("notification", {
-      type: "success",
-      user,
-      message: "Producto agregado exitosamente",
-    });
+    const getProducs = await items.getProducts();
+    socketServer.emit('productList', getProducs)
+    socketServer.emit('notification', {
+        type: 'success',
+        token,
+        message: 'Producto agregado exitosamente'
+    })
   });
 
   socket.on("deleteProduct", async (data) => {
-    console.log("🚀 ~ file: server.js:64 ~ socket.on ~ data:", data)
-    const { user, title, id } = data;
+    const { token, title, id } = data;
     await items.deleteProductById(title, id);
     products = await items.getProducts();
     socketServer.emit("products", products);
     socketServer.emit("notification", {
       type: "success",
-      user,
+      token,
       message: "Producto eliminado exitosamente",
     });
   });
