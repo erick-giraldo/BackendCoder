@@ -147,11 +147,36 @@
   gap: 2rem;
   justify-content: center;
 }
-.delete{
+
+.delete {
   padding: 0.5rem;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
   position: absolute;
   right: 0;
+}
+.back{
+  /* background-color: #11191f; */
+  height: 100%;
+  padding: 2rem;
+}
+
+.chat-title {
+  margin-top: 0;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  font-size: 2rem;
+  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+ul li {
+  list-style: square;
+
+}
+
+.back p {
+  margin-top: 0;
+  font-size: 18px;
+  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
 }

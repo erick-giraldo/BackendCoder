@@ -6,10 +6,9 @@
         <div class="productos-container">
           {{#each products}}
             <div>
-              <p class="p-titulo">{{this.title}}</p>
+              <p class="p-titulo">{{this.category}}</p>
               <p>Descubre algunos de los modelos más recientes.</p>
               <div class="card-container">
-                {{#each data}}
                   <div class="row productos-section">
                     <div
                       class="card col-lg-2 col-md-6 col-sm-12"
@@ -37,7 +36,6 @@
                     </div>
 
                   </div>
-                {{/each}}
               </div>
             </div>
           {{/each}}

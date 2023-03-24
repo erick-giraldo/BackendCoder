@@ -45,7 +45,6 @@ class ProductManager {
     return codigoRepetido;
   }
   async addProduct(data) {
-    console.log("🚀 ~ file: ProductManager.js:48 ~ ProductManager ~ addProduct ~ data:", data)
     const getProductos = await this.getProducts();
     if (!empty(getProductos)) this.products = getProductos;
     data.id = this.idCount++;

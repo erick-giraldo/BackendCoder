@@ -1,12 +1,13 @@
-import ProductManager from '../class/ProductManager.js';
+import ProductManager from '../dao/class/ProductManager.js';
+import ProductsModel from "../dao/models/products.js"
 
-const items = new ProductManager("products.json");
+// const items = new ProductManager("products.json");
 
 class ViewController {
 
     static async home(req, res) {
         try {
-            const response = await items.getProducts();
+            const response = await ProductsModel.find().lean();
             return res.render('home', {
                 style: 'style.css',
                 products: response

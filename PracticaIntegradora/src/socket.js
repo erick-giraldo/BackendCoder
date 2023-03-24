@@ -1,47 +1,51 @@
-import { Server } from 'socket.io'
-import ProductManager from './class/ProductManager.js';
+import { Server } from "socket.io";
+import ProductManager from "./dao/class/ProductManager.js";
 import empty from "is-empty";
+import ProductModel from "./dao/models/products.js";
+import MensajeModel from "./dao/models/mensaje.js";
 
-const items = new ProductManager("products.json");
-import MensajeModel from './models/mensaje.js'
-
-let products= [];
+let products = [];
 
 export const init = (httpServer) => {
   const socketServer = new Server(httpServer);
   socketServer.on("connection", async (socket) => {
     console.log("Nuevo cliente conectado", socket.id);
 
+    socket.on("new-message", async (data) => {
+      const mensaje = await MensajeModel.create(data);
+      socketServer.emit("notification", mensaje);
+    });
+
     if (empty(products)) {
-      products= await items.getProducts();
+      products = await ProductModel.find();
     }
-  
     socketServer.emit("products", products);
-    
+
     socket.on("addProduct", async (data) => {
       const { token, product: prod } = data;
-      const productByCode = await items.findProductCode(prod.data);
+      const productByCode =  await ProductModel.findOne({ code: prod.code })
       if (!empty(productByCode)) {
-          return socketServer.emit('notification', {
-              type: 'error',
-              token,
-              message: `El código ${productByCode} ya se encuentra regitrado`
-          })
-      }
-      await items.addProduct(prod);
-      const getProducs = await items.getProducts();
-      socketServer.emit('productList', getProducs)
-      socketServer.emit('notification', {
-          type: 'success',
+        return socketServer.emit("notification", {
+          type: "error",
           token,
-          message: 'Producto agregado exitosamente'
-      })
+          message: `El código ${productByCode} ya se encuentra regitrado`,
+        });
+      }
+      await ProductModel.create(prod);
+      const getProducs = await ProductModel.find();
+      socketServer.emit("productList", getProducs);
+      socketServer.emit("notification", {
+        type: "success",
+        token,
+        message: "Producto agregado exitosamente",
+      });
     });
-  
+
     socket.on("deleteProduct", async (data) => {
-      const { token, title, id } = data;
-      await items.deleteProductById(title, id);
-      products = await items.getProducts();
+      console.log("🚀 ~ file: socket.js:45 ~ socket.on ~ data:", data)
+      const { token, id } = data;
+      await ProductModel.deleteOne({ id })
+      products =  await ProductModel.find();
       socketServer.emit("products", products);
       socketServer.emit("notification", {
         type: "success",
@@ -50,16 +54,12 @@ export const init = (httpServer) => {
       });
     });
 
-    socket.on('disconection', () => {
-      console.log('Se desconecto el cliente con el id', socket.id)
-    })
+    socket.on("disconection", () => {
+      console.log("Se desconecto el cliente con el id", socket.id);
+    });
   });
-  
-
-}
-
-
+};
 
 export const emit = (mensaje) => {
-  io.emit('notification', mensaje)
-}
+  io.emit("notification", mensaje);
+};

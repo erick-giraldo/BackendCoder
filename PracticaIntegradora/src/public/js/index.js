@@ -49,59 +49,52 @@ const deleteProduct = (title, id) => {
   });
 };
 
-const listItem = (title, data) => {
-  let textHtml = "";
-  for (let i = 0; i < data.length; i++) {
-    let listCards = `
-        <div class="row productos-section">
-        <div
-          class="card col-lg-2 col-md-6 col-sm-12"
-          style="width: 20rem"
-        >
-        <div class="delete" onclick='deleteProduct("${title}",${data[i].id})'>x</div>
-          <img
-            src=${data[i].image}
-            class="d-block w-100"
-            alt=${data[i].name}
-          />
-          <div class="card-body">
-            <h5 class="card-title card-name">${data[i].name}</h5>
-            <p class="card-text">${data[i].description}</p>
-            <div class="card-inv">
-              <p class="card-title card-price">$ ${data[i].price}</p>
-              <p class="card-title card-stock">Stock:
-              ${data[i].stock}</p>
-            </div>
-            <a
-              type="button"
-              class="btn btn-outline-dark"
-              href=""
-            >Ver Detalles</a>
-          </div>
-        </div>
-      </div>`;
-    textHtml = textHtml + listCards;
-  }
-  return textHtml;
-};
 
 socket.on("products", (data) => {
+  console.log("🚀 ~ file: index.js:89 ~ socket.on ~ data:", data)
   document.getElementById("productForm").reset();
   const productList = document.getElementById("containerProducts");
   let items = "";
-  data.map((product) => {
-    items =
-      items +
+  data.forEach((product) => {
+    items = items +
       ` <div>
-            <p class="p-titulo">${product.title}</p>
+            <p class="p-titulo">${product.category}</p>
             <p>Descubre algunos de los modelos más recientes.</p>
             <div class="card-container">
-               ${listItem(product.title, product.data)}
+            <div class="row productos-section">
+            <div
+              class="card col-lg-2 col-md-6 col-sm-12"
+              style="width: 20rem"
+            >
+            <div class="delete" onclick='deleteProduct(${product.id})'>x</div>
+              <img
+                src=${product.image}
+                class="d-block w-100"
+                alt=${product.name}
+              />
+              <div class="card-body">
+                <h5 class="card-title card-name">${product.name}</h5>
+                <p class="card-text">${product.description}</p>
+                <div class="card-inv">
+                  <p class="card-title card-price">$ ${product.price}</p>
+                  <p class="card-title card-stock">Stock:
+                  ${product.stock}</p>
+                </div>
+                <a
+                  type="button"
+                  class="btn btn-outline-dark"
+                  href=""
+                >Ver Detalles</a>
+              </div>
+            </div>
+          </div>
                </div>
         </div>`;
   });
   productList.innerHTML = items;
 });
+
+
 
 socket.on("notification", (data) => {
   if (data.token === token) {

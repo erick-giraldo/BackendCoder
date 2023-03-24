@@ -1,6 +1,6 @@
 import express from "express";
 import { init } from './db/mongodb.js'
-import RouterController from "./routes/views/index.js";
+import RouterController from "./routes/index.js";
 import handlebars from "express-handlebars";
 import __dirname from "./utils.js";
 
