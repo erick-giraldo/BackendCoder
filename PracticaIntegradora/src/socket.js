@@ -1,5 +1,5 @@
 import { Server } from "socket.io";
-import ProductManager from "./dao/class/ProductManager.js";
+// import ProductManager from "./dao/class/ProductManager.js";
 import empty from "is-empty";
 import ProductModel from "./dao/models/products.js";
 import MensajeModel from "./dao/models/mensaje.js";
@@ -32,8 +32,8 @@ export const init = (httpServer) => {
         });
       }
       await ProductModel.create(prod);
-      const getProducs = await ProductModel.find();
-      socketServer.emit("productList", getProducs);
+      products  = await ProductModel.find();
+      socketServer.emit("productList", products);
       socketServer.emit("notification", {
         type: "success",
         token,
@@ -42,7 +42,6 @@ export const init = (httpServer) => {
     });
 
     socket.on("deleteProduct", async (data) => {
-      console.log("🚀 ~ file: socket.js:45 ~ socket.on ~ data:", data)
       const { token, id } = data;
       await ProductModel.deleteOne({ id })
       products =  await ProductModel.find();

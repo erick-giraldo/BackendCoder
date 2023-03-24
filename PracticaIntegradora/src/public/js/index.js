@@ -13,45 +13,41 @@ let token = "";
 token = generateToken();
 
 const onSubmitForm = () => {
-  const title = document.forms["productForm"]["title"].value;
+  const category = document.forms["productForm"]["category"].value;
   const name = document.forms["productForm"]["name"].value;
   const image = document.forms["productForm"]["image"].value;
   const description = document.forms["productForm"]["description"].value;
   const code = document.forms["productForm"]["code"].value;
   const stock = Number(document.forms["productForm"]["stock"].value);
   const price = Number(document.forms["productForm"]["price"].value);
+  const status = document.forms["productForm"]["status"].value;
 
   const product = {
-    title,
-    data: [
-      {
+        category:category,
         name: name,
         image: image,
         description: description,
         code: code,
         stock: stock,
         price: price,
-      },
-    ],
+        status: status
   };
 
   socket.emit("addProduct", {
     token,
-    product,
+    product
   });
 };
 
-const deleteProduct = (title, id) => {
+const deleteProduct = ( id) => {
   socket.emit("deleteProduct", {
     token,
-    title,
-    id,
+    id
   });
 };
 
 
 socket.on("products", (data) => {
-  console.log("🚀 ~ file: index.js:89 ~ socket.on ~ data:", data)
   document.getElementById("productForm").reset();
   const productList = document.getElementById("containerProducts");
   let items = "";

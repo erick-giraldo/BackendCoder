@@ -46,7 +46,7 @@ class ProductController {
         try {
             let error = {};
             const productData = req.body;
-            const requiredFields = ['description', 'code', 'name','price', 'stock', 'category', 'image'];
+            const requiredFields = ['description', 'code', 'name','price', 'stock', 'category', 'image','status'];
             requiredFields.forEach(field => {
                 if (!productData.hasOwnProperty(field)) {
                     error[field] = 'El campo es obligatorio';
@@ -87,7 +87,7 @@ class ProductController {
             let productById = await ProductModel.findOne({ id: pid })
             if (isEmpty(productById)) return res.status(404).json({ message: 'El producto a editar no existe' })
 
-            const allowedFields = ['name', 'description', 'code', 'price', 'status', 'stock', 'category', 'image'];
+            const allowedFields = ['name', 'description', 'code', 'price', 'status', 'stock', 'category', 'image', 'status'];
             Object.keys(productData).forEach(field => {
                 if (allowedFields.includes(field) && isEmpty(productData[field])) {
                     error[field] = 'El campo no puede estar vacío';

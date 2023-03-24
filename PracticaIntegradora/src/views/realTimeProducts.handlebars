@@ -4,8 +4,8 @@
             <h3>Añadir Producto</h3>
             <form id="productForm" name="productForm" onsubmit="event.preventDefault(); onSubmitForm();">
                 <div class="form-group"> <!-- Full Name -->
-                    <label for="title" class="control-label">Modelo</label>
-                    <select class="form-control" id="title" aria-label="Default select example" name="title">
+                    <label for="category" class="control-label">Modelo</label>
+                    <select class="form-control" id="category" aria-label="Default select example" name="titcategoryle">
                         <option selected>Selecciona un Modelo</option>
                         <option value="Sport">Sport</option>
                         <option value="Grand American Touring">Grand American Touring</option>
@@ -38,6 +38,14 @@
                 <div class="form-group"> <!-- Zip Code-->
                     <label for="price" class="control-label">Precio</label>
                     <input type="text" class="form-control" id="price" name="price">
+                </div>
+                      <div class="form-group"> <!-- Full Name -->
+                    <label for="status" class="control-label">Status</label>
+                    <select class="form-control" id="status" aria-label="Default select example" name="status">
+                        <option selected>Selecciona un Estado</option>
+                        <option value="true">Activado</option>
+                        <option value="false">Desactivado</option>
+                    </select>
                 </div>
                 <div class="form-group form-btn"> <!-- Submit Button -->
                     <button type="submit" class="btn btn-primary">Enviar!</button>
