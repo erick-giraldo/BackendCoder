@@ -1,5 +1,6 @@
 import isEmpty from "is-empty";
 import ProductModel from "../dao/models/products.js";
+import CommunsUtil from '../utils/communs.js'
 
 class ProductController {
   static async getProducts(req, res) {
@@ -12,7 +13,7 @@ class ProductController {
       }
       const products = await ProductModel.paginate( {}, options);
 
-      return res.json(products);
+      return res.json(CommunsUtil.buidResponse( products ));
     } catch (err) {
       return res.status(400).json({
         message: "Error al listar productos",

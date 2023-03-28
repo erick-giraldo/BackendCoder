@@ -52,6 +52,7 @@ socket.on("products", (data) => {
   const productList = document.getElementById("containerProducts");
   let items = "";
   data.forEach((product) => {
+    console.log("🚀 ~ file: products.js:55 ~ data.forEach ~ product:", product)
     items = items +
     `<tr>
     <th scope="row">${product.id}</th>
