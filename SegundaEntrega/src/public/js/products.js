@@ -69,6 +69,7 @@ socket.on("products", (data) => {
         <a href="#" id="add" rel="noopener noreferrer" title="Agregar"><span class="material-symbols-outlined">add_circle</span></a>
         <a href="#" id="edit" rel="noopener noreferrer" title="Editar"><span class="material-symbols-outlined">edit</span></a>
         <a href="#" id="delete" rel="noopener noreferrer" title="Eliminar"><span class="material-symbols-outlined">delete</span></a>
+        <a  href="#" id="addCart" rel="noopener noreferrer" title="Cart"><span class="material-symbols-outlined">add_shopping_cart</span></a>
       </div>
       </i>
     </td>
