@@ -1,11 +1,4 @@
-// const category = document.forms["productForm"]["category"].value;
-// const name = document.forms["productForm"]["name"].value;
-// const image = document.forms["productForm"]["image"].value;
-// const description = document.forms["productForm"]["description"].value;
-// const code = document.forms["productForm"]["code"].value;
-// const stock = Number(document.forms["productForm"]["stock"].value);
-// const price = Number(document.forms["productForm"]["price"].value);
-// const status = document.forms["productForm"]["status"].value;
+
 
 const addProductCart = async  (_id) => {
 

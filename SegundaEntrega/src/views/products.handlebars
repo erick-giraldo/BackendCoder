@@ -5,18 +5,16 @@
         <h1>Productos</h1>
         <div class="productos-container">
           <table class="table table-sm table-products">
-            <nav aria-label="...">
+            <nav aria-label="..." class="Paginator" id="pagination">
               <ul class="pagination">
-                <li class="page-item disabled">
-                  <span class="page-link">Previous</span>
+                <li class="page-item {{#if products.hasPrevPage}} {{else}} disabled {{/if}}" href={{products.prevLink}} >
+                    <a class="page-link" href={{products.prevLink}}>Previous</a>
                 </li>
                 <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item active" aria-current="page">
-                  <span class="page-link">2</span>
-                </li>
+                <li class="page-item active" aria-current="page"><span class="page-link">2</span></li>
                 <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#">Next</a>
+                <li class="page-item {{#if products.hasNextPage}} {{else}} disabled {{/if}}">
+                  <a class="page-link" href={{products.nextLink}}>Next</a>
                 </li>
               </ul>
             </nav>

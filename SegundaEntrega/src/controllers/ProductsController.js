@@ -1,19 +1,16 @@
 import isEmpty from "is-empty";
 import ProductModel from "../dao/models/products.js";
-import CommunsUtil from '../utils/communs.js'
+import CommonsUtil from '../utils/Commons.js'
 
 class ProductController {
   static async getProducts(req, res) {
     try {
-      const {
-        query: { limit = 3, page = 1 },
-      } = req;
-      const options = {
-        limit , page
+      const { limit = 3 , page = 1, sort } = query
+      const opts = { limit, page }
+      if (sort === 'asc' || sort === 'desc') {
+        opts.sort = { price: sort }
       }
-      const products = await ProductModel.paginate( {}, options);
-
-      return res.json(CommunsUtil.buidResponse( products ));
+      return res.json(CommonsUtils.getFilter(query), opts);
     } catch (err) {
       return res.status(400).json({
         message: "Error al listar productos",

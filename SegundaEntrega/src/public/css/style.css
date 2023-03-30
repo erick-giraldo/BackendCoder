@@ -189,3 +189,13 @@ ul li {
 .table-products td .actions{
   display: flex;
 }
+
+.paginator{
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.paginator ul li{
+  list-style: none;
+}

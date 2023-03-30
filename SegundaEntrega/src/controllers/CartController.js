@@ -26,7 +26,7 @@ class CartController {
     }
 
 
-    static async addProduct(req, res) {
+    static async addCart(req, res) {
         try {
             await CartModel.create({});
             return res.json({
