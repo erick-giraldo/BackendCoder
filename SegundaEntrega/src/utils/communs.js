@@ -1,4 +1,4 @@
-class CommunsUtil {
+class CommonsUtil {
   static buidResponse(data) {
     let sortQueryParam = ''
     if (data.sort) {
@@ -19,6 +19,14 @@ class CommunsUtil {
       sortLink: `${process.env.BASE_URL}/api?page=${data.page}&limit=${data.limit}&sort=${data.sort === 'asc' ? 'desc' : 'asc'}`
     }
   }
+  static getFilter(query = {}) {
+    const { category } = query
+    const filter = {}
+    if (category) {
+      filter.category = category
+    }
+    return filter
+  }
 }
 
-export default CommunsUtil
+export default CommonsUtil

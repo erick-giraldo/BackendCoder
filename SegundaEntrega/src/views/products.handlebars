@@ -34,7 +34,34 @@
                 <th scope="col">Acciones</th>
               </tr>
             </thead>
-            <tbody id="containerProducts">
+            <tbody>
+              {{#each products.payload}}
+              {{this.page}}
+              <tr>
+                <th scope="row">{{this.id}}</th>
+                <td>{{this.category}}</td>
+                <td>{{this.code}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.description}}</td>
+                <td><img style="width: 15rem;" src={{this.image}} /></td>
+                <td>{{this.price}}</td>
+                <td>{{this.stock}}</td>
+                <td>{{this.status}}</td>
+                <td>
+                  <div class="actions">
+                    <a href="#" id="add" rel="noopener noreferrer" title="Agregar"><span
+                        class="material-symbols-outlined">add_circle</span></a>
+                    <a href="#" id="edit" rel="noopener noreferrer" title="Editar"><span
+                        class="material-symbols-outlined">edit</span></a>
+                    <a href="#" id="delete" rel="noopener noreferrer" title="Eliminar"><span
+                        class="material-symbols-outlined">delete</span></a>
+                    <a href="#" id="addCart" rel="noopener noreferrer" title="Cart" onclick="addProductCart(`{{this._id}}`)"><span
+                        class="material-symbols-outlined">add_shopping_cart</span></a>
+                  </div>
+                  </i>
+                </td>
+              </tr>
+              {{/each}}
             </tbody>
           </table>
         </div>
@@ -42,5 +69,4 @@
     </div>
   </div>
 </div>
-<script src="/socket.io/socket.io.js"></script>
 <script src="/js/products.js"></script>
