@@ -5,16 +5,16 @@ import CommonsUtil from '../utils/Commons.js'
 class ProductController {
   static async getProducts(req, res) {
     try {
-      const { limit = 3 , page = 1, sort } = query
+      const {
+        query: { limit = 3, page = 1 },
+      } = req;
       const opts = { limit, page }
-      if (sort === 'asc' || sort === 'desc') {
-        opts.sort = { price: sort }
-      }
-      return res.json(CommonsUtils.getFilter(query), opts);
+      const products = await ProductModel.paginate( {}, opts);
+      return res.json(CommonsUtil.buidResponse( products ));
     } catch (err) {
       return res.status(400).json({
         message: "Error al listar productos",
-        error: JSON.parse(err.message),
+        error: err.message,
       });
     }
   }

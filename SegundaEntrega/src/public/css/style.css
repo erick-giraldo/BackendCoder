@@ -185,9 +185,13 @@ ul li {
   text-align: center;
   padding-bottom: 1rem
 }
-
+.table-products td{
+  text-align: center;
+}
 .table-products td .actions{
   display: flex;
+  justify-content: center;
+  
 }
 
 .paginator{
@@ -198,4 +202,8 @@ ul li {
 
 .paginator ul li{
   list-style: none;
+}
+
+td.price {
+  color: red;
 }

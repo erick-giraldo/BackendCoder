@@ -1,10 +1,10 @@
-import mongoose, { Schema, SchemaType } from "mongoose"
+import mongoose from "mongoose"
 
 const cart = new mongoose.Schema({
     id: { type: Number, index: true },
     products: {
         type: [{
-            product: { type: Schema.Types.ObjectId, require: true },
+            _id: { type: mongoose.Schema.Types.ObjectId, ref: 'product' },
             quantity: { type: Number, require: true }
         }],
         default: []

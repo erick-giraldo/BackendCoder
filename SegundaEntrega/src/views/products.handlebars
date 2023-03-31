@@ -7,20 +7,15 @@
           <table class="table table-sm table-products">
             <nav aria-label="..." class="Paginator" id="pagination">
               <ul class="pagination">
-                <li class="page-item {{#if products.hasPrevPage}} {{else}} disabled {{/if}}" href={{products.prevLink}} >
-                    <a class="page-link" href={{products.prevLink}}>Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item active" aria-current="page"><span class="page-link">2</span></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item {{#if products.hasNextPage}} {{else}} disabled {{/if}}">
-                  <a class="page-link" href={{products.nextLink}}>Next</a>
-                </li>
+                <li class="page-item {{#if products.hasPrevPage}} {{else}} disabled {{/if}}"><a class="page-link" href={{products.prevLink}}>Previous</a></li>
+                <li class="page-item  {{#if this.active}} active {{else}} {{/if}}"><a class="page-link" href={{this.link}}>{{products.page}}</a></li>
+                <li class="page-item {{#if products.hasNextPage}} {{else}} disabled {{/if}}"><a class="page-link" href={{products.nextLink}}>Next</a></li>
               </ul>
             </nav>
             <thead>
               <tr>
-                <th scope="col">#</th>
+                <th scope="colIdth>
+                <th scope="col">Id</th>
                 <th scope="col">Categoria</th>
                 <th scope="col">Código</th>
                 <th scope="col">Nombre</th>
@@ -47,12 +42,12 @@
                 <td>{{this.status}}</td>
                 <td>
                   <div class="actions">
-                    <a href="#" id="add" rel="noopener noreferrer" title="Agregar"><span
+                    {{!-- <a href="#" id="add" rel="noopener noreferrer" title="Agregar"><span
                         class="material-symbols-outlined">add_circle</span></a>
                     <a href="#" id="edit" rel="noopener noreferrer" title="Editar"><span
                         class="material-symbols-outlined">edit</span></a>
                     <a href="#" id="delete" rel="noopener noreferrer" title="Eliminar"><span
-                        class="material-symbols-outlined">delete</span></a>
+                        class="material-symbols-outlined">delete</span></a> --}}
                     <a href="#" id="addCart" rel="noopener noreferrer" title="Cart" onclick="addProductCart(`{{this._id}}`)"><span
                         class="material-symbols-outlined">add_shopping_cart</span></a>
                   </div>
@@ -68,3 +63,4 @@
   </div>
 </div>
 <script src="/js/products.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
