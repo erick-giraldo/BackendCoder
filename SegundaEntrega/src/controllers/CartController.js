@@ -137,84 +137,101 @@ class CartController {
 
   static async deleteProductsByCartId(req, res) {
     try {
-        const result = await CartModel.updateOne({ _id: req.params.cid }, { $set: { products: [] } })
-        if (result.nModified === 0) return res.status(404).json({ message: 'Carrito no encontrado' })
+      let { cid } = req.params;
+      cid = Number(cid);
+      if (isNaN(cid))
+        throw new Error(
+          JSON.stringify({
+            detail: "El id del carrito tiene que ser de tipo numérico",
+          })
+        );
+      const result = await CartModel.updateOne(
+        { id: cid },
+        { $set: { products: [] } }
+      );
+      if (result.nModified === 0)
+        return res.status(404).json({ message: "Carrito no encontrado" });
 
-        return res.json({
-            message: 'Productos eliminados del carrito exitosamente'
-        })
+      return res.json({
+        message: "Productos eliminados del carrito exitosamente",
+      });
     } catch (e) {
-        return res.status(500).json({
-            message: e.message
-        })
+      return res.status(500).json({
+        message: e.message,
+      });
     }
-}
+  }
 
-static async updateProductQuantityByCartId(req, res) {
+  static async updateProductQuantityByCartId(req, res) {
     try {
-        const result = await CartModel.updateOne({
-            _id: req.params.cid,
-            'products._id': req.params.pid
-        }, {
-            $set: {
-                'products.$.quantity': req.body.quantity
-            }
-        })
-        if (result.nModified === 0) return res.status(404).json({ message: 'Carrito no encontrado' })
+      let { cid, pid } = req.params;
+      let quantity = req.body.quantity;
 
-        return res.json({
-            message: 'Cantidad de productos actualizada exitosamente'
-        })
+      cid = Number(cid);
+      if (isNaN(cid))
+        throw new Error(
+          JSON.stringify({
+            detail: "El id del carrito tiene que ser de tipo numérico",
+          })
+        );
+      const result = await CartModel.updateOne(
+        {
+          id: cid,
+          "products._id": pid,
+        },
+        {
+          $set: {
+            "products.$.quantity": quantity,
+          },
+        }
+      );
+      if (result.nModified === 0)
+        return res.status(404).json({ message: "Carrito no encontrado" });
+
+      return res.json({
+        message: "Cantidad de productos actualizada exitosamente",
+      });
     } catch (e) {
-        return res.status(500).json({
-            message: e.message
-        })
+      return res.status(500).json({
+        message: e.message,
+      });
     }
-}
+  }
 
-static async updateProductsByCartId(req, res) {
+  static async updateProductsByCartId(req, res) {
     try {
-        const result = await CartModel.updateOne({
-            _id: req.params.cid
-        }, {
-            $set: {
-                products: req.body.products
-            }
-        })
-        if (result.nModified === 0) return res.status(404).json({ message: 'Carrito no encontrado' })
+      let { cid } = req.params;
+      let products = req.body.products;
+      cid = Number(cid);
+      if (isNaN(cid))
+        throw new Error(
+          JSON.stringify({
+            detail: "El id del carrito tiene que ser de tipo numérico",
+          })
+        );
+      const result = await CartModel.updateOne(
+        {
+          id: req.params.cid,
+        },
+        {
+          $set: {
+            products: products,
+          },
+        }
+      );
+      if (result.nModified === 0)
+        return res.status(404).json({ message: "Carrito no encontrado" });
 
-        return res.json({
-            message: 'Productos actualizados exitosamente'
-        })
+      return res.json({
+        message: "Productos actualizados exitosamente",
+      });
     } catch (e) {
-        return res.status(500).json({
-            message: e.message
-        })
+      return res.status(500).json({
+        message: e.message,
+      });
     }
-}
-
-// static async removeProductByCartId(req, res) {
-//     try {
-//         const result = await CartModel.updateOne({
-//             id: req.params.cid
-//         }, {
-//             $pull: {
-//                 products: {
-//                     product: req.params.pid
-//                 }
-//             }
-//         })
-//         if (result.nModified === 0) return res.status(404).json({ message: 'Carrito no encontrado' })
-
-//         return res.json({
-//             message: 'Producto eliminado del carrito exitosamente'
-//         })
-//     } catch (e) {
-//         return res.status(500).json({
-//             message: e.message
-//         })
-//     }
-// }
+  }
+  
 }
 
 export default CartController;

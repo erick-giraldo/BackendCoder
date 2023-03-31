@@ -1,27 +1,27 @@
-
-const addProductCart = async  (_id) => {
+const addProductCart = async (_id) => {
   try {
-    const cartId = 5;
+    const cartId = 1;
     const response = await fetch(`/carts/${cartId}/product/${_id}`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
     });
-    console.log("🚀 ~ file: products.js:9 ~ addProductCart ~ response:", response)
-    if(response.status === 200){
+    if (response.status === 200) {
       Swal.fire({
         icon: "success",
         title: "Bien Hecho!!",
         text: "El producto fue Agregado al Carrito",
         confirmButtonText: "Save",
-      })
+      });
     }
-    const data = await response.json();
-    console.log(data);
   } catch (error) {
+    Swal.fire({
+      icon: "error",
+      title: "Error!!",
+      text: "El producto no pudo ser Agregado al Carrito",
+      confirmButtonText: "Save",
+    });
     console.error(error);
   }
-    
 };
-

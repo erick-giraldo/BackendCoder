@@ -29,12 +29,13 @@ class ViewController {
 
   static async products(req, res) {
     try {
-        const { limit = 3, page = 1, sort } = req.query
+        const { query} = req;
+        const { limit = 3, page = 1, sort } = query
         const opts = { limit, page }
         if (sort === 'asc' || sort === 'desc') {
           opts.sort = { price: sort }   
         }
-      let response = await ProductsModel.paginate({}, opts);
+      let response = await ProductsModel.paginate(CommonsUtil.getFilter(query), opts);
       const newResponse = JSON.stringify(CommonsUtil.buidResponse( response ))
       response = JSON.parse(newResponse)
       return res.render("products", {
@@ -93,9 +94,7 @@ class ViewController {
         if (!productById) return res.status(404).json({ message: `No se encontró un producto con el id ${pid}` })
 
         let listProduct = cartById.products;
-        console.log("🚀 ~ file: ViewController.js:96 ~ ViewController ~ addProductCartById ~ listProduct:", listProduct)
         const searchProductByIdInCart = listProduct.find(data => data._id.toString() === pid);
-        console.log("🚀 ~ file: ViewController.js:97 ~ ViewController ~ addProductCartById ~ searchProductByIdInCart:", searchProductByIdInCart)
         if (!isEmpty(searchProductByIdInCart)) {
             listProduct = listProduct.map((item) => {
               if (item._id.toString() !== pid) return item;
