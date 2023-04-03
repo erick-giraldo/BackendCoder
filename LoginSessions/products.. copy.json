@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "category": "Sport",
+    "name": "Sportster™ S",
+    "image": "https://res.cloudinary.com/dwlf0cuu6/image/upload/v1670813526/blog/modelos/Sport/2022-sportster-s-f59-motorcycle-01_jj2zaq.webp",
+    "description": "Una categoría creada por la reconocida Sportster™. Diseño icónico, sonido auténtico.",
+    "code": "a12",
+    "stock": 10,
+    "price": 3500
+  },
+  {
+    "id": 2,
+    "category": "Sport",
+    "name": "Cruiser™",
+    "image": "https://res.cloudinary.com/dwlf0cuu6/image/upload/v1669739692/blog/modelos/Sport/sportster-s-red-removebg-preview_tnn6yp.webp",
+    "description": "El legado auténtico se encuentra con la tecnología moderna para brindar potencia, estilo.",
+    "code": "a123",
+    "stock": 100,
+    "price": 3500
+  },
+  {
+    "id": 3,
+    "category": "Sport",
+    "name": "Fat Boy™",
+    "image": "https://res.cloudinary.com/dwlf0cuu6/image/upload/v1669739693/blog/modelos/Sport/sportster-s-white-removebg-preview_mn0bbz.webp",
+    "description": "El icono original del estilo fat custom, ahora con brillantes acabados cromados..",
+    "code": "a1234",
+    "stock": 100,
+    "price": 3500
+  },
+  {
+    "id": 4,
+    "category": "Grand American Touring",
+    "name": "CVO Street Glide ™",
+    "image": "https://res.cloudinary.com/dwlf0cuu6/image/upload/v1669739693/blog/modelos/Grand%20American%20Touring/cvo-street-glide-f43-motorcycle-01_odirdu.webp",
+    "description": "Una bagger hot rod de altísima calidad sinónimo de gran sonido y orgullo.",
+    "code": "b12",
+    "stock": 100,
+    "price": 3500
+  },
+  {
+    "id": 5,
+    "category": "Grand American Touring",
+    "name": "Road Glide™ Special",
+    "image": "https://res.cloudinary.com/dwlf0cuu6/image/upload/v1669739691/blog/modelos/Grand%20American%20Touring/road-glide-special-f57-motorcycle-01_ckprs8.webp",
+    "description": "Una bagger oscurecida o brillantemente cromada de altas prestaciones de alta gama.",
+    "code": "b123",
+    "stock": 100,
+    "price": 3500
+  },
+  {
+    "id": 6,
+    "category": "Grand American Touring",
+    "name": "CVO™ Road Glide™",
+    "image": "https://res.cloudinary.com/dwlf0cuu6/image/upload/v1669739691/blog/modelos/Grand%20American%20Touring/cvo-road-glide-limited-f43-motorcycle-01_itxpor.webp",
+    "description": "Para los motociclistas que son protagonistas, solos o con un pasajero a bordo.",
+    "code": "b1234",
+    "stock": 100,
+    "price": 3500
+  },
+  {
+        "id": 7,
+        "category": "Cruiser",
+        "name": "Low Rider™ S",
+        "image": "https://res.cloudinary.com/dwlf0cuu6/image/upload/v1669739691/blog/modelos/Cruiser/low-rider-s-010-motorcycle-01_zhrvvk.webp",
+        "description": "Una motocicleta Cruiser con rendimiento personalizado de fábrica y oscurecida.",
+        "code": "c12",
+        "stock": 100,
+        "price": 3500
+      },
+      {
+        "id": 8,
+        "category": "Cruiser",
+        "name": "Street Bob™",
+        "image": "https://res.cloudinary.com/dwlf0cuu6/image/upload/v1669739690/blog/modelos/Cruiser/street-bob-114-010-motorcycle-01_xlst34.webp",
+        "description": "Una dinámica y desnuda bobber teñida de negro. Una perfecta base de altas prestaciones.",
+        "code": "c123",
+        "stock": 100,
+        "price": 3500
+      },
+      {
+        "id": 9,
+        "category": "Cruiser",
+        "name": "Pan America™ 1250 Special™",
+        "image": "https://res.cloudinary.com/dwlf0cuu6/image/upload/v1669739690/blog/modelos/Cruiser/pan-america-1250-special-010-motorcycle-01_yzsgpw.webp",
+        "description": "Es nuestra herramienta premium multiuso de dos ruedas fabricada para durar.",
+        "code": "c1234",
+        "stock": 100,
+        "price": 3500
+  }
+]
