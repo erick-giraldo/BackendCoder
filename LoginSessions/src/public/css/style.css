@@ -122,17 +122,13 @@
   --bs-gradient: none;
 }
 
-.form-btn {
-  display: flex;
-  justify-content: center;
-}
 
-.form-btn .btn-primary {
+.btn-primary {
   margin-top: 2rem;
   color: blue
 }
 
-.form-btn .btn-primary:hover {
+.btn-primary:hover {
   color: white;
 
 }
@@ -206,4 +202,137 @@ ul li {
 
 td.price {
   color: red;
+}
+
+
+/* Login */
+
+.fa {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.2rem;
+}
+/* Social Icons */
+.users-icon {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.users-icon p {
+  font-size: 12px;
+  color: red;
+  margin-inline-end: auto;
+  font-weight: 500;
+}
+.users-icon .text-tp {
+  color: #000;
+}
+.users-icon .text-tp strong {
+  font-weight: 500;
+}
+.active-sesion {
+  color: #000;
+}
+/* Tooltips */
+.users-icon .tooltip-data {
+  display: none;
+  background: #81dd6e;
+  max-width: 253px;
+  position: absolute;
+  right: 23px;
+  top: 0;
+  border-radius: 0.5rem;
+  padding: 10px;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  text-align: initial;
+  z-index: 1;
+}
+.users-icon:hover .tooltip-data {
+  display: block;
+}
+.bg {
+  background-image: url(https://res.cloudinary.com/dwlf0cuu6/image/upload/v1680559341/portada-login_gig9r5.webp);
+  background-position: center center;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  object-fit: cover;
+}
+#register {
+  display: none;
+}
+#btn-reg-submit, #btn-log-submit {
+  display: flex;
+  justify-content: center;
+}
+.spinnerLog {
+  display: none;
+}
+#btn-log-submit .spinnerLog {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border-left-color: #fff;
+  animation: spin 1s ease infinite;
+}
+.spinnerReg {
+  display: none;
+}
+#btn-reg-submit .spinnerReg {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border-left-color: #fff;
+  animation: spin 1s ease infinite;
+}
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+ }
+  100% {
+      transform: rotate(360deg);
+ }
+}
+@-webkit-keyframes fadein {
+  from {
+      bottom: 0;
+      opacity: 0;
+ }
+  to {
+      bottom: 30px;
+      opacity: 1;
+ }
+}
+@keyframes fadein {
+  from {
+      bottom: 0;
+      opacity: 0;
+ }
+  to {
+      bottom: 30px;
+      opacity: 1;
+ }
+}
+@-webkit-keyframes fadeout {
+  from {
+      bottom: 30px;
+      opacity: 1;
+ }
+  to {
+      bottom: 0;
+      opacity: 0;
+ }
+}
+@keyframes fadeout {
+  from {
+      bottom: 30px;
+      opacity: 1;
+ }
+  to {
+      bottom: 0;
+      opacity: 0;
+ }
 }
