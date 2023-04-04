@@ -152,7 +152,8 @@
   position: absolute;
   right: 0;
 }
-.back{
+
+.back {
   /* background-color: #11191f; */
   height: 100%;
   padding: 2rem;
@@ -165,6 +166,7 @@
   font-size: 2rem;
   font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
 ul li {
   list-style: square;
 
@@ -181,22 +183,24 @@ ul li {
   text-align: center;
   padding-bottom: 1rem
 }
-.table-products td{
+
+.table-products td {
   text-align: center;
 }
-.table-products td .actions{
+
+.table-products td .actions {
   display: flex;
   justify-content: center;
-  
-}
-
-.paginator{
-    display: flex;
-    justify-content: flex-end;
 
 }
 
-.paginator ul li{
+.paginator {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.paginator ul li {
   list-style: none;
 }
 
@@ -207,32 +211,37 @@ td.price {
 
 /* Login */
 
-.fa {
+/* .fa {
   display: flex;
   justify-content: flex-end;
   font-size: 1.2rem;
-}
+} */
 /* Social Icons */
 .users-icon {
   position: relative;
   display: flex;
   flex-direction: row-reverse;
 }
+
 .users-icon p {
   font-size: 12px;
   color: red;
   margin-inline-end: auto;
   font-weight: 500;
 }
+
 .users-icon .text-tp {
   color: #000;
 }
+
 .users-icon .text-tp strong {
   font-weight: 500;
 }
+
 .active-sesion {
   color: #000;
 }
+
 /* Tooltips */
 .users-icon .tooltip-data {
   display: none;
@@ -249,9 +258,11 @@ td.price {
   text-align: initial;
   z-index: 1;
 }
+
 .users-icon:hover .tooltip-data {
   display: block;
 }
+
 .bg {
   background-image: url(https://res.cloudinary.com/dwlf0cuu6/image/upload/v1680559341/portada-login_gig9r5.webp);
   background-position: center center;
@@ -259,16 +270,21 @@ td.price {
   border-bottom-left-radius: 0.5rem;
   object-fit: cover;
 }
+
 #register {
   display: none;
 }
-#btn-reg-submit, #btn-log-submit {
+
+#btn-reg-submit,
+#btn-log-submit {
   display: flex;
   justify-content: center;
 }
+
 .spinnerLog {
   display: none;
 }
+
 #btn-log-submit .spinnerLog {
   border: 4px solid rgba(0, 0, 0, 0.1);
   width: 25px;
@@ -277,9 +293,11 @@ td.price {
   border-left-color: #fff;
   animation: spin 1s ease infinite;
 }
+
 .spinnerReg {
   display: none;
 }
+
 #btn-reg-submit .spinnerReg {
   border: 4px solid rgba(0, 0, 0, 0.1);
   width: 25px;
@@ -288,51 +306,149 @@ td.price {
   border-left-color: #fff;
   animation: spin 1s ease infinite;
 }
+
 @keyframes spin {
   0% {
-      transform: rotate(0deg);
- }
+    transform: rotate(0deg);
+  }
+
   100% {
-      transform: rotate(360deg);
- }
+    transform: rotate(360deg);
+  }
 }
+
 @-webkit-keyframes fadein {
   from {
-      bottom: 0;
-      opacity: 0;
- }
+    bottom: 0;
+    opacity: 0;
+  }
+
   to {
-      bottom: 30px;
-      opacity: 1;
- }
+    bottom: 30px;
+    opacity: 1;
+  }
 }
+
 @keyframes fadein {
   from {
-      bottom: 0;
-      opacity: 0;
- }
+    bottom: 0;
+    opacity: 0;
+  }
+
   to {
-      bottom: 30px;
-      opacity: 1;
- }
+    bottom: 30px;
+    opacity: 1;
+  }
 }
+
 @-webkit-keyframes fadeout {
   from {
-      bottom: 30px;
-      opacity: 1;
- }
+    bottom: 30px;
+    opacity: 1;
+  }
+
   to {
-      bottom: 0;
-      opacity: 0;
- }
+    bottom: 0;
+    opacity: 0;
+  }
 }
+
 @keyframes fadeout {
   from {
-      bottom: 30px;
-      opacity: 1;
- }
+    bottom: 30px;
+    opacity: 1;
+  }
+
   to {
-      bottom: 0;
-      opacity: 0;
- }
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+/* Profile */
+.member-card {
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 20px 44px -6px rgb(0 0 0 / 6%);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-box {
+  padding: 20px;
+  border-radius: 3px;
+  margin-bottom: 30px;
+  background-color: #fff;
+}
+
+.social-links li a {
+  padding-top: 5px;
+  border-radius: 50%;
+  color: rgba(121, 121, 121, .8);
+  display: inline-block;
+  height: 30px;
+  line-height: 27px;
+  border: 2px solid rgba(121, 121, 121, .5);
+  text-align: center;
+  width: 30px
+}
+
+.social-links li .facebook:hover {
+  color: #3b5998 ;
+  border: 2px solid #3b5998;
+}
+
+.social-links li .twitter:hover {
+  color: #1DA1F2;
+  border: 2px solid #1DA1F2;
+}
+
+.social-links li .instagram:hover {
+  color: #E1306C;
+  border: 2px solid #E1306C;
+}
+
+
+.thumb-lg {
+  height: 88px;
+  width: 88px;
+}
+
+.img-thumbnail {
+  padding: .25rem;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: .25rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.text-pink {
+  color: #ff679b !important;
+}
+
+.btn-rounded {
+  border-radius: 2em;
+}
+
+.text-muted {
+  color: #98a6ad !important;
+}
+
+h4 {
+  line-height: 22px;
+  font-size: 18px;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+a.p-off {
+  font-size: 1.5rem;
+  color: red;
 }

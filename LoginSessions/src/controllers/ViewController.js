@@ -35,6 +35,20 @@ class ViewController {
       });
     }
   }
+  static async profile(req, res) {
+    try {
+      const response = await ProductsModel.find().lean();
+      return res.render("profile", {
+        style: "style.css",
+        products: response,
+      });
+    } catch (err) {
+      return res.status(400).json({
+        message: "Error al listar productos",
+        error: JSON.parse(err.message),
+      });
+    }
+  }
   static realtimeproducts(req, res) {
     return res.render("realtimeproducts", {
       style: "style.css",
