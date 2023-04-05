@@ -18,7 +18,6 @@ export const login = async ( email, password ) => {
         confirmButtonText: "OK",
       });
     }
- 
     if (response.status === 200) {
       Swal.fire({
         icon: "success",
@@ -30,8 +29,6 @@ export const login = async ( email, password ) => {
         window.location.replace("/products");
       }, 2000); 
     }
-
-   
   } catch (error) {
     console.error(error);
   }
