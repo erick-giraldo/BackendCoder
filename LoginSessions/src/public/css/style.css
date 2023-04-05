@@ -448,7 +448,20 @@ h4 {
   margin-top: 5rem;
 }
 
-a.p-off {
-  font-size: 1.5rem;
+.p-off {
+  font-size: 2rem;
   color: red;
+}
+
+.p-off:hover {
+  color: rgb(205, 76, 76);
+}
+
+.avatar{
+  display: flex;
+}
+
+.power-off{
+  margin-left: 10rem;
+  position: absolute;
 }

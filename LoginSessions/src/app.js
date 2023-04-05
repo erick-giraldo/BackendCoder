@@ -26,7 +26,7 @@ app.use(expressSession({
     store: MongoStore.create({
       mongoUrl: process.env.MONGODB_URI,
       mongoOptions: { useNewUrlParser: true, useUnifiedTopology: true },
-      ttl: 20,
+      ttl: 100,
     }),
     secret: process.env.COOKIE_SECRET,
     resave: false,
