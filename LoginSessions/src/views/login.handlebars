@@ -13,15 +13,15 @@
       <!--LOGIN-->
       <div id="login">
         <h2 class="fw-bold text-center py-5">Bienvenidos</h2>
-        <div class="users-icon" id="users-text">
+         <!--L<div class="users-icon" id="users-text">
           <i class="fa fa-duotone fa-user-secret"></i>
           <ul class="tooltip-data" id="tooltip-text"></ul>
           {{!-- <p class="load-credentials">Cargando.....</p> --}}
-        </div>
-        <form action="#" method="post">
+        </div>-->
+         <form action="/api/sessions/login" method="POST">
           <div class="mb-4">
             <label for="user" class="form-label">Ingrese su Usuario</label>
-            <input type="text" class="form-control" name="user" id="user" />
+            <input type="text" class="form-control" name="email" id="user" />
           </div>
           <div class="mb-4">
             <label for="pass" class="form-label">Ingrese su Password</label>
@@ -98,10 +98,10 @@
       <div id="register">
         <h2 class="fw-bold text-center py-5">Aun no tienes Cuenta?</h2>
         <p>Registrate para que puedas iniciar sesión</p>
-        <form action="#" method="post">
+        <form action="/api/sessions/register" method="POST">
           <div class="mb-4">
             <label for="user" class="form-label">Ingrese su Usuario</label>
-            <input type="text" class="form-control" name="user" id="user-reg" />
+            <input type="text" class="form-control" name="email" id="user-reg" />
           </div>
           <div class="mb-4">
             <label for="pass" class="form-label">Ingrese su Password</label>
@@ -167,4 +167,5 @@
     </div>
   </div>
 </div>
-<script src="/js/login.js"></script>
+<script src="/js/sessions.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>

@@ -6,7 +6,7 @@
       <div class="col-lg-4">
         <div class="text-center card-box">
           <div class="member-card pt-2 pb-2">
-            <div>
+            <div class="avatar">
                 <div class="thumb-lg member-thumb mx-auto"><img
                 src="https://bootdey.com/img/Content/avatar/avatar7.png"
                 class="rounded-circle img-thumbnail"
@@ -18,17 +18,18 @@
                 data-placement="top"
                 data-toggle="tooltip"
                 class="tooltips"
-                href=""
+                href="#"
+                onclick="logout()""
                 data-original-title="Facebook"
               ><i class="fa fa-power-off"></i></a></div>
             </div>
             <div class="">
-              <h4>James M. Fonville</h4>
-              <p class="text-muted">@Manager
-                <span>| </span><span><a
+              <h4> {{user.first_name}} {{user.last_name}} </h4>
+              <p class="text-muted">@{{user.occupation}} 
+                <span><a
                     href="#"
                     class="text-pink"
-                  >websitename.com</a></span></p>
+                  >{{user.email}}</a></span></p>
             </div>
             <ul class="social-links list-inline">
               <li class="list-inline-item"><a
@@ -95,3 +96,5 @@
   </div>
   <!-- container -->
 </div>
+<script src="/js/sessions.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
