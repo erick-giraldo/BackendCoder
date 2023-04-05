@@ -29,6 +29,7 @@ class ViewController {
   }
 
   static async products(req, res) {
+    const user = req.session.user;
     try {
       const { query } = req;
       const { limit = 3, page = 1, sort } = query;
@@ -45,6 +46,13 @@ class ViewController {
       return res.render("products", {
         style: "style.css",
         products: response,
+        user: {
+          first_name: user.first_name,
+          last_name: user.last_name,
+          email: user.email,
+          occupation: user.occupation,
+          age: user.age,
+    },
       });
     } catch (err) {
       return res.status(400).json({
@@ -165,7 +173,6 @@ class ViewController {
               first_name: user.first_name,
               last_name: user.last_name,
               email: user.email,
-              occupation: user.occupation,
               age: user.age,
         },
       });

@@ -1,23 +1,23 @@
 import UserModel from "../dao/models/users.js";
-
+import empty from "is-empty";
 class SessionsController {
   static async login(req, res) {
-    const requiredFields = ["email", "password"];
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).json({
+        message: "Los campos email and password son requeridos",
+      });
+    }
+
     try {
-      // Check if all required fields are present in the request body
-      for (const field of requiredFields) {
-        if (!req.body[field]) {
-          throw new Error(`${field} is a required field.`);
-        }
-      }
-  
-      const { email, password } = req.body;
       const user = await UserModel.findOne({ email });
-  
-      if (!user || user.password !== password) {
-        throw new Error("Invalid email or password.");
+
+      if (empty(user) || user.password !== password) {
+        return res.status(400).json({
+          message: "Credenciales invalidas por favor revisar y volver a iniciar sesión",
+        });
       }
-  
       req.session.user = user;
       res.json({ success: true });
     } catch (error) {
@@ -30,31 +30,43 @@ class SessionsController {
   }
 
   static async register(req, res) {
+    const body = {
+      first_name: "Jorge",
+      last_name: "Perez",
+      email: req.body.email,
+      age: 20,
+      occupation: "Ingeniero",
+      password: req.body.password
+    }
+
+    const requiredFields = [
+      "first_name",
+      "last_name",
+      "email",
+      "age",
+      "occupation",
+      "password",
+    ];
+
     try {
-      const requiredFields = [
-        "first_name",
-        "last_name",
-        "email",
-        "age",
-        "occupation",
-        "password",
-      ];
-      const userData = {};
-      requiredFields.forEach((field) => {
-        if (!req.body[field]) {
+      const userData = requiredFields.reduce((data, field) => {
+        if (!body[field]) {
           throw new Error(`El campo ${field} es obligatorio`);
         }
-        userData[field] = req.body[field];
-      });
+        return { ...data, [field]: body[field] };
+      }, {});
 
       const user = await UserModel.create(userData);
+
       console.log("new user", user);
       res.status(200).json(user);
     } catch (error) {
+      console.error(error);
       const message = error.message || "Error al registrar usuario";
       res.status(400).json({ message, error });
     }
   }
+
   static async logout(req, res) {
     try {
       // req.session.destroyError = true;
@@ -63,11 +75,11 @@ class SessionsController {
       // }
       req.session.destroy((err) => {
         if (err) throw err;
-        res.status(200).send("Logout successful");
+        res.status(200).send("Cierre de sesión exitoso");
       });
     } catch (err) {
       console.error(err);
-      res.status(500).send("Server error");
+      res.status(500).send("Error del servidor");
     }
   }
 }

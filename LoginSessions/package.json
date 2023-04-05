@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "./src/server.js",
   "scripts": {
-    "dev": "npx nodemon --exec \"node -r dotenv/config\" .",
+    "dev": "npx nodemon --exec \"node --experimental-modules -r dotenv/config\" .",
     "start": "node ."
   },
   "keywords": [],

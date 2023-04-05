@@ -13,12 +13,8 @@
       <!--LOGIN-->
       <div id="login">
         <h2 class="fw-bold text-center py-5">Bienvenidos</h2>
-         <!--L<div class="users-icon" id="users-text">
-          <i class="fa fa-duotone fa-user-secret"></i>
-          <ul class="tooltip-data" id="tooltip-text"></ul>
-          {{!-- <p class="load-credentials">Cargando.....</p> --}}
-        </div>-->
-         <form action="/api/sessions/login" method="POST">
+    
+         <form action="" onsubmit="event.preventDefault()">
           <div class="mb-4">
             <label for="user" class="form-label">Ingrese su Usuario</label>
             <input type="text" class="form-control" name="email" id="user" />
@@ -98,7 +94,7 @@
       <div id="register">
         <h2 class="fw-bold text-center py-5">Aun no tienes Cuenta?</h2>
         <p>Registrate para que puedas iniciar sesión</p>
-        <form action="/api/sessions/register" method="POST">
+        <form action="" onsubmit="event.preventDefault()">
           <div class="mb-4">
             <label for="user" class="form-label">Ingrese su Usuario</label>
             <input type="text" class="form-control" name="email" id="user-reg" />
@@ -114,7 +110,6 @@
           </div>
           <div class="d-grid">
             <button type="submit" class="btn btn-primary" id="btn-reg-submit">
-              <div class="spinnerReg"></div>
               <div class="reg-submit">Registrarse</div>
             </button>
           </div>
@@ -167,5 +162,5 @@
     </div>
   </div>
 </div>
-<script src="/js/sessions.js"></script>
+<script type="module" src="/js/loginAndRegister.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
