@@ -54,35 +54,36 @@
 // }
 const logout = async () => {
   try {
-    const cartId = 1;
     const response = await fetch(`/api/sessions/logout`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
     });
-    console.log("🚀 ~ file: sessions.js:60 ~ logout ~ response:", response)
 
-    if (response.status === 200) {
+    if (response.ok) {
       Swal.fire({
         icon: "success",
         title: "Logout ok!!!",
-        text: "La sesión se cerro correctamente",
+        text: "La sesión se cerró correctamente",
         confirmButtonText: "OK",
       });
+
       setTimeout(() => {
         window.location.replace("http://localhost:8080/login");
       }, 2000);
-      
-    }else if(response.status === 500){
-      Swal.fire({
-        icon: "error",
-        title: "Logout error!!!",
-        text: "Error al destruir la sesión",
-        confirmButtonText: "OK",
-      });
+    } else {
+      throw new Error("Error al destruir la sesión");
     }
   } catch (error) {
+    Swal.fire({
+      icon: "error",
+      title: "Logout error!!!",
+      text: error.message,
+      confirmButtonText: "OK",
+    });
+
     console.error(error);
   }
 };
+
