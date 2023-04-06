@@ -7,7 +7,7 @@ import isLoged from '../../middleware/isLoged.js'
 const viewRouter = Router();
 
 viewRouter.get('/chat', chatController.chatRouter)
-viewRouter.get('', ViewController.home)
+viewRouter.get('', auth ,ViewController.home)
 viewRouter.get('/realtimeproducts', ViewController.realtimeproducts)
 viewRouter.get('/products', auth, ViewController.products)
 viewRouter.post("/carts/:cid/product/:pid", ViewController.addProductCartById);

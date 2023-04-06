@@ -15,7 +15,8 @@ class SessionsController {
 
       if (empty(user) || user.password !== password) {
         return res.status(400).json({
-          message: "Credenciales invalidas por favor revisar y volver a iniciar sesión",
+          message:
+            "Credenciales invalidas por favor revisar y volver a iniciar sesión",
         });
       }
       req.session.user = user;
@@ -36,8 +37,8 @@ class SessionsController {
       email: req.body.email,
       age: 20,
       occupation: "Ingeniero",
-      password: req.body.password
-    }
+      password: req.body.password,
+    };
 
     const requiredFields = [
       "first_name",
@@ -80,6 +81,16 @@ class SessionsController {
     } catch (err) {
       console.error(err);
       res.status(500).send("Error del servidor");
+    }
+  }
+
+  static async addRole(req, res) {
+    const { rol } = req.body;
+    if (req.session.user) {
+      req.session.user.rol = rol;
+      res.status(200).json({ message: "Rol agregado a la sessión" });
+    } else {
+      res.status(400).json({ message: "Ningún usuario en sesión" });
     }
   }
 }

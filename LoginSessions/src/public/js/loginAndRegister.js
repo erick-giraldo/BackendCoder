@@ -1,8 +1,8 @@
 import { login, register } from "./sessions.mjs";
+
 const loginId = document.querySelector("#login");
 const registerId = document.querySelector("#register");
 let buttonLogin = document.getElementById("btn-log-submit");
-console.log("🚀 ~ file: loginAndRegister.js:5 ~ buttonLogin:", buttonLogin);
 let buttonRegister = document.getElementById("btn-reg-submit");
 
 document.querySelector("#register-btn").addEventListener("click", viewRegister);

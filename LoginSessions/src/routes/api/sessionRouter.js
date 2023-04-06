@@ -6,5 +6,6 @@ const sessionRouter = Router()
     .post('/login', SessionController.login)
     .post('/register', SessionController.register)
     .get('/logout', SessionController.logout)
+    .post('/add-role', SessionController.addRole)
 
 export default sessionRouter

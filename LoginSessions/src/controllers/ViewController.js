@@ -51,6 +51,7 @@ class ViewController {
           last_name: user.last_name,
           email: user.email,
           occupation: user.occupation,
+          rol:user.rol,
           age: user.age,
     },
       });
