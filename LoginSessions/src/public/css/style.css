@@ -166,11 +166,11 @@
   font-size: 2rem;
   font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-
+/* 
 ul li {
   list-style: square;
 
-}
+} */
 
 .back p {
   margin-top: 0;
@@ -464,4 +464,46 @@ h4 {
 .power-off{
   margin-left: 10rem;
   position: absolute;
+}
+
+.navbar.bg-dark{
+  background-color: #070d1b!important;
+  padding: 0 1rem 0 1rem;
+}
+
+ul.dropdown-menu.dropdown-menu-end.show {
+  background-color: #070d1b!important;
+}
+
+a.navbar-brand.mt-2.mt-lg-0.logo-img {
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-item.active, .dropdown-item:active, .dropdown-item:focus, .dropdown-item:hover {
+  background-color: #59595991!important;
+  color: #d9f116!important;
+}
+
+.nav-link:focus, .nav-link:hover {
+  color: #d9f116!important;
+}
+
+a.nav-link {
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+a.dropdown-item {
+  color: white;
+}
+
+fa-solid, .fas {
+  color: white;
+}
+
+.hello{
+  padding-right: 1rem;
+  color: white;
 }
