@@ -2,7 +2,7 @@
     if (req.session.user) {
       return next()
     }
-    res.redirect('/401')    
+    res.redirect('/login')    
   }
 
   export default auth;

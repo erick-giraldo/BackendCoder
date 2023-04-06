@@ -162,8 +162,12 @@ class ViewController {
   }
   
   static async login(req, res) {
-      return res.render("login", {style: "style.css",});
+      return res.render("login", {style: "style.css"});
   }
+
+  static async Unauthorized(req, res) {
+    return res.render("401", {style: "401.css"});
+}
 
   static async profile(req, res) {
     try {
