@@ -41,11 +41,15 @@ class ViewController {
         CommonsUtil.getFilter(query),
         opts
       );
+      const cartById = await CartModel.findOne({ id: 1 })
+      const totalItems = cartById.products.reduce((acc, item) => acc + item.quantity, 0);
+ 
       const newResponse = JSON.stringify(CommonsUtil.buidResponse(response));
       response = JSON.parse(newResponse);
       return res.render("products", {
         style: "style.css",
         products: response,
+        cartItems : JSON.stringify(totalItems),
         user: {
           first_name: user.first_name,
           last_name: user.last_name,
