@@ -1,9 +1,5 @@
-export const login = async (email, password) => {
+export const login = async ( email, password ) => {  
   try {
-    const roles = {
-      "adminCoder@coder.com": "admin",
-    };
-
     const response = await fetch(`/api/sessions/login`, {
       method: "POST",
       headers: {
@@ -23,35 +19,20 @@ export const login = async (email, password) => {
       });
     }
     if (response.status === 200) {
-      const responseData = await response.json();
-      const rol = roles[email] || "usuario";
-      responseData.rol = rol;
-
-      const sessionResponse = await fetch(`/api/sessions/add-role`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ rol }),
+      Swal.fire({
+        icon: "success",
+        title: "Login ok!!!",
+        text: "Bienvenido",
+        showConfirmButton: false,
       });
-      if (sessionResponse.status === 200) {
-        Swal.fire({
-          icon: "success",
-          title: "Login ok!!!",
-          text: "Bienvenido",
-          showConfirmButton: false,
-        });
-        setTimeout(() => {
-          window.location.replace("/products");
-        }, 2000);
-      } else {
-        console.error("Failed to add role to session");
-      }
+      setTimeout(() => {
+        window.location.replace("/products");
+      }, 2000); 
     }
   } catch (error) {
     console.error(error);
   }
-};
+}
 
 export const register = async ( email, password ) => {  
   try {

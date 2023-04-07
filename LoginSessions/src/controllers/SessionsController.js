@@ -2,22 +2,33 @@ import UserModel from "../dao/models/users.js";
 import empty from "is-empty";
 class SessionsController {
   static async login(req, res) {
-    const { email, password } = req.body;
-
-    if (!email || !password) {
-      return res.status(400).json({
-        message: "Los campos email and password son requeridos",
-      });
-    }
-
     try {
-      const user = await UserModel.findOne({ email });
+      const { email, password } = req.body;
 
-      if (empty(user) || user.password !== password) {
+      if (!email || !password) {
         return res.status(400).json({
-          message:
-            "Credenciales invalidas por favor revisar y volver a iniciar sesión",
+          message: "Los campos email and password son requeridos",
         });
+      }
+      let user;
+      const isAdminUser =
+        email === " " && password === "adminCod3r123";
+      if (isAdminUser) {
+        user = {
+          first_name: "adminCoder",
+          rol: "Admin",
+          email: "adminCoder@coder.com",
+        };
+      } else {
+        user = await UserModel.findOne({ email });
+        if (empty(user) || user.password !== password) {
+          return res.status(400).json({
+            message:
+              "Credenciales invalidas por favor revisar y volver a iniciar sesión",
+          });
+        }
+        user = JSON.parse(JSON.stringify(user))
+        user.rol = 'Usuario'
       }
       req.session.user = user;
       res.json({ success: true });
