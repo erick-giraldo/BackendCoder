@@ -1,5 +1,6 @@
 import UserModel from "../dao/models/users.js";
-import empty from "is-empty";
+import { createHash, validatePassword } from "../utils/hash.js";
+
 class SessionsController {
   static async login(req, res) {
     try {
@@ -11,8 +12,7 @@ class SessionsController {
         });
       }
       let user;
-      const isAdminUser =
-        email === " " && password === "adminCod3r123";
+      const isAdminUser = email === " " && password === "adminCod3r123";
       if (isAdminUser) {
         user = {
           first_name: "adminCoder",
@@ -21,14 +21,20 @@ class SessionsController {
         };
       } else {
         user = await UserModel.findOne({ email });
-        if (empty(user) || user.password !== password) {
+        if (!user) {
           return res.status(400).json({
             message:
               "Credenciales invalidas por favor revisar y volver a iniciar sesión",
           });
         }
-        user = JSON.parse(JSON.stringify(user))
-        user.rol = 'Usuario'
+        if (!validatePassword(password, user)) {
+          return res.status(400).json({
+            message:
+              "Credenciales invalidas por favor revisar y volver a iniciar sesión",
+          });
+        }
+        user = JSON.parse(JSON.stringify(user));
+        user.rol = "Usuario";
       }
       req.session.user = user;
       res.json({ success: true });
@@ -48,7 +54,7 @@ class SessionsController {
       email: req.body.email,
       age: 20,
       occupation: "Ingeniero",
-      password: req.body.password,
+      password: createHash(req.body.password),
     };
 
     const requiredFields = [
@@ -94,8 +100,35 @@ class SessionsController {
       res.status(500).send("Error del servidor");
     }
   }
+  static async resetPassword(req, res) {
+    try {
+      const { email, password } = req.body;
 
-
+      if (!email || !password) {
+        return res.status(400).json({
+          message: "Los campos email and password son requeridos",
+        });
+      }
+      let user = await UserModel.findOne({ email });
+      if (!user) {
+        return res.status(400).json({
+          message: "Email invalido por favor revisar",
+        });
+      }
+      user.password = createHash(password);
+      await UserModel.updateOne({ email }, user);
+      return res.status(200).json({
+        success: true,
+        message: "Se cambio la contraseña correctamente",
+      });
+    } catch (error) {
+      const errorDetail = error.message;
+      return res.status(400).json({
+        message: "Error al iniciar sesión",
+        error: { detail: errorDetail },
+      });
+    }
+  }
 }
 
 export default SessionsController;
