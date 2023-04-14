@@ -6,6 +6,7 @@ const resetId = document.querySelector("#reset");
 let buttonLogin = document.getElementById("btn-log-submit");
 let buttonRegister = document.getElementById("btn-reg-submit");
 let buttonReset = document.getElementById("btn-reset-submit");
+let buttonGitHub = document.getElementById("GitHub");
 
 document.querySelector("#register-btn").addEventListener("click", viewRegister);
 document.querySelector("#login-btn").addEventListener("click", viewLogin);
@@ -13,6 +14,10 @@ document.querySelector("#login-reset-btn").addEventListener("click", viewLoginRe
 document.querySelector("#reset-btn").addEventListener("click", viewReset);
 document.querySelector("#reset-btn-reg").addEventListener("click", viewResetReg);
 const form = document.querySelector("form");
+
+buttonGitHub.addEventListener("click", (e) => {
+  authGitHub()
+});
 
 buttonLogin.addEventListener("click", (e) => {
   const email = document.querySelector("#user").value;
@@ -55,5 +60,9 @@ function viewReset() {
 function viewResetReg() {
   registerId.style.display = "none";
   resetId.style.display = "block";
+}
+
+function authGitHub() {
+  window.location.replace("/auth/github");
 }
 

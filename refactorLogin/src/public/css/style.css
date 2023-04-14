@@ -241,6 +241,9 @@ td.price {
 .active-sesion {
   color: #000;
 }
+.btn-outline-danger{
+  border-color: #000000!important;
+}
 
 /* Tooltips */
 .users-icon .tooltip-data {
