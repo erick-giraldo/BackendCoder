@@ -43,6 +43,7 @@ export const register = async ( email, password ) => {
       },
       body: JSON.stringify({ email, password }),
     });
+    console.log("🚀 ~ file: sessions.mjs:41 ~ register ~ response:", response)
 
     if (response.status === 400) {
       const errorText = await response.text();
@@ -62,9 +63,9 @@ export const register = async ( email, password ) => {
         text: `Bienvenido ${email}`,
         confirmButtonText: "OK",
       });
-      setTimeout(() => {
-        window.location.replace("/login");
-      }, 2000); 
+      // setTimeout(() => {
+      //   window.location.replace("/login");
+      // }, 2000); 
     }
 
    
