@@ -9,8 +9,7 @@ export const login = async ( email, password ) => {
     });
 
     if (response.status === 400) {
-      const errorText = await response.text();
-      const error = JSON.parse(errorText);
+      const error = await response.json();
       Swal.fire({
         icon: "error",
         title: "Login error!!!",
@@ -45,9 +44,8 @@ export const register = async ( email, password ) => {
     });
     console.log("🚀 ~ file: sessions.mjs:41 ~ register ~ response:", response)
 
-    if (response.status === 400) {
-      const errorText = await response.text();
-      const error = JSON.parse(errorText);
+    if (response.status === 500) {
+      const error = await response.json();
       Swal.fire({
         icon: "error",
         title: "Registro error!!!",

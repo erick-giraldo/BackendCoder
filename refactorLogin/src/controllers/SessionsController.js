@@ -88,7 +88,6 @@ class SessionsController {
   static async login(req, res) {
     console.log('req.user', req.user);
     req.session.user = req.user
-    res.redirect('/profile')
   }
   
   static async register(req, res) {

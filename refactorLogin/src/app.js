@@ -9,7 +9,6 @@ import GitHubStrategy from "passport-github2";
 import passport from "passport";
 import initPassport from "./config/passport.config.js";
 import MongoStore from "connect-mongo";
-import flash from 'connect-flash';
 const app = express();
 
 init();
@@ -39,14 +38,8 @@ app.use(
 );
 
 initPassport();
-app.use(flash())
 app.use(passport.initialize());
 app.use(passport.session());
-
-app.use( (req, res, netx) =>{
-  app.locals.signupMessage = req.flash('signupMessage');
-  netx();
-})
 
 passport.use(
   new GitHubStrategy(
