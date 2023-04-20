@@ -29,31 +29,33 @@ const initPassport = () => {
     })
   );
 
-  passport.use("login",
-  new LocalStrategy({ usernameField: "email" }, async ( req, email, password, done) => {
-    try {
-     console.log("111")
-      let user;
-      const isAdminUser = email === "adminCoder@coder.com" && password === "adminCod3r123";
-      if (isAdminUser) {
-        user = {
-          first_name: "adminCoder",
-          rol: "Admin",
-          email: "adminCoder@coder.com",
-        };
-      } else {
-        user = await UserModel.findOne({ email });
-  
-        user = JSON.parse(JSON.stringify(user));
-        user.rol = "Usuario";
+  passport.use(
+    "login",
+    new LocalStrategy(
+      { usernameField: "email" },
+      async ( email, password, done, req ) => {
+        try {
+          const isAdminUser =
+            email === "adminCoder@coder.com" && password === "adminCod3r123";
+          let user = isAdminUser
+            ? {
+                first_name: "adminCoder",
+                rol: "Admin",
+                email: "adminCoder@coder.com",
+                password: createHash("adminCod3r123"),
+              }
+            : await UserModel.findOne({ email });
+           if(!isAdminUser){
+            user = JSON.parse(JSON.stringify(user));
+            user.rol = "Usuario";
+           }
+            done(null, user);
+        } catch (error) {
+          const message = error.message || "Error al registrar usuario";
+          return done(new Error(message), true);
+        }
       }
-      req.session.user = user;
-      done(null, user)
-    } catch (error) {
-      const message = error.message || "Error al registrar usuario";
-      return done(new Error(message), true);
-    }
-      })
+    )
   );
 
   passport.serializeUser((user, done) => {

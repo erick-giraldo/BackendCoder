@@ -7,8 +7,9 @@ export const login = async ( email, password ) => {
       },
       body: JSON.stringify({ email, password }),
     });
+    console.log("🚀 ~ file: sessions.mjs:5 ~ login ~ response:", response)
 
-    if (response.status === 400) {
+    if (response.status === 500) {
       const error = await response.json();
       Swal.fire({
         icon: "error",
