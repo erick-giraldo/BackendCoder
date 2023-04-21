@@ -184,6 +184,7 @@ class ViewController {
               last_name: user.last_name,
               email: user.email,
               age: user.age,
+              avatar: user.avatar || "https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
         },
       });
     } catch (err) {
