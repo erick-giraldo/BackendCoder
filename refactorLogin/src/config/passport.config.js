@@ -1,16 +1,27 @@
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
+import { Strategy as GithubStrategy } from 'passport-github2'
 import UserModel from "../dao/models/users.js";
 import { createHash, validatePassword } from "../utils/hash.js";
 
 const initPassport = () => {
-  const options = {
-    usernameField: "email",
+  const registerOptions = {
+    usernameField: 'email',
     passReqToCallback: true,
-  };
-  passport.use(
-    "register",
-    new LocalStrategy(options, async (req, email, password, done) => {
+  }
+
+  const loginOptions = {
+    usernameField: 'email',
+  }
+
+  const githubOptions = {
+    clientID: process.env.GITHUB_CLIENT_ID,
+    clientSecret: process.env.GITHUB_CLIENT_SECRET,
+    callbackURL: process.env.GITHUB_CALLBACK,
+  }
+
+
+  passport.use( "register", new LocalStrategy(registerOptions, async (req, email, password, done) => {
       try {
         const body = {
           first_name: "Jorge",
@@ -29,11 +40,7 @@ const initPassport = () => {
     })
   );
 
-  passport.use(
-    "login",
-    new LocalStrategy(
-      { usernameField: "email" },
-      async ( email, password, done, req ) => {
+  passport.use( "login", new LocalStrategy(loginOptions, async ( email, password, done, req ) => {
         try {
           const isAdminUser =
             email === "adminCoder@coder.com" && password === "adminCod3r123";
@@ -58,14 +65,43 @@ const initPassport = () => {
     )
   );
 
-  passport.serializeUser((user, done) => {
-    done(null, user._id);
-  });
+  passport.use(new GithubStrategy(githubOptions, async (accessToken, refreshToken, profile, done) => {
+    
+    try {
+      if(profile._json.email === null){
+        return done(null, false, `El campo emal es obligatorio`);
+      }
+      let user = await UserModel.findOne({ email: profile._json.email });
+      if (!user) {
+        user = await UserModel.create({
+          first_name: profile._json.name,
+          email: profile._json.email,
+          age: 18,
+          password: '',
+          rol: "Usuario"
+        });
+      } 
+      user = JSON.parse(JSON.stringify(user));
+      user.avatar =  profile._json.avatar_url;
 
-  passport.deserializeUser(async (id, done) => {
-    let user = await UserModel.findById(id);
-    done(null, user);
-  });
+      user.rol = "Usuario";
+
+      done(null, user);
+    } catch (error) {
+      const message = error.message || "Error al registrar o logear usuario";
+      return done(new Error(message), true);
+    }
+  }));
+
+  passport.serializeUser((user, done) => {
+    done(null, user._id)
+  })
+
+  passport.deserializeUser( async (id, done) => {
+    let user = await UserModel.findById(id)
+    done(null, user)
+  })
+
 };
 
 export default initPassport;

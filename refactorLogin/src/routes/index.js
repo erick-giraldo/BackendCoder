@@ -10,17 +10,7 @@ class RouterController {
     .use("", viewRouter)
     .use("/api/products", routerProducts)
     .use("/api/carts", cartProducts)
-    .use("/api/sessions", sessionsApiRouter)
-    .use("/auth/github",  passport.authenticate('github'))
-    .use(
-      '/auth/github/callback',
-      passport.authenticate('github', { failureRedirect: '/login' }),
-      function (req, res) {
-        // Successful authentication, redirect home.
-        res.redirect('/products');
-      }
-    );
-    
+    .use("/api/sessions", sessionsApiRouter)    
   }
 }
 export default RouterController;

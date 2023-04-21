@@ -6,7 +6,7 @@ const resetId = document.querySelector("#reset");
 let buttonLogin = document.getElementById("btn-log-submit");
 let buttonRegister = document.getElementById("btn-reg-submit");
 let buttonReset = document.getElementById("btn-reset-submit");
-let buttonGitHub = document.getElementById("GitHub");
+let buttonGitHub = document.getElementById("GitHubId");
 
 document.querySelector("#register-btn").addEventListener("click", viewRegister);
 document.querySelector("#login-btn").addEventListener("click", viewLogin);
@@ -16,7 +16,7 @@ document.querySelector("#reset-btn-reg").addEventListener("click", viewResetReg)
 const form = document.querySelector("form");
 
 buttonGitHub.addEventListener("click", (e) => {
-  authGitHub()
+  window.location.replace("/api/sessions/auth/github");
 });
 
 buttonLogin.addEventListener("click", (e) => {
@@ -61,8 +61,3 @@ function viewResetReg() {
   registerId.style.display = "none";
   resetId.style.display = "block";
 }
-
-function authGitHub() {
-  window.location.replace("/auth/github");
-}
-

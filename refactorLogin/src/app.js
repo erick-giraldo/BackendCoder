@@ -5,7 +5,6 @@ import handlebars from "express-handlebars";
 import __dirname from "./utils.js";
 import cookieParser from "cookie-parser";
 import expressSession from "express-session";
-import GitHubStrategy from "passport-github2";
 import passport from "passport";
 import initPassport from "./config/passport.config.js";
 import MongoStore from "connect-mongo";
@@ -40,20 +39,6 @@ app.use(
 initPassport();
 app.use(passport.initialize());
 app.use(passport.session());
-
-passport.use(
-  new GitHubStrategy(
-    {
-      clientID: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
-      callbackURL: process.env.GITHUB_CALLBACKURL,
-    },
-    function (accessToken, refreshToken, profile, cb) {
-      console.log(profile);
-      cb(null, profile);
-    }
-  )
-);
 
 RouterController.routes(app);
 

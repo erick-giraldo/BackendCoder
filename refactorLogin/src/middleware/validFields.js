@@ -49,9 +49,7 @@ export const validLogin = async (req, res, next) => {
     const { email, password } = req.body;
 
     const requiredFields = ["email", "password"];
-
     validateFields(requiredFields, req.body);
-
     const isAdminUser =
       email === "adminCoder@coder.com" && password === "adminCod3r123";
 

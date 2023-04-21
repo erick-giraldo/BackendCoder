@@ -57,6 +57,7 @@ class ViewController {
           occupation: user.occupation,
           rol:user.rol,
           age: user.age,
+          avatar: user.avatar || "https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
     },
       });
     } catch (err) {

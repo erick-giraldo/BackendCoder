@@ -32,7 +32,7 @@
     <!-- Collapsible wrapper -->
     <div class="d-flex align-items-center hello">
       Bienvenido {{user.first_name}} Rol : {{user.rol}}
-      <h2></h2>
+      
     </div>
     <!-- Right elements -->
     <div class="d-flex align-items-center">
@@ -65,7 +65,7 @@
       <div class="dropdown">
         <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar"
           role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-          <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="40"
+          <img src={{user.avatar}} class="rounded-circle" height="40"
             alt="Black and White Portrait of a Man" loading="lazy" />
         </a>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
