@@ -1,4 +1,5 @@
 import express from "express";
+import * as dotenv from "dotenv";
 import { init } from "./db/mongodb.js";
 import RouterController from "./routes/index.js";
 import handlebars from "express-handlebars";
@@ -10,6 +11,7 @@ import initPassport from "./config/passport.config.js";
 import MongoStore from "connect-mongo";
 const app = express();
 
+dotenv.config();
 init();
 
 app.engine("handlebars", handlebars.engine());
