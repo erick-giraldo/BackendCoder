@@ -2,6 +2,7 @@ import jsonwebtoken from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 import passport from 'passport'
 import multer from 'multer'
+import Exception from './exception.js'
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -16,12 +17,12 @@ const JWT_SECRET = process.env.JWT_SECRET
 
 export const tokenGenerator = (user) => {
   const payload = {
-    name: user.fullname,
+    id: user._id,
+    name: `${user.first_name} ${user.last_name}`,
     email: user.email,
-    rol: user.rol,
+    rol: user.role,
   }
   const token = jsonwebtoken.sign(payload, JWT_SECRET, { expiresIn: '24h' })
-  console.log("🚀 ~ file: hash.js:24 ~ tokenGenerator ~ token:", token)
   return token
 }
 
@@ -47,19 +48,19 @@ export const validatePassword = (password, user) => {
   return bcrypt.compareSync(password, user.password)
 }
 
-export const authJWTMiddleware = (roles) => (req, res, next) => {
+export const authJWTMiddleware = (roles, url) => (req, res, next) => {
   passport.authenticate('jwt', function (error, user, info) {  
     if (error) {
       return next(error)
     }
-    if (!user) { // Autenticación
-      return next(new Exception('Unauthorized' , 401))
+    if (!user) { 
+      return next(new Exception('Unauthorized' , 401, url))
     }
-    if (!roles.includes(user.role)) { // Autorización
-      return next(new Exception('Forbidden' , 403))
+    if (!roles.includes(user.rol)) { 
+      return next(new Exception('Forbidden' , 403, url))
     }
-    if (user.role === 'user' && req.params.id && req.params.id !== user.id) {
-      return next(new Exception('Forbidden' , 403))
+    if (user.rol === 'user' && req.params.id && req.params.id !== user.id) {
+      return next(new Exception('Forbidden' , 403, url))
     }
     req.user = user
     next()

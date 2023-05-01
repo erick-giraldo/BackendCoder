@@ -2,7 +2,7 @@ import { Router } from 'express'
 import passport from 'passport'
 import SessionController from '../../controllers/SessionsController.js'
 import { validLogin, validRegister } from '../../middleware/validFields.js'
-
+import { authJWTMiddleware } from '../../utils/hash.js';
 
 const sessionRouter = Router()
 
@@ -19,6 +19,7 @@ const sessionRouter = Router()
     .post('/reset-password', SessionController.resetPassword)
     .get('/logout', SessionController.logout)
     .get('/auth/github', passport.authenticate('github', { scope: [ 'user:email' ] }))
+    .get('/me', authJWTMiddleware(['admin', 'student']), SessionController.me)
     .get('/auth/github/callback', passport.authenticate('github', { failureRedirect: '/login' }), (req, res) => {
         req.session.user = req.user
         res.redirect('/products')

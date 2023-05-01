@@ -28,7 +28,7 @@ class ViewController {
   }
 
   static async products(req, res) {
-    const user = req.session.user;
+    const user = req.user;
     try {
       const { query } = req;
       const { limit = 3, page = 1, sort } = query;
@@ -50,8 +50,7 @@ class ViewController {
         products: response,
         cartItems : JSON.stringify(totalItems),
         user: {
-          first_name: user.first_name,
-          last_name: user.last_name,
+          name: user.name,
           email: user.email,
           occupation: user.occupation,
           rol:user.rol,
@@ -175,7 +174,7 @@ class ViewController {
 
   static async profile(req, res) {
     try {
-      const user = req.session.user;
+      const user = req.user;
       return res.render("profile", {
         style: "style.css",
         user: {

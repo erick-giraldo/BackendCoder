@@ -7,7 +7,7 @@ const UserSchema = new mongoose.Schema({
     age: { type: Number, require: true },
     password: { type: String, require: true, ref: 'cart' },
     cart:{ type: mongoose.Schema.Types.ObjectId, require: true},
-    role: { type: String, default: 'user'}
+    role: { type: String, default: 'user', enum: ['user', 'admin']}
 }, { timestamps: true})
 
 export default mongoose.model('User', UserSchema)

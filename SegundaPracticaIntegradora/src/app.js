@@ -5,10 +5,8 @@ import RouterController from "./routes/index.js";
 import handlebars from "express-handlebars";
 import __dirname from "./utils.js";
 import cookieParser from "cookie-parser";
-import expressSession from "express-session";
 import passport from "passport";
 import initPassport from "./config/passport.config.js";
-import MongoStore from "connect-mongo";
 const app = express();
 
 dotenv.config();
@@ -23,25 +21,19 @@ app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(cookieParser(process.env.COOKIE_SECRET));
-
-app.use(
-  expressSession({
-    store: MongoStore.create({
-      mongoUrl: process.env.MONGODB_URI,
-      mongoOptions: { useNewUrlParser: true, useUnifiedTopology: true },
-      ttl: 100,
-    }),
-    secret: process.env.COOKIE_SECRET,
-    resave: false,
-    saveUninitialized: false,
-  })
-);
+app.use(cookieParser());
 
 initPassport();
 app.use(passport.initialize());
-app.use(passport.session());
 
 RouterController.routes(app);
 
+app.use((err, req, res, next) => {
+    console.error(err)
+    res.render( err.url , { 
+      success: false, 
+      message: err.message, 
+      statusCode: err.statusCode || 500 });
+  })
+  
 export default app;
