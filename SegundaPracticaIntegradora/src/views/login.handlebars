@@ -1,0 +1,232 @@
+<div class="container w-75 bg-light mt-5 rounded-3 shadow" id="login-sesion">
+  <div class="row align-items-stretch">
+    <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6"></div>
+    <div class="col bg-white p-3 rounded-3">
+      <div class="text-end">
+        <img
+          src="https://res.cloudinary.com/dwlf0cuu6/image/upload/v1680559638/logo_celer7.webp"
+          alt="Logo"
+          width="60x"
+          height="60px"
+        />
+      </div>
+      <!--LOGIN-->
+      <div id="login">
+        <h2 class="fw-bold text-center py-5">Bienvenidos</h2>
+    
+         <form action="" onsubmit="event.preventDefault()">
+          <div class="mb-4">
+            <label for="user" class="form-label">Ingrese su Usuario</label>
+            <input type="text" class="form-control" name="email" id="user" />
+          </div>
+          <div class="mb-4">
+            <label for="pass" class="form-label">Ingrese su Password</label>
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              id="pass"
+            />
+          </div>
+          <div class="mb-4 form-check">
+            <input
+              type="checkbox"
+              name="connected"
+              class="form-check-input"
+              id="checked"
+            />
+            <label for="checked" class="form-check-label">Mantener la sesión
+              activa</label>
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary" id="btn-log-submit">
+              <div class="spinnerLog"></div>
+              <div class="log-submit">Iniciar Sesión</div>
+            </button>
+          </div>
+          <div class="my-3">
+            <span>No tienes cuenta?
+              <a href="#" id="register-btn">Regístrate</a></span>
+            <br />
+            <span><a href="#" id="reset-btn">Recuperar Password</a></span>
+          </div>
+        </form>
+        <!----- LOGIN CON REDES SOCIALES-->
+        <div class="container w-100 my-5">
+          <div class="row text-center">
+            <div class="col12">Inicia Sesion</div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-outline-primary w-100 my-1">
+                <div class="row align-items-center">
+                  <div class="col-2 d-none d-md-block">
+                    <img
+                      src="https://res.cloudinary.com/dwlf0cuu6/image/upload/v1680559676/facebook_zaz87y.webp"
+                      width="30px"
+                      height="30px"
+                      alt="Facebook"
+                    />
+                  </div>
+                  <div class="col-12 col-md-10 text-center">Facebook</div>
+                </div>
+              </button>
+            </div>
+            <div class="col">
+              <button class="btn btn-outline-danger w-100 my-1"  id="GitHubId">
+                <div class="row align-items-center">
+                  <div class="col-2 d-none d-md-block">
+                    <img
+                      src="https://res.cloudinary.com/dwlf0cuu6/image/upload/v1681418568/pngegg_gtklag.png"
+                      height="30px"
+                      alt="GitHub"
+                    />
+                  </div>
+                  <div class="col-12 col-md-10 text-center">GitHub</div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Register-->
+      <div id="register">
+        <h2 class="fw-bold text-center py-5">Aun no tienes Cuenta?</h2>
+        <p>Registrate para que puedas iniciar sesión</p>
+        <form action="" onsubmit="event.preventDefault()">
+          <div class="mb-4">
+            <label for="user" class="form-label">Ingrese su Usuario</label>
+            <input type="text" class="form-control" name="email" id="user-reg" />
+          </div>
+          <div class="mb-4">
+            <label for="pass" class="form-label">Ingrese su Password</label>
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              id="pass-reg"
+            />
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary" id="btn-reg-submit">
+              <div class="reg-submit">Registrarse</div>
+            </button>
+          </div>
+          <div class="my-3">
+            <span>Ya tienes cuenta?
+              <a href="#" id="login-btn">Inicia Sesión</a></span>
+            <br />
+            <span><a href="#" id="reset-btn-reg">Recuperar Password</a></span>
+          </div>
+        </form>
+        <!----- LOGIN CON REDES SOCIALES-->
+        <div class="container w-100 my-5">
+          <div class="row text-center">
+            <div class="col12">Inicia Sesion</div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-outline-primary w-100 my-1">
+                <div class="row align-items-center">
+                  <div class="col-2 d-none d-md-block">
+                    <img
+                      src="https://res.cloudinary.com/dwlf0cuu6/image/upload/v1680559676/facebook_zaz87y.webp"
+                      width="30px"
+                      height="30px"
+                      alt="Facebook"
+                    />
+                  </div>
+                  <div class="col-12 col-md-10 text-center">Facebook</div>
+                </div>
+              </button>
+            </div>
+            <div class="col">
+              <button class="btn btn-outline-danger w-100 my-1"  id="GitHubId">
+                <div class="row align-items-center">
+                  <div class="col-2 d-none d-md-block">
+                    <img
+                      src="https://res.cloudinary.com/dwlf0cuu6/image/upload/v1681418568/pngegg_gtklag.png"
+                      height="30px"
+                      alt="GitHub"
+                    />
+                  </div>
+                  <div class="col-12 col-md-10 text-center">GitHub</div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+       <!--Reset password-->
+      <div id="reset">
+        <h2 class="fw-bold text-center py-5">Recupera tu contraseña?</h2>
+        <p>Coloca una nueva contraseña</p>
+        <form action="" onsubmit="event.preventDefault()">
+          <div class="mb-4">
+            <label for="user" class="form-label">Ingrese su Usuario</label>
+            <input type="text" class="form-control" name="email" id="user-reset" />
+          </div>
+          <div class="mb-4">
+            <label for="pass" class="form-label">Ingrese su Password</label>
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              id="pass-reset"
+            />
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary" id="btn-reset-submit">
+              <div class="reg-submit">Recuperar Password</div>
+            </button>
+          </div>
+          <div class="my-3">
+            <span>Ya tienes cuenta?
+              <a href="#" id="login-reset-btn">Inicia Sesión</a></span>
+            <br />
+            <span><a href="#" id="reset-btn">Recuperar Password</a></span>
+          </div>
+        </form>
+        <!----- LOGIN CON REDES SOCIALES-->
+        <div class="container w-100 my-5">
+          <div class="row text-center">
+            <div class="col12">Inicia Sesion</div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-outline-primary w-100 my-1">
+                <div class="row align-items-center">
+                  <div class="col-2 d-none d-md-block">
+                    <img
+                      src="https://res.cloudinary.com/dwlf0cuu6/image/upload/v1680559676/facebook_zaz87y.webp"
+                      width="30px"
+                      height="30px"
+                      alt="Facebook"
+                    />
+                  </div>
+                  <div class="col-12 col-md-10 text-center">Facebook</div>
+                </div>
+              </button>
+            </div>
+            <div class="col">
+              <button class="btn btn-outline-danger w-100 my-1"  id="GitHubId">
+                <div class="row align-items-center">
+                  <div class="col-2 d-none d-md-block">
+                    <img
+                      src="https://res.cloudinary.com/dwlf0cuu6/image/upload/v1681418568/pngegg_gtklag.png"
+                      height="30px"
+                      alt="GitHub"
+                    />
+                  </div>
+                  <div class="col-12 col-md-10 text-center">GitHub</div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="module" src="/js/loginAndRegister.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
