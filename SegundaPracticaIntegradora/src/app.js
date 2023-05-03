@@ -8,6 +8,9 @@ import cookieParser from "cookie-parser";
 import passport from "passport";
 import isEmpty from "is-empty";
 import initPassport from "./config/passport.config.js";
+import expressSession from "express-session";
+import MongoStore from "connect-mongo";
+
 const app = express();
 
 dotenv.config();
@@ -23,6 +26,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
+
+app.use(
+  expressSession({
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGODB_URI,
+      mongoOptions: { useNewUrlParser: true, useUnifiedTopology: true },
+      ttl: 100,
+    }),
+    secret: process.env.COOKIE_SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
 initPassport();
 app.use(passport.initialize());

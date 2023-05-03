@@ -66,3 +66,22 @@ export const authJWTMiddleware = (roles, url = '' ) => (req, res, next) => {
     next()
   })(req, res, next)
 }
+
+export const authJWTMiddlewareGit = () => (req, res, next) => {
+  passport.authenticate('github', function (error, user, info) {  
+    if (error) {
+      return next(error)
+    }
+    if (!user) { 
+      return next(new Exception('Unauthorized' , 401, url))
+    }
+    if (!roles.includes(user.rol)) { 
+      return next(new Exception('Forbidden' , 403, url))
+    }
+    if (user.rol === 'user' && req.params.id && req.params.id !== user.id) {
+      return next(new Exception('Forbidden' , 403, url))
+    }
+    req.user = user
+    next()
+  })(req, res, next)
+}
