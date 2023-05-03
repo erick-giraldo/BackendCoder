@@ -6,23 +6,17 @@ import { authJWTMiddleware } from '../../utils/hash.js';
 
 const sessionRouter = Router()
 
-.post('/login', validLogin, (req, res, next) => {return SessionController.login(req, res)}, (err, req, res, next) => {
-    res.status(500).json({ message: err.message });
-})
-
-    .post('/register', validRegister, (req, res, next) => {
-        passport.authenticate('register', { failureRedirect: '/register', passReqToCallback: true }, err => {
-            if (err) return res.status(500).json({ message: err.message })
-            return SessionController.register(req, res)
-        })(req, res, next)
-    })
+    .post('/login', validLogin, (req, res, next) => {return SessionController.login(req, res)}, (err, req, res, next) => {
+          res.status(500).json({ message: err.message });})
+    .post('/register', validRegister, (req, res, next) => {return SessionController.register(req, res)}, (err, req, res, next) => {
+          res.status(500).json({ message: err.message });})
     .post('/reset-password', SessionController.resetPassword)
-    .get('/logout', SessionController.logout)
+    .get('/logout', authJWTMiddleware(['admin', 'user', 'logout']),SessionController.logout)
     .get('/auth/github', passport.authenticate('github', { scope: [ 'user:email' ] }))
-    .get('/me', authJWTMiddleware(['admin', 'student']), SessionController.me)
+    .get('/current', authJWTMiddleware(['admin', 'user']), SessionController.current)
     .get('/auth/github/callback', passport.authenticate('github', { failureRedirect: '/login' }), (req, res) => {
         req.session.user = req.user
         res.redirect('/products')
-      })
+         })
       
 export default sessionRouter

@@ -1,3 +1,16 @@
+{{#if message}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
+  <script>
+  Swal.fire({
+    icon: 'error',
+    title: 'No tiene Permiso para acceder a esta página',
+    text: '{{message}}',
+    showConfirmButton: false
+  }); setTimeout(() => {
+        window.location.replace("/login");
+      }, 1000); 
+  </script>
+{{else}}
 <div class="back">
   <h1 class="chat-title">ChaT</h1>
 
@@ -48,3 +61,4 @@
   <script src="/js/chat.js"></script>
 
 </div>
+{{/if}}

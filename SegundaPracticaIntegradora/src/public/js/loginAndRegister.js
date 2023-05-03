@@ -28,7 +28,12 @@ buttonLogin.addEventListener("click", (e) => {
 buttonRegister.addEventListener("click", (e) => {
   const email = document.querySelector("#user-reg").value;
   const password = document.querySelector("#pass-reg").value;
-  register(email, password);
+  const admin = document.getElementById('role');
+  let role;
+  if (admin.checked) {
+    role = 'admin';
+  } 
+  register(email, password, role);
 });
 
 buttonReset.addEventListener("click", (e) => {

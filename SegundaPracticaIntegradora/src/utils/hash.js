@@ -48,7 +48,7 @@ export const validatePassword = (password, user) => {
   return bcrypt.compareSync(password, user.password)
 }
 
-export const authJWTMiddleware = (roles, url) => (req, res, next) => {
+export const authJWTMiddleware = (roles, url = '' ) => (req, res, next) => {
   passport.authenticate('jwt', function (error, user, info) {  
     if (error) {
       return next(error)

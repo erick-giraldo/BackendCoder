@@ -11,6 +11,7 @@ export const validateFields = (requiredFields, data) => {
 };
 
 export const validRegister = async (req, res, next) => {
+  console.log("🚀 ~ file: validFields.js:14 ~ validRegister ~ req:", req.body)
   try {
     const body = {
       first_name: "Jorge",
@@ -53,7 +54,7 @@ export const validLogin = async (req, res, next) => {
     const isAdminUser =
       email === "adminCoder@coder.com" && password === "adminCod3r123";
 
-    const user = isAdminUser
+      const user = isAdminUser
       ? {
           first_name: "adminCoder",
           rol: "Admin",

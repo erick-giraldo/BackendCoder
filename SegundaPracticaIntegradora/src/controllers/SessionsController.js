@@ -7,7 +7,7 @@ import {
 } from "../utils/hash.js";
 
 class SessionsController {
-  static async me(req, res) {
+  static async current(req, res) {
     const token = req.cookies.token
     if(token){
       const { id } = req.user
@@ -19,9 +19,23 @@ class SessionsController {
    
   }
   static async login(req, res) {
-    const { email } = req.body;
-    let user = await UserModel.findOne({ email });
-    console.log("🚀 ~ file: SessionsController.js:13 ~ SessionsController ~ login ~ user:", user)
+    const { email, password } = req.body;
+
+    const isAdminUser =
+    email === "adminCoder@coder.com" && password === "adminCod3r123";
+    let user = isAdminUser
+    ? {
+        first_name: "adminCoder",
+        last_name: '',
+        role: "admin",
+        email: "adminCoder@coder.com",
+        password: createHash("adminCod3r123"),
+      }
+    : await UserModel.findOne({ email });
+   if(!isAdminUser){
+    user = JSON.parse(JSON.stringify(user));
+   }
+
     const token = tokenGenerator(user);
     res
       .cookie("token", token, {
@@ -33,17 +47,25 @@ class SessionsController {
   }
 
   static async register(req, res) {
-    const {
-      body: { email, password },
-    } = req;
+    const body = {
+      first_name: "Jorge",
+      last_name: "Perez",
+      email : req.body.email,
+      age: 20,
+      occupation: "Ingeniero",
+      role: req.body.role,
+      password: createHash(req.body.password),
+    };
 
-    const user = await UserModel.findOne({ email });
+    const user = await UserModel.create(body);
 
     if (!user) {
       return res
         .status(401)
         .json({ success: false, message: "Email or password is incorrect." });
     }
+
+    res.status(200).json({ message: true })
   }
 
   static async logout(req, res) {

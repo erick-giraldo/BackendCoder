@@ -7,7 +7,6 @@ export const login = async ( email, password ) => {
       },
       body: JSON.stringify({ email, password }),
     });
-    console.log("🚀 ~ file: sessions.mjs:5 ~ login ~ response:", response)
 
     if (response.status === 500) {
       const error = await response.json();
@@ -34,14 +33,14 @@ export const login = async ( email, password ) => {
   }
 }
 
-export const register = async ( email, password ) => {  
+export const register = async ( email, password , role ) => {  
   try {
     const response = await fetch(`/api/sessions/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, password , role}),
     });
 
     if (response.status === 500) {

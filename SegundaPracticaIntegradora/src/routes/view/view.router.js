@@ -8,14 +8,12 @@ import { authJWTMiddleware } from '../../utils/hash.js';
 
 const viewRouter = Router();
 
-viewRouter.get('/chat', chatController.chatRouter)
-viewRouter.get('', authHome ,ViewController.home)
-viewRouter.get('/realtimeproducts', ViewController.realtimeproducts)
+viewRouter.get('/chat', authJWTMiddleware(['admin'], 'chat'), chatController.chatRouter)
+viewRouter.get('/home' , authJWTMiddleware(['user'], 'home'), ViewController.home)
+viewRouter.get('/realtimeproducts', authJWTMiddleware(['user'], 'realtimeproducts'), ViewController.realtimeproducts)
 viewRouter.get('/products', authJWTMiddleware(['admin','user'],'products'), ViewController.products)
 viewRouter.get('/profile', authJWTMiddleware(['admin'],'profile'), ViewController.profile)
-
 viewRouter.post("/carts/:cid/product/:pid", ViewController.addProductCartById);
 viewRouter.get('/carts/:cid', ViewController.getCart)
 viewRouter.get('/login', isLoged, ViewController.login)
-viewRouter.get('/401' , ViewController.Unauthorized)
 export default viewRouter;
