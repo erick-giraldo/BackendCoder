@@ -1,46 +1,53 @@
-import { login, register, reset } from "./sessions.mjs";
+import { login, register, reset } from "./sessions.js";
 
 const loginId = document.querySelector("#login");
 const registerId = document.querySelector("#register");
 const resetId = document.querySelector("#reset");
-let buttonLogin = document.getElementById("btn-log-submit");
-let buttonRegister = document.getElementById("btn-reg-submit");
-let buttonReset = document.getElementById("btn-reset-submit");
-let buttonGitHub = document.getElementById("GitHubId");
+
+const buttonLogin = document.querySelector("#btn-log-submit");
+buttonLogin.addEventListener("click", handleLogin);
+
+const buttonRegister = document.querySelector("#btn-reg-submit");
+buttonRegister.addEventListener("click", handleRegister);
+
+const buttonReset = document.querySelector("#btn-reset-submit");
+buttonReset.addEventListener("click", handleReset);
+
+const buttonGitHub = document.querySelector("#GitHubId");
+buttonGitHub.addEventListener("click", handleGitHub);
 
 document.querySelector("#register-btn").addEventListener("click", viewRegister);
 document.querySelector("#login-btn").addEventListener("click", viewLogin);
 document.querySelector("#login-reset-btn").addEventListener("click", viewLoginReset);
 document.querySelector("#reset-btn").addEventListener("click", viewReset);
 document.querySelector("#reset-btn-reg").addEventListener("click", viewResetReg);
-const form = document.querySelector("form");
 
-buttonGitHub.addEventListener("click", (e) => {
-  window.location.replace("/api/sessions/auth/github");
-});
-
-buttonLogin.addEventListener("click", (e) => {
+function handleLogin(e) {
+  e.preventDefault();
   const email = document.querySelector("#user").value;
   const password = document.querySelector("#pass").value;
   login(email, password);
-});
+}
 
-buttonRegister.addEventListener("click", (e) => {
+function handleRegister(e) {
+  e.preventDefault();
   const email = document.querySelector("#user-reg").value;
   const password = document.querySelector("#pass-reg").value;
   const admin = document.getElementById('role');
-  let role;
-  if (admin.checked) {
-    role = 'admin';
-  } 
+  const role = admin.checked ? 'admin' : undefined;
   register(email, password, role);
-});
+}
 
-buttonReset.addEventListener("click", (e) => {
+function handleReset(e) {
+  e.preventDefault();
   const email = document.querySelector("#user-reset").value;
   const password = document.querySelector("#pass-reset").value;
   reset(email, password);
-});
+}
+
+function handleGitHub() {
+  window.location.replace("/api/sessions/auth/github");
+}
 
 function viewLogin() {
   registerId.style.display = "none";

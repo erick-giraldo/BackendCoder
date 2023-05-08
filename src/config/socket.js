@@ -1,8 +1,7 @@
 import { Server } from "socket.io";
-// import ProductManager from "./dao/class/ProductManager.js";
 import empty from "is-empty";
-import ProductModel from "./dao/models/products.js";
-import MensajeModel from "./dao/models/mensaje.js";
+import ProductModel from "../dao/models/products.js";
+import MensajeModel from "../dao/models/mensaje.js";
 
 let products = [];
 

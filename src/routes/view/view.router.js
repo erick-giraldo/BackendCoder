@@ -16,4 +16,5 @@ const viewRouter = Router()
 .post("/carts/:cid/product/:pid", ViewController.addProductCartById)
 .get('/carts/:cid', ViewController.getCart)
 .get('/login', isLoged, ViewController.login)
+
 export default viewRouter;

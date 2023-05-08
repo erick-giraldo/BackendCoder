@@ -1,4 +1,4 @@
-import { logout } from './sessions.mjs'
+import { logout } from './sessions.js'
 
 let buttonLogout = document.getElementById("btn-logout");
 

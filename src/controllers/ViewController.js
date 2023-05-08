@@ -1,4 +1,3 @@
-import ProductManager from "../dao/class/ProductManager.js";
 import ProductsModel from "../dao/models/products.js";
 import CartModel from "../dao/models/carts.js";
 import CommonsUtil from "../utils/Commons.js";

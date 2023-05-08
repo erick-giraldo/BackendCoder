@@ -1,6 +1,6 @@
 import http from 'http'
-import app from './app.js'
-import { init } from './socket.js'
+import app from './config/app.js'
+import { init } from './config/socket.js'
 
 const PORT = process.env.NODE_PORT || 8080
 const ENV = process.env.NODE_ENV || 'local'
