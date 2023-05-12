@@ -17,14 +17,14 @@ class SessionsController {
     const { email, password } = req.body;
 
     const isAdminUser =
-      email === "adminCoder@coder.com" && password === "adminCod3r123";
+      email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD;
     let user = isAdminUser
       ? {
-          first_name: "adminCoder",
+          first_name: process.env.ADMIN_NAME,
           last_name: "",
           role: "admin",
-          email: "adminCoder@coder.com",
-          password: createHash("adminCod3r123"),
+          email: process.env.ADMIN_EMAIL,
+          password: createHash(process.env.ADMIN_PASSWORD),
         }
       : await UsersService.getOne(email);
     if (!isAdminUser) {

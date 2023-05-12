@@ -54,13 +54,14 @@ export const validLogin = async (req, res, next) => {
     validateFields(requiredFields, req.body);
 
     const isAdminUser =
-      email === "adminCoder@coder.com" && password === "adminCod3r123";
+      email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD;
     const user = isAdminUser
       ? {
-          first_name: "adminCoder",
-          rol: "Admin",
-          email: "adminCoder@coder.com",
-          password: createHash("adminCod3r123"),
+        first_name: process.env.ADMIN_NAME,
+        last_name: "",
+        role: "admin",
+        email: process.env.ADMIN_EMAIL,
+        password: createHash(process.env.ADMIN_PASSWORD),
         }
       : await UsersService.getOne(email);
 
