@@ -59,7 +59,7 @@ const initPassport = () => {
           : await UserModel.findOne({ email });
         if (!isAdminUser) {
           user = JSON.parse(JSON.stringify(user));
-          user.rol = "Usuario";
+          user.role = "Usuario";
         }
         done(null, user);
       } catch (error) {
@@ -84,13 +84,13 @@ const initPassport = () => {
               email: profile._json.email,
               age: 18,
               password: "",
-              rol: "Usuario",
+              role: "Usuario",
             });
           }
           user = JSON.parse(JSON.stringify(user));
           user.avatar = profile._json.avatar_url;
 
-          user.rol = "Usuario";
+          user.role = "Usuario";
 
           done(null, user);
         } catch (error) {

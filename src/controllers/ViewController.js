@@ -3,7 +3,6 @@ import CartModel from "../dao/models/carts.js";
 import CommonsUtil from "../utils/Commons.js";
 import isEmpty from "is-empty";
 
-
 class ViewController {
   static async home(req, res) {
     try {
@@ -39,28 +38,32 @@ class ViewController {
         CommonsUtil.getFilter(query),
         opts
       );
-      const cartById = await CartModel.findOne({ id: 1 })
-      const totalItems = cartById.products.reduce((acc, item) => acc + item.quantity, 0);
- 
+      const cartById = await CartModel.findOne({ id: 1 });
+      const totalItems = cartById.products.reduce(
+        (acc, item) => acc + item.quantity,
+        0
+      );
+
       const newResponse = JSON.stringify(CommonsUtil.buidResponse(response));
       response = JSON.parse(newResponse);
       return res.render("products", {
         style: "style.css",
         products: response,
-        cartItems : JSON.stringify(totalItems),
+        cartItems: JSON.stringify(totalItems),
         user: {
           name: user.name,
           email: user.email,
           occupation: user.occupation,
-          rol:user.rol,
+          role: user.role,
           age: user.age,
-          avatar: user.avatar || "https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-    },
+          avatar:
+            user.avatar || "https://mdbcdn.b-cdn.net/img/new/avatars/2.webp",
+        },
       });
     } catch (err) {
       return res.status(400).json({
         message: "Error al listar productos",
-        error: JSON.parse(err.message),
+        error: err.message,
       });
     }
   }
@@ -162,14 +165,10 @@ class ViewController {
       });
     }
   }
-  
-  static async login(req, res) {
-      return res.render("login", {style: "style.css"});
-  }
 
-  static async Unauthorized(req, res) {
-    return res.render("401", {style: "401.css"});
-}
+  static async login(req, res) {
+    return res.render("login", { style: "style.css" });
+  }
 
   static async profile(req, res) {
     try {
@@ -177,11 +176,12 @@ class ViewController {
       return res.render("profile", {
         style: "style.css",
         user: {
-              first_name: user.first_name,
-              last_name: user.last_name,
-              email: user.email,
-              age: user.age,
-              avatar: user.avatar || "https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+          first_name: user.first_name,
+          last_name: user.last_name,
+          email: user.email,
+          age: user.age,
+          avatar:
+            user.avatar || "https://mdbcdn.b-cdn.net/img/new/avatars/2.webp",
         },
       });
     } catch (err) {
@@ -191,7 +191,6 @@ class ViewController {
       });
     }
   }
-
 }
 
 export default ViewController;

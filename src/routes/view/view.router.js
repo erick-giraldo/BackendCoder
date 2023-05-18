@@ -1,20 +1,19 @@
-import { Router } from 'express';
+import CustomerRouter from '../Router.js'
 import ViewController from '../../controllers/ViewController.js';
 import chatController from './chat.js'
-import authHome from '../../middleware/authHome.js'
-import isLoged from '../../middleware/isLoged.js'
-import { authJWTMiddleware } from '../../utils/hash.js';
+import { authHome, isLoged } from '../../middleware/sessionMiddleware.js';
 
-const viewRouter = Router()
+export default class viewRouter extends CustomerRouter {
 
-.get('' , authHome)
-.get('/chat', authJWTMiddleware(['admin'], 'chat'), chatController.chatRouter)
-.get('/home' , authJWTMiddleware(['user'], 'home'), ViewController.home)
-.get('/realtimeproducts', authJWTMiddleware(['user'], 'realtimeproducts'), ViewController.realtimeproducts)
-.get('/products', authJWTMiddleware(['admin','user'],'products'), ViewController.products)
-.get('/profile', authJWTMiddleware(['admin'],'profile'), ViewController.profile)
-.post("/carts/:cid/product/:pid", ViewController.addProductCartById)
-.get('/carts/:cid', ViewController.getCart)
-.get('/login', isLoged, ViewController.login)
-
-export default viewRouter;
+  init() {
+    this.get('/products', ['USER','ADMIN'], ViewController.products)
+    this.get('', ['PUBLIC'], authHome)
+    this.get('/chat', ['ADMIN'] , chatController.chatRouter)
+    this.get('/home', ['USER'], ViewController.home)
+    this.get('/realtimeproducts', ['USER'], ViewController.realtimeproducts)
+    this.get('/profile', ['ADMIN'], ViewController.profile)
+    this.post("/carts/:cid/product/:pid", ['USER'], ViewController.addProductCartById)
+    this.get('/carts/:cid', ['USER'], ViewController.getCart)
+    this.get('/login' ,['PUBLIC'], isLoged, ViewController.login)
+  }
+}

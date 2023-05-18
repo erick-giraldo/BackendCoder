@@ -1,4 +1,4 @@
-const API_URL = "/api/sessions";
+const API_URL = "/api/auth";
 
 const successMessages = {
   LOGIN: "Bienvenido",

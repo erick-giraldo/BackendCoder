@@ -99,6 +99,18 @@ export const validResetPassword = async (req, res, next) => {
   }
 };
 
+export  const authHome = (req, res, next) => {
+  res.redirect('/login')    
+}
+
+export const isLoged = (req, res, next) => {
+  if (!req.cookies.token) {
+    return next()
+  }
+  res.redirect('/products')    
+}
+
+
 export const loginMiddleware = (req, res, next) => {
   return SessionController.login(req, res);
 };
