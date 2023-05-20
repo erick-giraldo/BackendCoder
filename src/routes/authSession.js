@@ -1,4 +1,8 @@
-import { validResetPassword, validLogin, validRegister } from "../middleware/sessionMiddleware.js";
+import {
+  validResetPassword,
+  validLogin,
+  validRegister,
+} from "../middleware/sessionMiddleware.js";
 import UsersService from "../services/users.service.js";
 import { tokenGenerator, createHash } from "../utils/hash.js";
 import CustomerRouter from "./Router.js";
@@ -12,12 +16,12 @@ export default class AuthRouter extends CustomerRouter {
         password === process.env.ADMIN_PASSWORD;
       let user = isAdminUser
         ? {
-            first_name: process.env.ADMIN_NAME,
-            last_name: "",
-            role: "admin",
-            email: process.env.ADMIN_EMAIL,
-            password: createHash(process.env.ADMIN_PASSWORD),
-          }
+          first_name: process.env.ADMIN_NAME,
+          last_name: "",
+          role: "admin",
+          email: process.env.ADMIN_EMAIL,
+          password: createHash(process.env.ADMIN_PASSWORD),
+        }
         : await UsersService.getOne(email);
       if (!isAdminUser) {
         user = JSON.parse(JSON.stringify(user));
@@ -67,22 +71,49 @@ export default class AuthRouter extends CustomerRouter {
       }
     });
 
-    this.post("/reset-password", ["PUBLIC"], validResetPassword, async (req, res) => {
-      try {
-        const { email, password } = req.body;
-      
-        let user = await UsersService.getOne(email);
-        if (!user) {
-          return res
-            .sendUserError({ message: "Email or password is incorrect." });
+    this.post(
+      "/reset-password",
+      ["PUBLIC"],
+      validResetPassword,
+      async (req, res) => {
+        try {
+          const { email, password } = req.body;
+
+          let user = await UsersService.getOne(email);
+          if (!user) {
+            return res.sendUserError({
+              message: "Email or password is incorrect.",
+            });
+          }
+          await UsersService.update(email, { password: createHash(password) });
+          return res.sendSuccess({
+            message: "Se cambio la contraseña correctamente.",
+          });
+        } catch (error) {
+          const errorDetail = error.message;
+          return res.sendServerError({
+            message: "Error al iniciar sesión",
+            error: { detail: errorDetail },
+          });
         }
-        await UsersService.update(email, { password: createHash(password) });
-        return res.sendSuccess({ message: "Se cambio la contraseña correctamente." });
-      } catch (error) {
-        const errorDetail = error.message;
+      }
+    );
+
+    this.get("/current", ["USER", "ADMIN"], async (req, res) => {
+      try {
+        const token = req.cookies.token;
+        if (token) {
+          const { id } = req.user;
+          console.log("🚀 ~ file: authSession.js:107 ~ AuthRouter ~ this.get ~ req.user:", req.user)
+          const result = await UsersService.getById(id);
+          res.sendSuccess({
+            result,
+          });
+        }
+      } catch (err) {
         return res.sendServerError({
-          message: "Error al iniciar sesión",
-          error: { detail: errorDetail },
+          message: "Error al listar perfil",
+          error: JSON.parse(err.message),
         });
       }
     });

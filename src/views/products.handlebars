@@ -1,5 +1,7 @@
 {{#if message}}
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
+{{message}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js">
+</script>
   <script>
   Swal.fire({
     icon: 'error',
@@ -7,7 +9,7 @@
     text: '{{message}}',
     showConfirmButton: false
   }); setTimeout(() => {
-        window.location.replace("/login");
+        {{!-- window.location.replace("/login"); --}}
       }, 1000); 
   </script>
 {{else}}
@@ -50,7 +52,7 @@
     <!-- Right elements -->
     <div class="d-flex align-items-center">
       <!-- Icon -->
-      <a class="text-reset me-3" href="/carts/1">
+      <a class="text-reset me-3" href="/cart/1">
         <i class="fa fa-shopping-cart"></i>
         <span class="badge rounded-pill badge-notification bg-danger">{{cartItems}}</span>
       </a>

@@ -12,8 +12,8 @@ export default class viewRouter extends CustomerRouter {
     this.get('/home', ['USER'], ViewController.home)
     this.get('/realtimeproducts', ['USER'], ViewController.realtimeproducts)
     this.get('/profile', ['ADMIN'], ViewController.profile)
-    this.post("/carts/:cid/product/:pid", ['USER'], ViewController.addProductCartById)
-    this.get('/carts/:cid', ['USER'], ViewController.getCart)
+    this.post("/carts/:cid/product/:pid", ['USER','ADMIN'], ViewController.addProductCartById)
+    this.get('/cart/:cid', ['USER'], ViewController.getCart)
     this.get('/login' ,['PUBLIC'], isLoged, ViewController.login)
   }
 }

@@ -76,26 +76,51 @@ class ViewController {
         throw new Error(
           JSON.stringify({ detail: "El id tiene que ser de tipo numérico" })
         );
-
+  
       const cartById = await CartModel.findOne({ id: cid }).populate(
         "products._id"
       );
       if (isEmpty(cartById))
         return res.status(404).json({ message: "Carrito no encontrado" });
-
-      const newProducts = cartById.products.map((product) => {
-        return {
+  
+      const newProducts = [];
+  
+      for (const product of cartById.products) {
+        const productData = await ProductsModel.findById(product._id);
+        const newProduct = {
           ...product._id._doc,
           quantity: product._doc.quantity,
           totalPrice: (product._doc.quantity * product._id.price).toFixed(2),
         };
+        
+        if (productData.stock >= product._doc.quantity) {
+          newProduct.disable = false;
+        } else {
+          newProduct.disable = true;
+          newProduct.stockMessage = `La cantidad es mayor al stock disponible, cantidad disponible : ${newProduct.stock}`;
+        }
+  
+        newProducts.push(newProduct);
+      }
+  
+      newProducts.sort((a, b) => {
+        if (a.disable && !b.disable) {
+          return 1; 
+        }
+        if (!a.disable && b.disable) {
+          return -1; 
+        }
+        return 0; 
       });
+  
       const total = newProducts
+        .filter(product => !product.disable)
         .reduce(
           (accumulator, current) => accumulator + Number(current.totalPrice),
           0
         )
         .toFixed(2);
+      
       return res.render("cart", {
         style: "style.css",
         products: newProducts,
