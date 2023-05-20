@@ -13,7 +13,8 @@ export default class viewRouter extends CustomerRouter {
     this.get('/realtimeproducts', ['USER'], ViewController.realtimeproducts)
     this.get('/profile', ['ADMIN'], ViewController.profile)
     this.post("/carts/:cid/product/:pid", ['USER','ADMIN'], ViewController.addProductCartById)
-    this.get('/cart/:cid', ['USER'], ViewController.getCart)
+    this.post("/deletecarts/:cid/product/:pid", ['USER','ADMIN'], ViewController.deleteProductCartById)
+    this.get('/cart/:cid', ['USER','ADMIN'], ViewController.getCart)
     this.get('/login' ,['PUBLIC'], isLoged, ViewController.login)
   }
 }

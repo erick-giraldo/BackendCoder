@@ -104,7 +104,6 @@ export default class AuthRouter extends CustomerRouter {
         const token = req.cookies.token;
         if (token) {
           const { id } = req.user;
-          console.log("🚀 ~ file: authSession.js:107 ~ AuthRouter ~ this.get ~ req.user:", req.user)
           const result = await UsersService.getById(id);
           res.sendSuccess({
             result,

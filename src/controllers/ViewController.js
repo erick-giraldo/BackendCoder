@@ -137,7 +137,7 @@ class ViewController {
   static async addProductCartById(req, res) {
     try {
       let { cid, pid } = req.params;
-
+  
       cid = Number(cid);
       if (isNaN(cid))
         throw new Error(
@@ -145,29 +145,34 @@ class ViewController {
             detail: "El id del carrito tiene que ser de tipo numérico",
           })
         );
-
+  
       let cartById = await CartModel.findOne({ id: cid });
       if (!cartById)
         return res
           .status(404)
           .json({ message: `No se encontró un carrito con el id ${cid}` });
-
+  
       const productById = await ProductsModel.findOne({ _id: pid });
       if (!productById)
         return res
           .status(404)
           .json({ message: `No se encontró un producto con el id ${pid}` });
-
+  
       let listProduct = cartById.products;
-      const searchProductByIdInCart = listProduct.find(
-        (data) => data._id.toString() === pid
-      );
-      if (!isEmpty(searchProductByIdInCart)) {
+      const existingProduct = listProduct.find((item) => item._id.toString() === pid);
+  
+      if (existingProduct && existingProduct.quantity >= productById.stock) {
+        return res.status(400).json({
+          message: `El producto ${productById.name} ya está agregado al carrito y no hay suficiente stock`,
+        });
+      }
+  
+      if (existingProduct) {
         listProduct = listProduct.map((item) => {
           if (item._id.toString() !== pid) return item;
           return {
             _id: item._id,
-            quantity: ++item.quantity,
+            quantity: item.quantity + 1,
           };
         });
       } else {
@@ -176,16 +181,79 @@ class ViewController {
           quantity: 1,
         });
       }
+  
       await CartModel.updateOne(
         { id: cid },
         { $set: { products: listProduct } }
       );
+  
       return res.json({
         message: "El producto fue agregado al carrito exitosamente",
       });
     } catch (err) {
       return res.status(400).json({
         message: "Error al insertar un producto en el carrito",
+        error: err.message,
+      });
+    }
+  }
+  
+
+  static async deleteProductCartById(req, res) {
+    try {
+      let { cid, pid } = req.params;
+  
+      cid = Number(cid);
+      if (isNaN(cid))
+        throw new Error(
+          JSON.stringify({
+            detail: "El id del carrito tiene que ser de tipo numérico",
+          })
+        );
+  
+      let cartById = await CartModel.findOne({ id: cid });
+      if (!cartById)
+        return res
+          .status(404)
+          .json({ message: `No se encontró un carrito con el id ${cid}` });
+  
+      const productById = await ProductsModel.findOne({ _id: pid });
+      if (!productById)
+        return res
+          .status(404)
+          .json({ message: `No se encontró un producto con el id ${pid}` });
+  
+      let listProduct = cartById.products;
+      const searchProductByIdInCart = listProduct.find(
+        (data) => data._id.toString() === pid
+      );
+      if (!isEmpty(searchProductByIdInCart)) {
+        listProduct = listProduct.map((item) => {
+          if (item._id.toString() !== pid) return item;
+          if (item.quantity > 1) {
+            return {
+              _id: item._id,
+              quantity: --item.quantity,
+            };
+          } else {
+            return null; // Eliminar el producto si la cantidad es 1
+          }
+        }).filter(Boolean); // Filtrar los elementos nulos (productos eliminados)
+      } else {
+        return res.status(404).json({ message: `El producto con el id ${pid} no se encuentra en el carrito` });
+      }
+      
+      await CartModel.updateOne(
+        { id: cid },
+        { $set: { products: listProduct } }
+      );
+  
+      return res.json({
+        message: "La cantidad del producto en el carrito se disminuyó exitosamente",
+      });
+    } catch (err) {
+      return res.status(400).json({
+        message: "Error al disminuir la cantidad del producto en el carrito",
         error: err.message,
       });
     }

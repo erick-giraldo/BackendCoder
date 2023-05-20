@@ -94,7 +94,7 @@ export default class CustomerRouter {
    * to access the endpoint
    */
   handlePolicies = (policies) => (req, res, next) => {
-     const path = req.params ? "" : req.path;
+     const path = req.baseUrl ? "" : req.path;
      const url = path.split("/")[1];
     if (policies[0] === "PUBLIC") {
       return next();
