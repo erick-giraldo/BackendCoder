@@ -4,8 +4,6 @@ import {
   validLogin,
   validRegister,
 } from "../middleware/sessionMiddleware.js";
-import UsersService from "../services/users.service.js";
-import { tokenGenerator, createHash } from "../utils/hash.js";
 import CustomerRouter from "./Router.js";
 
 export default class AuthRouter extends CustomerRouter {

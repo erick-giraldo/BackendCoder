@@ -1,12 +1,15 @@
-import ProductsModel from "../dao/models/products.js";
-import CartModel from "../dao/models/carts.js";
+import ProductsService from "../services/products.service.js";
+import CartService from "../services/carts.service.js";
 import CommonsUtil from "../utils/Commons.js";
 import isEmpty from "is-empty";
+import UsersService from "../services/users.service.js";
+import ProductController from "../controllers/ProductsController.js";
+import CartController from "./CartController.js";
 
-class ViewController {
+export default class ViewController {
   static async home(req, res) {
     try {
-      const response = await ProductsModel.find().lean();
+      const response = await ProductsService.get();
       return res.render("home", {
         style: "style.css",
         products: response,
@@ -27,6 +30,8 @@ class ViewController {
 
   static async products(req, res) {
     const user = req.user;
+    const cid = isEmpty(user.cart) ? "0" : user.cart[0].id;
+    let totalItems = 0;
     try {
       const { query } = req;
       const { limit = 3, page = 1, sort } = query;
@@ -34,15 +39,21 @@ class ViewController {
       if (sort === "asc" || sort === "desc") {
         opts.sort = { price: sort };
       }
-      let response = await ProductsModel.paginate(
+      let response = await ProductsService.paginate(
         CommonsUtil.getFilter(query),
         opts
       );
-      const cartById = await CartModel.findOne({ id: 1 });
-      const totalItems = cartById.products.reduce(
-        (acc, item) => acc + item.quantity,
-        0
-      );
+      const cartById = await CartService.getById(cid);
+      if (!isEmpty(cartById)) {
+        totalItems = cartById.products.reduce(
+          (acc, item) => acc + item.quantity,
+          0
+        );
+      }
+      const path =
+        !isEmpty(user) && !isEmpty(user.cart)
+          ? `/cart/${user.cart[0].id}`
+          : "#";
 
       const newResponse = JSON.stringify(CommonsUtil.buidResponse(response));
       response = JSON.parse(newResponse);
@@ -50,12 +61,14 @@ class ViewController {
         style: "style.css",
         products: response,
         cartItems: JSON.stringify(totalItems),
+        email: user.email,
         user: {
           name: user.name,
           email: user.email,
           occupation: user.occupation,
           role: user.role,
           age: user.age,
+          cart: path,
           avatar:
             user.avatar || "https://mdbcdn.b-cdn.net/img/new/avatars/2.webp",
         },
@@ -76,51 +89,52 @@ class ViewController {
         throw new Error(
           JSON.stringify({ detail: "El id tiene que ser de tipo numérico" })
         );
-  
-      const cartById = await CartModel.findOne({ id: cid }).populate(
-        "products._id"
-      );
+
+      const cartById = await CartService.getOne(cid);
       if (isEmpty(cartById))
         return res.status(404).json({ message: "Carrito no encontrado" });
-  
+
       const newProducts = [];
-  
+
       for (const product of cartById.products) {
-        const productData = await ProductsModel.findById(product._id);
+        const productData = await ProductsService.getById(product._id);
         const newProduct = {
           ...product._id._doc,
           quantity: product._doc.quantity,
           totalPrice: (product._doc.quantity * product._id.price).toFixed(2),
         };
-        
+
         if (productData.stock >= product._doc.quantity) {
           newProduct.disable = false;
         } else {
           newProduct.disable = true;
           newProduct.stockMessage = `La cantidad es mayor al stock disponible, cantidad disponible : ${newProduct.stock}`;
         }
-  
+
         newProducts.push(newProduct);
       }
-  
+
       newProducts.sort((a, b) => {
         if (a.disable && !b.disable) {
-          return 1; 
+          return 1;
         }
         if (!a.disable && b.disable) {
-          return -1; 
+          return -1;
         }
-        return 0; 
+        return 0;
       });
-  
+
       const total = newProducts
-        .filter(product => !product.disable)
+        .filter((product) => !product.disable)
         .reduce(
           (accumulator, current) => accumulator + Number(current.totalPrice),
           0
         )
         .toFixed(2);
-      
+      const selectedProducts = newProducts.filter(
+        (product) => !product.disable
+      );
+
       return res.render("cart", {
         style: "style.css",
         products: newProducts,
@@ -129,64 +143,59 @@ class ViewController {
     } catch (err) {
       return res.status(400).json({
         message: "Error al mostrar Carrito",
-        error: JSON.parse(err.message),
+        error: err.message,
       });
     }
   }
 
-  static async addProductCartById(req, res) {
+  static async addProductById(req, res) {
     try {
-      let { cid, pid } = req.params;
-  
-      cid = Number(cid);
-      if (isNaN(cid))
+      const { pid } = req.params;
+      const cid = req.user.cart[0].id;
+      if (isNaN(cid)) {
         throw new Error(
           JSON.stringify({
             detail: "El id del carrito tiene que ser de tipo numérico",
           })
         );
-  
-      let cartById = await CartModel.findOne({ id: cid });
-      if (!cartById)
+      }
+      const cartById = await CartService.getById(cid);
+      if (!cartById) {
         return res
           .status(404)
           .json({ message: `No se encontró un carrito con el id ${cid}` });
-  
-      const productById = await ProductsModel.findOne({ _id: pid });
-      if (!productById)
+      }
+      const productById = await ProductsService.getById({ _id: pid });
+      if (!productById) {
         return res
           .status(404)
           .json({ message: `No se encontró un producto con el id ${pid}` });
-  
+      }
       let listProduct = cartById.products;
-      const existingProduct = listProduct.find((item) => item._id.toString() === pid);
-  
+      const existingProduct = listProduct.find(
+        (item) => item._id.toString() === pid
+      );
       if (existingProduct && existingProduct.quantity >= productById.stock) {
         return res.status(400).json({
           message: `El producto ${productById.name} ya está agregado al carrito y no hay suficiente stock`,
         });
       }
-  
       if (existingProduct) {
-        listProduct = listProduct.map((item) => {
-          if (item._id.toString() !== pid) return item;
-          return {
-            _id: item._id,
-            quantity: item.quantity + 1,
-          };
-        });
+        listProduct = listProduct.map((item) =>
+          item._id.toString() !== pid
+            ? item
+            : {
+                _id: item._id,
+                quantity: item.quantity + 1,
+              }
+        );
       } else {
         listProduct.push({
           _id: pid,
           quantity: 1,
         });
       }
-  
-      await CartModel.updateOne(
-        { id: cid },
-        { $set: { products: listProduct } }
-      );
-  
+      await CartService.updateOne(cid, listProduct);
       return res.json({
         message: "El producto fue agregado al carrito exitosamente",
       });
@@ -197,12 +206,12 @@ class ViewController {
       });
     }
   }
-  
 
   static async deleteProductCartById(req, res) {
     try {
-      let { cid, pid } = req.params;
-  
+      let { pid } = req.params;
+      let cid =
+        !isEmpty(req.user) && !isEmpty(req.user.cart) ? req.user.cart[0].id : 0;
       cid = Number(cid);
       if (isNaN(cid))
         throw new Error(
@@ -210,46 +219,46 @@ class ViewController {
             detail: "El id del carrito tiene que ser de tipo numérico",
           })
         );
-  
-      let cartById = await CartModel.findOne({ id: cid });
+
+      let cartById = await CartService.getById(cid);
       if (!cartById)
         return res
           .status(404)
           .json({ message: `No se encontró un carrito con el id ${cid}` });
-  
-      const productById = await ProductsModel.findOne({ _id: pid });
+
+      const productById = await ProductsService.getById({ _id: pid });
       if (!productById)
         return res
           .status(404)
           .json({ message: `No se encontró un producto con el id ${pid}` });
-  
+
       let listProduct = cartById.products;
       const searchProductByIdInCart = listProduct.find(
         (data) => data._id.toString() === pid
       );
       if (!isEmpty(searchProductByIdInCart)) {
-        listProduct = listProduct.map((item) => {
-          if (item._id.toString() !== pid) return item;
-          if (item.quantity > 1) {
-            return {
-              _id: item._id,
-              quantity: --item.quantity,
-            };
-          } else {
-            return null; // Eliminar el producto si la cantidad es 1
-          }
-        }).filter(Boolean); // Filtrar los elementos nulos (productos eliminados)
+        listProduct = listProduct
+          .map((item) => {
+            if (item._id.toString() !== pid) return item;
+            if (item.quantity > 1) {
+              return {
+                _id: item._id,
+                quantity: --item.quantity,
+              };
+            } else {
+              return null; // Eliminar el producto si la cantidad es 1
+            }
+          })
+          .filter(Boolean); // Filtrar los elementos nulos (productos eliminados)
       } else {
-        return res.status(404).json({ message: `El producto con el id ${pid} no se encuentra en el carrito` });
+        return res.status(404).json({
+          message: `El producto con el id ${pid} no se encuentra en el carrito`,
+        });
       }
-      
-      await CartModel.updateOne(
-        { id: cid },
-        { $set: { products: listProduct } }
-      );
-  
+      await CartService.updateOne(cid, listProduct);
       return res.json({
-        message: "La cantidad del producto en el carrito se disminuyó exitosamente",
+        message:
+          "La cantidad del producto en el carrito se disminuyó exitosamente",
       });
     } catch (err) {
       return res.status(400).json({
@@ -284,6 +293,85 @@ class ViewController {
       });
     }
   }
-}
 
-export default ViewController;
+  static async createOrder(req, res) {
+    try {
+      const { cid } = req.params;
+      const response = await CartService.getOne(cid);
+      const products = JSON.parse(JSON.stringify(response.products));
+      const newProducts = products.map((product) => {
+        return {
+          _id: product._id._id,
+          quantity: product.quantity,
+          available: product._id.stock >= product.quantity,
+        };
+      });
+
+      const available = newProducts.filter((product) => product.available);
+      const notAvailable = newProducts.filter((product) => !product.available);
+      // console.log({ available, notAvailable });
+
+      // descontar stock
+      if (available) {
+        available.map(async (e) => {
+          await ProductController.discountStockProduct(e._id, e.quantity);
+        });
+      }
+
+      let carrito = [];
+
+      if (notAvailable) {
+        notAvailable.map((e) => {
+          carrito.push({
+            _id: e._id,
+            quantity: e.quantity,
+          });
+        });
+      }
+      await CartController.updateCartBeforeBuy(cid, carrito);
+      return res.status(200).json({
+        message: " Se realizo la compra verificar el ticket",
+        noProcedProducts: notAvailable,
+      });
+    } catch (error) {
+      return res.status(400).json({
+        message: "Error al listar perfil",
+        error: JSON.parse(err.message),
+      });
+    }
+  }
+
+  static async mailling(req, res) {
+    res.send(`
+    <div>
+      <h1>Hello world!</h1>
+      <ul>
+        <li><a href="/api/message/email">Send email</a></li>
+        <li><a href="/api/message/sms">Send SMS</a></li>
+        <li><a href="/api/message/thanks">Send SMS Whit Params</a></li>
+      </ul>
+    </div>
+    `);
+  }
+
+  static resetPassword = async (req, res) => {
+    console.log("token", req.cookies.token);
+    if (req.cookies.token) {
+      res.send(`
+      <div>
+        <h1>Reset password 🛅</h1>
+        <form action="/new-password" method="POST">
+          <input type="email" name="email" placeholder="Email" />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+      `);
+    } else {
+      res.send(`
+    <div>
+      <h1>No puedes estar acá 😥</h1>
+    </div>
+    `);
+    }
+  };
+}

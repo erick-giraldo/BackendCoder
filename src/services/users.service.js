@@ -21,6 +21,10 @@ export default class UsersService {
     return UserModel.updateOne({ email }, user);
   }
 
+  static async updateUserCart(id, body) {
+    return UserModel.updateOne( {_id : id }, { $set: { cart: body } });
+  }
+
   static delete(id) {
     return UserModel.deleteOne({ _id: id });
   }

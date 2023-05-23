@@ -6,7 +6,13 @@ const UserSchema = new mongoose.Schema({
     email: { type: String, require: true, unique: true },
     age: { type: Number, require: true },
     password: { type: String, require: true, ref: 'cart' },
-    cart:{ type: mongoose.Schema.Types.ObjectId, require: true},
+    cart: {
+        type: [{
+            _id: { type: mongoose.Schema.Types.ObjectId, ref: 'cart' },
+            id: { type: Number }
+        }],
+        default: []
+    },
     role: { type: String, default: 'user', enum: ['user', 'admin']}
 }, { timestamps: true})
 

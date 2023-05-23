@@ -8,13 +8,19 @@ export default class ViewRouter extends CustomerRouter {
   init() {
     this.get('/products', ['USER','ADMIN'], ViewController.products)
     this.get('', ['PUBLIC'], authHome)
+    this.get('/mailing',  ['USER','ADMIN'], ViewController.mailling)
+    this.get('/reset-password',  ['USER','ADMIN'], ViewController.resetPassword)
     this.get('/chat', ['USER'] , chatController.chatRouter)
     this.get('/home', ['USER'], ViewController.home)
     this.get('/realtimeproducts', ['USER'], ViewController.realtimeproducts)
     this.get('/profile', ['ADMIN'], ViewController.profile)
-    this.post("/carts/:cid/product/:pid", ['USER'], ViewController.addProductCartById)
-    this.post("/deletecarts/:cid/product/:pid", ['USER','ADMIN'], ViewController.deleteProductCartById)
     this.get('/cart/:cid', ['USER','ADMIN'], ViewController.getCart)
     this.get('/login' ,['PUBLIC'], isLoged, ViewController.login)
+
+    this.post("/carts/product/:pid", ['USER','ADMIN'], ViewController.addProductById)
+    this.post("/:cid/purchase", ['USER','ADMIN'], ViewController.createOrder)
+
+    this.delete("/deletecarts/product/:pid", ['USER','ADMIN'], ViewController.deleteProductCartById)
+
   }
 }

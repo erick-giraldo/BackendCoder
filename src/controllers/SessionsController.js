@@ -1,3 +1,4 @@
+import CartService from "../services/carts.service.js";
 import UsersService from "../services/users.service.js";
 import { tokenGenerator, createHash } from "../utils/hash.js";
 import isEmpty from "is-empty"
@@ -8,7 +9,6 @@ class SessionsController {
       if (token) {
         const { id } = req.user;
         const user = await UsersService.getById(id);
-
         if (!isEmpty(user)) {
           const userDto = {
             first_name: user.first_name,
@@ -20,10 +20,10 @@ class SessionsController {
           };
           return res.status(200).json(userDto);
         } else {
-          return res.status(404).json({ success: false, message: "Se produjo un error." });
+          return res.status(404).json({ success: false, message: "Se produjo un error al obtener usuario." });
         }
       } else {
-        return res.status(404).json({ success: false, message: "Se produjo un error." });
+        return res.status(404).json({ success: false, message: "Se produjo un error al obtener token." });
       }
     } catch (error) {
       console.error(error);
@@ -48,6 +48,7 @@ class SessionsController {
     if (!isAdminUser) {
       user = JSON.parse(JSON.stringify(user));
     }
+
     const token = tokenGenerator(user);
     res
       .cookie("token", token, {
@@ -65,10 +66,15 @@ class SessionsController {
       age: 20,
       occupation: "Ingeniero",
       role: req.body.role,
+      cart: [],
       password: createHash(req.body.password),
     };
 
     const user = await UsersService.create(body);
+    const createCart = await CartService.create()
+    const findCart = await CartService.getCartById(createCart._id);
+    const cart = [{ _id: createCart._id, id: findCart.id }];
+    await UsersService.updateUserCart(user._id, cart);
 
     if (!user) {
       return res
