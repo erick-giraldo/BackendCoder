@@ -310,7 +310,6 @@ export default class ViewController {
   }
 
   static resetPassword = async (req, res) => {
-    console.log("token", req.cookies.token);
     if (req.cookies.token) {
       res.send(`
       <div>

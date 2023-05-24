@@ -4,10 +4,8 @@ import { tokenGenerator, createHash } from "../utils/hash.js";
 import isEmpty from "is-empty"
 class SessionsController {
   static current = async (req, res) => {
-    console.log("🚀 ~ file: SessionsController.js:7 ~ SessionsController ~ current= ~ req:", req)
     try {
       const token = req.cookies.token;
-      console.log("🚀 ~ file: SessionsController.js:9 ~ SessionsController ~ current= ~ token:", token)
       if (!token) {
         return res.status(404).json({ success: false, message: "Se produjo un error al obtener token." });
       }
@@ -56,7 +54,6 @@ class SessionsController {
     const findCart = await CartService.getCartById(createCart._id);
     const cart = [{ _id: createCart._id, id: findCart.id }];
     const result = await UsersService.updateUserCart(user._id, cart);
-    console.log("🚀 ~ file: SessionsController.js:58 ~ SessionsController ~ register= ~ cart:", result)
 
     if (!user) {
       return res

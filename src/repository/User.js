@@ -10,7 +10,6 @@ export default class User {
 
   create(data) {
     const usertDto = new UserDTO(data)
-    console.log("🚀 ~ file: User.js:13 ~ User ~ create ~ usertDto:", usertDto)
     return this.dao.create(usertDto)
   }
 
