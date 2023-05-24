@@ -21,6 +21,7 @@ export const tokenGenerator = (user) => {
     name: `${user.first_name} ${user.last_name}`,
     email: user.email,
     cart: user.cart,
+    ticket: user.ticket,
     role: user.role,
   };
   const token = jsonwebtoken.sign(payload, JWT_SECRET, { expiresIn: "24h" });

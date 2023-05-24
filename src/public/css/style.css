@@ -854,3 +854,9 @@ span.fa.fa-cart-plus {
   margin: 0;
   padding: 0;
 }
+
+.nosotros-contenido.cart{
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+}

@@ -29,6 +29,10 @@ export default class UsersService {
     return userRepository.updateOne(id, body);
   }
 
+  static async updateTicket(id, body) {
+    return userRepository.updateTicket(id, body);
+  }
+
   static delete(id) {
     return userRepository.deleteOne(id);
   }

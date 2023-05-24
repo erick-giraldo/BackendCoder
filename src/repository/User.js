@@ -28,8 +28,8 @@ export default class User {
     return this.dao.updateById(id, usertDto)
   }
 
-  updateOne(id, body){
-    return this.dao.updateOne( id, body )
+  updateTicket(id, body){
+    return this.dao.updateTicket( id, body )
   }
   
   deleteById(id) {
