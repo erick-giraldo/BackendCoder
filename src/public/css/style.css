@@ -1,19 +1,46 @@
 .padre .hijo .main-container {
   color: #747474;
-  height: calc(100vh - 55px);
+  /* height: calc(100vh - 55px); */
   overflow: auto;
-  padding: 2rem 6rem;
+  padding: 1rem 2rem;
   position: relative;
   width: 100%;
 }
-
+.padre .hijo .cart-flex {
+  display: flex;
+  gap: 3rem;
+}
+.payment-summary ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
 .main-container .nosotros-contenido {
   border-radius: 20px;
   box-shadow: 0 10px 45px -6px rgb(0 0 0 / 15%);
   gap: 0;
-  height: auto;
+  height: 100vh;
   margin-bottom: 3rem;
   padding: 2rem;
+}
+.payment-summary span {
+  font-weight: 600;
+}
+.payment-summary li {
+  display: flex;
+  justify-content: space-between;
+}
+button.pay-button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-bottom: 4px;
+  background: #fd384f;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  width: 200px;
 }
 
 .productos-container {
@@ -787,4 +814,43 @@ span.fa.fa-cart-plus {
 .me-3 .fa.fa-bell {
   font-size: 1.4rem;
   color: white;
+}
+
+
+.disabled-row {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"%3E%3Cpath fill="gray" d="M0 0h512v512H0z"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.disabled-row td{
+  border: none;
+}
+
+.disabled-row td:first-child::before {
+  content: "\f071";
+  font-family: FontAwesome;
+  font-weight: 900;
+  font-size: 20px;
+  color: red;
+  position: absolute;
+  left: 2.5rem;
+  padding-top: 4rem;
+}
+
+.disabled-message-row {
+  position: relative;
+  top: -6.5rem;
+  color: red;
+  margin: 0;
+}
+.disabled-message{
+  width: 19rem;
+}
+.disabled-message-row td, .disabled-message-row p{
+  margin: 0;
+  padding: 0;
 }

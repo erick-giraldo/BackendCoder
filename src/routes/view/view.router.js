@@ -1,20 +1,25 @@
-import { Router } from 'express';
+import CustomerRouter from '../Router.js'
 import ViewController from '../../controllers/ViewController.js';
 import chatController from './chat.js'
-import authHome from '../../middleware/authHome.js'
-import isLoged from '../../middleware/isLoged.js'
-import { authJWTMiddleware } from '../../utils/hash.js';
+import { authHome, isLoged } from '../../middleware/sessionMiddleware.js';
 
-const viewRouter = Router()
+export default class ViewRouter extends CustomerRouter {
 
-.get('' , authHome)
-.get('/chat', authJWTMiddleware(['admin'], 'chat'), chatController.chatRouter)
-.get('/home' , authJWTMiddleware(['user'], 'home'), ViewController.home)
-.get('/realtimeproducts', authJWTMiddleware(['user'], 'realtimeproducts'), ViewController.realtimeproducts)
-.get('/products', authJWTMiddleware(['admin','user'],'products'), ViewController.products)
-.get('/profile', authJWTMiddleware(['admin'],'profile'), ViewController.profile)
-.post("/carts/:cid/product/:pid", ViewController.addProductCartById)
-.get('/carts/:cid', ViewController.getCart)
-.get('/login', isLoged, ViewController.login)
+  init() {
+    this.get('/products', ['USER','ADMIN'], ViewController.products)
+    this.get('', ['PUBLIC'], authHome)
+    this.get('/mailing',  ['USER','ADMIN'], ViewController.mailling)
+    this.get('/reset-password',  ['USER','ADMIN'], ViewController.resetPassword)
+    this.get('/chat', ['USER'] , chatController.chatRouter)
+    this.get('/home', ['USER'], ViewController.home)
+    this.get('/realtimeproducts', ['USER'], ViewController.realtimeproducts)
+    this.get('/profile', ['ADMIN'], ViewController.profile)
+    this.get('/cart/:cid', ['USER','ADMIN'], ViewController.getCart)
+    this.get('/login' ,['PUBLIC'], isLoged, ViewController.login)
 
-export default viewRouter;
+    this.post("/carts/product/:pid", ['USER'], ViewController.addProductById)
+    
+    this.delete("/deletecarts/product/:pid", ['USER','ADMIN'], ViewController.deleteProductCartById)
+
+  }
+}

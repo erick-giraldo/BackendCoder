@@ -1,14 +1,23 @@
-import { Router } from "express";
+import CustomerRouter from '../Router.js'
 import CartController from "../../controllers/CartController.js";
+import { validateFieldsCart } from '../../middleware/sessionMiddleware.js';
+import OrderController from '../../controllers/OrderController.js';
 
-const cartProducts = Router();
+export default class cartProducts extends CustomerRouter {
 
-cartProducts.get("/:cid", CartController.getCartById);
-cartProducts.post("", CartController.addCart);
-cartProducts.post("/:cid/product/:pid", CartController.addProductCartById);
-cartProducts.delete("/:cid/products/:pid", CartController.deleteProductById);
-cartProducts.delete("/:cid", CartController.deleteProductsByCartId);
-cartProducts.put("/:cid/products/:pid", CartController.updateProductQuantityByCartId);
-cartProducts.put("/:cid", CartController.updateProductsByCartId);
+    init() {
+        this.get("/", ['USER','ADMIN'], CartController.getAllCarts);
+        this.get("/:cid", ['USER','ADMIN'], CartController.getCartById);
 
-export default cartProducts;
+        this.post("", ['USER','ADMIN'], CartController.addCart);
+        this.post("/add/product/:pid", ['USER','ADMIN'], CartController.addProductById);
+
+        this.delete("/products/:pid", ['USER','ADMIN'], CartController.deleteProductCartById);
+        this.delete("/:cid", ['USER','ADMIN'], validateFieldsCart, CartController.deleteProductsByCartId);
+
+        this.put("/:cid/products/:pid", ['USER','ADMIN'], validateFieldsCart, CartController.updateProductQuantityByCartId);
+        this.put("/:cid", ['USER','ADMIN'], validateFieldsCart, CartController.updateProductsByCartId);
+        this.post("/:cid/purchase/:total", ['USER'], CartController.createOrder)
+        this.post("/:cid/ticket", ['USER'], OrderController.createTicket)
+    }
+  }

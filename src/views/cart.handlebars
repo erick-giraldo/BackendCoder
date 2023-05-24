@@ -1,6 +1,19 @@
+{{#if message}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
+<script>
+  Swal.fire({
+    icon: 'error',
+    title: 'No tiene Permiso para acceder a esta página',
+    text: '{{message}}',
+    showConfirmButton: false
+  }); setTimeout(() => {
+    window.location.replace("/login");
+  }, 1000); 
+</script>
+{{else}}
 <div class="container-fluid padre">
   <div class="row hijo">
-    <div class="col-lg-10 col-md-12 col-sm-12 main-container">
+    <div class="col-lg-10 col-md-12 col-sm-12 main-container cart-flex">
       <div class="row nosotros-contenido">
         <h1>Carrtito de Compras</h1>
         <div class="productos-container">
@@ -8,7 +21,7 @@
             <thead>
               <tr>
                 <th scope="colIdth>
-                <th scope="col">id</th>
+                <th scope=" col">id</th>
                 <th scope="col">Código</th>
                 <th scope="col">Categoria</th>
                 <th scope="col">Nombre</th>
@@ -20,35 +33,75 @@
             </thead>
             <tbody>
               {{#each products}}
-              {{this.page}}
+              {{#unless this.disable}}
               <tr>
                 <td>{{this.id}}</td>
                 <td>{{this.code}}</td>
                 <td>{{this.category}}</td>
                 <td>{{this.name}}</td>
                 <td><img style="width: 15rem;" src={{this.image}} /></td>
-                <td>{{this.quantity}}</td>
+                <td>
+                  <a href="#" id="addCart" rel="noopener noreferrer" title="Cart"
+                    onclick="deleteProductCartById(`{{this._id}}`)">
+                    <button class="quantity-button" data-action="decrease" data-id="{{this.id}}">-</button>
+                  </a>
+                  {{this.quantity}}
+                  <a href="#" id="addCart" rel="noopener noreferrer" title="Cart"
+                    onclick="addProductCart(`{{this._id}}`)">
+                    <button class="quantity-button" data-action="increase" data-id="{{this.id}}">+</button>
+                  </a>
+                </td>
                 <td class="price">$ {{this.price}}</td>
                 <td class="price">$ {{this.totalPrice}}</td>
-
               </tr>
-                {{/each}}
-               <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><b>Total a pagar:</b></td>
-                    <td><b>$ {{total}}</b></td>
-                </tr>
+              {{else}}
+              <tr class="disabled-row">
+                <td>{{this.id}}</td>
+                <td>{{this.code}}</td>
+                <td>{{this.category}}</td>
+                <td>{{this.name}}</td>
+                <td><img style="width: 15rem;" src={{this.image}} /></td>
+                <td>
+                  <a href="#" id="addCart" rel="noopener noreferrer" title="Cart"
+                    onclick="deleteProductCartById(`{{this._id}}`)">
+                    <button class="quantity-button" data-action="decrease" data-id="{{this.id}}">-</button>
+                  </a>
+                  {{this.quantity}}
+                  <a href="#" id="addCart" rel="noopener noreferrer" title="Cart"
+                    onclick="addProductCart(`{{this._id}}`)">
+                    <button class="quantity-button" data-action="increase" data-id="{{this.id}}">+</button>
+                  </a>
+                </td>
+                <td class="price">$ {{this.price}}</td>
+                <td class="price">$ {{this.totalPrice}}</td>
+              </tr>
+              <tr class="disabled-message-row">
+                <td colspan="8">
+                  <p class="disabled-message">{{this.stockMessage}}</p>
+                </td>
+              </tr>
+              {{/unless}}
+              {{/each}}
             </tbody>
           </table>
+        </div>
+      </div>
+      <div class="row nosotros-contenido">
+        <div class="payment-summary">
+          <h2>Resumen</h2>
+          <ul>
+            <li><span>Subtotal</span> $ 74.79</li>
+            <li><span>Ahorrado</span> - $ 0.37</li>
+            <li><span>Gastos de envío</span> $ 5.21</li>
+          </ul>
+          <tr></tr>
+               <td><button class="pay-button" onclick="pagar( {{path}},{{total}} )">$ {{total}}</button></td>
+          </tr>
         </div>
       </div>
     </div>
   </div>
 </div>
+{{/if}}
 <script src="/js/products.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>

@@ -1,31 +1,41 @@
+import UserDTO from "../dto/UserDTO.js";
+import CartService from "../services/carts.service.js";
 import UsersService from "../services/users.service.js";
 import { tokenGenerator, createHash } from "../utils/hash.js";
-
+import isEmpty from "is-empty"
 class SessionsController {
   static current = async (req, res) => {
-    const token = req.cookies.token;
-    if (token) {
+    try {
+      const token = req.cookies.token;
+      if (!token) {
+        return res.status(404).json({ success: false, message: "Se produjo un error al obtener token." });
+      }
       const { id } = req.user;
-      const result = await UsersService.getById(id);
-      res.status(200).json(result);
-    } else {
-      return res.status(404).end();
+      const user = await UsersService.getById(id);
+      if (isEmpty(user)) {
+        return res.status(404).json({ success: false, message: "Se produjo un error al obtener usuario." });
+      }
+      const current = new UserDTO(user).current();
+      return res.status(200).json(current);
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ success: false, message: "Error en el servidor." });
     }
   };
 
   static login = async (req, res) => {
     const { email, password } = req.body;
-
     const isAdminUser =
-      email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD;
+      email === process.env.ADMIN_EMAIL &&
+      password === process.env.ADMIN_PASSWORD;
     let user = isAdminUser
       ? {
-          first_name: process.env.ADMIN_NAME,
-          last_name: "",
-          role: "admin",
-          email: process.env.ADMIN_EMAIL,
-          password: createHash(process.env.ADMIN_PASSWORD),
-        }
+        first_name: process.env.ADMIN_NAME,
+        last_name: "",
+        role: "admin",
+        email: process.env.ADMIN_EMAIL,
+        password: createHash(process.env.ADMIN_PASSWORD),
+      }
       : await UsersService.getOne(email);
     if (!isAdminUser) {
       user = JSON.parse(JSON.stringify(user));
@@ -37,60 +47,63 @@ class SessionsController {
         maxAge: 60 * 60 * 1000,
         httpOnly: true,
       })
-      .status(200)
-      .json({ success: true, token });
+      .sendSuccess({ access_token: token });
   };
 
   static register = async (req, res) => {
-    const body = {
-      first_name: "Jorge",
-      last_name: "Perez",
-      email: req.body.email,
-      age: 20,
-      occupation: "Ingeniero",
-      role: req.body.role,
-      password: createHash(req.body.password),
-    };
-
+    const body = new UserDTO(req.body)
     const user = await UsersService.create(body);
+    const createCart = await CartService.create()
+    const findCart = await CartService.getCartById(createCart._id);
+    const cart = [{ _id: createCart._id, id: findCart.id }];
+    await UsersService.updateUserCart(user._id, cart);
 
     if (!user) {
       return res
         .status(401)
         .json({ success: false, message: "Email or password is incorrect." });
     }
-
-    res.status(200).json({ message: true });
+    res.sendSuccess({ message: true });
   };
 
   static logout = async (req, res) => {
     try {
-      res.clearCookie("token").status(200).json({ success: true });
+      if (req.cookies.token) {
+        res
+          .clearCookie("token")
+          .sendSuccess({ message: "El usuario a sido deslogueado." });
+      } else {
+        res.sendSuccess({ message: "El usuario ya está deslogueado." });
+      }
     } catch (err) {
       console.error(err);
-      res.status(500).send("Error del servidor");
+      res.sendServerError({ message: `${err} - Error del servidor` });
     }
   };
 
   static resetPassword = async (req, res) => {
     try {
       const { email, password } = req.body;
-      let user = await UsersService.getOne(email);
-      user.password = createHash(password);
 
-      await UsersService.update(email, user);
-      return res.status(200).json({
-        success: true,
-        message: "Se cambio la contraseña correctamente",
+      let user = await UsersService.getOne(email);
+      if (!user) {
+        return res.sendUserError({
+          message: "Email or password is incorrect.",
+        });
+      }
+      await UsersService.update(email, { password: createHash(password) });
+      return res.sendSuccess({
+        message: "Se cambio la contraseña correctamente.",
       });
     } catch (error) {
       const errorDetail = error.message;
-      return res.status(400).json({
+      return res.sendServerError({
         message: "Error al iniciar sesión",
         error: { detail: errorDetail },
       });
     }
-  };
-}
+  }
+};
+
 
 export default SessionsController;
