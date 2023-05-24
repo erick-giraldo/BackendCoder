@@ -14,8 +14,8 @@ export default class User {
     return UserModel.findById(id)
   }
 
-  findOne(id) {
-    return UserModel.findOne(id)
+  findOne(email) {
+    return UserModel.findOne({ email });
   }
 
  getOne(id) {
@@ -26,11 +26,15 @@ export default class User {
     return UserModel.updateOne( {_id : id }, { $set: { cart: body } });
   }
 
+  updateTicket(id, body) {
+    return UserModel.updateOne( {_id : id }, { $set: { ticket: body } });
+  }
+
   updateById(id, data) {
     return UserModel.updateOne({ _id: id }, { $set: data })
   }
 
-  static deleteOne(id) {
+   deleteOne(id) {
     return UserModel.deleteOne({ _id: id });
   }
 

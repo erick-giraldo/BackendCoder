@@ -6,8 +6,6 @@ const addProductCart = async (_id) => {
         "Content-Type": "application/json",
       },
     });
-    console.log("🚀 ~ file: products.js:5 ~ addProductCart ~ response:", response)
-
 
     if (response.status === 200) {
       Swal.fire({
@@ -78,18 +76,24 @@ const pagar = async (cid, total) => {
       Swal.fire({
         icon: "success",
         title: "¡Bien hecho!",
-        text: "El producto fue eliminado del carrito",
+        text: "Pedido Generado exitosamente",
         showConfirmButton: false
       });
-      location.reload();
+      setTimeout(() => {
+        window.location.replace("/invoice");
+      }, 2000);
     }
   } catch (error) {
     Swal.fire({
       icon: "error",
       title: "¡Error!",
-      text: "El producto no pudo ser eliminado del carrito",
+      text: "No se puede generar el pedido",
       showConfirmButton: false
     });
     console.error(error);
   }
+}
+
+const redirectToProducts = () =>{
+  window.location.replace("/products");
 }

@@ -2,7 +2,8 @@ import isEmpty from "is-empty";
 import ProductsService from "../services/products.service.js";
 import CartService from "../services/carts.service.js";
 import ProductController from "./ProductsController.js";
-import OrderController from "./OrderController.js";
+import TicketsController from "./TicketsController.js";
+import UsersService from "../services/users.service.js";
 
 export default class CartController {
   static async getAllCarts(req, res) {
@@ -240,9 +241,12 @@ export default class CartController {
     }
   }
 
+
+
   static async createOrder(req, res) {
     try {
       const { cid, total } = req.params;
+      let ticket;
       const purchaser = req.user.email;
       const response = await CartService.getOne(cid);
       const products = JSON.parse(JSON.stringify(response.products));
@@ -265,11 +269,16 @@ export default class CartController {
       };
       // descontar stock
       if (available) {
-        await OrderController.createTicket(payload);
+        const user = await UsersService.getOne(purchaser);
+        ticket = await TicketsController.createTicket(payload);
+        const body = [{ _id: ticket._id}];
+        const result = await UsersService.updateTicket(user._id, body);
         available.map(async (e) => {
           await ProductController.discountStockProduct(e._id, e.quantity);
         });
       }
+      const ticketID = JSON.parse(JSON.stringify(ticket._id))
+
       let carrito = [];
 
       if (notAvailable) {
@@ -280,12 +289,14 @@ export default class CartController {
           });
         });
       }
-
       await CartController.updateCartBeforeBuy(cid, carrito);
-      return res.status(200).json({
-        message: " Se realizo la compra verificar el ticket",
-        noProcedProducts: notAvailable,
-      });
+  
+      res
+      .cookie("ticket", ticketID , {
+        maxAge: 60 * 60 * 1000,
+        httpOnly: true,
+      })
+      .sendSuccess({ message: "Se realizo la compra verificar el ticket", noProcedProducts: notAvailable });
     } catch (err) {
       return res.status(400).json({
         message: "Error al listar perfil",

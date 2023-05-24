@@ -2,10 +2,8 @@ import ProductsService from "../services/products.service.js";
 import CartService from "../services/carts.service.js";
 import CommonsUtil from "../utils/Commons.js";
 import isEmpty from "is-empty";
-import UsersService from "../services/users.service.js";
-import ProductController from "../controllers/ProductsController.js";
-import CartController from "./CartController.js";
-
+import TicketsController from "./TicketsController.js";
+import moment from "moment";
 export default class ViewController {
   static async home(req, res) {
     try {
@@ -295,6 +293,36 @@ export default class ViewController {
       });
     }
   }
+  
+  static async invoice(req, res) {
+    try {
+    const user = req.user
+    const ticketId = req.cookies.ticket
+    const ticket = await TicketsController.getTicketById(ticketId)
+    const products = ticket.products.map((p) => {
+      return {
+        name: p._id.name,
+        code: p._id.code,
+        quantity: p.quantity,
+        price: p._id.price
+      };
+    })
+      return res.render("invoice", {
+        style: "invoice.css",
+        amount: ticket.amount,
+        products,
+        code:ticket.code,
+        date: moment(ticket.purchase_datetime).format('MMMM Do YYYY'),
+        user: user.name,
+
+      })
+    } catch (err) {
+      return res.status(400).json({
+        message: "Error al listar productos",
+        error: JSON.parse(err.message),
+      });
+    }
+  }
 
   static async mailling(req, res) {
     res.send(`
@@ -310,7 +338,6 @@ export default class ViewController {
   }
 
   static resetPassword = async (req, res) => {
-    console.log("token", req.cookies.token);
     if (req.cookies.token) {
       res.send(`
       <div>

@@ -226,19 +226,3 @@ export const isLoged = (req, res, next) => {
   }
   res.redirect("/products");
 };
-
-export const loginMiddleware = (req, res, next) => {
-  return SessionController.login(req, res);
-};
-
-export const registerMiddleware = (req, res, next) => {
-  return SessionController.register(req, res);
-};
-
-export const resetPasswordMiddleware = (req, res, next) => {
-  return SessionController.resetPassword(req, res);
-};
-
-export const errorMiddleware = (err, req, res, next) => {
-  res.status(500).json({ message: err.message });
-};
