@@ -44,24 +44,3 @@ export const createHash = (password) => {
 export const validatePassword = (password, user) => {
   return bcrypt.compareSync(password, user.password);
 };
-
-export const authJWTMiddleware =
-  (roles, url = "") =>
-  (req, res, next) => {
-    passport.authenticate("jwt", function (error, user, info) {
-      if (error) {
-        return next(error);
-      }
-      if (!user) {
-        return next(new Exception("Unauthorized", 401, url));
-      }
-      if (!roles.includes(user.role)) {
-        return next(new Exception("Forbidden", 403, url));
-      }
-      if (user.role === "user" && req.params.id && req.params.id !== user.id) {
-        return next(new Exception("Forbidden", 403, url));
-      }
-      req.user = user;
-      next();
-    })(req, res, next);
-  };
