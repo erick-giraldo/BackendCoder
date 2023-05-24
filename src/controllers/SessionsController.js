@@ -1,30 +1,22 @@
+import UserDTO from "../dto/UserDTO.js";
 import CartService from "../services/carts.service.js";
 import UsersService from "../services/users.service.js";
 import { tokenGenerator, createHash } from "../utils/hash.js";
 import isEmpty from "is-empty"
 class SessionsController {
   static current = async (req, res) => {
-    const token = req.cookies.token;
     try {
-      if (token) {
-        const { id } = req.user;
-        const user = await UsersService.getById(id);
-        if (!isEmpty(user)) {
-          const userDto = {
-            first_name: user.first_name,
-            last_name: user.last_name,
-            email: user.email,
-            age: user.age,
-            role: user.role,
-            createdAt: user.createdAt
-          };
-          return res.status(200).json(userDto);
-        } else {
-          return res.status(404).json({ success: false, message: "Se produjo un error al obtener usuario." });
-        }
-      } else {
+      const token = req.cookies.token;
+      if (!token) {
         return res.status(404).json({ success: false, message: "Se produjo un error al obtener token." });
       }
+      const { id } = req.user;
+      const user = await UsersService.getById(id);
+      if (isEmpty(user)) {
+        return res.status(404).json({ success: false, message: "Se produjo un error al obtener usuario." });
+      }
+      const current = new UserDTO(user).current();
+      return res.status(200).json(current);
     } catch (error) {
       console.error(error);
       return res.status(500).json({ success: false, message: "Error en el servidor." });
@@ -59,17 +51,7 @@ class SessionsController {
   };
 
   static register = async (req, res) => {
-    const body = {
-      first_name: "Jorge",
-      last_name: "Perez",
-      email: req.body.email,
-      age: 20,
-      occupation: "Ingeniero",
-      role: req.body.role,
-      cart: [],
-      password: createHash(req.body.password),
-    };
-
+    const body = new UserDTO(req.body)
     const user = await UsersService.create(body);
     const createCart = await CartService.create()
     const findCart = await CartService.getCartById(createCart._id);

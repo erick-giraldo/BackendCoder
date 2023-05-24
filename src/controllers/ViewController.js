@@ -83,6 +83,7 @@ export default class ViewController {
 
   static async getCart(req, res) {
     try {
+      const user = req.user;
       let { cid } = req.params;
       cid = Number(cid);
       if (isNaN(cid))
@@ -134,11 +135,12 @@ export default class ViewController {
       const selectedProducts = newProducts.filter(
         (product) => !product.disable
       );
-
+        const url = user.cart[0].id;
       return res.render("cart", {
         style: "style.css",
         products: newProducts,
         total,
+        path: url
       });
     } catch (err) {
       return res.status(400).json({
@@ -287,53 +289,6 @@ export default class ViewController {
         },
       });
     } catch (err) {
-      return res.status(400).json({
-        message: "Error al listar perfil",
-        error: JSON.parse(err.message),
-      });
-    }
-  }
-
-  static async createOrder(req, res) {
-    try {
-      const { cid } = req.params;
-      const response = await CartService.getOne(cid);
-      const products = JSON.parse(JSON.stringify(response.products));
-      const newProducts = products.map((product) => {
-        return {
-          _id: product._id._id,
-          quantity: product.quantity,
-          available: product._id.stock >= product.quantity,
-        };
-      });
-
-      const available = newProducts.filter((product) => product.available);
-      const notAvailable = newProducts.filter((product) => !product.available);
-      // console.log({ available, notAvailable });
-
-      // descontar stock
-      if (available) {
-        available.map(async (e) => {
-          await ProductController.discountStockProduct(e._id, e.quantity);
-        });
-      }
-
-      let carrito = [];
-
-      if (notAvailable) {
-        notAvailable.map((e) => {
-          carrito.push({
-            _id: e._id,
-            quantity: e.quantity,
-          });
-        });
-      }
-      await CartController.updateCartBeforeBuy(cid, carrito);
-      return res.status(200).json({
-        message: " Se realizo la compra verificar el ticket",
-        noProcedProducts: notAvailable,
-      });
-    } catch (error) {
       return res.status(400).json({
         message: "Error al listar perfil",
         error: JSON.parse(err.message),

@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const TicketSchema = new mongoose.Schema(
   {
-    code: { type: String, unique: true, required: true },
+    code: { type: String, unique: true},
     purchase_datetime: { type: Date, default: Date.now, required: true },
     amount: { type: Number, required: true },
     purchaser: { type: String, required: true },
@@ -24,7 +24,6 @@ TicketSchema.pre("save", async function (next) {
   if (!this.isNew) {
     return next();
   }
-
   try {
     const ticketCount = await mongoose.model("Ticket").countDocuments();
     const code = "TK-" + String(ticketCount + 1).padStart(7, "0");

@@ -6,6 +6,8 @@ const addProductCart = async (_id) => {
         "Content-Type": "application/json",
       },
     });
+    console.log("🚀 ~ file: products.js:5 ~ addProductCart ~ response:", response)
+
 
     if (response.status === 200) {
       Swal.fire({
@@ -64,14 +66,14 @@ const deleteProductCartById = async (_id) => {
   }
 };
 
-const pagar = async () => {
+const pagar = async (cid, total) => {
   try {
-    const response = await fetch(`/1/purchase`, {
+    const response = await fetch(`/api/carts/${cid}/purchase/${total}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-    });
+      });
     if (response.status === 200) {
       Swal.fire({
         icon: "success",

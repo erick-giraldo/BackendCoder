@@ -1,8 +1,9 @@
 import http from 'http'
 import app from './config/app.js'
 import { init } from './config/socket.js'
+import config from './config/index.js'
 
-const PORT = process.env.NODE_PORT || 8080
+const PORT = config.port
 const ENV = process.env.NODE_ENV || 'local'
 
 

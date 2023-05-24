@@ -1,6 +1,8 @@
 import isEmpty from "is-empty";
 import ProductsService from "../services/products.service.js";
 import CartService from "../services/carts.service.js";
+import ProductController from "./ProductsController.js";
+import OrderController from "./OrderController.js";
 
 export default class CartController {
   static async getAllCarts(req, res) {
@@ -31,7 +33,7 @@ export default class CartController {
           JSON.stringify({ detail: "El id tiene que ser de tipo numérico" })
         );
 
-      const cartById = await CartService.getOne( cid );
+      const cartById = await CartService.getOne(cid);
 
       if (!cartById)
         return res.status(404).json({ message: "Carrito no encontrado" });
@@ -119,7 +121,8 @@ export default class CartController {
   static async deleteProductCartById(req, res) {
     try {
       let { pid } = req.params;
-      let cid = !isEmpty(req.user) && !isEmpty(req.user.cart) ? req.user.cart[0].id : 0;
+      let cid =
+        !isEmpty(req.user) && !isEmpty(req.user.cart) ? req.user.cart[0].id : 0;
       cid = Number(cid);
       if (isNaN(cid))
         throw new Error(
@@ -180,8 +183,8 @@ export default class CartController {
     try {
       let { cid } = req.params;
       cid = Number(cid);
-      const products = []
-      const result = await CartService.updateOne( cid, products );
+      const products = [];
+      const result = await CartService.updateOne(cid, products);
       return res.json({
         message: "Productos eliminados del carrito exitosamente",
       });
@@ -196,7 +199,7 @@ export default class CartController {
     try {
       let { cid, pid } = req.params;
       let quantity = req.body.quantity;
-      const result = await CartService.updateOneQuantity(cid, pid, quantity );
+      const result = await CartService.updateOneQuantity(cid, pid, quantity);
       if (result.nModified === 0)
         return res.status(404).json({ message: "Carrito no encontrado" });
 
@@ -214,7 +217,7 @@ export default class CartController {
     try {
       let { cid } = req.params;
       let products = req.body.products;
-      const result = await CartService.updateOne( cid, products );
+      const result = await CartService.updateOne(cid, products);
       if (result.nModified === 0)
         return res.status(404).json({ message: "Carrito no encontrado" });
 
@@ -230,14 +233,64 @@ export default class CartController {
 
   static async updateCartBeforeBuy(cid, products) {
     try {
-      // let { cid } = req.params;
-      // let products = req.body.products;
-      const result = await CartService.updateOne( cid, products );
-      return true
+      const result = await CartService.updateOne(cid, products);
+      return true;
     } catch (e) {
-      return false
+      return false;
     }
   }
-  
-}
 
+  static async createOrder(req, res) {
+    try {
+      const { cid, total } = req.params;
+      const purchaser = req.user.email;
+      const response = await CartService.getOne(cid);
+      const products = JSON.parse(JSON.stringify(response.products));
+      const newProducts = products.map((product) => {
+        return {
+          _id: product._id._id,
+          quantity: product.quantity,
+          available: product._id.stock >= product.quantity,
+        };
+      });
+
+      const available = newProducts.filter((product) => product.available);
+      const notAvailable = newProducts.filter((product) => !product.available);
+      // console.log({ available, notAvailable });
+
+      const payload = {
+        products : available,
+        purchaser,
+        amount: JSON.parse(total),
+      };
+      // descontar stock
+      if (available) {
+        await OrderController.createTicket(payload);
+        available.map(async (e) => {
+          await ProductController.discountStockProduct(e._id, e.quantity);
+        });
+      }
+      let carrito = [];
+
+      if (notAvailable) {
+        notAvailable.map((e) => {
+          carrito.push({
+            _id: e._id,
+            quantity: e.quantity,
+          });
+        });
+      }
+
+      await CartController.updateCartBeforeBuy(cid, carrito);
+      return res.status(200).json({
+        message: " Se realizo la compra verificar el ticket",
+        noProcedProducts: notAvailable,
+      });
+    } catch (err) {
+      return res.status(400).json({
+        message: "Error al listar perfil",
+        error: JSON.parse(err.message),
+      });
+    }
+  }
+}

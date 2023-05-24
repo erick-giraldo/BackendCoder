@@ -105,7 +105,7 @@ export default class CustomerRouter {
     }
     const payload = isValidToken(token);
     if (!policies.includes(payload.role.toUpperCase())) {
-      return next(new Exception("Forbidden", 403, url));
+      return next(new Exception("Forbiddenxxx", 403, url));
     }
     req.user = payload;
     next();

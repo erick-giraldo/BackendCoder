@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import handlebars from "express-handlebars";
 import cookieParser from "cookie-parser";
 import passport from "passport";
-
+import config from './index.js'
 import { init } from "../db/mongodb.js";
 import RouterController from "../routes/index.js";
 import  dirname  from "./utils.js";
@@ -16,7 +16,9 @@ const app = express();
 dotenv.config();
 
 // Inicialización de base de datos
-init();
+if (config.presistanceType === 'mongodb') {
+  await init()
+}
 
 // Configuración de vistas con Handlebars
 app.engine("handlebars", handlebars.engine());

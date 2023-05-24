@@ -112,5 +112,4 @@ export default class ProductController {
 
   }
 
-  static a
 }

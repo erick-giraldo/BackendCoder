@@ -2,9 +2,9 @@ import TicketModel from '../dao/models/tickets.js'
 
 
 export default class TicketsService {
-  static create(body) {
-    // return TicketModel.create({body},{ $set: { products } });
-    return TicketModel.create(body);
+  static create(body , products) {
+    //return TicketModel.create({body},{ $set: { products } });
+     return TicketModel.create(body);
   }
 
   static get(query) {

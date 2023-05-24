@@ -1,4 +1,6 @@
-import UserModel from "../dao/models/users.js";
+import { UserDao } from "../dao/factory.js";
+
+const UserModel = new UserDao();
 
 export default class UsersService {
   static create(body) {
@@ -6,11 +8,11 @@ export default class UsersService {
   }
 
   static get(query) {
-    return UserModel.find(query);
+    return UserModel.get();
   }
 
   static getById(id) {
-    return UserModel.findById(id);
+    return UserModel.getById(id);
   }
 
   static getOne(email) {
@@ -18,14 +20,14 @@ export default class UsersService {
   }
 
   static async update(email, user) {
-    return UserModel.updateOne({ email }, user);
+    return UserModel.updateOne(email, user);
   }
 
   static async updateUserCart(id, body) {
-    return UserModel.updateOne( {_id : id }, { $set: { cart: body } });
+    return UserModel.updateOne(id, body);
   }
 
   static delete(id) {
-    return UserModel.deleteOne({ _id: id });
+    return UserModel.deleteOne(id);
   }
 }
