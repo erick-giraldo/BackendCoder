@@ -31,6 +31,10 @@ export default class User {
   updateTicket(id, body){
     return this.dao.updateTicket( id, body )
   }
+
+  updateOne(id, body){
+    return this.dao.updateOne( id, body )
+  }
   
   deleteById(id) {
     return this.dao.deleteById(id)

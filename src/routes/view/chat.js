@@ -1,5 +1,3 @@
-import { Router } from "express";
-
 import MensajeModel from "../../dao/models/mensaje.js";
 
 class chatController {
