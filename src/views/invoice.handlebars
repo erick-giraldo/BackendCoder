@@ -164,7 +164,7 @@
                                                 <td style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #646a6e;  line-height: 18px;  vertical-align: top; padding:10px 0;"
                                                     align="center">{{this.quantity}}</td>
                                                 <td style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #1e2b33;  line-height: 18px;  vertical-align: top; padding:10px 0;"
-                                                    align="right">${{this.price}}</td>
+                                                    align="right">{{this.price}}</td>
                                             </tr>
                                             {{/each}}
                                             <tr>
@@ -206,17 +206,27 @@
                                                 </td>
                                                 <td style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #646a6e; line-height: 22px; vertical-align: top; text-align:right; white-space:nowrap;"
                                                     width="80">
-                                                    $329.90
+                                                    {{subTotal}}.00
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td
                                                     style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #646a6e; line-height: 22px; vertical-align: top; text-align:right; ">
-                                                    Shipping &amp; Handling
+                                                    IGV
                                                 </td>
                                                 <td
                                                     style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #646a6e; line-height: 22px; vertical-align: top; text-align:right; ">
-                                                    $15.00
+                                                    {{igv}}.00
+                                                </td>
+                                            </tr>
+                                                <tr>
+                                                <td
+                                                    style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #646a6e; line-height: 22px; vertical-align: top; text-align:right; ">
+                                                    Envio
+                                                </td>
+                                                <td
+                                                    style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #646a6e; line-height: 22px; vertical-align: top; text-align:right; ">
+                                                    {{shippingCost}}.00
                                                 </td>
                                             </tr>
                                             <tr>
@@ -227,16 +237,6 @@
                                                 <td
                                                     style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #000; line-height: 22px; vertical-align: top; text-align:right; ">
                                                     <strong>${{amount}}.00</strong>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #b0b0b0; line-height: 22px; vertical-align: top; text-align:right; ">
-                                                    <small>TAX</small>
-                                                </td>
-                                                <td
-                                                    style="font-size: 12px; font-family: 'Open Sans', sans-serif; color: #b0b0b0; line-height: 22px; vertical-align: top; text-align:right; ">
-                                                    <small>$72.40</small>
                                                 </td>
                                             </tr>
                                         </tbody>

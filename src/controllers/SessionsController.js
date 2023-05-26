@@ -49,26 +49,32 @@ class SessionsController {
   };
 
   static register = async (req, res) => {
-   try {
-    const createCart = await CartService.create()
-    const findCart = await CartService.getCartById(createCart._id);
-    const cartBody = [{ _id: createCart._id, id: findCart.id }];
-    const user = await UsersService.create(req.body);
-    const result = await UsersService.updateUserCart(user._id, cartBody);
-    if (!user) {
-      return res
-        .status(401)
-        .json({ success: false, message: "Email or password is incorrect." });
+    try {
+      const createCart = await CartService.create();
+      const findCart = await CartService.getCartById(createCart._id);
+      let cartBody;
+      if (findCart && findCart.id) {
+        cartBody = [{ _id: createCart._id, id: findCart.id }];
+      } else {
+        cartBody = [{ _id: createCart._id, id: 0 } ];
+      }
+      const user = await UsersService.create(req.body);
+      await UsersService.updateUserCart(user._id, cartBody);
+      if (!user) {
+        return res
+          .status(401)
+          .json({ success: false, message: "Email or password is incorrect." });
+      }
+      res.sendSuccess({ message: true });
+    } catch (error) {
+      const errorDetail = error.message;
+      return res.sendServerError({
+        message: "Error al crear usuario sesión",
+        error: { detail: errorDetail },
+      });
     }
-    res.sendSuccess({ message: true });
-   } catch (error) {
-    const errorDetail = error.message;
-    return res.sendServerError({
-      message: "Error al crear uusario sesión",
-      error: { detail: errorDetail },
-    });
-   }
   };
+  
 
   static logout = async (req, res) => {
     try {

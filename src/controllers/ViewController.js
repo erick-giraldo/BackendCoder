@@ -82,6 +82,7 @@ export default class ViewController {
   static async getCart(req, res) {
     try {
       const user = req.user;
+      const url = user.cart[0].id;
       let { cid } = req.params;
       cid = Number(cid);
       if (isNaN(cid))
@@ -122,23 +123,26 @@ export default class ViewController {
         }
         return 0;
       });
-
-      const total = newProducts
+      const subtotal = newProducts
         .filter((product) => !product.disable)
         .reduce(
           (accumulator, current) => accumulator + Number(current.totalPrice),
           0
-        )
-        .toFixed(2);
-      const selectedProducts = newProducts.filter(
-        (product) => !product.disable
-      );
-        const url = user.cart[0].id;
+        );
+
+      const igv = subtotal * 0.18; // IGV peruano (18%)
+      const shippingCost = !isEmpty(newProducts) ? 50 : 0; // Gastos de envío (50)
+
+      const total = (subtotal + igv + shippingCost).toFixed(2);
+
       return res.render("cart", {
         style: "style.css",
         products: newProducts,
+        subtotal: subtotal.toFixed(2),
+        igv: igv.toFixed(2),
+        shippingCost: shippingCost.toFixed(2),
         total,
-        path: url
+        path: url,
       });
     } catch (err) {
       return res.status(400).json({
@@ -151,6 +155,8 @@ export default class ViewController {
   static async addProductById(req, res) {
     try {
       const { pid } = req.params;
+      const arrayPid = [pid];
+      const quantityProducts = arrayPid.length;
       const cid = req.user.cart[0].id;
       if (isNaN(cid)) {
         throw new Error(
@@ -175,6 +181,13 @@ export default class ViewController {
       const existingProduct = listProduct.find(
         (item) => item._id.toString() === pid
       );
+
+      if (productById.stock < quantityProducts) {
+        return res.status(400).json({
+          message: `El producto ${productById.name} no cuenta con suficiente stock`,
+        });
+      }
+      // Validar stock antes de agregar el producto
       if (existingProduct && existingProduct.quantity >= productById.stock) {
         return res.status(400).json({
           message: `El producto ${productById.name} ya está agregado al carrito y no hay suficiente stock`,
@@ -293,29 +306,38 @@ export default class ViewController {
       });
     }
   }
-  
+
   static async invoice(req, res) {
     try {
-    const user = req.user
-    const ticketId = req.cookies.ticket
-    const ticket = await TicketsController.getTicketById(ticketId)
-    const products = ticket.products.map((p) => {
-      return {
-        name: p._id.name,
-        code: p._id.code,
-        quantity: p.quantity,
-        price: p._id.price
-      };
-    })
+      const user = req.user;
+      const ticketId = req.cookies.ticket;
+      const ticket = await TicketsController.getTicketById(ticketId);
+      let amount = ticket.amount;
+      const products = ticket.products.map((p) => {
+        return {
+          name: p._id.name,
+          code: p._id.code,
+          quantity: p.quantity,
+          price: p._id.price,
+        };
+      });
+      const shippingCost =  50; // Gastos de envío (50)
+      const amountShip = amount - shippingCost;
+      const igvPercentage = 0.18; // IGV en Perú (18%)
+      const subTotal = amountShip / (1 + igvPercentage);
+      const igv = subTotal * igvPercentage;
+
       return res.render("invoice", {
         style: "invoice.css",
-        amount: ticket.amount,
+        subTotal,
+        igv,
+        shippingCost,
+        amount,
         products,
-        code:ticket.code,
-        date: moment(ticket.purchase_datetime).format('MMMM Do YYYY'),
+        code: ticket.code,
+        date: moment(ticket.purchase_datetime).format("MMMM Do YYYY"),
         user: user.name,
-
-      })
+      });
     } catch (err) {
       return res.status(400).json({
         message: "Error al listar productos",

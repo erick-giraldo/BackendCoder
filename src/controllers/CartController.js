@@ -245,7 +245,13 @@ export default class CartController {
 
   static async createOrder(req, res) {
     try {
-      const { cid, total } = req.params;
+      let { cid, total } = req.params;
+      total = JSON.parse(total)
+      if(isEmpty(cid) || isEmpty(total) ){
+         throw new Error(
+          JSON.stringify("No hay Productos para generar Ticket")
+        );
+      }
       let ticket;
       const purchaser = req.user.email;
       const response = await CartService.getOne(cid);
@@ -265,7 +271,7 @@ export default class CartController {
       const payload = {
         products : available,
         purchaser,
-        amount: JSON.parse(total),
+        amount: total,
       };
       // descontar stock
       if (available) {
@@ -298,10 +304,7 @@ export default class CartController {
       })
       .sendSuccess({ message: "Se realizo la compra verificar el ticket", noProcedProducts: notAvailable });
     } catch (err) {
-      return res.status(400).json({
-        message: "Error al listar perfil",
-        error: JSON.parse(err.message),
-      });
+      res.status(400).json({ message: err.message });
     }
   }
 }

@@ -1,8 +1,6 @@
 import jsonwebtoken from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import passport from "passport";
 import multer from "multer";
-import Exception from "./exception.js";
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
