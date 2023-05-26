@@ -1,99 +1,78 @@
-const addProductCart = async (_id) => {
+const fetchApi = async (url, method, body = null) => {
   try {
-    const response = await fetch(`/carts/product/${_id}`, {
-      method: "POST",
+    const response = await fetch(url, {
+      method,
       headers: {
         "Content-Type": "application/json",
       },
+      body: body ? JSON.stringify(body) : null,
     });
 
     if (response.status === 200) {
-      Swal.fire({
-        icon: "success",
-        title: "¡Bien Hecho!",
-        text: "El producto fue Agregado al Carrito",
-        showConfirmButton: false
-      });
-      location.reload();
+      return { success: true, data: await response.json() };
     } else {
       const errorResponse = await response.json();
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: errorResponse.message || "El producto no pudo ser Agregado al Carrito",
-        showConfirmButton: false
-      });
+      return { success: false, error: errorResponse.message || "Error en la solicitud" };
     }
   } catch (error) {
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: "El producto no pudo ser Agregado al Carrito",
-      showConfirmButton: false
-    });
-    console.error(error);
+    return { success: false, error: "Error en la solicitud" };
   }
 };
 
+const showSuccessMessage = (title, message, shouldReload = true) => {
+  Swal.fire({
+    icon: "success",
+    title,
+    text: message,
+    showConfirmButton: false,
+  });
+  if (shouldReload) {
+    location.reload();
+  }
+};
+
+const showErrorMessage = (title, message) => {
+  Swal.fire({
+    icon: "error",
+    title,
+    text: message,
+    showConfirmButton: false,
+  });
+  setTimeout(() => {
+    location.reload();
+  }, 1000);
+};
+
+const addProductCart = async (_id) => {
+  const { success, error } = await fetchApi(`/carts/product/${_id}`, "POST");
+  if (success) {
+    showSuccessMessage("¡Bien Hecho!", "El producto fue Agregado al Carrito");
+  } else {
+    showErrorMessage("Error", error || "El producto no pudo ser Agregado al Carrito");
+  }
+};
 
 const deleteProductCartById = async (_id) => {
-  try {
-    const response = await fetch(`/deletecarts/product/${_id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (response.status === 200) {
-      Swal.fire({
-        icon: "success",
-        title: "Bien Hecho!!",
-        text: "El producto fue eliminado al Carrito",
-        showConfirmButton: false
-      });
-      location.reload();
-    }
-  } catch (error) {
-    Swal.fire({
-      icon: "error",
-      title: "Error!!",
-      text: "El producto no pudo ser eliminado al Carrito",
-      showConfirmButton: false
-    });
-    console.error(error);
+  const { success, error } = await fetchApi(`/deletecarts/product/${_id}`, "DELETE");
+  if (success) {
+    showSuccessMessage("Bien Hecho!!", "El producto fue eliminado del Carrito");
+  } else {
+    showErrorMessage("Error!!", error || "El producto no pudo ser eliminado del Carrito");
   }
 };
 
 const pagar = async (cid, total) => {
-  try {
-    const response = await fetch(`/api/carts/${cid}/purchase/${total}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      });
-    if (response.status === 200) {
-      Swal.fire({
-        icon: "success",
-        title: "¡Bien hecho!",
-        text: "Pedido Generado exitosamente",
-        showConfirmButton: false
-      });
-      setTimeout(() => {
-        window.location.replace("/invoice");
-      }, 2000);
-    }
-  } catch (error) {
-    Swal.fire({
-      icon: "error",
-      title: "¡Error!",
-      text: "No se puede generar el pedido",
-      showConfirmButton: false
-    });
-    console.error(error);
+  const { success, error } = await fetchApi(`/api/carts/${cid}/purchase/${total}`, "POST");
+  if (success) {
+    showSuccessMessage("¡Bien hecho!", "Pedido generado exitosamente", false);
+    setTimeout(() => {
+      window.location.replace("/invoice");
+    }, 2000);
+  } else {
+    showErrorMessage("¡Error!", error || "No se puede generar el pedido");
   }
-}
+};
 
-const redirectToProducts = () =>{
+const redirectToProducts = () => {
   window.location.replace("/products");
-}
+};
