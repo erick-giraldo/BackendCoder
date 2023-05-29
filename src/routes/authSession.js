@@ -3,7 +3,7 @@ import {
   validResetPassword,
   validLogin,
   validRegister,
-} from "../middleware/sessionMiddleware.js";
+} from "../middleware/index.js";
 import CustomerRouter from "./Router.js";
 
 export default class AuthRouter extends CustomerRouter {

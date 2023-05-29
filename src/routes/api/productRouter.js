@@ -1,6 +1,7 @@
 import CustomerRouter from '../Router.js'
 import ProductsController from "../../controllers/ProductsController.js";
-import { validAddProduct, validUpdateProduct, validateDeleteProduct } from '../../middleware/sessionMiddleware.js';
+import { validAddProduct, validUpdateProduct, validateDeleteProduct } from '../../middleware/index.js';
+import TestingMocking from '../../controllers/TestingMocking.js';
 
 export default class productsRouter extends CustomerRouter {
 
@@ -11,5 +12,8 @@ export default class productsRouter extends CustomerRouter {
         this.put("/:pid", ['ADMIN'], validUpdateProduct, ProductsController.updateProduct);
         this.delete("/:pid", ['ADMIN'], validateDeleteProduct, ProductsController.deleteProduct);
         this.put("/:pid/:qty", ['USER','ADMIN'], ProductsController.discountStockProduct)
+
+        //Testing
+        this.get('/mockingproducts/create', ['ADMIN'], TestingMocking.createProduct);
     }
   }

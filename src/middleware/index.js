@@ -4,12 +4,31 @@ import ProductsService from "../services/products.service.js";
 import UsersService from "../services/users.service.js";
 import isEmpty from "is-empty";
 import CartService from "../services/carts.service.js";
+import { generatorUserError } from "../utils/errors/MessagesError.js";
+import EnumsError from "../utils/errors/EnumsError.js";
+import CustomError from '../utils/errors/CustomError.js';
 
 const validateFields = (requiredFields, data) => {
   for (const field of requiredFields) {
     if (!data[field]) {
       throw new Error(`El campo ${field} es obligatorio`);
     }
+  }
+};
+
+
+const validateFieldsProducts = (requiredFields, data) => {
+  const missingFields = requiredFields.filter(field => !data[field]);
+  
+  if (missingFields.length > 0) {
+    const error = CustomError.createError({
+      name: 'User creating error',
+      cause: generatorUserError(data),
+      message: 'Error trying to create user',
+      code: EnumsError.INVALID_TYPES_ERROR,
+    });
+    
+    throw error;
   }
 };
 
@@ -49,25 +68,41 @@ export const validRegister = async (req, res, next) => {
   }
 };
 
+// export const validAddProduct = async (req, res, next) => {
+//   try {
+//     let error = {};
+//     const productData = req.body;
+//     const requiredFields = [
+//       "description",
+//       "code",
+//       "name",
+//       "price",
+//       "stock",
+//       "category",
+//       "image",
+//       "status",
+//     ];
+//     validateFields(requiredFields, productData);
+//     next();
+//   } catch (err) {
+//     res.status(500).json({ message: err.message });
+//   }
+// };
+
+
 export const validAddProduct = async (req, res, next) => {
   try {
-    let error = {};
-    const productData = req.body;
-    const requiredFields = [
-      "description",
-      "code",
-      "name",
-      "price",
-      "stock",
-      "category",
-      "image",
-      "status",
-    ];
-    validateFields(requiredFields, productData);
-    next();
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
+        const { count = 50 } = req.query;
+        let products = [];
+        const requiredFields = ['name', 'description', 'code', 'price', 'status', 'stock', 'category', 'image'];
+        const { ...data } = req.body;
+        
+        validateFieldsProducts(requiredFields, data);
+        
+        next()
+      } catch (err) {
+        next(err)
+  };
 };
 
 export const validUpdateProduct = async (req, res, next) => {

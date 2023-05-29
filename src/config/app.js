@@ -4,11 +4,12 @@ import handlebars from "express-handlebars";
 import cookieParser from "cookie-parser";
 import passport from "passport";
 import config from './index.js'
-import { init } from "../db/mongodb.js";
+import { init } from "./db/mongodb.js";
 import RouterController from "../routes/index.js";
 import  dirname  from "./utils.js";
 import initPassport from "./passport.config.js";
 import isEmpty from "is-empty";
+import errorMiddleware from '../utils/errors/MiddlewareError.js'
 
 const app = express();
 
@@ -41,20 +42,8 @@ app.use(passport.initialize());
 
 // Configuración de rutas
 RouterController.routes(app);
-
 // Manejador de errores
-app.use((err, req, res, next) => {
-  console.error(err);
+app.use(errorMiddleware)
 
-  const statusCode = err.statusCode || 500;
-  const success = false;
-  const message = err.message;
-
-  if (!isEmpty(err.url)) {
-    res.render(err.url, { success, message, statusCode });
-  } else {
-    res.status(statusCode).json({ success, message });
-  }
-});
 
 export default app;

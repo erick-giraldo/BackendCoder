@@ -1,8 +1,7 @@
 import CustomerRouter from '../Router.js'
 import ViewController from '../../controllers/ViewController.js';
 import chatController from './chat.js'
-import { authHome, isLoged } from '../../middleware/sessionMiddleware.js';
-
+import { authHome, isLoged } from '../../middleware/index.js';
 export default class ViewRouter extends CustomerRouter {
 
   init() {
@@ -21,6 +20,8 @@ export default class ViewRouter extends CustomerRouter {
     this.post("/carts/product/:pid", ['USER'], ViewController.addProductById)
     
     this.delete("/deletecarts/product/:pid", ['USER','ADMIN'], ViewController.deleteProductCartById)
+
+
 
   }
 }
