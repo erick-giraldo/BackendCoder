@@ -2,7 +2,6 @@ import CustomerRouter from '../Router.js'
 import ViewController from '../../controllers/ViewController.js';
 import chatController from './chat.js'
 import { authHome, isLoged } from '../../middleware/index.js';
-import TestingMocking from "../../controllers/TestingMocking.js";
 export default class ViewRouter extends CustomerRouter {
 
   init() {
@@ -23,7 +22,6 @@ export default class ViewRouter extends CustomerRouter {
     this.delete("/deletecarts/product/:pid", ['USER','ADMIN'], ViewController.deleteProductCartById)
 
 
-    this.get('/mockingproducts', ['ADMIN'], TestingMocking.createProduct)
 
   }
 }
