@@ -1,6 +1,6 @@
 import CustomerRouter from '../Router.js'
 import CartController from "../../controllers/CartController.js";
-import { validateFieldsCart } from '../../middleware/sessionMiddleware.js';
+import { validateFieldsCart } from '../../middleware/index.js';
 import TicketsController from '../../controllers/TicketsController.js';
 
 export default class cartProducts extends CustomerRouter {

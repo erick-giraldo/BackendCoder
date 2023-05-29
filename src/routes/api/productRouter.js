@@ -1,6 +1,6 @@
 import CustomerRouter from '../Router.js'
 import ProductsController from "../../controllers/ProductsController.js";
-import { validAddProduct, validUpdateProduct, validateDeleteProduct } from '../../middleware/sessionMiddleware.js';
+import { validAddProduct, validUpdateProduct, validateDeleteProduct } from '../../middleware/index.js';
 
 export default class productsRouter extends CustomerRouter {
 
