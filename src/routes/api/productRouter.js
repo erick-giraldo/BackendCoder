@@ -6,6 +6,10 @@ import TestingMocking from '../../controllers/TestingMocking.js';
 export default class productsRouter extends CustomerRouter {
 
     init() {
+
+        //Testing
+        this.get('/mockingproducts', ['ADMIN'], TestingMocking.createProduct);
+
         this.get("", ['USER','ADMIN'], ProductsController.getProducts);
         this.get("/:pid", ['USER','ADMIN'], ProductsController.getProductById);
         this.post("", ['ADMIN'], validAddProduct, ProductsController.addProduct);
@@ -13,7 +17,5 @@ export default class productsRouter extends CustomerRouter {
         this.delete("/:pid", ['ADMIN'], validateDeleteProduct, ProductsController.deleteProduct);
         this.put("/:pid/:qty", ['USER','ADMIN'], ProductsController.discountStockProduct)
 
-        //Testing
-        this.get('/mockingproducts/create', ['ADMIN'], TestingMocking.createProduct);
     }
   }

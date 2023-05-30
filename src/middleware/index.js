@@ -4,7 +4,7 @@ import ProductsService from "../services/products.service.js";
 import UsersService from "../services/users.service.js";
 import isEmpty from "is-empty";
 import CartService from "../services/carts.service.js";
-import { generatorUserError } from "../utils/errors/MessagesError.js";
+import { generatorProdError } from "../utils/errors/MessagesError.js";
 import EnumsError from "../utils/errors/EnumsError.js";
 import CustomError from '../utils/errors/CustomError.js';
 
@@ -23,7 +23,7 @@ const validateFieldsProducts = (requiredFields, data) => {
   if (missingFields.length > 0) {
     const error = CustomError.createError({
       name: 'User creating error',
-      cause: generatorUserError(data),
+      cause: generatorProdError(data),
       message: 'Error trying to create user',
       code: EnumsError.INVALID_TYPES_ERROR,
     });

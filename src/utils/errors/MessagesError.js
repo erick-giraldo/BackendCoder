@@ -1,4 +1,4 @@
-export const generatorUserError = (data) => {
+export const generatorProdError = (data) => {
   return `One or more of the following fields are invalid or incomplete.
   List of required fields:
   - name        : ${data.name}
