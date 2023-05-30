@@ -1,6 +1,7 @@
 import { faker } from '@faker-js/faker'
 
-export const generateProduct = () => ({
+export const generateProduct = (id) => ({
+    _id: faker.database.mongodbObjectId(),
     name:faker.commerce.productName(),
     description: faker.lorem.paragraph(),
     code: faker.string.alphanumeric({ length: 5 , casing: 'upper'}),
@@ -9,5 +10,8 @@ export const generateProduct = () => ({
     stock: parseInt(faker.string.numeric()),
     category: faker.commerce.department(),
     image: faker.image.url(),
-    id: faker.database.mongodbObjectId(),
+    createdAt: faker.date.past().toISOString(),
+    updatedAt: faker.date.recent().toISOString(),
+    __v: 0,
+    id,
 })

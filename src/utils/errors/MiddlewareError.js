@@ -23,7 +23,6 @@ const message = error.message;
         res.send({ status: "error", error: "Unhandled error" });
   }
   } else if(!isEmpty(error.url)){
-  
     res.render(error.url, { success, message, statusCode });
   } else {
       res.status(statusCode).json({ success, message });
