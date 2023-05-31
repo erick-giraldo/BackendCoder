@@ -22,9 +22,9 @@ const validateFieldsProducts = (requiredFields, data) => {
   
   if (missingFields.length > 0) {
     const error = CustomError.createError({
-      name: 'User creating error',
+      name: 'Product creating error',
       cause: generatorProdError(data),
-      message: 'Error trying to create user',
+      message: 'Error trying to create Product',
       code: EnumsError.INVALID_TYPES_ERROR,
     });
     
@@ -96,9 +96,7 @@ export const validAddProduct = async (req, res, next) => {
         let products = [];
         const requiredFields = ['name', 'description', 'code', 'price', 'status', 'stock', 'category', 'image'];
         const { ...data } = req.body;
-        
         validateFieldsProducts(requiredFields, data);
-        
         next()
       } catch (err) {
         next(err)
