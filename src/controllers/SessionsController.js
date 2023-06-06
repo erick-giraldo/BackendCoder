@@ -2,6 +2,10 @@ import CartService from "../services/carts.service.js";
 import UsersService from "../services/users.service.js";
 import { tokenGenerator, createHash } from "../utils/hash.js";
 import isEmpty from "is-empty"
+import getLogger from "../utils/logger.js";
+
+
+const logger = getLogger();
 class SessionsController {
   static current = async (req, res) => {
     try {
@@ -14,6 +18,7 @@ class SessionsController {
       if (isEmpty(user)) {
         return res.status(404).json({ success: false, message: "Se produjo un error al obtener usuario." });
       }
+       logger.info(`me: ${JSON.stringify(user)}.`)
       return res.status(200).json(user);
     } catch (error) {
       console.error(error);
@@ -22,7 +27,8 @@ class SessionsController {
   };
 
   static login = async (req, res) => {
-    const { email, password } = req.body;
+    try {
+      const { email, password } = req.body;
     const isAdminUser =
       email === process.env.ADMIN_EMAIL &&
       password === process.env.ADMIN_PASSWORD;
@@ -46,6 +52,11 @@ class SessionsController {
         httpOnly: true,
       })
       .sendSuccess({ access_token: token });
+      logger.info(`Usuario ${user.email} logueado correctamente.`)
+    } catch (error) {
+      logger.error(error);
+      return res.status(500).json({ success: false, message: "Error en el servidor." });
+    }
   };
 
   static register = async (req, res) => {

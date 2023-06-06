@@ -8,7 +8,6 @@ import { init } from "./db/mongodb.js";
 import RouterController from "../routes/index.js";
 import  dirname  from "./utils.js";
 import initPassport from "./passport.config.js";
-import isEmpty from "is-empty";
 import errorMiddleware from '../utils/errors/MiddlewareError.js'
 
 const app = express();

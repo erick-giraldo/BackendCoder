@@ -1,0 +1,42 @@
+debug: Esto es un mensaje de debug {"timestamp":"2023-06-05T05:39:35.290Z"}
+http: Esto es un mensaje de http {"timestamp":"2023-06-05T05:39:35.291Z"}
+info: Esto es un mensaje informativo {"timestamp":"2023-06-05T05:39:35.292Z"}
+warning: Esto es una advertencia {"timestamp":"2023-06-05T05:39:35.292Z"}
+error: Esto es un error {"timestamp":"2023-06-05T05:39:35.292Z"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 00:40:07"}
+debug: Esto es un mensaje de debug {"timestamp":"2023-06-05 00:40:18"}
+http: Esto es un mensaje de http {"timestamp":"2023-06-05 00:40:18"}
+info: Esto es un mensaje informativo {"timestamp":"2023-06-05 00:40:18"}
+warning: Esto es una advertencia {"timestamp":"2023-06-05 00:40:18"}
+error: Esto es un error {"timestamp":"2023-06-05 00:40:18"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 00:40:54"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 00:42:20"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 00:45:07"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 00:45:18"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 00:45:32"}
+info: Usuario adminCoder@coder.com logueado correctamente. {"timestamp":"2023-06-05 00:45:44"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 00:47:49"}
+info: Usuario adminCoder@coder.com logueado correctamente. {"timestamp":"2023-06-05 00:48:12"}
+info: Usuario egiraldom1@outlook.com logueado correctamente. {"timestamp":"2023-06-05 00:48:34"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 00:49:20"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 00:49:42"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 00:50:30"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 00:50:43"}
+error: Cannot read property '_id' of null {"timestamp":"2023-06-05 00:50:45"}
+error: Cannot read property '_id' of null {"timestamp":"2023-06-05 00:51:17"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 00:51:33"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 19:26:16"}
+info: Usuario adminCoder@coder.com logueado correctamente. {"timestamp":"2023-06-05 19:27:15"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 19:29:41"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 19:37:58"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 19:38:42"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 19:38:56"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 19:39:23"}
+info: Usuario egiraldom4@outlook.com logueado correctamente. {"timestamp":"2023-06-05 19:41:31"}
+info: Usuario egiraldom4@outlook.com logueado correctamente. {"timestamp":"2023-06-05 19:42:29"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 19:43:09"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 19:43:35"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 19:44:17"}
+info: me: [object Object]. {"timestamp":"2023-06-05 19:44:20"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 19:44:58"}
+info: me: {"name":"Jorge Perez","email":"egiraldom4@outlook.com","age":20,"occupation":"Ingeniero"}. {"timestamp":"2023-06-05 19:45:01"}

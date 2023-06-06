@@ -9,6 +9,7 @@ export default class productsRouter extends CustomerRouter {
 
         //Testing
         this.get('/mockingproducts', ['ADMIN'], TestingMocking.createProduct);
+        this.get('/loggerTest', ['ADMIN'], TestingMocking.loggerTest);
 
         this.get("", ['USER','ADMIN'], ProductsController.getProducts);
         this.get("/:pid", ['USER','ADMIN'], ProductsController.getProductById);

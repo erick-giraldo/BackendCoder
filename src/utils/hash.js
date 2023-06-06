@@ -1,6 +1,10 @@
 import jsonwebtoken from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import multer from "multer";
+import getLogger from "./logger.js";
+
+
+const logger = getLogger();
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -31,7 +35,7 @@ export const isValidToken = (token) => {
     const decodedToken = jsonwebtoken.verify(token, process.env.JWT_SECRET);
     return decodedToken;
   } catch (error) {
-    console.log(error);
+    logger.error(error);
     return null;
   }
 };
