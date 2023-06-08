@@ -37,9 +37,8 @@ const productionLogger = winston.createLogger({
     }),
   ],
 });
-
 const getLogger = () => {
-  if (process.env.NODE_ENV === "production") {
+  if (process.env.NODE_ENV === "produccion") {
     return productionLogger;
   }
   return developmentLogger;

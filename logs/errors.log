@@ -76,3 +76,13 @@ info: Database connected. {"timestamp":"2023-06-08 14:53:30"}
 info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:53:30"}
 error: profile Forbidden {"statusCode":403,"success":false,"timestamp":"2023-06-08 14:53:40"}
 info: me: {"name":"Jorge Perez","email":"egiraldom1@outlook.com","age":20,"occupation":"Ingeniero"}. {"timestamp":"2023-06-08 14:54:11"}
+info: Database connected. {"timestamp":"2023-06-08 15:09:17"}
+info: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 15:09:17"}
+info: Database connected. {"timestamp":"2023-06-08 15:09:26"}
+info: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 15:09:26"}
+info: Database connected. {"timestamp":"2023-06-08 15:09:43"}
+info: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 15:09:43"}
+debug: Database connected. {"timestamp":"2023-06-08 15:16:28"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 15:16:28"}
+debug: Database connected. {"timestamp":"2023-06-08 15:17:14"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 15:17:14"}

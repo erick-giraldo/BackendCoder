@@ -5,7 +5,7 @@
   "main": "./src/server.js",
   "scripts": {
     "dev": "npx nodemon --exec \"node --experimental-modules -r dotenv/config\" .",
-    "start": "node ."
+    "start": "NODE_ENV=produccion npx nodemon --exec \"node --experimental-modules -r dotenv/config\" ."
   },
   "keywords": [],
   "author": "Erick Giraldo",
