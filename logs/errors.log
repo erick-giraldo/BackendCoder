@@ -40,3 +40,39 @@ info: Server running in http://localhost:8080/ in production environment. {"time
 info: me: [object Object]. {"timestamp":"2023-06-05 19:44:20"}
 info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-05 19:44:58"}
 info: me: {"name":"Jorge Perez","email":"egiraldom4@outlook.com","age":20,"occupation":"Ingeniero"}. {"timestamp":"2023-06-05 19:45:01"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:13:23"}
+info: Usuario egiraldom1@outlook.com logueado correctamente. {"timestamp":"2023-06-08 14:16:40"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:19:16"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:20:46"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:27:05"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:32:33"}
+warning: Usuario password no encontrado, por favor intente nuevamente {"timestamp":"2023-06-08 14:32:43"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:33:21"}
+warning: El campo password es obligatorio {"timestamp":"2023-06-08 14:33:23"}
+warning: El campo email es obligatorio {"timestamp":"2023-06-08 14:33:36"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:34:41"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:35:01"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:36:42"}
+warning: usuario egiraldom1@outlook.com ya existe {"timestamp":"2023-06-08 14:36:48"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:37:53"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:43:05"}
+info: Database connected. {"timestamp":"2023-06-08 14:45:13"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:45:13"}
+info: Database connected. {"timestamp":"2023-06-08 14:46:18"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:46:18"}
+info: Database connected. {"timestamp":"2023-06-08 14:47:28"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:47:28"}
+info: Usuario egiraldom1@outlook.com logueado correctamente. {"timestamp":"2023-06-08 14:48:03"}
+info: Database connected. {"timestamp":"2023-06-08 14:50:06"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:50:06"}
+info: Database connected. {"timestamp":"2023-06-08 14:50:12"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:50:12"}
+info: Database connected. {"timestamp":"2023-06-08 14:50:18"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:50:18"}
+warning: Forbidden {"timestamp":"2023-06-08 14:50:29"}
+info: Database connected. {"timestamp":"2023-06-08 14:51:30"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:51:31"}
+info: Database connected. {"timestamp":"2023-06-08 14:53:30"}
+info: Server running in http://localhost:8080/ in production environment. {"timestamp":"2023-06-08 14:53:30"}
+error: profile Forbidden {"statusCode":403,"success":false,"timestamp":"2023-06-08 14:53:40"}
+info: me: {"name":"Jorge Perez","email":"egiraldom1@outlook.com","age":20,"occupation":"Ingeniero"}. {"timestamp":"2023-06-08 14:54:11"}

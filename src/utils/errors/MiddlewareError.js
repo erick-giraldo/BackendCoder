@@ -1,5 +1,8 @@
 import isEmpty from "is-empty";
 import EnumsError from "./EnumsError.js";
+import getLogger from "../../utils/logger.js";
+
+const logger = getLogger();
 
 export default (error, req, res, next) => {
 console.error(error);
@@ -8,7 +11,7 @@ const success = false;
 const message = error.message;
 
   if(!isEmpty(error.cause)){
-    console.log("MiddlewareError ====>", error.cause);
+    logger.error("MiddlewareError ====>", error.cause);
     switch (error.code) {
       case EnumsError.INVALID_TYPES_ERROR:
         res.status(400).send({ status: "error", error: error.name });
@@ -23,8 +26,10 @@ const message = error.message;
         res.send({ status: "error", error: "Unhandled error" });
   }
   } else if(!isEmpty(error.url)){
+    logger.error(error.url, { success, message, statusCode });
     res.render(error.url, { success, message, statusCode });
   } else {
+    logger.error({ success, message });
       res.status(statusCode).json({ success, message });
     }
 }

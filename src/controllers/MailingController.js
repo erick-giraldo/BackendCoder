@@ -4,7 +4,9 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+import getLogger from "../utils/logger.js";
 
+const logger = getLogger();
 export default class MailingController {
     static email = async (req, res) => {
         const attachments = [
@@ -27,7 +29,7 @@ export default class MailingController {
             `,
             attachments
         );
-        console.log(result);
+        logger.info(result);
         res.send(`
           <div>
             <h1>Hello email!</h1>
@@ -38,7 +40,7 @@ export default class MailingController {
 
     static sms = async (req, res) => {
         const result = await twilioService.sendSMS('+51945970045', 'Hola. Cómo estás? Gracias por unirte a nuestro ecommerce.')
-        console.log(result)
+        logger.info(result)
         res.send(`
     <div>
       <h1>Hello sms!</h1>
@@ -53,7 +55,7 @@ export default class MailingController {
         const target = '+51945970045'
         const body = `Gracias, ${name}, tu solicitud del producto ${product} ha sido aprobada.`
         const result = await twilioService.sendSMS(target, body)
-        console.log(result)
+        logger.log(result)
         res.send(`
     <div>
       <h1>Hello sms!</h1>

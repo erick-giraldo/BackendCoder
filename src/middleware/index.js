@@ -6,28 +6,30 @@ import isEmpty from "is-empty";
 import CartService from "../services/carts.service.js";
 import { generatorProdError } from "../utils/errors/MessagesError.js";
 import EnumsError from "../utils/errors/EnumsError.js";
-import CustomError from '../utils/errors/CustomError.js';
+import CustomError from "../utils/errors/CustomError.js";
+import getLogger from "../utils/logger.js";
+
+const logger = getLogger();
 
 const validateFields = (requiredFields, data) => {
   for (const field of requiredFields) {
     if (!data[field]) {
+      logger.warning(`El campo ${field} es obligatorio`);
       throw new Error(`El campo ${field} es obligatorio`);
     }
   }
 };
 
-
 const validateFieldsProducts = (requiredFields, data) => {
-  const missingFields = requiredFields.filter(field => !data[field]);
-  
+  const missingFields = requiredFields.filter((field) => !data[field]);
+
   if (missingFields.length > 0) {
     const error = CustomError.createError({
-      name: 'Product creating error',
+      name: "Product creating error",
       cause: generatorProdError(data),
-      message: 'Error trying to create Product',
+      message: "Error trying to create Product",
       code: EnumsError.INVALID_TYPES_ERROR,
     });
-    
     throw error;
   }
 };
@@ -59,6 +61,7 @@ export const validRegister = async (req, res, next) => {
 
     const user = await UsersService.getOne(email);
     if (user) {
+      logger.warning(`usuario ${email} ya existe`);
       throw new Error("usuario ya existe");
     }
 
@@ -89,18 +92,26 @@ export const validRegister = async (req, res, next) => {
 //   }
 // };
 
-
 export const validAddProduct = async (req, res, next) => {
   try {
-        const { count = 50 } = req.query;
-        let products = [];
-        const requiredFields = ['name', 'description', 'code', 'price', 'status', 'stock', 'category', 'image'];
-        const { ...data } = req.body;
-        validateFieldsProducts(requiredFields, data);
-        next()
-      } catch (err) {
-        next(err)
-  };
+    const { count = 50 } = req.query;
+    let products = [];
+    const requiredFields = [
+      "name",
+      "description",
+      "code",
+      "price",
+      "status",
+      "stock",
+      "category",
+      "image",
+    ];
+    const { ...data } = req.body;
+    validateFieldsProducts(requiredFields, data);
+    next();
+  } catch (err) {
+    next(err);
+  }
 };
 
 export const validUpdateProduct = async (req, res, next) => {
@@ -114,6 +125,7 @@ export const validUpdateProduct = async (req, res, next) => {
       throw new Error("No se ha ingresado nungún elemento a actualizar");
     let productById = await ProductsService.getOne(pid);
     if (isEmpty(productById)) {
+      logger.warning("No se encontró ningún producto con ese id");
       throw new Error("No se encontró ningún producto con ese id");
     }
 
@@ -151,50 +163,62 @@ export const validUpdateProduct = async (req, res, next) => {
   }
 };
 
-export const validateDeleteProduct = async ( req, res, next) => {
+export const validateDeleteProduct = async (req, res, next) => {
   try {
     let { pid } = req.params;
     pid = Number(pid);
-    if (isNaN(pid)) throw new Error("El id tiene que ser de tipo numérico");
+    if (isNaN(pid)) {
+      logger.error("El id tiene que ser de tipo numérico");
+      throw new Error("El id tiene que ser de tipo numérico");
+    }
     let productById = await ProductsService.getOne(pid);
     if (isEmpty(productById)) {
+      logger.warning("No se encontró ningún producto con ese id");
       throw new Error("No se encontró ningún producto con ese id");
     }
     next();
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
-}
+};
 
-export const validateFieldsCart = async ( req, res, next) => {
+export const validateFieldsCart = async (req, res, next) => {
   try {
     let { cid } = req.params;
     cid = Number(cid);
-    if (isNaN(cid)) throw new Error("El id tiene que ser de tipo numérico");
+    if (isNaN(pid)) {
+      logger.error("El id tiene que ser de tipo numérico");
+      throw new Error("El id tiene que ser de tipo numérico");
+    }
     let productById = await CartService.getOne(cid);
     if (isEmpty(productById)) {
+      logger.warning("No se encontró ningún producto con ese id");
       throw new Error("No se encontró ningún carrito con ese id");
     }
     next();
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
-}
+};
 
-export const validateDeleteCart = async ( req, res, next) => {
+export const validateDeleteCart = async (req, res, next) => {
   try {
     let { cid } = req.params;
     cid = Number(cid);
-    if (isNaN(cid)) throw new Error("El id tiene que ser de tipo numérico");
+    if (isNaN(pid)) {
+      logger.error("El id tiene que ser de tipo numérico");
+      throw new Error("El id tiene que ser de tipo numérico");
+    }
     let productById = await CartService.getOne(cid);
     if (isEmpty(productById)) {
+      logger.warning("No se encontró ningún producto con ese id");
       throw new Error("No se encontró ningún carrito con ese id");
     }
     next();
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
-}
+};
 
 export const validLogin = async (req, res, next) => {
   try {
@@ -207,19 +231,23 @@ export const validLogin = async (req, res, next) => {
       password === process.env.ADMIN_PASSWORD;
     const user = isAdminUser
       ? {
-        first_name: process.env.ADMIN_NAME,
-        last_name: "",
-        role: "admin",
-        email: process.env.ADMIN_EMAIL,
-        password: createHash(process.env.ADMIN_PASSWORD),
-      }
+          first_name: process.env.ADMIN_NAME,
+          last_name: "",
+          role: "admin",
+          email: process.env.ADMIN_EMAIL,
+          password: createHash(process.env.ADMIN_PASSWORD),
+        }
       : await UsersService.getOne(email);
 
     if (isEmpty(user)) {
+      logger.error(
+        `Usuario ${user.email} no encontrado, por favor intente nuevamente`
+      );
       throw new Error("Usuario no encontrado, por favor intente nuevamente");
     }
 
     if (!validatePassword(password, user)) {
+      logger.error("El password no es correcto, por favor intente nuevamente");
       throw new Error(
         "El password no es correcto, por favor intente nuevamente"
       );
@@ -240,6 +268,7 @@ export const validResetPassword = async (req, res, next) => {
     const user = await UsersService.getOne(email);
 
     if (isEmpty(user)) {
+      logger.warning(`Usuario no encontrado, por favor intente nuevamente`)
       throw new Error("Usuario no encontrado, por favor intente nuevamente");
     }
 
