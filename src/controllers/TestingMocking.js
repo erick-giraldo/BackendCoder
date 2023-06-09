@@ -1,6 +1,7 @@
 import { generateProduct } from "../utils/faker/index.js";
-import getLogger  from "../utils/logger.js";
+import getLogger from "../utils/logger.js";
 
+const logger = getLogger();
 export default class TestingMocking {
   static createProduct = (req, res, next) => {
     try {
@@ -16,16 +17,17 @@ export default class TestingMocking {
   };
 
   static loggerTest = (req, res, next) => {
-  
-    const logger = getLogger();
-  
-    logger.debug('Esto es un mensaje de debug');
-    logger.http('Esto es un mensaje de http');
-    logger.info('Esto es un mensaje informativo');
-    logger.warning('Esto es una advertencia');
-    logger.error('Esto es un error');
-    logger.fatal('Esto es un error fatal');
+    try {
+      logger.debug("Esto es un mensaje de debug");
+      logger.http("Esto es un mensaje de http");
+      logger.info("Esto es un mensaje informativo");
+      logger.warning("Esto es una advertencia");
+      logger.error("Esto es un error");
+      logger.fatal("Esto es un error fatal");
 
-    res.status(200).json({ status: true, payload: "Logs generados" });
+      res.status(200).json({ status: true, payload: "Logs generados" });
+    } catch (error) {
+      logger.error("Se produjo un error al generar los logs");
+    }
   };
 }

@@ -86,3 +86,294 @@ debug: Database connected. {"timestamp":"2023-06-08 15:16:28"}
 debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 15:16:28"}
 debug: Database connected. {"timestamp":"2023-06-08 15:17:14"}
 debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 15:17:14"}
+debug: Database connected. {"timestamp":"2023-06-08 18:59:44"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 18:59:44"}
+info: Usuario adminCoder@coder.com logueado correctamente. {"timestamp":"2023-06-08 19:00:10"}
+debug: Esto es un mensaje de debug {"timestamp":"2023-06-08 19:00:15"}
+http: Esto es un mensaje de http {"timestamp":"2023-06-08 19:00:15"}
+info: Esto es un mensaje informativo {"timestamp":"2023-06-08 19:00:15"}
+warning: Esto es una advertencia {"timestamp":"2023-06-08 19:00:15"}
+error: Esto es un error {"timestamp":"2023-06-08 19:00:15"}
+debug: Database connected. {"timestamp":"2023-06-08 19:06:20"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 19:06:20"}
+debug: Database connected. {"timestamp":"2023-06-08 19:06:38"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 19:06:38"}
+error: El password no es correcto, por favor intente nuevamente {"timestamp":"2023-06-08 20:02:36"}
+error: Unauthorized {"statusCode":401,"timestamp":"2023-06-08 20:02:52"}
+error: Unauthorized {"success":false,"timestamp":"2023-06-08 20:02:52"}
+debug: Database connected. {"timestamp":"2023-06-08 20:03:13"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 20:03:13"}
+error: Unauthorized {"success":false,"timestamp":"2023-06-08 20:03:16"}
+debug: Database connected. {"timestamp":"2023-06-08 20:04:00"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 20:04:00"}
+error: Unauthorized {"success":false,"timestamp":"2023-06-08 20:04:03"}
+error: Unauthorized {"success":false,"timestamp":"2023-06-08 20:04:10"}
+debug: Database connected. {"timestamp":"2023-06-08 20:04:34"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 20:04:34"}
+error: Unauthorized {"success":false,"timestamp":"2023-06-08 20:04:37"}
+debug: Database connected. {"timestamp":"2023-06-08 20:04:59"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 20:04:59"}
+error: Unauthorized {"success":false,"timestamp":"2023-06-08 20:05:07"}
+error: Unauthorized {"success":false,"timestamp":"2023-06-08 20:05:07"}
+error: Unauthorized {"success":false,"timestamp":"2023-06-08 20:05:08"}
+error: Unauthorized {"success":false,"timestamp":"2023-06-08 20:05:24"}
+error: Unauthorized {"success":false,"timestamp":"2023-06-08 20:05:26"}
+error: Unauthorized {"success":false,"timestamp":"2023-06-08 20:05:28"}
+debug: Database connected. {"timestamp":"2023-06-08 20:05:43"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 20:05:43"}
+info: Usuario adminCoder@coder.com logueado correctamente. {"timestamp":"2023-06-08 20:05:47"}
+error: MiddlewareError ====> {"timestamp":"2023-06-08 20:05:54"}
+debug: Database connected. {"timestamp":"2023-06-08 20:06:35"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 20:06:35"}
+debug: Database connected. {"timestamp":"2023-06-08 20:06:49"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 20:06:49"}
+error: Error trying to create Product {"code":2,"name":"Product creating error","timestamp":"2023-06-08 20:06:51"}
+debug: Error trying to create Product {"code":2,"name":"Product creating error","timestamp":"2023-06-08 20:06:51"}
+error: MiddlewareError ====> {"timestamp":"2023-06-08 20:06:51"}
+debug: Database connected. {"timestamp":"2023-06-08 20:07:16"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 20:07:16"}
+debug: Database connected. {"timestamp":"2023-06-08 20:08:11"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 20:08:11"}
+error: {"name":"Product creating error","code":2} {"timestamp":"2023-06-08 20:08:12"}
+error: MiddlewareError ====> {"timestamp":"2023-06-08 20:08:12"}
+debug: Database connected. {"timestamp":"2023-06-08 20:08:29"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 20:08:29"}
+error: {"name":"Product creating error","code":2} {"timestamp":"2023-06-08 20:08:46"}
+error: MiddlewareError ====> {"timestamp":"2023-06-08 20:08:46"}
+debug: Database connected. {"timestamp":"2023-06-08 20:09:01"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 20:09:01"}
+debug: Database connected. {"timestamp":"2023-06-08 20:09:23"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 20:09:23"}
+2023-06-08 20:12:59 Database connected.
+2023-06-08 20:12:59 Server running in http://localhost:8080/ in produccion environment.
+2023-06-08 20:13:49 Error trying to create Product
+2023-06-08 20:13:49 MiddlewareError ====>
+2023-06-08 20:14:46 El password no es correcto, por favor intente nuevamente
+2023-06-08 20:14:57 Usuario egiraldom1@outlook.com logueado correctamente.
+2023-06-08 20:15:10 Forbidden
+2023-06-08 20:15:10 profile Forbidden
+2023-06-08 20:16:57 Database connected.
+2023-06-08 20:16:57 Server running in http://localhost:8080/ in produccion environment.
+2023-06-08 20:17:03 Database connected.
+2023-06-08 20:17:03 Server running in http://localhost:8080/ in produccion environment.
+2023-06-08 20:17:06 Database connected.
+2023-06-08 20:17:06 Server running in http://localhost:8080/ in produccion environment.
+debug: Database connected. {"timestamp":"2023-06-08 20:17:13"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 20:17:13"}
+debug: Database connected. {"timestamp":"2023-06-08 20:17:44"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 20:17:44"}
+error: Forbidden {"statusCode":403,"timestamp":"2023-06-08 20:17:53","url":"profile"}
+error: profile Forbidden {"statusCode":403,"success":false,"timestamp":"2023-06-08 20:17:53"}
+debug: Database connected. {"timestamp":"2023-06-08 20:18:20"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 20:18:20"}
+debug: Database connected. {"timestamp":"2023-06-08 20:21:32"}
+debug: Server running in http://localhost:8080/ in produccion environment. {"timestamp":"2023-06-08 20:21:32"}
+2023-06-08 20:21:51 [undefined] debug: Database connected.
+2023-06-08 20:21:51 [undefined] debug: Server running in http://localhost:8080/ in produccion environment.
+2023-06-08 20:22:21 [undefined] error: Forbidden
+2023-06-08 20:22:21 [undefined] error: profile Forbidden
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-09T01:24:55.069Z'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-09T01:24:55.088Z'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-09T01:25:16.970Z'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-09T01:25:16.988Z'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-09T01:25:48.211Z'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-09T01:25:48.228Z'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-09T01:26:02.480Z'
+}
+{
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-06-09T01:26:02.481Z'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-09T01:26:17.739Z'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-09T01:26:17.754Z'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-09T01:26:20.977Z'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : Aasjaas\n' +
+    '  - price        : undefined\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-06-09T01:26:20.977Z'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-08 20:27:42'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-08 20:27:42'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-08 20:27:53'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : Aasjaas\n' +
+    '  - price        : undefined\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-06-08 20:27:53'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-08 20:28:32'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-08 20:28:32'
+}
+{
+  statusCode: 403,
+  url: 'profile',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-08 20:29:28'
+}
+{
+  success: false,
+  message: 'profile Forbidden',
+  statusCode: 403,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-08 20:29:28'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-08 20:29:47'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-08 20:29:47'
+}
+{
+  statusCode: 403,
+  url: 'profile',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-08 20:30:18'
+}
+{
+  success: false,
+  message: 'profile Forbidden',
+  statusCode: 403,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-08 20:30:18'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-08 20:31:37'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-08 20:31:37'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-08 20:31:51'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-08 20:31:51'
+}
+{
+  message: 'El password no es correcto, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-08 20:32:16'
+}

@@ -1,4 +1,8 @@
-import winston, { format } from "winston";
+import { format, transports, createLogger } from "winston";
+import config from '../config/index.js'
+
+const { combine, timestamp, label, prettyPrint } = format;
+
 const customerLogger = {
   levels: {
     debug: 0,
@@ -10,35 +14,38 @@ const customerLogger = {
   },
 };
 
-const developmentLogger = winston.createLogger({
+const developmentLogger = createLogger({
   levels: customerLogger.levels,
-  format: winston.format.combine(
-    winston.format.timestamp({
-        format: "YYYY-MM-DD HH:mm:ss",
-      }),
-    winston.format.simple()
-  ),
-  transports: [new winston.transports.Console({ level: "debug" })],
-});
-
-const productionLogger = winston.createLogger({
-  levels: customerLogger.levels,
-  format: winston.format.combine(
-    winston.format.timestamp({
+  format: combine(
+    label({ label: 'right meow!' }),
+    timestamp({
       format: "YYYY-MM-DD HH:mm:ss",
     }),
-    winston.format.simple()
+    prettyPrint()
+  ),
+  transports: [new transports.Console({ level: "debug" })],
+});
+
+const productionLogger = createLogger({
+  levels: customerLogger.levels,
+  format: combine(
+    label({ label: 'right meow!' }),
+    timestamp({
+      format: "YYYY-MM-DD HH:mm:ss",
+    }),
+    prettyPrint()
   ),
   transports: [
-    new winston.transports.Console({ level: "info" }),
-    new winston.transports.File({
+    new transports.Console({ level: "info" }),
+    new transports.File({
       filename: "./logs/errors.log",
       level: "error",
     }),
   ],
 });
+
 const getLogger = () => {
-  if (process.env.NODE_ENV === "produccion") {
+  if (config.nodeEnv === "produccion") {
     return productionLogger;
   }
   return developmentLogger;

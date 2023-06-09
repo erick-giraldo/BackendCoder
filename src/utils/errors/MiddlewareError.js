@@ -5,13 +5,13 @@ import getLogger from "../../utils/logger.js";
 const logger = getLogger();
 
 export default (error, req, res, next) => {
-console.error(error);
+logger.error(error);
 const statusCode = error.statusCode || 500;
 const success = false;
 const message = error.message;
 
   if(!isEmpty(error.cause)){
-    logger.error("MiddlewareError ====>", error.cause);
+    logger.error("MiddlewareError ====>", [error.cause]);
     switch (error.code) {
       case EnumsError.INVALID_TYPES_ERROR:
         res.status(400).send({ status: "error", error: error.name });
