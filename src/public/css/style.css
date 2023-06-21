@@ -313,12 +313,21 @@ td.price {
 
 
 #btn-reg-submit,
+#btn-reset-submit,
 #btn-log-submit {
   display: flex;
   justify-content: center;
 }
 
 .spinnerLog {
+  display: none;
+}
+
+.spinnerReg {
+  display: none;
+}
+
+.spinnerReset {
   display: none;
 }
 
@@ -331,9 +340,7 @@ td.price {
   animation: spin 1s ease infinite;
 }
 
-.spinnerReg {
-  display: none;
-}
+
 
 #btn-reg-submit .spinnerReg {
   border: 4px solid rgba(0, 0, 0, 0.1);
@@ -343,6 +350,16 @@ td.price {
   border-left-color: #fff;
   animation: spin 1s ease infinite;
 }
+
+#btn-reset-submit .spinnerReset {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border-left-color: #fff;
+  animation: spin 1s ease infinite;
+}
+
 
 @keyframes spin {
   0% {

@@ -19,7 +19,7 @@ const UserSchema = new mongoose.Schema({
         }],
         default: []
     },
-    role: { type: String, default: 'user', enum: ['user', 'admin']}
+    role: { type: String, default: 'user', enum: ['user', 'admin', 'premium']}
 }, { timestamps: true})
 
 export default mongoose.model('User', UserSchema)

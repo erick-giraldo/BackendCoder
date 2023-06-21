@@ -359,13 +359,14 @@ export default class ViewController {
     `);
   }
 
-  static resetPassword = async (req, res) => {
-    if (req.cookies.token) {
+  static resetPassword2 = async (req, res) => {
+    if (!req.cookies.token) {
       res.send(`
       <div>
         <h1>Reset password 🛅</h1>
-        <form action="/new-password" method="POST">
-          <input type="email" name="email" placeholder="Email" />
+        <form action="/reset-password" method="POST">
+        <input type="email" name="email" placeholder="Email" />
+        <input type="password" name="password" placeholder="password" />
           <button type="submit">Send</button>
         </form>
       </div>
@@ -378,4 +379,18 @@ export default class ViewController {
     `);
     }
   };
+
+    static async resetPassword(req, res) {
+      try {
+        const { email } = req.user;
+      return res.render("reserPassword", 
+      { style: "resetPassword.css",
+        email: email, });
+      } catch (err) {
+        return res.status(400).json({
+          message: "Error al actualizar contraseña",
+          error: JSON.parse(err.message),
+        });
+      }
+    }
 }

@@ -1,9 +1,9 @@
 import CartService from "../services/carts.service.js";
 import UsersService from "../services/users.service.js";
 import { tokenGenerator, createHash } from "../utils/hash.js";
-import isEmpty from "is-empty"
+import isEmpty from "is-empty";
 import getLogger from "../utils/logger.js";
-
+import MailingController from "./MailingController.js";
 
 const logger = getLogger();
 class SessionsController {
@@ -11,51 +11,61 @@ class SessionsController {
     try {
       const token = req.cookies.token;
       if (!token) {
-        return res.status(404).json({ success: false, message: "Se produjo un error al obtener token." });
+        return res.status(404).json({
+          success: false,
+          message: "Se produjo un error al obtener token.",
+        });
       }
       const { id } = req.user;
-        const user = await UsersService.current(id);
+      const user = await UsersService.current(id);
       if (isEmpty(user)) {
-        return res.status(404).json({ success: false, message: "Se produjo un error al obtener usuario." });
+        return res.status(404).json({
+          success: false,
+          message: "Se produjo un error al obtener usuario.",
+        });
       }
-       logger.info(`me: ${JSON.stringify(user)}.`)
+      logger.info(`me: ${JSON.stringify(user)}.`);
       return res.status(200).json(user);
     } catch (error) {
       console.error(error);
-      return res.status(500).json({ success: false, message: "Error en el servidor." });
+      return res
+        .status(500)
+        .json({ success: false, message: "Error en el servidor." });
     }
   };
 
   static login = async (req, res) => {
     try {
       const { email, password } = req.body;
-    const isAdminUser =
-      email === process.env.ADMIN_EMAIL &&
-      password === process.env.ADMIN_PASSWORD;
-    let user = isAdminUser
-      ? {
-        first_name: process.env.ADMIN_NAME,
-        last_name: "",
-        role: "admin",
-        email: process.env.ADMIN_EMAIL,
-        password: createHash(process.env.ADMIN_PASSWORD),
+      const isAdminUser =
+        email === process.env.ADMIN_EMAIL &&
+        password === process.env.ADMIN_PASSWORD;
+      let user = isAdminUser
+        ? {
+          first_name: process.env.ADMIN_NAME,
+          last_name: "",
+          role: "admin",
+          email: process.env.ADMIN_EMAIL,
+          password: createHash(process.env.ADMIN_PASSWORD),
+        }
+        : await UsersService.getOne(email);
+      if (!isAdminUser) {
+        user = JSON.parse(JSON.stringify(user));
       }
-      : await UsersService.getOne(email);
-    if (!isAdminUser) {
-      user = JSON.parse(JSON.stringify(user));
-    }
 
-    const token = tokenGenerator(user);
-    res
-      .cookie("token", token, {
-        maxAge: 60 * 60 * 1000,
-        httpOnly: true,
-      })
-      .sendSuccess({ access_token: token });
-      logger.info(`Usuario ${user.email} logueado correctamente.`)
+      const token = tokenGenerator(user);
+      res
+        .cookie("token", token, {
+          maxAge: 60 * 60 * 1000,
+          httpOnly: true,
+        })
+        .sendSuccess({ access_token: token });
+      logger.info(`Usuario ${user.email} logueado correctamente.`);
     } catch (error) {
       logger.error(error);
-      return res.status(500).json({ success: false, message: "Error en el servidor." });
+      return res
+        .status(500)
+        .json({ success: false, message: "Error en el servidor." });
     }
   };
 
@@ -67,7 +77,7 @@ class SessionsController {
       if (findCart && findCart.id) {
         cartBody = [{ _id: createCart._id, id: findCart.id }];
       } else {
-        cartBody = [{ _id: createCart._id, id: 0 } ];
+        cartBody = [{ _id: createCart._id, id: 0 }];
       }
       const user = await UsersService.create(req.body);
       await UsersService.updateUserCart(user._id, cartBody);
@@ -85,7 +95,6 @@ class SessionsController {
       });
     }
   };
-  
 
   static logout = async (req, res) => {
     try {
@@ -102,17 +111,37 @@ class SessionsController {
     }
   };
 
+  static forgotPassword = async (req, res) => {
+    try {
+      const { email } = req.body;
+      const token = tokenGenerator(req.user);
+      const sendEmail = await MailingController.email(email, token);
+      if (!sendEmail) {
+        return res.sendServerError({
+          message: "Error al enviar el correo electrónico.",
+        });
+      }
+      logger.info(`Link de restablecimiento enviado exitosamente.`);
+      return res.sendSuccess({
+        message: "Correo electrónico enviado exitosamente.",
+      });
+    } catch (error) {
+      const errorDetail = error.message;
+      return res.sendServerError({
+        message: "Error al generar link de restablecimiento.",
+        error: { detail: errorDetail },
+      });
+    }
+  };
+
   static resetPassword = async (req, res) => {
     try {
       const { email, password } = req.body;
-
-      let user = await UsersService.getOne(email);
-      if (!user) {
-        return res.sendUserError({
-          message: "Email or password is incorrect.",
-        });
-      }
-      await UsersService.update(email, { password: createHash(password) });
+      console.log("🚀 ~ file: SessionsController.js:140 ~ SessionsController ~ resetPassword= ~ password:", password)
+      console.log("🚀 ~ file: SessionsController.js:140 ~ SessionsController ~ resetPassword= ~ email:", email)
+      const cambio = await UsersService.update(email, { password: createHash(password) });
+      console.log("🚀 ~ file: SessionsController.js:143 ~ SessionsController ~ resetPassword= ~ cambio:", cambio)
+      return true
       return res.sendSuccess({
         message: "Se cambio la contraseña correctamente.",
       });
@@ -123,8 +152,7 @@ class SessionsController {
         error: { detail: errorDetail },
       });
     }
-  }
-};
-
+  };
+}
 
 export default SessionsController;

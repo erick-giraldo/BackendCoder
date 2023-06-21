@@ -30,6 +30,6 @@ const message = error.message;
     res.render(error.url, { success, message, statusCode });
   } else {
     logger.error({ success, message });
-      res.status(statusCode).json({ success, message });
+    res.status(statusCode).json({ success, message });
     }
 }

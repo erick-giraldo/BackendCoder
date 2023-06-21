@@ -1,5 +1,5 @@
 import SessionController from "../controllers/SessionsController.js";
-import { createHash, validatePassword } from "../utils/hash.js";
+import { createHash, isValidToken, validatePassword } from "../utils/hash.js";
 import ProductsService from "../services/products.service.js";
 import UsersService from "../services/users.service.js";
 import isEmpty from "is-empty";
@@ -260,9 +260,36 @@ export const validLogin = async (req, res, next) => {
 };
 
 export const validResetPassword = async (req, res, next) => {
+  console.log("aaaaa")
   try {
     const { email, password } = req.body;
     const requiredFields = ["email", "password"];
+    validateFields(requiredFields, req.body);
+
+     const user = await UsersService.getOne(email);
+     console.log("🚀 ~ file: index.js:270 ~ validResetPassword ~ user:", user)
+
+    if (isEmpty(user)) {
+      logger.warning(`Usuario no encontrado, por favor intente nuevamente`)
+      throw new Error("Usuario no encontrado, por favor intente nuevamente");
+    }
+
+    if (validatePassword(password, user)) {
+      logger.warning("El password no puede ser el mismo, por favor intente nuevamente")
+      throw new Error(
+        "El password no puede ser el mismo, por favor intente nuevamente"
+      );
+    }
+    next();
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+export const validForgotPassword = async (req, res, next) => {
+  try {
+    const { email } = req.body;
+    const requiredFields = ["email"];
     validateFields(requiredFields, req.body);
 
     const user = await UsersService.getOne(email);
@@ -271,12 +298,31 @@ export const validResetPassword = async (req, res, next) => {
       logger.warning(`Usuario no encontrado, por favor intente nuevamente`)
       throw new Error("Usuario no encontrado, por favor intente nuevamente");
     }
-
+    req.user = user;
     next();
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
+
+export const viewResetPassword = async (req, res, next) => {
+  try {
+    const { token } = req.query
+    const isToken = isValidToken(token)
+ 
+    if (!isToken) {
+      logger.warning(`El Link expiro por favor vuelva a generarlo`)
+      throw new Error("El Link expiro por favor vuelva a generarlo");
+    }
+    //PARA PROTEGER LA RUTA DE RESET PASSWORD CON PERFIL "USER"
+    const user = await UsersService.getOne(isToken.email);
+    req.user = user
+    next();
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 
 export const authHome = (req, res, next) => {
   res.redirect("/login");

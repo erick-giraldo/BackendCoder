@@ -4,7 +4,7 @@ const successMessages = {
   LOGIN: "Bienvenido",
   REGISTER: (email) => `Bienvenido ${email}`,
   LOGOUT: "La sesión se cerró correctamente",
-  RESET: "La contraseña ha sido restablecida correctamente",
+  RESET: "Se ha generado un link para restablecer la contraseña. Revisa tu correo electrónico.",
 };
 
 const errorMessages = {
@@ -12,7 +12,7 @@ const errorMessages = {
   LOGIN: "No se ha podido iniciar sesión con los datos proporcionados.",
   REGISTER: "No se ha podido crear la cuenta con los datos proporcionados.",
   RESET:
-    "No se ha podido restablecer la contraseña con los datos proporcionados.",
+    "No se ha podido generar el link para restablecer la contraseña. Por favor, intenta de nuevo más tarde",
   LOGOUT: "No se ha podido cerrar la sesión.",
 };
 
@@ -84,21 +84,45 @@ const register = async (email, password, role) => {
   }
 };
 
-const reset = async (email, password) => {
-  const { success, error } = await postRequest(`${API_URL}/reset-password`, {
-    email,
-    password,
+const forgotPassword = async (email) => {
+  const { success, error } = await postRequest(`${API_URL}/forgot-password`, {
+    email
   }, "POST");
   if (success) {
     Swal.fire({
       icon: "success",
-      title: "Reset Pass ok!!!",
+      title: "Send Link Ok!!!",
       text: successMessages.RESET,
       showConfirmButton: false,
     });
     setTimeout(() => {
       window.location.replace("/login");
-    }, 2000);
+    }, 3000);
+  } else {
+    Swal.fire({
+      icon: "error",
+      title: "Login error!!!",
+      text: error?.message || errorMessages.RESET,
+      showConfirmButton: false,
+    });
+  }
+};
+
+
+const resetPassword = async (payload) => {
+  const { success, error } = await postRequest(`${API_URL}/reset-password`, {
+    payload
+  }, "POST");
+  if (success) {
+    Swal.fire({
+      icon: "success",
+      title: "Send Link Ok!!!",
+      text: successMessages.RESET,
+      showConfirmButton: false,
+    });
+    setTimeout(() => {
+      window.location.replace("/login");
+    }, 3000);
   } else {
     Swal.fire({
       icon: "error",
@@ -131,4 +155,4 @@ const logout = async () => {
   }
 };
 
-export { login, register, reset, logout };
+export { login, register, resetPassword, forgotPassword, logout };

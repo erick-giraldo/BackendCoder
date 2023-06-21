@@ -22,6 +22,10 @@ export default class User {
     return UserModel.findOne(id)
   }
 
+  updateUser(id, body) {
+    return UserModel.updateOne( {_id : id }, { $set: { cart: body } });
+  }
+
   updateOne(id, body) {
     return UserModel.updateOne( {_id : id }, { $set: { cart: body } });
   }

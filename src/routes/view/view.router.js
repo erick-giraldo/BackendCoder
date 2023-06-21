@@ -1,14 +1,14 @@
 import CustomerRouter from '../Router.js'
 import ViewController from '../../controllers/ViewController.js';
 import chatController from './chat.js'
-import { authHome, isLoged } from '../../middleware/index.js';
+import { authHome, isLoged, viewResetPassword } from '../../middleware/index.js';
 export default class ViewRouter extends CustomerRouter {
 
   init() {
     this.get('/products', ['USER','ADMIN'], ViewController.products)
     this.get('', ['PUBLIC'], authHome)
     this.get('/mailing',  ['USER','ADMIN'], ViewController.mailling)
-    this.get('/reset-password',  ['USER','ADMIN'], ViewController.resetPassword)
+    this.get('/forgotPassword',  ['PUBLIC'], viewResetPassword , ViewController.resetPassword)
     this.get('/chat', ['USER'] , chatController.chatRouter)
     this.get('/home', ['USER'], ViewController.home)
     this.get('/realtimeproducts', ['USER'], ViewController.realtimeproducts)
