@@ -114,7 +114,8 @@ class SessionsController {
   static forgotPassword = async (req, res) => {
     try {
       const { email } = req.body;
-      const token = tokenGeneratorPass(req.user);
+      const user = await UsersService.getOne(email);
+      const token = tokenGeneratorPass(user);
       const sendEmail = await MailingController.email(email, token);
       if (!sendEmail) {
         return res.sendServerError({
