@@ -9891,3 +9891,665 @@ debug: Server running in http://localhost:8080/ in produccion environment. {"tim
   label: 'right meow!',
   timestamp: '2023-06-22 01:28:54'
 }
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 10:49:56'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 10:49:56'
+}
+{
+  message: {
+    accepted: [ 'egiraldom7@gmail.com' ],
+    rejected: [],
+    ehlo: [
+      'SIZE 157286400',
+      'PIPELINING',
+      'DSN',
+      'ENHANCEDSTATUSCODES',
+      'AUTH LOGIN XOAUTH2',
+      '8BITMIME',
+      'BINARYMIME',
+      'CHUNKING',
+      'SMTPUTF8'
+    ],
+    envelopeTime: 825,
+    messageTime: 1521,
+    messageSize: 43505,
+    response: '250 2.0.0 OK <PH7PR20MB50367572D37C08928C4B17D5A922A@PH7PR20MB5036.namprd20.prod.outlook.com> [Hostname=PH7PR20MB5036.namprd20.prod.outlook.com]',
+    envelope: { from: 'coder.test2@outlook.com', to: [ 'egiraldom7@gmail.com' ] },
+    messageId: '<13ac5027-4fcc-f6a7-0d44-747084059b31@outlook.com>'
+  },
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-22 12:00:00'
+}
+{
+  message: 'Link de restablecimiento enviado exitosamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-22 12:00:00'
+}
+{
+  message: 'El password no puede ser el mismo, por favor intente nuevamente',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 12:00:32'
+}
+{
+  message: 'Usuario egiraldom7@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-22 12:00:47'
+}
+{
+  level: 'error',
+  message: 'Error to connecto to database',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:38:04'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:38:04'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:48:02'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:48:02'
+}
+{
+  message: {
+    accepted: [ 'egiraldom7@gmail.com' ],
+    rejected: [],
+    ehlo: [
+      'SIZE 157286400',
+      'PIPELINING',
+      'DSN',
+      'ENHANCEDSTATUSCODES',
+      'AUTH LOGIN XOAUTH2',
+      '8BITMIME',
+      'BINARYMIME',
+      'CHUNKING',
+      'SMTPUTF8'
+    ],
+    envelopeTime: 594,
+    messageTime: 2555,
+    messageSize: 43505,
+    response: '250 2.0.0 OK <PH7PR20MB503641FA7B173533B8187053A922A@PH7PR20MB5036.namprd20.prod.outlook.com> [Hostname=PH7PR20MB5036.namprd20.prod.outlook.com]',
+    envelope: { from: 'coder.test2@outlook.com', to: [ 'egiraldom7@gmail.com' ] },
+    messageId: '<1aaffa3a-94a9-26f5-18bd-a9326cea8ee7@outlook.com>'
+  },
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:48:18'
+}
+{
+  message: 'Link de restablecimiento enviado exitosamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:48:18'
+}
+{
+  message: 'No tienes permiso para acceder a esa página.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:48:53'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:48:53'
+}
+{
+  success: false,
+  message: 'forgotPassword No tienes permiso para acceder a esa página.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:48:53'
+}
+{
+  message: 'El password no puede ser el mismo, por favor intente nuevamente',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:49:22'
+}
+{
+  message: 'Usuario egiraldom7@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:49:39'
+}
+{
+  message: 'Usuario no encontrado, por favor intente nuevamente',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:52:16'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:54:02'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:54:02'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:58:06'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:58:40'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:58:40'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T17:59:50.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:59:04'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:59:04'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:59:04'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 15:59:04'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:01:13'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:01:13'
+}
+{
+  message: {
+    accepted: [ 'egiraldom7@gmail.com' ],
+    rejected: [],
+    ehlo: [
+      'SIZE 157286400',
+      'PIPELINING',
+      'DSN',
+      'ENHANCEDSTATUSCODES',
+      'AUTH LOGIN XOAUTH2',
+      '8BITMIME',
+      'BINARYMIME',
+      'CHUNKING',
+      'SMTPUTF8'
+    ],
+    envelopeTime: 573,
+    messageTime: 734,
+    messageSize: 43505,
+    response: '250 2.0.0 OK <PH7PR20MB50366580E4A5D7129417D9DEA922A@PH7PR20MB5036.namprd20.prod.outlook.com> [Hostname=PH7PR20MB5036.namprd20.prod.outlook.com]',
+    envelope: { from: 'coder.test2@outlook.com', to: [ 'egiraldom7@gmail.com' ] },
+    messageId: '<9b31d5b2-9f78-4571-967b-20d86a57a635@outlook.com>'
+  },
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:01:36'
+}
+{
+  message: 'Link de restablecimiento enviado exitosamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:01:36'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T21:02:29.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:04:22'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:04:22'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:04:22'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:04:22'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:06:05'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:06:05'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:06:27'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:06:27'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T21:02:29.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:06:32'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:06:32'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:06:32'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:06:32'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T21:02:29.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:06:35'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:06:35'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:06:35'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:06:35'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:07:56'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:07:56'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T21:02:29.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:08:03'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:08:03'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:08:03'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:08:03'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:08:31'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:08:31'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T21:02:29.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:08:52'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:08:52'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:08:52'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:08:52'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:10:14'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:10:14'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T21:02:29.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:10:14'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:10:14'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:10:14'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:10:14'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T21:02:29.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:12:30'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:12:30'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:12:30'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:12:30'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T21:02:29.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:12:34'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:12:34'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:12:34'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:12:34'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T21:02:29.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:12:39'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:12:39'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:12:39'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:12:39'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T21:02:29.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:12:41'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:12:41'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:12:41'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:12:41'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T21:02:29.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:13:11'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:13:11'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:13:11'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:13:11'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T21:02:29.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:13:24'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:13:24'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:13:24'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 16:13:24'
+}

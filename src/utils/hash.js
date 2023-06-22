@@ -39,7 +39,7 @@ export const tokenGeneratorPass = (user) => {
     ticket: user.ticket,
     role: user.role,
   };
-  const token = jsonwebtoken.sign(payload, JWT_SECRET, { expiresIn: "1h" });
+  const token = jsonwebtoken.sign(payload, JWT_SECRET, { expiresIn: "1m" });
   return token;
 };
 

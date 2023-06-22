@@ -12,13 +12,7 @@ const product = new mongoose.Schema(
     category: { type: String, require: true },
     image: { type: String, require: true },
     id: { type: Number, index: true },
-    owner: {
-      type: [
-        {
-          _id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-        },
-      ],
-      default: [],
+    owner: { type: String, default: 'admin' },
     },
   },
   { timestamps: true }
