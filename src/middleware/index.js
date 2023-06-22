@@ -8,6 +8,9 @@ import { generatorProdError } from "../utils/errors/MessagesError.js";
 import EnumsError from "../utils/errors/EnumsError.js";
 import CustomError from "../utils/errors/CustomError.js";
 import getLogger from "../utils/logger.js";
+import moment from 'moment';
+import 'moment-timezone';
+import Exception from "../utils/exception.js";
 
 const logger = getLogger();
 
@@ -231,12 +234,12 @@ export const validLogin = async (req, res, next) => {
       password === process.env.ADMIN_PASSWORD;
     const user = isAdminUser
       ? {
-          first_name: process.env.ADMIN_NAME,
-          last_name: "",
-          role: "admin",
-          email: process.env.ADMIN_EMAIL,
-          password: createHash(process.env.ADMIN_PASSWORD),
-        }
+        first_name: process.env.ADMIN_NAME,
+        last_name: "",
+        role: "admin",
+        email: process.env.ADMIN_EMAIL,
+        password: createHash(process.env.ADMIN_PASSWORD),
+      }
       : await UsersService.getOne(email);
 
     if (isEmpty(user)) {
@@ -260,20 +263,17 @@ export const validLogin = async (req, res, next) => {
 };
 
 export const validResetPassword = async (req, res, next) => {
-  console.log("aaaaa")
   try {
     const { email, password } = req.body;
     const requiredFields = ["email", "password"];
     validateFields(requiredFields, req.body);
 
-     const user = await UsersService.getOne(email);
-     console.log("🚀 ~ file: index.js:270 ~ validResetPassword ~ user:", user)
+    const user = await UsersService.getOne(email);
 
     if (isEmpty(user)) {
       logger.warning(`Usuario no encontrado, por favor intente nuevamente`)
       throw new Error("Usuario no encontrado, por favor intente nuevamente");
     }
-
     if (validatePassword(password, user)) {
       logger.warning("El password no puede ser el mismo, por favor intente nuevamente")
       throw new Error(
@@ -307,17 +307,34 @@ export const validForgotPassword = async (req, res, next) => {
 
 export const viewResetPassword = async (req, res, next) => {
   try {
-    const { token } = req.query
-    const isToken = isValidToken(token)
- 
-    if (!isToken) {
-      logger.warning(`El Link expiro por favor vuelva a generarlo`)
-      throw new Error("El Link expiro por favor vuelva a generarlo");
+    const path = req.baseUrl ? "" : req.path;
+    const url = path.split("/")[1];
+
+    if (isEmpty(req.query)) {
+      logger.warning(`No tienes permiso para acceder a esa página.`);
+      return next(new Exception("No tienes permiso para acceder a esa página.", 401, url))
     }
-    //PARA PROTEGER LA RUTA DE RESET PASSWORD CON PERFIL "USER"
-    const user = await UsersService.getOne(isToken.email);
-    req.user = user
-    next();
+
+    const { token } = req.query;
+    const isToken = isValidToken(token);
+
+    if (isEmpty(isToken)) {
+      logger.warning(`El enlace ha expirado. Por favor, genere uno nuevo.`);
+      return next(new Exception("El enlace ha expirado. Por favor, genere uno nuevo.", 401, url))
+    } else {
+      const expiration = isToken.exp;
+      const ahora = moment().tz('America/Lima');
+      const fechaExpiracion = moment(expiration * 1000).tz('America/Lima');
+
+      if (!ahora.isBefore(fechaExpiracion)) {
+        logger.warning(`El enlace ha expirado. Por favor, genere uno nuevo.`);
+        throw new Error("El enlace ha expirado. Por favor, genere uno nuevo.");
+      }
+
+      const user = await UsersService.getOne(isToken.email);
+      req.user = user;
+      next();
+    }
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

@@ -4,6 +4,7 @@ const successMessages = {
   LOGIN: "Bienvenido",
   REGISTER: (email) => `Bienvenido ${email}`,
   LOGOUT: "La sesión se cerró correctamente",
+  UPDATEPASS:"Se cambio la contraseña correctamente",
   RESET: "Se ha generado un link para restablecer la contraseña. Revisa tu correo electrónico.",
 };
 
@@ -14,6 +15,7 @@ const errorMessages = {
   RESET:
     "No se ha podido generar el link para restablecer la contraseña. Por favor, intenta de nuevo más tarde",
   LOGOUT: "No se ha podido cerrar la sesión.",
+  UPDATEPASS:"No se ha podido cambiar su clave"
 };
 
 const postRequest = async (url, body, method = "GET") => {
@@ -109,15 +111,16 @@ const forgotPassword = async (email) => {
 };
 
 
-const resetPassword = async (payload) => {
+const resetPassword = async (email, password) => {
   const { success, error } = await postRequest(`${API_URL}/reset-password`, {
-    payload
-  }, "POST");
+    email, 
+    password
+  }, "PUT");
   if (success) {
     Swal.fire({
       icon: "success",
-      title: "Send Link Ok!!!",
-      text: successMessages.RESET,
+      title: "Pass OK!!",
+      text: successMessages.UPDATEPASS,
       showConfirmButton: false,
     });
     setTimeout(() => {
@@ -127,7 +130,7 @@ const resetPassword = async (payload) => {
     Swal.fire({
       icon: "error",
       title: "Login error!!!",
-      text: error?.message || errorMessages.RESET,
+      text: error?.message || errorMessages.UPDATEPASS,
       showConfirmButton: false,
     });
   }

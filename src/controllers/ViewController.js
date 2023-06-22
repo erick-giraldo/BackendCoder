@@ -321,7 +321,7 @@ export default class ViewController {
           price: p._id.price,
         };
       });
-      const shippingCost =  50; // Gastos de envío (50)
+      const shippingCost = 50; // Gastos de envío (50)
       const amountShip = amount - shippingCost;
       const igvPercentage = 0.18; // IGV en Perú (18%)
       const subTotal = amountShip / (1 + igvPercentage);
@@ -380,17 +380,18 @@ export default class ViewController {
     }
   };
 
-    static async resetPassword(req, res) {
-      try {
-        const { email } = req.user;
-      return res.render("reserPassword", 
-      { style: "resetPassword.css",
-        email: email, });
-      } catch (err) {
-        return res.status(400).json({
-          message: "Error al actualizar contraseña",
-          error: JSON.parse(err.message),
-        });
-      }
+  static async forgotPassword(req, res) {
+    try {
+      const { email } = req.user;
+      return res.render("forgotPassword", {
+        style: "resetPassword.css",
+        email: email,
+      });
+    } catch (err) {
+      return res.status(400).json({
+        message: "Error al actualizar contraseña",
+        error: JSON.parse(err.message),
+      });
     }
+  }
 }

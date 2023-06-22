@@ -30,6 +30,20 @@ export const tokenGenerator = (user) => {
   return token;
 };
 
+export const tokenGeneratorPass = (user) => {
+  const payload = {
+    id: user._id,
+    name: `${user.first_name} ${user.last_name}`,
+    email: user.email,
+    cart: user.cart,
+    ticket: user.ticket,
+    role: user.role,
+  };
+  const token = jsonwebtoken.sign(payload, JWT_SECRET, { expiresIn: "1h" });
+  return token;
+};
+
+
 export const isValidToken = (token) => {
   try {
     const decodedToken = jsonwebtoken.verify(token, process.env.JWT_SECRET);

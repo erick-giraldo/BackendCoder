@@ -5635,3 +5635,4259 @@ debug: Server running in http://localhost:8080/ in produccion environment. {"tim
   label: 'right meow!',
   timestamp: '2023-06-21 18:38:33'
 }
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 21:54:34'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 21:54:34'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'jwt must be provided',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 21:55:00'
+}
+{
+  message: 'El Link expiro por favor vuelva a generarlo',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-21 21:55:00'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 21:57:46'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 21:57:46'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 21:59:05'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 21:59:05'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 21:59:09'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 21:59:09'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:00:01'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:00:01'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:00:21'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:00:21'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:00:31'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:00:31'
+}
+{
+  message: 'El Link expiro por favor vuelva a generarlo',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:00:33'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:02:05'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:02:05'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'jwt must be provided',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:02:36'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:03:03'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:03:03'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:03:05'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:03:05'
+}
+{
+  statusCode: 401,
+  url: 'profile',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:03:23'
+}
+{
+  success: false,
+  message: 'profile Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:03:23'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:03:28'
+}
+{
+  statusCode: 403,
+  url: 'profile',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:03:36'
+}
+{
+  success: false,
+  message: 'profile Forbidden',
+  statusCode: 403,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:03:36'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:04:58'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:04:58'
+}
+{
+  statusCode: 401,
+  url: 'profile',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:05:25'
+}
+{
+  success: false,
+  message: 'profile Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:05:25'
+}
+-----------{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:06:16'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:06:16'
+}
+-------------------{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:07:01'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:07:01'
+}
+{
+  statusCode: 401,
+  url: 'profile',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:07:21'
+}
+{
+  success: false,
+  message: 'profile Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:07:21'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:08:09'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:08:09'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:08:23'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:08:23'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:09:46'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:09:46'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:09:59'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:09:59'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:10:03'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:10:03'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:14:32'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:14:32'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:14:36'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:14:36'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:16:27'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:16:27'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:16:33'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:16:33'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:16:37'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:16:37'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:16:40'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:16:40'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:16:42'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:16:42'
+}
+{
+  statusCode: 401,
+  url: 'invoice',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:16:58'
+}
+{
+  success: false,
+  message: 'invoice Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:16:58'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:18:13'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:18:13'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:19:00'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:19:00'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:19:47'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:19:47'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:20:58'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:20:58'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:21:18'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:21:18'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:24:29'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:24:29'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:24:42'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:24:42'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:25:01'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:25:01'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:25:38'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:25:38'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:26:04'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:26:50'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:26:50'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:26:53'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:26:53'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:28:07'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:28:07'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:28:32'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:28:32'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:28:40'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:28:40'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:29:07'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:29:07'
+}
+{
+  message: 'El Link expiro por favor vuelva a generarlo',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:29:20'
+}
+{
+  message: 'Usuario no encontrado, por favor intente nuevamente',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:29:38'
+}
+{
+  message: 'Link de restablecimiento enviado exitosamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:29:52'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:30:37'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:30:37'
+}
+{
+  message: 'Link de restablecimiento enviado exitosamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:30:57'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:32:26'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:32:26'
+}
+{
+  message: 'Link de restablecimiento enviado exitosamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:32:47'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:33:13'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:33:13'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:33:21'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:33:21'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:36:41'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:36:41'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:37:12'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:37:12'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:40:11'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:40:11'
+}
+{
+  message: 'Link de restablecimiento enviado exitosamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:40:24'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:43:30'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:43:30'
+}
+{
+  message: 'Link de restablecimiento enviado exitosamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:43:38'
+}
+{
+  message: {
+    accepted: [ 'egiraldom7@gmail.com' ],
+    rejected: [],
+    ehlo: [
+      'SIZE 157286400',
+      'PIPELINING',
+      'DSN',
+      'ENHANCEDSTATUSCODES',
+      'AUTH LOGIN XOAUTH2',
+      '8BITMIME',
+      'BINARYMIME',
+      'CHUNKING',
+      'SMTPUTF8'
+    ],
+    envelopeTime: 265,
+    messageTime: 752,
+    messageSize: 44650,
+    response: '250 2.0.0 OK <CP5P284MB2184ABD027385492E51AC648AE22A@CP5P284MB2184.BRAP284.PROD.OUTLOOK.COM> [Hostname=CP5P284MB2184.BRAP284.PROD.OUTLOOK.COM]',
+    envelope: { from: 'egiraldom@outlook.com', to: [ 'egiraldom7@gmail.com' ] },
+    messageId: '<f849066b-690b-22da-57b3-4480a3ba7bc6@outlook.com>'
+  },
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:43:42'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:43:56'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:43:56'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:46:42'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:46:42'
+}
+{
+  message: {
+    accepted: [ 'egiraldom7@gmail.com' ],
+    rejected: [],
+    ehlo: [
+      'SIZE 157286400',
+      'PIPELINING',
+      'DSN',
+      'ENHANCEDSTATUSCODES',
+      'AUTH LOGIN XOAUTH2',
+      '8BITMIME',
+      'BINARYMIME',
+      'CHUNKING',
+      'SMTPUTF8'
+    ],
+    envelopeTime: 514,
+    messageTime: 2101,
+    messageSize: 44652,
+    response: '250 2.0.0 OK <PH7PR20MB50363D2F6B3DED5635B46E85A922A@PH7PR20MB5036.namprd20.prod.outlook.com> [Hostname=PH7PR20MB5036.namprd20.prod.outlook.com]',
+    envelope: { from: 'coder.test2@outlook.com', to: [ 'egiraldom7@gmail.com' ] },
+    messageId: '<d36c13cb-e8c9-e7d7-2484-b61bfc75335c@outlook.com>'
+  },
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:47:01'
+}
+{
+  message: 'Link de restablecimiento enviado exitosamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:47:01'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:48:36'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:48:36'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:48:46'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:48:46'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:49:22'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:49:22'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:50:40'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:50:40'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:50:47'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:50:47'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:50:49'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:50:49'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:52:10'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:52:10'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:52:17'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:52:17'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:52:41'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:54:14'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:54:14'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:54:45'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:54:45'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:55:19'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:55:19'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:55:30'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:55:30'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:55:35'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:55:35'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:56:37'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:56:37'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'jwt must be provided',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:56:38'
+}
+{
+  message: 'El Link expiro por favor vuelva a generarlo',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:56:47'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:59:55'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 22:59:55'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:00:04'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:00:04'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:00:21'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:00:21'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:00:44'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:00:44'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:00:57'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:00:57'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:01:17'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:01:17'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:01:27'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:01:48'
+}
+{
+  message: {
+    accepted: [ 'egiraldom7@gmail.com' ],
+    rejected: [],
+    ehlo: [
+      'SIZE 157286400',
+      'PIPELINING',
+      'DSN',
+      'ENHANCEDSTATUSCODES',
+      'AUTH LOGIN XOAUTH2',
+      '8BITMIME',
+      'BINARYMIME',
+      'CHUNKING',
+      'SMTPUTF8'
+    ],
+    envelopeTime: 527,
+    messageTime: 590,
+    messageSize: 44652,
+    response: '250 2.0.0 OK <PH7PR20MB5036DFBAEF4CA06B5A8A2D04A922A@PH7PR20MB5036.namprd20.prod.outlook.com> [Hostname=PH7PR20MB5036.namprd20.prod.outlook.com]',
+    envelope: { from: 'coder.test2@outlook.com', to: [ 'egiraldom7@gmail.com' ] },
+    messageId: '<fb1b1051-5372-f3b8-aa19-af2defc68793@outlook.com>'
+  },
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:02:52'
+}
+{
+  message: 'Link de restablecimiento enviado exitosamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:02:52'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:03:03'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:05:09'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:05:09'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:05:15'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:06:50'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:06:50'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:07:33'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:07:33'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:07:46'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:07:46'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:07:47'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-21T18:55:32.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:08:33'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:09:00'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:09:00'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-21T18:55:32.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:09:01'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-21T18:55:32.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:10:00'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:10:09'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-21T18:55:32.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:10:18'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:10:26'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:10:26'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:11:07'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:11:07'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:11:26'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:11:26'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:11:55'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:11:55'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:12:13'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:12:13'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:12:25'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:12:25'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:14:01'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:14:01'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:14:32'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:14:32'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:15:11'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:15:11'
+}
+{
+  view: View {
+    defaultEngine: 'handlebars',
+    ext: '.handlebars',
+    name: 'reserPassword',
+    root: '/Users/erick/Documents/Repos/BackendCoder/src/config/../views',
+    engine: [Function: bound ],
+    path: undefined
+  },
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:15:12'
+}
+{
+  success: false,
+  message: 'Failed to lookup view "reserPassword" in views directory "/Users/erick/Documents/Repos/BackendCoder/src/config/../views"',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:15:12'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:15:36'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:15:36'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:16:19'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:16:19'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'jwt must be provided',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:16:28'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-21T18:55:32.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:16:54'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:18:26'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:18:26'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:20:52'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:20:52'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:21:04'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:21:04'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:23:31'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:23:31'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:24:06'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:24:06'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:24:53'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:24:53'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:25:55'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:25:55'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:27:22'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:27:22'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:28:49'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:28:49'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:39:58'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:39:58'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:40:08'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:40:09'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:41:19'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:41:19'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:41:30'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:41:30'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:41:35'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:41:35'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:41:50'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:41:50'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:46:46'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:46:46'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:47:26'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:47:26'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:47:43'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:47:43'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:48:25'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:48:25'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:49:50'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:49:50'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:50:40'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:50:40'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:50:52'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:50:52'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:52:07'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:52:07'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:52:50'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:52:50'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:53:00'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:53:00'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:53:13'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:53:13'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:53:38'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:53:38'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:55:56'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:55:56'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:56:05'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:56:05'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:56:23'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:56:23'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:58:12'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:58:12'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:58:31'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:58:31'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:58:49'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:58:49'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:59:57'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-21 23:59:57'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:00:12'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:00:12'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:00:32'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:00:32'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:01:04'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:01:04'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:01:18'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:01:18'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:01:49'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:01:49'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:02:42'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:02:42'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:03:16'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:03:16'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:04:58'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:04:58'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:05:04'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:05:04'
+}
+{
+  message: 'El password no puede ser el mismo, por favor intente nuevamente',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:05:24'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:05:41'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:05:41'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:05:47'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:05:47'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:05:53'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:05:53'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:06:07'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:06:07'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:06:25'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:06:25'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:06:33'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:06:33'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:07:32'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:07:32'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:08:55'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:08:55'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:08:58'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:08:58'
+}
+{
+  message: 'El password no es correcto, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:09:24'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:09:34'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:11:13'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:11:13'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:11:43'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:11:43'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:12:40'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:12:40'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:12:51'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:12:51'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:15:08'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:15:08'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:15:47'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:15:47'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:16:44'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:16:44'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:16:53'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:16:53'
+}
+{
+  message: 'El password no es correcto, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:17:39'
+}
+{
+  message: 'El password no es correcto, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:17:57'
+}
+{
+  message: 'El password no es correcto, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:18:14'
+}
+{
+  message: 'El password no es correcto, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:18:43'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:22:53'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:22:54'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:28:36'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:28:36'
+}
+{
+  message: 'Usuario egiraldom7@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:29:33'
+}
+{
+  message: 'El password no puede ser el mismo, por favor intente nuevamente',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:29:47'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:30:17'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:30:17'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:30:22'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:30:22'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:30:27'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:30:27'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:30:56'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:30:56'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:31:16'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:31:16'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'jwt must be provided',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:31:54'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:32:13'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:32:13'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:32:16'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:32:16'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:35:28'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:35:28'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:36:01'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:36:02'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:36:10'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:36:10'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:37:02'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:37:02'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:38:38'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:38:38'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:40:36'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:40:36'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:40:41'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:40:41'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:40:47'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:40:48'
+}
+{
+  message: {
+    accepted: [ 'egiraldom7@gmail.com' ],
+    rejected: [],
+    ehlo: [
+      'SIZE 157286400',
+      'PIPELINING',
+      'DSN',
+      'ENHANCEDSTATUSCODES',
+      'AUTH LOGIN XOAUTH2',
+      '8BITMIME',
+      'BINARYMIME',
+      'CHUNKING',
+      'SMTPUTF8'
+    ],
+    envelopeTime: 513,
+    messageTime: 586,
+    messageSize: 43505,
+    response: '250 2.0.0 OK <PH7PR20MB5036592A108E5D2DCA2D1941A922A@PH7PR20MB5036.namprd20.prod.outlook.com> [Hostname=PH7PR20MB5036.namprd20.prod.outlook.com]',
+    envelope: { from: 'coder.test2@outlook.com', to: [ 'egiraldom7@gmail.com' ] },
+    messageId: '<d6e10046-31bb-4b71-6807-761d193231b7@outlook.com>'
+  },
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:41:08'
+}
+{
+  message: 'Link de restablecimiento enviado exitosamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:41:08'
+}
+{
+  message: 'El password no puede ser el mismo, por favor intente nuevamente',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:41:43'
+}
+{
+  message: 'Usuario egiraldom7@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:41:59'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:45:17'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:45:17'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:45:43'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:45:43'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'jwt malformed',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:47:32'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:49:08'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:49:08'
+}
+{
+  message: {
+    accepted: [ 'egiraldom7@gmail.com' ],
+    rejected: [],
+    ehlo: [
+      'SIZE 157286400',
+      'PIPELINING',
+      'DSN',
+      'ENHANCEDSTATUSCODES',
+      'AUTH LOGIN XOAUTH2',
+      '8BITMIME',
+      'BINARYMIME',
+      'CHUNKING',
+      'SMTPUTF8'
+    ],
+    envelopeTime: 505,
+    messageTime: 595,
+    messageSize: 43505,
+    response: '250 2.0.0 OK <PH7PR20MB5036BA70523D7239D1A3CC9FA922A@PH7PR20MB5036.namprd20.prod.outlook.com> [Hostname=PH7PR20MB5036.namprd20.prod.outlook.com]',
+    envelope: { from: 'coder.test2@outlook.com', to: [ 'egiraldom7@gmail.com' ] },
+    messageId: '<b341a903-3f51-7431-0841-312d00d8def4@outlook.com>'
+  },
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:49:32'
+}
+{
+  message: 'Link de restablecimiento enviado exitosamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:49:32'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:51:01'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:51:22'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:51:22'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:51:28'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:51:29'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:51:45'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:51:45'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:51:47'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:52:24'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:52:24'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:52:38'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:53:51'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:53:51'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:53:55'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:53:55'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:54:06'
+}
+{
+  statusCode: 403,
+  url: 'profile',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:54:48'
+}
+{
+  success: false,
+  message: 'profile Forbidden',
+  statusCode: 403,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:54:48'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:55:03'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:55:36'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:55:36'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:55:39'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:55:39'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:57:10'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:57:10'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:57:10'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:58:00'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:58:00'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:58:00'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:58:01'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:58:10'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:58:10'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:58:10'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'jwt must be provided',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:58:26'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:58:30'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:58:30'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:58:30'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:58:30'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:58:31'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:01'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:01'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:01'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:02'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:03'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:03'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:03'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:17'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:17'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:19'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:21'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:35'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:35'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:36'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:36'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:37'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:37'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:38'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:38'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:48'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:48'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:48'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:57'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:57'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 00:59:59'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:00:18'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:00:18'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:00:21'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:00:22'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:00:23'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:00:23'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:00:23'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:00:41'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:00:41'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:00:43'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:00:44'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:01:06'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:01:06'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:01:09'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:01:10'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:01:10'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:01:11'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:01:11'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:01:11'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:01:11'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:01:29'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:01:29'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:01:29'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:01:55'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:01:55'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:01:56'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:02:27'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:02:27'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:02:28'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:02:41'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:03:15'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:03:15'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:03:18'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:03:20'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:06:09'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:06:09'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:06:47'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:06:47'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:08:42'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:08:42'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:09:17'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:09:17'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:09:32'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:09:32'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:09:43'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:09:43'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:10:08'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:10:08'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:10:10'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:10:10'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:10:28'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:10:28'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:10:33'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:10:33'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:11:23'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:11:23'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:11:25'
+}
+{
+  success: false,
+  message: 'forgotPassword Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:11:25'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:12:20'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:12:20'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:12:29'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:12:29'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:12:29'
+}
+{
+  name: 'JsonWebTokenError',
+  message: 'jwt must be provided',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:12:37'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:13:22'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:13:22'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:13:25'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:13:26'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:13:27'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:13:40'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:13:40'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:13:41'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:13:42'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:13:43'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:13:50'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:13:50'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:13:53'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:13:53'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:13:53'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:14:44'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:14:44'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:14:48'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:14:48'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:14:48'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:15:29'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:15:29'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:16:48'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:16:48'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:16:49'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:16:50'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:16:52'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:17:10'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:17:10'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo2.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:17:11'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo2.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:17:12'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo2.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:17:14'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:17:27'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:17:27'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo2.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:17:28'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo2.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:17:30'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:18:02'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:18:02'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:18:03'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:18:03'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:18:03'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:18:07'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:18:07'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:18:07'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:18:10'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:18:10'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:18:10'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:19:01'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:19:01'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:19:01'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:19:17'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:19:17'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:19:21'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:19:21'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo2.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:19:21'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:19:49'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:19:49'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:19:52'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:19:52'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo2.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:19:52'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:20:12'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:20:12'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:20:19'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:20:19'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:20:22'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:20:22'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo2.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:20:22'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:20:33'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:20:33'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:20:34'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:20:34'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo2.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:20:34'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:20:51'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:20:51'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:21:00'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:21:00'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:21:00'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo2.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:21:00'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:22:37'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:22:37'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:22:43'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:22:43'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:22:45'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:22:45'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:23:42'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:24:33'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:24:33'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:24:33'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:24:33'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo1.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:24:33'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:24:46'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:24:46'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:25:22'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:25:22'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:25:22'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:25:22'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:25:22'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:25:22'
+}
+{
+  message: 'No tienes permiso para acceder a esa página.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:25:30'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:25:30'
+}
+{
+  success: false,
+  message: 'forgotPassword No tienes permiso para acceder a esa página.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:25:30'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:26:12'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:26:12'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:26:42'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:26:42'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:26:52'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:26:52'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:26:55'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:26:55'
+}
+{
+  name: 'TokenExpiredError',
+  message: 'jwt expired',
+  expiredAt: 2023-06-22T05:50:27.000Z,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:26:57'
+}
+{
+  message: 'El enlace ha expirado. Por favor, genere uno nuevo.',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:26:57'
+}
+{
+  statusCode: 401,
+  url: 'forgotPassword',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:26:57'
+}
+{
+  success: false,
+  message: 'forgotPassword El enlace ha expirado. Por favor, genere uno nuevo.',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:26:57'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:27:47'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:27:47'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:28:25'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:28:25'
+}
+{
+  message: {
+    accepted: [ 'egiraldom7@gmail.com' ],
+    rejected: [],
+    ehlo: [
+      'SIZE 157286400',
+      'PIPELINING',
+      'DSN',
+      'ENHANCEDSTATUSCODES',
+      'AUTH LOGIN XOAUTH2',
+      '8BITMIME',
+      'BINARYMIME',
+      'CHUNKING',
+      'SMTPUTF8'
+    ],
+    envelopeTime: 522,
+    messageTime: 585,
+    messageSize: 43505,
+    response: '250 2.0.0 OK <PH7PR20MB503679958A70DB9EB2760436A922A@PH7PR20MB5036.namprd20.prod.outlook.com> [Hostname=PH7PR20MB5036.namprd20.prod.outlook.com]',
+    envelope: { from: 'coder.test2@outlook.com', to: [ 'egiraldom7@gmail.com' ] },
+    messageId: '<7b2b520f-4211-3e0b-4c6d-d0b8d1d40811@outlook.com>'
+  },
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:28:54'
+}
+{
+  message: 'Link de restablecimiento enviado exitosamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-06-22 01:28:54'
+}

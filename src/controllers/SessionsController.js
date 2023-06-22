@@ -1,6 +1,6 @@
 import CartService from "../services/carts.service.js";
 import UsersService from "../services/users.service.js";
-import { tokenGenerator, createHash } from "../utils/hash.js";
+import { tokenGeneratorPass, tokenGenerator, createHash } from "../utils/hash.js";
 import isEmpty from "is-empty";
 import getLogger from "../utils/logger.js";
 import MailingController from "./MailingController.js";
@@ -42,12 +42,12 @@ class SessionsController {
         password === process.env.ADMIN_PASSWORD;
       let user = isAdminUser
         ? {
-          first_name: process.env.ADMIN_NAME,
-          last_name: "",
-          role: "admin",
-          email: process.env.ADMIN_EMAIL,
-          password: createHash(process.env.ADMIN_PASSWORD),
-        }
+            first_name: process.env.ADMIN_NAME,
+            last_name: "",
+            role: "admin",
+            email: process.env.ADMIN_EMAIL,
+            password: createHash(process.env.ADMIN_PASSWORD),
+          }
         : await UsersService.getOne(email);
       if (!isAdminUser) {
         user = JSON.parse(JSON.stringify(user));
@@ -114,7 +114,7 @@ class SessionsController {
   static forgotPassword = async (req, res) => {
     try {
       const { email } = req.body;
-      const token = tokenGenerator(req.user);
+      const token = tokenGeneratorPass(req.user);
       const sendEmail = await MailingController.email(email, token);
       if (!sendEmail) {
         return res.sendServerError({
@@ -136,12 +136,16 @@ class SessionsController {
 
   static resetPassword = async (req, res) => {
     try {
+      if(isEmpty(req.body)){
+        return res.sendServerError({
+          message: "No existe email o password.",
+        });
+      }
       const { email, password } = req.body;
-      console.log("🚀 ~ file: SessionsController.js:140 ~ SessionsController ~ resetPassword= ~ password:", password)
-      console.log("🚀 ~ file: SessionsController.js:140 ~ SessionsController ~ resetPassword= ~ email:", email)
-      const cambio = await UsersService.update(email, { password: createHash(password) });
-      console.log("🚀 ~ file: SessionsController.js:143 ~ SessionsController ~ resetPassword= ~ cambio:", cambio)
-      return true
+      const user = await UsersService.getOne(email);
+      const hashedPassword = createHash(password);
+      user.password = hashedPassword;
+      await user.save();
       return res.sendSuccess({
         message: "Se cambio la contraseña correctamente.",
       });

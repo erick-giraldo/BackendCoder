@@ -54,11 +54,8 @@ function validateSignupForm() {
   if (!validatePassword()) {
     return false;
   }
-  const payload = {
-    email: email.value,
-    password: password.value,
-  }
-  resetPassword(payload);
+  
+  resetPassword( email.value, password.value,);
   disableSubmitButton();
 
   setTimeout(function () {
