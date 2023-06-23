@@ -4,6 +4,7 @@ import CartService from "../services/carts.service.js";
 import ProductController from "./ProductsController.js";
 import TicketsController from "./TicketsController.js";
 import UsersService from "../services/users.service.js";
+import { isValidToken } from "../utils/hash.js";
 
 export default class CartController {
   static async getAllCarts(req, res) {
@@ -60,7 +61,7 @@ export default class CartController {
     } catch (err) {}
   }
 
-  static async addProductById(req, res) {
+  static async addProductCartById(req, res) {
     try {
       const { pid } = req.params;
       const cid = req.user.cart[0].id;
@@ -83,6 +84,11 @@ export default class CartController {
           .status(404)
           .json({ message: `No se encontró un producto con el id ${pid}` });
       }
+      const token = await isValidToken(req.cookies.token);
+      if(token.role === 'premium' && token.email !== productById.owner){
+          throw new Error(JSON.stringify({ detail: `No puedes agregar un producto que no te pertenece` }));
+      }
+
       let listProduct = cartById.products;
       const existingProduct = listProduct.find(
         (item) => item._id.toString() === pid
