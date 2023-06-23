@@ -85,7 +85,7 @@ export default class CartController {
           .json({ message: `No se encontró un producto con el id ${pid}` });
       }
       const token = await isValidToken(req.cookies.token);
-      if(token.user.role === 'Premium' && token.user.email === productById.owner){
+      if(token.role === 'premium' &&token.email === productById.owner){
           throw new Error(JSON.stringify({ detail: `No puedes agregar un producto que te pertenece` }));
       }
 

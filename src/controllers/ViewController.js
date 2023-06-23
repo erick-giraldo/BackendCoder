@@ -4,6 +4,7 @@ import CommonsUtil from "../utils/Commons.js";
 import isEmpty from "is-empty";
 import TicketsController from "./TicketsController.js";
 import moment from "moment";
+import { isValidToken } from "../utils/hash.js";
 export default class ViewController {
   static async home(req, res) {
     try {
@@ -158,6 +159,17 @@ export default class ViewController {
       const arrayPid = [pid];
       const quantityProducts = arrayPid.length;
       const cid = req.user.cart[0].id;
+      let findProduct = await ProductsService.getOne(pid);
+      const token = await isValidToken (req.cookies.token);
+      console.log("🚀 ~ file: ViewController.js:165 ~ ViewController ~ addProductById ~ token:", token)
+      if (token.role === "premium" && token.email !== findProduct.owner) {
+        throw new Error(
+          JSON.stringify({
+            detail: `No puedes agregar Productos que no te pertenecen`,
+
+          })
+        );
+      }
       if (isNaN(cid)) {
         throw new Error(
           JSON.stringify({

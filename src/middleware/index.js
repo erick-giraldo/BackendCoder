@@ -8,8 +8,8 @@ import { generatorProdError } from "../utils/errors/MessagesError.js";
 import EnumsError from "../utils/errors/EnumsError.js";
 import CustomError from "../utils/errors/CustomError.js";
 import getLogger from "../utils/logger.js";
-import moment from 'moment';
-import 'moment-timezone';
+import moment from "moment";
+import "moment-timezone";
 import Exception from "../utils/exception.js";
 
 const logger = getLogger();
@@ -234,12 +234,12 @@ export const validLogin = async (req, res, next) => {
       password === process.env.ADMIN_PASSWORD;
     const user = isAdminUser
       ? {
-        first_name: process.env.ADMIN_NAME,
-        last_name: "",
-        role: "admin",
-        email: process.env.ADMIN_EMAIL,
-        password: createHash(process.env.ADMIN_PASSWORD),
-      }
+          first_name: process.env.ADMIN_NAME,
+          last_name: "",
+          role: "admin",
+          email: process.env.ADMIN_EMAIL,
+          password: createHash(process.env.ADMIN_PASSWORD),
+        }
       : await UsersService.getOne(email);
 
     if (isEmpty(user)) {
@@ -271,11 +271,13 @@ export const validResetPassword = async (req, res, next) => {
     const user = await UsersService.getOne(email);
 
     if (isEmpty(user)) {
-      logger.warning(`Usuario no encontrado, por favor intente nuevamente`)
+      logger.warning(`Usuario no encontrado, por favor intente nuevamente`);
       throw new Error("Usuario no encontrado, por favor intente nuevamente");
     }
     if (validatePassword(password, user)) {
-      logger.warning("El password no puede ser el mismo, por favor intente nuevamente")
+      logger.warning(
+        "El password no puede ser el mismo, por favor intente nuevamente"
+      );
       throw new Error(
         "El password no puede ser el mismo, por favor intente nuevamente"
       );
@@ -295,7 +297,7 @@ export const validForgotPassword = async (req, res, next) => {
     const user = await UsersService.getOne(email);
 
     if (isEmpty(user)) {
-      logger.warning(`Usuario no encontrado, por favor intente nuevamente`)
+      logger.warning(`Usuario no encontrado, por favor intente nuevamente`);
       throw new Error("Usuario no encontrado, por favor intente nuevamente");
     }
     req.user = user;
@@ -312,7 +314,9 @@ export const viewResetPassword = async (req, res, next) => {
 
     if (isEmpty(req.query)) {
       logger.warning(`No tienes permiso para acceder a esa página.`);
-      return next(new Exception("No tienes permiso para acceder a esa página.", 401, url))
+      return next(
+        new Exception("No tienes permiso para acceder a esa página.", 401, url)
+      );
     }
 
     const { token } = req.query;
@@ -320,11 +324,17 @@ export const viewResetPassword = async (req, res, next) => {
 
     if (isEmpty(isToken)) {
       logger.warning(`El enlace ha expirado. Por favor, genere uno nuevo.`);
-      return next(new Exception("El enlace ha expirado. Por favor, genere uno nuevo.", 401, url))
+      return next(
+        new Exception(
+          "El enlace ha expirado. Por favor, genere uno nuevo.",
+          401,
+          url
+        )
+      );
     } else {
       const expiration = isToken.exp;
-      const ahora = moment().tz('America/Lima');
-      const fechaExpiracion = moment(expiration * 1000).tz('America/Lima');
+      const ahora = moment().tz("America/Lima");
+      const fechaExpiracion = moment(expiration * 1000).tz("America/Lima");
 
       if (!ahora.isBefore(fechaExpiracion)) {
         logger.warning(`El enlace ha expirado. Por favor, genere uno nuevo.`);
@@ -340,7 +350,6 @@ export const viewResetPassword = async (req, res, next) => {
   }
 };
 
-
 export const authHome = (req, res, next) => {
   res.redirect("/login");
 };
@@ -350,4 +359,21 @@ export const isLoged = (req, res, next) => {
     return next();
   }
   res.redirect("/products");
+};
+
+export const authenticateAndAuthorize = (req, res, next) => {
+  const token = req.cookies.token;
+  const role  = req.body.role.toUpperCase();
+  const isToken = isValidToken(token);
+  if (isEmpty(isToken)) {
+    logger.warning("Se produjo un error al obtener token.")
+    throw new Error("Se produjo un error al obtener token.",);
+  }
+  const userRoles =  [ 'ADMIN', 'PREMIUM'] // Obtén los roles del usuario
+  if ( !userRoles.includes(role) ) {
+    return res.status(401).json({
+      message: 'Solo se puede Cambiar roles por Admin o premium'
+    });
+  }
+  next();
 };

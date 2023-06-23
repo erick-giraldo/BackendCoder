@@ -9,13 +9,13 @@ class UserController {
             const user = await UsersService.getById(id).catch(() => {
                 throw new Error(JSON.stringify({ detail: 'El usuario no fue encontrado' }))
             })
-            const role = req.body.role 
+            const role = req.body.role.toLowerCase()
             if(user.role === role ){
                 return res.json({
                     message: 'El rol del usuario no puede ser el mismo'
                 });
             }
-            user.role = req.body.role 
+            user.role = role 
             await user.save();
             return res.json({
                 message: 'El rol del usuario fue actualizado exitosamente'

@@ -49,7 +49,7 @@ export default class ProductController {
       const token = await isValidToken(req.cookies.token);
       const newProductData = {
         ...productData,
-        owner: token.user.role === "admin" ? "admin" : token.user.email,
+        owner: token.role === "admin" ? "admin" : token.email,
       };
       await ProductsService.create(newProductData).catch(() => {
         throw new Error(
@@ -74,10 +74,7 @@ export default class ProductController {
       const productData = req.body;
       let productById = await ProductsService.getOne(pid);
       const token = await isValidToken(req.cookies.token);
-      if (
-        token.user.role === "Premium" &&
-        token.user.email !== productById.owner
-      ) {
+      if (token.role === "premium" && token.email !== productById.owner) {
         throw new Error(
           JSON.stringify({
             detail: `El producto fue registrado por otro usuario`,
@@ -103,19 +100,13 @@ export default class ProductController {
 
   static async deleteProduct(req, res) {
     try {
-      const { pid } = req.params;
+      let { pid } = req.params;
       pid = Number(pid);
-      let productById = await ProductsService.getOne(pid);
       const token = await isValidToken(req.cookies.token);
-      if (
-        token.user.role === "Premium" &&
-        token.user.email !== productById.owner
-      ) {
-        throw new Error(
-          JSON.stringify({
-            detail: `El producto fue registrado por otro usuario`,
-          })
-        );
+      let productById = await ProductsService.getOne(pid);
+  
+      if (token.role === "premium" && token.email !== productById.owner) {
+        throw new Error(JSON.stringify( `El producto fue registrado por otro usuario`));
       }
       await ProductsService.deleteById(pid);
       return res.json({
@@ -124,7 +115,7 @@ export default class ProductController {
     } catch (err) {
       return res.status(400).json({
         message: "Error al eliminar el producto",
-        error: JSON.parse(err.message),
+        error: err.message,
       });
     }
   }
