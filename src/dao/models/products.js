@@ -14,7 +14,6 @@ const product = new mongoose.Schema(
     id: { type: Number, index: true },
     owner: { type: String, default: 'admin' },
     },
-  },
   { timestamps: true }
 );
 

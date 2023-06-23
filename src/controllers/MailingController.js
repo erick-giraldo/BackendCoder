@@ -13,7 +13,7 @@ import { plantillaForgotPass } from "./plantillaForgotPass.js";
 const logger = getLogger();
 export default class MailingController {
   static email = async (email, token) => {
-    const resetLink = `http://localhost:${PORT}/forgotPassword?token=${token} `;
+    const resetLink = `http://localhost:${PORT}/forgotPassword?token=${token}`;
     const attachments = [
       {
         filename: "image.png",
