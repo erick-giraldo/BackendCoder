@@ -23,7 +23,7 @@ export default class MailingController {
     ];
     const result = await messageService.sendEmail(
       `${email}`,
-      "establecimiento de contraseña",
+      "Restablecimiento de contraseña",
       plantillaForgotPass(resetLink)
       ,
       // attachments

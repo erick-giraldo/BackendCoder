@@ -36,5 +36,9 @@ export default class UsersService {
   static delete(id) {
     return userRepository.deleteOne(id);
   }
+  
+  static updateOne(id, payload, extradata = {}) {
+    return UserModel.updateOne({ _id: id, ...extradata }, payload);
+}
 
 }
