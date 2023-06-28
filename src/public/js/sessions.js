@@ -62,8 +62,11 @@ const login = async (email, password) => {
 
 const register = async (email, password, role) => {
   const { success, error } = await postRequest(`${API_URL}/register`, {
-    email,
     password,
+    first_name: "Jorge",
+    last_name: "Perez",
+    email,
+    age: 20,
     role,
   }, "POST");
   if (success) {

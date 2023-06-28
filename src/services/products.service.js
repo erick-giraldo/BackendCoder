@@ -12,7 +12,7 @@ export default class ProductsService {
   }
 
   static getOne(id) {
-    return ProductsModel.findOne({ id });
+    return ProductsModel.findOne({ _id : id });
   }
 
   static getCode(code) {

@@ -9,6 +9,7 @@ import RouterController from "../routes/index.js";
 import  dirname  from "./utils.js";
 import initPassport from "./passport.config.js";
 import errorMiddleware from '../utils/errors/MiddlewareError.js'
+import swagger from "./swagger.js";
 
 const app = express();
 
@@ -38,6 +39,10 @@ app.use(cookieParser());
 // Configuración de Passport
 initPassport();
 app.use(passport.initialize());
+
+
+
+swagger(app);
 
 // Configuración de rutas
 RouterController.routes(app);

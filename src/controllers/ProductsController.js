@@ -22,13 +22,7 @@ export default class ProductController {
   static async getProductById(req, res) {
     try {
       let { pid } = req.params;
-      pid = Number(pid);
-      if (isNaN(pid)) {
-        throw new Error(
-          JSON.stringify({ id: "El id tiene que ser de tipo numérico" })
-        );
-      }
-      const productById = await ProductsService.getOne({ id: pid });
+      const productById = await ProductsService.getOne( pid );
       if (!productById)
         return res.status(404).json({ message: "Producto no encontrado" });
       return res.json({
@@ -70,7 +64,6 @@ export default class ProductController {
   static async updateProduct(req, res) {
     try {
       let { pid } = req.params;
-      pid = Number(pid);
       const productData = req.body;
       let productById = await ProductsService.getOne(pid);
       const token = await isValidToken(req.cookies.token);

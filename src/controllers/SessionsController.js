@@ -37,22 +37,8 @@ class SessionsController {
   static login = async (req, res) => {
     try {
       const { email, password } = req.body;
-      const isAdminUser =
-        email === process.env.ADMIN_EMAIL &&
-        password === process.env.ADMIN_PASSWORD;
-      let user = isAdminUser
-        ? {
-            first_name: process.env.ADMIN_NAME,
-            last_name: "",
-            role: "admin",
-            email: process.env.ADMIN_EMAIL,
-            password: createHash(process.env.ADMIN_PASSWORD),
-          }
-        : await UsersService.getOne(email);
-      if (!isAdminUser) {
-        user = JSON.parse(JSON.stringify(user));
-      }
-
+      let user = await UsersService.getOne(email);
+      user = JSON.parse(JSON.stringify(user));
       const token = tokenGenerator(user);
       res
         .cookie("token", token, {
@@ -71,6 +57,7 @@ class SessionsController {
 
   static register = async (req, res) => {
     try {
+
       const createCart = await CartService.create();
       const findCart = await CartService.getCartById(createCart._id);
       let cartBody;
@@ -79,6 +66,7 @@ class SessionsController {
       } else {
         cartBody = [{ _id: createCart._id, id: 0 }];
       }
+      console.log("🚀 ~ file: SessionsController.js:83 ~ SessionsController ~ register= ~ user:", req.body)
       const user = await UsersService.create(req.body);
       await UsersService.updateUserCart(user._id, cartBody);
       if (!user) {

@@ -3,6 +3,21 @@ import UsersService from "../services/users.service.js";
 
 class UserController {
 
+    static async getAllUsers(req, res) {
+        try {
+            const users = await UsersService.get().catch(() => {
+                throw new Error(JSON.stringify({ detail: 'No se encontro usuarios' }))
+            })
+            return res.json(users);
+        } catch (err) {
+            return res.status(400).json({
+                message: 'Error al obtener los usuarios',
+                error: err.message
+            });
+        };
+    }
+
+
     static async updateRoleById(req, res) {
         try {
             const { id } = req.params;

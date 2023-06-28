@@ -2,11 +2,10 @@ import { createHash } from "../utils/hash.js";
 
 export default class UserDTO {
   constructor(user) {
-    this.first_name = "Jorge";
-    this.last_name = "Perez";
+    this.first_name = user.first_name;
+    this.last_name = user.last_name;
     this.email = user.email;
-    this.age = 20;
-    this.occupation = "Ingeniero";
+    this.age = user.age;
     this.role = user.role;
     this.cart = [];
     this.password = createHash(user.password);

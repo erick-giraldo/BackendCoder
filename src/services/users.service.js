@@ -5,7 +5,7 @@ export default class UsersService {
     return userRepository.create(body);
   }
 
-  static get(query) {
+  static get() {
     return userRepository.get();
   }
 

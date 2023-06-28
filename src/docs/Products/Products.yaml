@@ -1,0 +1,150 @@
+paths:
+  /api/products:
+    post:
+        summary: Crear un Producto
+        tags:
+          - Products
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product'
+        responses:
+          200:
+            description: Usuario registrado
+          400:
+            description: Error en los datos enviados
+          500:
+            description: Error interno del servidor
+
+    get:
+      summary: Listar prodcutos
+      tags:
+        - Products
+      responses:
+        200:
+          descripton: Lista de prodcutos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/product'
+        500:
+          description: Error interno del servidor
+
+  /api/products/{id}:
+    get:
+      summary: Obtener un producto por ID
+      tags:
+        - Products
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID del producto
+      responses:
+        200:
+          description: Producto encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product'
+        404:
+          description: Producto no encontrado
+        500:
+          description: Error interno del servidor
+
+    put:
+      summary: Actualizar un producto
+      tags:
+        - Products
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Id del producto
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/product'
+      responses:
+        200:
+          description: Producto actualizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product'
+        404:
+          description: Producto no encontrado
+        500:
+          description: Error interno del servidor
+
+    delete:
+      summary: Eliminar un producto
+      tags:
+        - Products
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Id del producto
+      responses:
+        200:
+          description: Producto eliminado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product'
+        404:
+          description: Producto no encontrado
+        500:
+          description: Error interno del servidor        
+          
+components:
+  schemas:
+    product:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Modelo del producto
+        description:
+          type: string
+          description: description del producto
+        code:
+          type: string
+          description: codigo del producto
+        price:
+          type: number
+          description: Precio del producto
+        status:
+          type: boolean
+          description: Status del producto
+        stock:
+          type: number
+          description: Stock del producto
+        category:
+          type: string
+          description: Categoria del producto
+        image:
+          type: string
+          description: imagen del producto  
+      example:
+        name: "Fat Boy™"
+        description: "Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores."
+        code: "A752ss"
+        price: 457
+        status: true
+        stock: 3
+        category: "Sports"
+        image: "https://picsum.photos/seed/UATvGWR/640/480"
