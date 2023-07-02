@@ -25,11 +25,11 @@ export default class ProductsService {
   }
 
   static async updateOne(id, body) {
-    return ProductsModel.updateOne({ id }, { $set: body });
+    return ProductsModel.updateOne({ _id: id }, { $set: body });
   }
 
   static deleteById(id) {
-    return ProductsModel.deleteOne({ id: id });
+    return ProductsModel.deleteOne({ _id: id });
   }
 
   static paginate(query, opts) {

@@ -7,7 +7,6 @@ const fetchApi = async (url, method, body = null) => {
       },
       body: body ? JSON.stringify(body) : null,
     });
-
     if (response.status === 200) {
       return { success: true, data: await response.json() };
     } else {
@@ -32,15 +31,24 @@ const showSuccessMessage = (title, message, shouldReload = true) => {
 };
 
 const showErrorMessage = (title, message) => {
+ if(message === 'Forbidden'){
+  Swal.fire({
+    icon: "error",
+    title,
+    text: 'No tiene Permiso para acceder a esta página',
+    showConfirmButton: false,
+  });
+ }else{
   Swal.fire({
     icon: "error",
     title,
     text: message,
     showConfirmButton: false,
   });
-  setTimeout(() => {
-    location.reload();
-  }, 1000);
+ }
+  // setTimeout(() => {
+  //   location.reload();
+  // }, 1000);
 };
 
 const addProductCart = async (_id) => {

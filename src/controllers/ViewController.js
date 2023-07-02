@@ -41,7 +41,7 @@ export default class ViewController {
         CommonsUtil.getFilter(query),
         opts
       );
-      const cartById = await CartService.getById(cid);
+      const cartById = await CartService.getByIdView(cid);
       if (!isEmpty(cartById)) {
         totalItems = cartById.products.reduce(
           (acc, item) => acc + item.quantity,
@@ -90,7 +90,7 @@ export default class ViewController {
           JSON.stringify({ detail: "El id tiene que ser de tipo numérico" })
         );
 
-      const cartById = await CartService.getOne(cid);
+      const cartById = await CartService.getOneView(cid);
       if (isEmpty(cartById))
         return res.status(404).json({ message: "Carrito no encontrado" });
 
@@ -165,7 +165,7 @@ export default class ViewController {
           })
         );
       }
-      const cartById = await CartService.getById(cid);
+      const cartById = await CartService.getByIdView(cid);
       if (!cartById) {
         return res
           .status(404)
@@ -233,7 +233,7 @@ export default class ViewController {
           })
         );
 
-      let cartById = await CartService.getById(cid);
+      let cartById = await CartService.getByIdView(cid);
       if (!cartById)
         return res
           .status(404)

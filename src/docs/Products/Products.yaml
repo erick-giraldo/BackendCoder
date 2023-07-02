@@ -12,7 +12,7 @@ paths:
                 $ref: '#/components/schemas/product'
         responses:
           200:
-            description: Usuario registrado
+            description: Producto creado
           400:
             description: Error en los datos enviados
           500:
@@ -74,14 +74,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/product'
+              $ref: '#/components/requestBodies/productUpdate'
       responses:
         200:
           description: Producto actualizado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/product'
+                $ref: '#/components/requestBodies/productUpdate'
         404:
           description: Producto no encontrado
         500:
@@ -148,3 +148,8 @@ components:
         stock: 3
         category: "Sports"
         image: "https://picsum.photos/seed/UATvGWR/640/480"
+  requestBodies:
+    productUpdate:
+      example:
+        name: "Fat Boy II™"
+        price: 500

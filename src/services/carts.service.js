@@ -15,13 +15,23 @@ export default class CartService {
   }
 
   static getById(id) {
-    return CartModel.findOne({id});
+    return CartModel.findOne({ _id : id });
+  }
+
+  static getByIdView(id) {
+    return CartModel.findOne({ id });
   }
 
   static getCartById(id) {
     return CartModel.findById( id );
   }
+  
   static getOne(id) {
+    return CartModel.findOne({ _id: id }).populate(
+      "products._id"
+    );
+  }
+  static getOneView(id) {
     return CartModel.findOne({ id }).populate(
       "products._id"
     );
@@ -36,6 +46,6 @@ export default class CartService {
   }
 
   static deleteById(id) {
-    return CartModel.deleteOne({ id: id });
+    return CartModel.deleteOne({ _id: id });
   }
 }

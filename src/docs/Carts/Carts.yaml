@@ -1,0 +1,266 @@
+paths:
+  /api/carts:
+    post:
+        summary: Crear un Carrito
+        tags:
+          - Carrito
+        requestBody:
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cart'
+        responses:
+          200:
+            description: Carrito registrado
+          400:
+            description: Error en los datos enviados
+          500:
+            description: Error interno del servidor
+
+    get:
+      summary: Listar Carritos
+      tags:
+        - Carrito
+      responses:
+        200:
+          descripton: Lista de Carritos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/cart'
+        500:
+          description: Error interno del servidor
+
+  /api/carts/{id}:
+    get:
+      summary: Obtener un Carrito por ID
+      tags:
+        - Carrito
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID del Carrito
+      responses:
+        200:
+          description: Carrito encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cart'
+        404:
+          description: Carrito no encontrado
+        500:
+          description: Error interno del servidor
+
+    delete:
+      summary: Eliminar un Carrito por ID
+      tags:
+        - Carrito
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID del Carrito
+      responses:
+        200:
+          description: Carrito eliminado
+        404:
+          description: Carrito no encontrado
+        500:
+          description: Error interno del servidor
+
+  /api/carts/product/{id}:
+    post:
+      summary: Agregar producto al Carrito
+      tags:
+        - Carrito
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID del Carrito
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cart'
+      responses:
+        200:
+          description: Prodiucto agregado al carrito exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cart'
+        404:
+          description: Carrito no encontrado
+        500:
+          description: Error interno del servidor
+
+    put:
+      summary: Descontar producto del Carrito
+      tags:
+        - Carrito
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID del Carrito
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cart'
+      responses:
+        200:
+          description: Se desconto Productos del carrito exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cart'
+        404:
+          description: Carrito no encontrado
+        500:
+          description: Error interno del servidor
+
+    delete:
+      summary: Eliminar producto del Carrito
+      tags:
+        - Carrito
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID del Carrito
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cart'
+      responses:
+        200:
+          description: Se elimino el producto del carrito exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cart'
+        404:
+          description: Carrito no encontrado
+        500:
+          description: Error interno del servidor
+
+  /api/carts/qty/product/{id}:
+    put:
+      summary: Actualizar cantidad de producto en el Carrito
+      tags:
+        - Carrito
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID del Carrito
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBody/qtyProduct'
+      responses:
+        200:
+          description: Se actualizo la cantidad de productos del carrito exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cart'
+        404:
+          description: Carrito no encontrado
+        500:
+          description: Error interno del servidor
+
+/api/carts/qty/products:
+    put:
+      summary: Actualizar todos los productos en el Carrito
+      tags:
+        - Carrito
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBody/updateProductCart'
+      responses:
+        200:
+          description: Se actualizo la cantidad de productos del carrito exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cart'
+        404:
+          description: Carrito no encontrado
+        500:
+          description: Error interno del servidor
+components:
+  schemas:
+    cart:
+      type: object
+      properties:
+        products:
+          type: array
+          description: Productos agregados al carrito
+        id:
+          type: number
+          description: ID del carriro
+      example:
+        _id: "6471207372a1eae2f6d0fc4f"
+        products: [
+          {
+            "_id": "6426434a69f571391d2dcbd4",
+            "quantity": 5
+          }]
+        id: 43
+  requestBody:
+    qtyProduct:
+      type: object
+      properties:
+        quantity:
+          type: number
+          description: Cantidad del producto
+      example:
+        quantity: 5
+    updateProductCart:
+      type: object
+      properties:
+        products:
+          type: array
+          description: Productos en el carrito
+      example:
+        products: 
+              [
+                  {
+                      "_id" : "6426439d69f571391d2dcbd6",
+                      "quantity" : 5
+                  },
+                  {
+                      "_id" : "6426434a69f571391d2dcbd4",
+                      "quantity" : 1
+                  }
+              ]
+        
