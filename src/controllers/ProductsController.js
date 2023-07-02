@@ -1,6 +1,6 @@
 import isEmpty from "is-empty";
 import ProductsService from "../services/products.service.js";
-import CommonsUtil from "../utils/Commons.js";
+import CommonsUtil from "../utils/commons.js";
 import { isValidToken } from "../utils/hash.js";
 export default class ProductController {
   static async getProducts(req, res) {
