@@ -206,8 +206,6 @@ export const validUpdateProduct = async (req, res, next) => {
     let error = {};
     let { pid } = req.params;
     const productData = req.body;
-    pid = Number(pid);
-    if (isNaN(pid)) throw new Error("El id tiene que ser de tipo numérico");
     if (isEmpty(productData))
       throw new Error("No se ha ingresado nungún elemento a actualizar");
     let productById = await ProductsService.getOne(pid);
@@ -253,11 +251,6 @@ export const validUpdateProduct = async (req, res, next) => {
 export const validateDeleteProduct = async (req, res, next) => {
   try {
     let { pid } = req.params;
-    pid = Number(pid);
-    if (isNaN(pid)) {
-      logger.error("El id tiene que ser de tipo numérico");
-      throw new Error("El id tiene que ser de tipo numérico");
-    }
     let productById = await ProductsService.getOne(pid);
     if (isEmpty(productById)) {
       logger.warning("No se encontró ningún producto con ese id");

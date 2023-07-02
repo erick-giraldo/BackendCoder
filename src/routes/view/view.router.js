@@ -17,7 +17,7 @@ export default class ViewRouter extends CustomerRouter {
     this.get('/login' ,['PUBLIC'], isLoged, ViewController.login)
     this.get('/invoice' , ['USER','ADMIN'], ViewController.invoice)
 
-    this.post("/carts/product/:pid", ['USER', 'PREMIUM'], viewAddProductCart, ViewController.addProductById)
+    this.post("/carts/product/:pid", ['USER','ADMIN', 'PREMIUM'], viewAddProductCart, ViewController.addProductById)
     
     this.delete("/deletecarts/product/:pid", ['USER','ADMIN', 'PREMIUM'], ViewController.deleteProductCartById)
 

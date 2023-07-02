@@ -29,12 +29,6 @@ export default class CartController {
   static async getCartById(req, res) {
     try {
       let { cid } = req.params;
-      cid = Number(cid);
-      if (isNaN(cid))
-        throw new Error(
-          JSON.stringify({ detail: "El id tiene que ser de tipo numérico" })
-        );
-
       const cartById = await CartService.getOne(cid);
 
       if (!cartById)
@@ -52,7 +46,7 @@ export default class CartController {
     }
   }
 
-  static async addCart(req, res) {
+  static async createCart(req, res) {
     try {
       await CartService.create({});
       return res.json({
@@ -72,7 +66,7 @@ export default class CartController {
           })
         );
       }
-      const cartById = await CartService.getById(cid);
+      const cartById = await CartService.getByIdView(cid);
       if (!cartById) {
         return res
           .status(404)
@@ -125,7 +119,21 @@ export default class CartController {
     }
   }
 
-  static async deleteProductCartById(req, res) {
+  static async deleteCartById(req, res){
+    try{
+        const { cid } = req.params;
+        const cartById = await CartService.getById(cid);
+        if(!cartById){
+            return res.status(404).json({ message: `No se encontró un carrito con el id ${cid}` });
+        }
+        await CartService.deleteById(cid);
+        return res.json({ message: `El carrito con el id ${cid} fue eliminado exitosamente` });
+    }catch(err){
+        return res.status(400).json({ message: "Error al eliminar el carrito", error: err.message });
+    }
+  }
+
+  static async discountQuantityProductCartById(req, res) {
     try {
       let { pid } = req.params;
       let cid =
@@ -138,7 +146,7 @@ export default class CartController {
           })
         );
 
-      let cartById = await CartService.getById(cid);
+      let cartById = await CartService.getByIdView(cid);
       if (!cartById)
         return res
           .status(404)
@@ -175,8 +183,7 @@ export default class CartController {
       }
       await CartService.updateOne(cid, listProduct);
       return res.json({
-        message:
-          "La cantidad del producto en el carrito se disminuyó exitosamente",
+        message: "Se desconto Productos del carrito exitosamente",
       });
     } catch (err) {
       return res.status(400).json({
@@ -188,52 +195,150 @@ export default class CartController {
 
   static async deleteProductsByCartId(req, res) {
     try {
-      let { cid } = req.params;
-      cid = Number(cid);
-      const products = [];
-      const result = await CartService.updateOne(cid, products);
+      let { pid } = req.params;
+      let products = req.body.products;
+      const result = await CartService.deleteProducts(cid, pid);
+      if (result.nModified === 0)
+        return res.status(404).json({ message: "Carrito no encontrado" });
+
       return res.json({
-        message: "Productos eliminados del carrito exitosamente",
+        message: "Productos eliminados exitosamente",
       });
     } catch (e) {
       return res.status(500).json({
         message: e.message,
+      });
+    }
+    
+  }
+
+  static async deleteProductsByCartId(req, res) {
+    try {
+      let { pid } = req.params;
+      let cid =
+        !isEmpty(req.user) && !isEmpty(req.user.cart) ? req.user.cart[0].id : 0;
+      cid = Number(cid);
+      if (isNaN(cid))
+        throw new Error(
+          JSON.stringify({
+            detail: "El id del carrito tiene que ser de tipo numérico",
+          })
+        );
+       let cartById = await CartService.getByIdView(cid);
+      if (!cartById)
+        return res
+          .status(404)
+          .json({ message: `No se encontró un carrito con el id ${cid}` });
+       const productById = await ProductsService.getById({ _id: pid });
+      if (!productById)
+        return res
+          .status(404)
+          .json({ message: `No se encontró un producto con el id ${pid}` });
+       let listProduct = cartById.products;
+      const searchProductByIdInCart = listProduct.find(
+        (data) => data._id.toString() === pid
+      );
+      if (!isEmpty(searchProductByIdInCart)) {
+        listProduct = listProduct.filter((item) => item._id.toString() !== pid);
+      } else {
+        return res.status(404).json({
+          message: `El producto con el id ${pid} no se encuentra en el carrito`,
+        });
+      }
+      await CartService.updateOne(cid, listProduct);
+      return res.json({
+        message: "Se elimino producto del carrito exitosamente",
+      });
+    } catch (err) {
+      return res.status(400).json({
+        message: "Error al eliminar producto del carrito",
+        error: err.message,
       });
     }
   }
 
   static async updateProductQuantityByCartId(req, res) {
-    try {
-      let { cid, pid } = req.params;
-      let quantity = req.body.quantity;
-      const result = await CartService.updateOneQuantity(cid, pid, quantity);
-      if (result.nModified === 0)
-        return res.status(404).json({ message: "Carrito no encontrado" });
-
-      return res.json({
-        message: "Cantidad de productos actualizada exitosamente",
-      });
-    } catch (e) {
-      return res.status(500).json({
-        message: e.message,
-      });
-    }
+      try {
+        let { pid } = req.params;
+        let cid =
+          !isEmpty(req.user) && !isEmpty(req.user.cart) ? req.user.cart[0].id : 0;
+        cid = Number(cid);
+        if (isNaN(cid))
+          throw new Error(
+            JSON.stringify({
+              detail: "El id del carrito tiene que ser de tipo numérico",
+            })
+          );
+         let cartById = await CartService.getByIdView(cid);
+        if (!cartById)
+          return res
+            .status(404)
+            .json({ message: `No se encontró un carrito con el id ${cid}` });
+         const productById = await ProductsService.getById({ _id: pid });
+        if (!productById)
+          return res
+            .status(404)
+            .json({ message: `No se encontró un producto con el id ${pid}` });
+         let listProduct = cartById.products;
+        const searchProductByIdInCart = listProduct.find(
+          (data) => data._id.toString() === pid
+        );
+        if (!isEmpty(searchProductByIdInCart)) {
+          listProduct = listProduct.map((item) => {
+            if (item._id.toString() !== pid) return item;
+            return {
+              _id: item._id,
+              quantity: item.quantity + parseInt(req.body.quantity),
+            };
+          });
+        } else {
+          return res.status(404).json({
+            message: `El producto con el id ${pid} no se encuentra en el carrito`,
+          });
+        }
+        await CartService.updateOne(cid, listProduct);
+        return res.json({
+          message: "Se aumentó la cantidad de productos en el carrito exitosamente",
+        });
+      } catch (err) {
+        return res.status(400).json({
+          message: "Error al aumentar la cantidad del producto en el carrito",
+          error: err.message,
+        });
+      }
   }
 
-  static async updateProductsByCartId(req, res) {
+  static async updateProductsCartById(req, res) {
     try {
-      let { cid } = req.params;
-      let products = req.body.products;
-      const result = await CartService.updateOne(cid, products);
-      if (result.nModified === 0)
-        return res.status(404).json({ message: "Carrito no encontrado" });
-
-      return res.json({
-        message: "Productos actualizados exitosamente",
+      let { products } = req.body;
+      let cid = req.user.cart[0].id;
+      cid = Number(cid);
+      if (isNaN(cid))
+        throw new Error(
+          JSON.stringify({
+            detail: "El id del carrito tiene que ser de tipo numérico",
+          })
+        );
+      let cartById = await CartService.getByIdView(cid);
+      if (!cartById)
+        return res
+          .status(404)
+          .json({ message: `No se encontró un carrito con el id ${cid}` });
+       let listProduct = products.map((product) => {
+        const { id, quantity } = product;
+        return {
+          _id: id,
+          quantity: parseInt(quantity),
+        };
       });
-    } catch (e) {
-      return res.status(500).json({
-        message: e.message,
+       await CartService.updateOne(cid, listProduct);
+      return res.json({
+        message: "Se actualizó la cantidad de los productos en el carrito exitosamente",
+      });
+    } catch (err) {
+      return res.status(400).json({
+        message: "Error al actualizar la cantidad de los productos en el carrito",
+        error: err.message,
       });
     }
   }
@@ -246,9 +351,7 @@ export default class CartController {
       return false;
     }
   }
-
-
-
+  
   static async createOrder(req, res) {
     try {
       let { cid, total } = req.params;
@@ -260,7 +363,7 @@ export default class CartController {
       }
       let ticket;
       const purchaser = req.user.email;
-      const response = await CartService.getOne(cid);
+      const response = await CartService.getOneView(cid);
       const products = JSON.parse(JSON.stringify(response.products));
       const newProducts = products.map((product) => {
         return {

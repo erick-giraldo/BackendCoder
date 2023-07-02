@@ -94,7 +94,6 @@ export default class ProductController {
   static async deleteProduct(req, res) {
     try {
       let { pid } = req.params;
-      pid = Number(pid);
       const token = await isValidToken(req.cookies.token);
       let productById = await ProductsService.getOne(pid);
   
