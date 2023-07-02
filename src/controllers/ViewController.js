@@ -1,6 +1,6 @@
 import ProductsService from "../services/products.service.js";
 import CartService from "../services/carts.service.js";
-import CommonsUtil from "../utils/Commons.js";
+import CommonsUtil from "../utils/commons.js";
 import isEmpty from "is-empty";
 import TicketsController from "./TicketsController.js";
 import moment from "moment";
@@ -351,7 +351,6 @@ export default class ViewController {
     <div>
       <h1>Hello world!</h1>
       <ul>
-        <li><a href="/api/message/email">Send email</a></li>
         <li><a href="/api/message/sms">Send SMS</a></li>
         <li><a href="/api/message/thanks">Send SMS Whit Params</a></li>
       </ul>
@@ -359,33 +358,14 @@ export default class ViewController {
     `);
   }
 
-  static resetPassword2 = async (req, res) => {
-    if (!req.cookies.token) {
-      res.send(`
-      <div>
-        <h1>Reset password 🛅</h1>
-        <form action="/reset-password" method="POST">
-        <input type="email" name="email" placeholder="Email" />
-        <input type="password" name="password" placeholder="password" />
-          <button type="submit">Send</button>
-        </form>
-      </div>
-      `);
-    } else {
-      res.send(`
-    <div>
-      <h1>No puedes estar acá 😥</h1>
-    </div>
-    `);
-    }
-  };
-
   static async forgotPassword(req, res) {
     try {
       const { email } = req.user;
+      const { token } = req.query;
       return res.render("forgotPassword", {
         style: "resetPassword.css",
         email: email,
+        token
       });
     } catch (err) {
       return res.status(400).json({

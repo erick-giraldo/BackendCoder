@@ -1,6 +1,10 @@
 import CartService from "../services/carts.service.js";
 import UsersService from "../services/users.service.js";
-import { tokenGeneratorPass, tokenGenerator, createHash } from "../utils/hash.js";
+import {
+  tokenGeneratorPass,
+  tokenGenerator,
+  createHash,
+} from "../utils/hash.js";
 import isEmpty from "is-empty";
 import getLogger from "../utils/logger.js";
 import MailingController from "./MailingController.js";
@@ -57,7 +61,6 @@ class SessionsController {
 
   static register = async (req, res) => {
     try {
-
       const createCart = await CartService.create();
       const findCart = await CartService.getCartById(createCart._id);
       let cartBody;
@@ -66,7 +69,6 @@ class SessionsController {
       } else {
         cartBody = [{ _id: createCart._id, id: 0 }];
       }
-      console.log("🚀 ~ file: SessionsController.js:83 ~ SessionsController ~ register= ~ user:", req.body)
       const user = await UsersService.create(req.body);
       await UsersService.updateUserCart(user._id, cartBody);
       if (!user) {
@@ -125,23 +127,38 @@ class SessionsController {
 
   static resetPassword = async (req, res) => {
     try {
-      if(isEmpty(req.body)){
+      if (isEmpty(req.body)) {
         return res.sendServerError({
           message: "No existe email o password.",
         });
       }
-      const { email, password } = req.body;
+      const { email, password, token } = req.body;
       const user = await UsersService.getOne(email);
+      // Verifica si el token ya se ha utilizado antes
+      const tokens = user.passwordResetTokens.map((tokenObj) => tokenObj.token);
+      const tokenExists = tokens.includes(token);
+      if (tokenExists) {
+        return res.sendServerError({
+          message: "El token ya ha sido utilizado para cambiar la contraseña.",
+        });
+      }
+      // Agrega el token generado al historial de tokens del usuario
+      user.passwordResetTokens.push({
+        token: token,
+        used: false,
+        createdAt: new Date(),
+      });
       const hashedPassword = createHash(password);
       user.password = hashedPassword;
       await user.save();
+      logger.info(`Contraseña cambiada exitosamente.`);
       return res.sendSuccess({
-        message: "Se cambio la contraseña correctamente.",
+        message: "Se cambió la contraseña correctamente.",
       });
     } catch (error) {
       const errorDetail = error.message;
       return res.sendServerError({
-        message: "Error al iniciar sesión",
+        message: error,
         error: { detail: errorDetail },
       });
     }

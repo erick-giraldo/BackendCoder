@@ -19,7 +19,14 @@ const UserSchema = new mongoose.Schema({
         }],
         default: []
     },
-    role: { type: String, default: 'user', enum: ['user', 'admin', 'premium']}
+    role: { type: String, default: 'user', enum: ['user', 'admin', 'premium']},
+    passwordResetTokens: [
+        {
+          token: String,
+          used: Boolean,
+          createdAt: Date
+        }
+      ]
 }, { timestamps: true})
 
 export default mongoose.model('User', UserSchema)

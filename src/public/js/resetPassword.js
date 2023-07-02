@@ -10,6 +10,7 @@ buttonReset.addEventListener("click", (e) => {
   validateSignupForm()
 });
 
+const token = buttonReset.value;
 
 document.getElementById('signupLogo').src = "https://res.cloudinary.com/dwlf0cuu6/image/upload/v1680559638/logo_celer7.webp";
 enableSubmitButton();
@@ -55,7 +56,7 @@ function validateSignupForm() {
     return false;
   }
   
-  resetPassword( email.value, password.value,);
+  resetPassword( email.value, password.value, token);
   disableSubmitButton();
 
   setTimeout(function () {

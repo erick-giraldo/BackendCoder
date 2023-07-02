@@ -114,10 +114,11 @@ const forgotPassword = async (email) => {
 };
 
 
-const resetPassword = async (email, password) => {
+const resetPassword = async (email, password, token) => {
   const { success, error } = await postRequest(`${API_URL}/reset-password`, {
     email, 
-    password
+    password,
+    token
   }, "PUT");
   if (success) {
     Swal.fire({
@@ -132,7 +133,7 @@ const resetPassword = async (email, password) => {
   } else {
     Swal.fire({
       icon: "error",
-      title: "Login error!!!",
+      title: "Reset Password error!!!",
       text: error?.message || errorMessages.UPDATEPASS,
       showConfirmButton: false,
     });
