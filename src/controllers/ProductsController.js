@@ -45,14 +45,14 @@ export default class ProductController {
         ...productData,
         owner: token.role === "admin" ? "admin" : token.email,
       };
-      await ProductsService.create(newProductData).catch(() => {
+      const result = await ProductsService.create(newProductData).catch(() => {
         throw new Error(
           JSON.stringify({
             detail: "El tipo de dato no es correcto o el código ya existe",
           })
         );
       });
-      return res.json({ message: "El producto fue agregado exitosamente" });
+      return res.json({ message: "El producto fue agregado exitosamente", data: result });
     } catch (err) {
       return res.status(400).json({
         message: "Error al agregar el producto",

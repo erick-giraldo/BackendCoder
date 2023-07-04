@@ -48,9 +48,11 @@ export default class CartController {
 
   static async createCart(req, res) {
     try {
-      await CartService.create({});
+      const result = await CartService.create({});
+      console.log("🚀 ~ file: CartController.js:52 ~ CartController ~ createCart ~ result:", result)
       return res.json({
         message: "El carrito fue agregado exitosamente",
+        data: result,
       });
     } catch (err) {}
   }

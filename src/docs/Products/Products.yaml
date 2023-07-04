@@ -1,37 +1,37 @@
 paths:
   /api/products:
     post:
-        summary: Crear un Producto
-        tags:
-          - Products
-        requestBody:
-          required: true
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/product'
-        responses:
-          200:
-            description: Producto creado
-          400:
-            description: Error en los datos enviados
-          500:
-            description: Error interno del servidor
+      summary: Crear un Producto
+      tags:
+        - Products
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductRequest'
+      responses:
+        '200':
+          description: Producto creado
+        '400':
+          description: Error en los datos enviados
+        '500':
+          description: Error interno del servidor
 
     get:
-      summary: Listar prodcutos
+      summary: Listar productos
       tags:
         - Products
       responses:
-        200:
-          descripton: Lista de prodcutos
+        '200':
+          description: Lista de productos
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/product'
-        500:
+                  $ref: '#/components/schemas/Product'
+        '500':
           description: Error interno del servidor
 
   /api/products/{id}:
@@ -47,15 +47,15 @@ paths:
           required: true
           description: ID del producto
       responses:
-        200:
+        '200':
           description: Producto encontrado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/product'
-        404:
+                $ref: '#/components/schemas/Product'
+        '404':
           description: Producto no encontrado
-        500:
+        '500':
           description: Error interno del servidor
 
     put:
@@ -68,23 +68,23 @@ paths:
           schema:
             type: string
           required: true
-          description: Id del producto
+          description: ID del producto
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/requestBodies/productUpdate'
+              $ref: '#/components/schemas/ProductUpdateRequest'
       responses:
-        200:
+        '200':
           description: Producto actualizado
           content:
             application/json:
               schema:
-                $ref: '#/components/requestBodies/productUpdate'
-        404:
+                $ref: '#/components/schemas/Product'
+        '404':
           description: Producto no encontrado
-        500:
+        '500':
           description: Error interno del servidor
 
     delete:
@@ -97,22 +97,22 @@ paths:
           schema:
             type: string
           required: true
-          description: Id del producto
+          description: ID del producto
       responses:
-        200:
+        '200':
           description: Producto eliminado
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/product'
-        404:
+                $ref: '#/components/schemas/Product'
+        '404':
           description: Producto no encontrado
-        500:
+        '500':
           description: Error interno del servidor        
-          
+
 components:
   schemas:
-    product:
+    Product:
       type: object
       properties:
         name:
@@ -120,25 +120,25 @@ components:
           description: Modelo del producto
         description:
           type: string
-          description: description del producto
+          description: Descripción del producto
         code:
           type: string
-          description: codigo del producto
+          description: Código del producto
         price:
           type: number
           description: Precio del producto
         status:
           type: boolean
-          description: Status del producto
+          description: Estado del producto
         stock:
           type: number
           description: Stock del producto
         category:
           type: string
-          description: Categoria del producto
+          description: Categoría del producto
         image:
           type: string
-          description: imagen del producto  
+          description: Imagen del producto  
       example:
         name: "Fat Boy™"
         description: "Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores."
@@ -148,8 +148,53 @@ components:
         stock: 3
         category: "Sports"
         image: "https://picsum.photos/seed/UATvGWR/640/480"
-  requestBodies:
-    productUpdate:
+
+    ProductRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Modelo del producto
+        description:
+          type: string
+          description: Descripción del producto
+        code:
+          type: string
+          description: Código del producto
+        price:
+          type: number
+          description: Precio del producto
+        status:
+          type: boolean
+          description: Estado del producto
+        stock:
+          type: number
+          description: Stock del producto
+        category:
+          type: string
+          description: Categoría del producto
+        image:
+          type: string
+          description: Imagen del producto  
+      example:
+        name: "Fat Boy™"
+        description: "Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores."
+        code: "A752ss"
+        price: 457
+        status: true
+        stock: 3
+        category: "Sports"
+        image: "https://picsum.photos/seed/UATvGWR/640/480"
+
+    ProductUpdateRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Modelo del producto
+        price:
+          type: number
+          description: Precio del producto
       example:
         name: "Fat Boy II™"
         price: 500
