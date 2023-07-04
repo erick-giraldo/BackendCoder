@@ -1,37 +1,33 @@
 paths:
   /api/carts:
     post:
-        summary: Crear un Carrito
-        tags:
-          - Carrito
-        requestBody:
-          required: true
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/cart'
-        responses:
-          200:
-            description: Carrito registrado
-          400:
-            description: Error en los datos enviados
-          500:
-            description: Error interno del servidor
+      summary: Crear un Carrito
+      tags:
+        - Carrito
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cart'
+      responses:
+        '200':
+          description: Carrito registrado
+        '400':
+          description: Error en los datos enviados
+        '500':
+          description: Error interno del servidor
 
     get:
       summary: Listar Carritos
       tags:
         - Carrito
       responses:
-        200:
-          descripton: Lista de Carritos
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/cart'
-        500:
+        '200':
+          description: Lista de carritos
+        '404':
+          description: Lista de carritos no encontrada
+        '500':
           description: Error interno del servidor
 
   /api/carts/{id}:
@@ -47,15 +43,11 @@ paths:
           required: true
           description: ID del Carrito
       responses:
-        200:
+        '200':
           description: Carrito encontrado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/cart'
-        404:
+        '404':
           description: Carrito no encontrado
-        500:
+        '500':
           description: Error interno del servidor
 
     delete:
@@ -70,41 +62,43 @@ paths:
           required: true
           description: ID del Carrito
       responses:
-        200:
+        '200':
           description: Carrito eliminado
-        404:
+        '404':
           description: Carrito no encontrado
-        500:
+        '500':
           description: Error interno del servidor
 
-  /api/carts/product/{id}:
+  /api/carts/{cid}/product/{pid}:
     post:
       summary: Agregar producto al Carrito
       tags:
         - Carrito
       parameters:
         - in: path
-          name: id
+          name: cid
           schema:
             type: string
           required: true
-          description: ID del Carrito
+          description: Id del Carrito
+        - in: path
+          name: pid
+          schema:
+            type: string
+          required: true
+          description: Id del Producto
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/cart'
+              $ref: '#/components/requestBody/ProductRequest'
       responses:
-        200:
-          description: Prodiucto agregado al carrito exitosamente
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/cart'
-        404:
+        '200':
+          description: Producto agregado al carrito exitosamente
+        '404':
           description: Carrito no encontrado
-        500:
+        '500':
           description: Error interno del servidor
 
     put:
@@ -123,17 +117,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/cart'
+              $ref: '#/components/requestBody/ProductRequest'
       responses:
-        200:
-          description: Se desconto Productos del carrito exitosamente
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/cart'
-        404:
+        '200':
+          description: Se descontaron productos del carrito exitosamente
+        '404':
           description: Carrito no encontrado
-        500:
+        '500':
           description: Error interno del servidor
 
     delete:
@@ -152,17 +142,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/cart'
+              $ref: '#/components/requestBody/ProductRequest'
       responses:
-        200:
-          description: Se elimino el producto del carrito exitosamente
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/cart'
-        404:
+        '200':
+          description: Se eliminó el producto del carrito exitosamente
+        '404':
           description: Carrito no encontrado
-        500:
+        '500':
           description: Error interno del servidor
 
   /api/carts/qty/product/{id}:
@@ -184,18 +170,18 @@ paths:
             schema:
               $ref: '#/components/requestBody/qtyProduct'
       responses:
-        200:
-          description: Se actualizo la cantidad de productos del carrito exitosamente
+        '200':
+          description: Se actualizó la cantidad de productos del carrito exitosamente
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/cart'
-        404:
+        '404':
           description: Carrito no encontrado
-        500:
+        '500':
           description: Error interno del servidor
 
-/api/carts/qty/products:
+  /api/carts/qty/products:
     put:
       summary: Actualizar todos los productos en el Carrito
       tags:
@@ -207,16 +193,17 @@ paths:
             schema:
               $ref: '#/components/requestBody/updateProductCart'
       responses:
-        200:
-          description: Se actualizo la cantidad de productos del carrito exitosamente
+        '200':
+          description: Se actualizó la cantidad de productos del carrito exitosamente
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/cart'
-        404:
+        '404':
           description: Carrito no encontrado
-        500:
+        '500':
           description: Error interno del servidor
+
 components:
   schemas:
     cart:
@@ -226,17 +213,40 @@ components:
           type: array
           description: Productos agregados al carrito
         id:
-          type: number
-          description: ID del carriro
+          type: string
+          description: ID del carrito
       example:
-        _id: "6471207372a1eae2f6d0fc4f"
-        products: [
-          {
-            "_id": "6426434a69f571391d2dcbd4",
-            "quantity": 5
-          }]
-        id: 43
+        _id: "64a10a6a21c3fcddd96e176e"
+        products: []	
+        createdAt: "2023-07-02T05:26:02.695Z"
+        updatedAt: "2023-07-02T07:05:31.729Z"
+        __v: 0
+        id: 61
+
+       
+
   requestBody:
+    ProductRequest:
+      type: object
+      properties:
+        products:
+          type: array
+          description: Productos agregados al carrito
+        id:
+          type: string
+          description: ID del carrito
+      example:
+        _id: "64a10a6a21c3fcddd96e176e"
+        products:
+          - _id: "6426439d69f571391d2dcbd6"
+            quantity: 5
+          - _id: "6426434a69f571391d2dcbd4"
+            quantity: 1
+        createdAt: "2023-07-02T05:26:02.695Z"
+        updatedAt: "2023-07-02T07:05:31.729Z"
+        __v: 0
+        id: 61   
+        
     qtyProduct:
       type: object
       properties:
@@ -245,6 +255,7 @@ components:
           description: Cantidad del producto
       example:
         quantity: 5
+
     updateProductCart:
       type: object
       properties:
@@ -253,14 +264,7 @@ components:
           description: Productos en el carrito
       example:
         products: 
-              [
-                  {
-                      "_id" : "6426439d69f571391d2dcbd6",
-                      "quantity" : 5
-                  },
-                  {
-                      "_id" : "6426434a69f571391d2dcbd4",
-                      "quantity" : 1
-                  }
-              ]
-        
+          - _id: "6426439d69f571391d2dcbd6"
+            quantity: 5
+          - _id: "6426434a69f571391d2dcbd4"
+            quantity: 1

@@ -12,7 +12,8 @@ export default class cartProducts extends CustomerRouter {
         this.post("", ['USER','ADMIN'], CartController.createCart);
         this.delete("/:cid", ['USER', 'ADMIN'], CartController.deleteCartById)
 
-        this.post("/product/:pid", ['USER','ADMIN', 'PREMIUM'], CartController.addProductCartById);
+        this.post("/product/:pid", ['USER','ADMIN', 'PREMIUM'], CartController.addProductCartByIdView);
+        this.post(":cid/product/:pid", ['USER','ADMIN', 'PREMIUM'], CartController.addProductCartById);
         this.put("/product/:pid", ['USER','ADMIN'], CartController.discountQuantityProductCartById);
         this.delete("/product/:pid", ['USER','ADMIN'], CartController.deleteProductsByCartId);
         this.put("/qty/product/:pid", ['USER','ADMIN'], CartController.updateProductQuantityByCartId);

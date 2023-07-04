@@ -48,17 +48,85 @@ export default class CartController {
 
   static async createCart(req, res) {
     try {
-      await CartService.create({});
+      const result = await CartService.create({});
       return res.json({
         message: "El carrito fue agregado exitosamente",
+        data: result,
       });
     } catch (err) {}
   }
 
-  static async addProductCartById(req, res) {
+  static async addProductCartByIdView(req, res) {
     try {
+      console.log("eeeee")
       const { pid } = req.params;
       const cid = req.user.cart[0].id;
+      console.log("🚀 ~ file: CartController.js:64 ~ CartController ~ addProductCartById ~ cid:", cid)
+      if (isNaN(cid)) {
+        throw new Error(
+          JSON.stringify({
+            detail: "El id del carrito tiene que ser de tipo numérico",
+          })
+        );
+      }
+      const cartById = await CartService.getByIdView(cid);
+      if (!cartById) {
+        return res
+          .status(404)
+          .json({ message: `No se encontró un carrito con el id ${cid}` });
+      }
+      const productById = await ProductsService.getById({ _id: pid });
+      if (!productById) {
+        return res
+          .status(404)
+          .json({ message: `No se encontró un producto con el id ${pid}` });
+      }
+      const token = await isValidToken(req.cookies.token);
+      if(token.role === 'premium' && token.email !== productById.owner){
+          throw new Error(JSON.stringify({ detail: `No puedes agregar un producto que no te pertenece` }));
+      }
+
+      let listProduct = cartById.products;
+      const existingProduct = listProduct.find(
+        (item) => item._id.toString() === pid
+      );
+      if (existingProduct && existingProduct.quantity >= productById.stock) {
+        return res.status(400).json({
+          message: `El producto ${productById.name} ya está agregado al carrito y no hay suficiente stock`,
+        });
+      }
+      if (existingProduct) {
+        listProduct = listProduct.map((item) =>
+          item._id.toString() !== pid
+            ? item
+            : {
+                _id: item._id,
+                quantity: item.quantity + 1,
+              }
+        );
+      } else {
+        listProduct.push({
+          _id: pid,
+          quantity: 1,
+        });
+      }
+      await CartService.updateOne(cid, listProduct);
+      return res.json({
+        message: "El producto fue agregado al carrito exitosamente",
+      });
+    } catch (err) {
+      return res.status(400).json({
+        message: "Error al insertar un producto en el carrito",
+        error: err.message,
+      });
+    }
+  }
+
+  static async addProductCartById(req, res) {
+    try {
+      console.log("eeeee")
+      const { pid, cid } = req.params;
+      console.log("🚀 ~ file: CartController.js:64 ~ CartController ~ addProductCartById ~ cid:", cid)
       if (isNaN(cid)) {
         throw new Error(
           JSON.stringify({

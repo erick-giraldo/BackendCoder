@@ -14666,3 +14666,416 @@ debug: Server running in http://localhost:8080/ in produccion environment. {"tim
   label: 'right meow!',
   timestamp: '2023-07-03 12:46:27'
 }
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 15:54:13'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 15:54:13'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-04 16:59:36'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 17:01:00'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 17:01:00'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 17:04:23'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 17:04:23'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 17:05:43'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 17:05:43'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 17:07:55'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 17:07:55'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 17:08:01'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 17:08:01'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:03:11'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:03:12'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:04:47'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:04:47'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:06:24'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:06:24'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:06:57'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:06:57'
+}
+{
+  statusCode: 401,
+  url: 'products',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:07:04'
+}
+{
+  success: false,
+  message: 'products Unauthorized',
+  statusCode: 401,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:07:04'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:07:06'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:08:33'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:08:33'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:10:41'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:10:41'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:12:25'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:12:25'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:13:31'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:13:31'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:16:23'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:16:23'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:17:26'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:17:26'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:20:22'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:20:22'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:25:45'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:25:45'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:30:21'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:30:21'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:32:24'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:32:24'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:36:36'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:36:36'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:37:55'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:37:55'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:38:26'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:38:26'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:42:53'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:42:53'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:44:44'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:44:44'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:47:48'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:47:48'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:47:56'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:47:56'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:48:26'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:48:26'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:51:47'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:51:47'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:51:54'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:51:54'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:52:09'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:52:09'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:54:32'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-04 18:54:33'
+}
