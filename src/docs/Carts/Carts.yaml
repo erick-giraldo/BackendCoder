@@ -68,7 +68,7 @@ paths:
           schema:
             type: string
           required: true
-          description: ID del Carrito
+          description: ID del Producto
       responses:
         200:
           description: Carrito eliminado
@@ -79,7 +79,7 @@ paths:
 
   /api/carts/product/{id}:
     post:
-      summary: Agregar producto al Carrito
+      summary: Agregar producto al Carrito || El id de carrito se obtiene del token de usuario
       tags:
         - Carrito
       parameters:
@@ -88,7 +88,7 @@ paths:
           schema:
             type: string
           required: true
-          description: ID del Carrito
+          description: ID del Producto
       requestBody:
         required: true
         content:
@@ -98,17 +98,13 @@ paths:
       responses:
         200:
           description: Prodiucto agregado al carrito exitosamente
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/cart'
         404:
           description: Carrito no encontrado
         500:
           description: Error interno del servidor
 
     put:
-      summary: Descontar producto del Carrito
+      summary: Descontar producto del Carrito || El id de carrito se obtiene del token de usuario
       tags:
         - Carrito
       parameters:
@@ -117,7 +113,7 @@ paths:
           schema:
             type: string
           required: true
-          description: ID del Carrito
+          description: ID del Producto
       requestBody:
         required: true
         content:
@@ -137,7 +133,7 @@ paths:
           description: Error interno del servidor
 
     delete:
-      summary: Eliminar producto del Carrito
+      summary: Eliminar producto del Carrito || El id de carrito se obtiene del token de usuario
       tags:
         - Carrito
       parameters:
@@ -146,20 +142,10 @@ paths:
           schema:
             type: string
           required: true
-          description: ID del Carrito
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/cart'
+          description: ID del Producto
       responses:
         200:
           description: Se elimino el producto del carrito exitosamente
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/cart'
         404:
           description: Carrito no encontrado
         500:
@@ -167,7 +153,7 @@ paths:
 
   /api/carts/qty/product/{id}:
     put:
-      summary: Actualizar cantidad de producto en el Carrito
+      summary: Actualizar cantidad de producto en el Carrito || El id de carrito se obtiene del token de usuario
       tags:
         - Carrito
       parameters:
@@ -176,7 +162,7 @@ paths:
           schema:
             type: string
           required: true
-          description: ID del Carrito
+          description: ID del Producto
       requestBody:
         required: true
         content:
@@ -186,10 +172,6 @@ paths:
       responses:
         200:
           description: Se actualizo la cantidad de productos del carrito exitosamente
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/cart'
         404:
           description: Carrito no encontrado
         500:
@@ -197,7 +179,7 @@ paths:
 
 /api/carts/qty/products:
     put:
-      summary: Actualizar todos los productos en el Carrito
+      summary: Actualizar todos los productos en el Carrito || El id de carrito se obtiene del token de usuario
       tags:
         - Carrito
       requestBody:
@@ -217,6 +199,7 @@ paths:
           description: Carrito no encontrado
         500:
           description: Error interno del servidor
+
 components:
   schemas:
     cart:
@@ -229,13 +212,9 @@ components:
           type: number
           description: ID del carriro
       example:
-        _id: "6471207372a1eae2f6d0fc4f"
-        products: [
-          {
-            "_id": "6426434a69f571391d2dcbd4",
-            "quantity": 5
-          }]
-        id: 43
+        _id: "64a4dafd797ee88bb74e82dc"
+        products: []
+        id: 4
   requestBody:
     qtyProduct:
       type: object

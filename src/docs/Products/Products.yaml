@@ -78,10 +78,6 @@ paths:
       responses:
         200:
           description: Producto actualizado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/productUpdate'
         404:
           description: Producto no encontrado
         500:
@@ -101,10 +97,6 @@ paths:
       responses:
         200:
           description: Producto eliminado
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/product'
         404:
           description: Producto no encontrado
         500:

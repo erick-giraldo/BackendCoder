@@ -48,9 +48,10 @@ export default class CartController {
 
   static async createCart(req, res) {
     try {
-      await CartService.create({});
+      const result = await CartService.create({});
       return res.json({
         message: "El carrito fue agregado exitosamente",
+        data: result,
       });
     } catch (err) {}
   }
@@ -108,8 +109,10 @@ export default class CartController {
         });
       }
       await CartService.updateOne(cid, listProduct);
+      const result = await CartService.getByIdView(cid);
       return res.json({
         message: "El producto fue agregado al carrito exitosamente",
+        data: result,
       });
     } catch (err) {
       return res.status(400).json({
@@ -182,8 +185,10 @@ export default class CartController {
         });
       }
       await CartService.updateOne(cid, listProduct);
+      const result = await CartService.getByIdView(cid);
       return res.json({
         message: "Se desconto Productos del carrito exitosamente",
+        data: result,
       });
     } catch (err) {
       return res.status(400).json({
@@ -297,8 +302,10 @@ export default class CartController {
           });
         }
         await CartService.updateOne(cid, listProduct);
+        const result = await CartService.getByIdView(cid);
         return res.json({
           message: "Se aumentó la cantidad de productos en el carrito exitosamente",
+          data: result,
         });
       } catch (err) {
         return res.status(400).json({
@@ -332,8 +339,10 @@ export default class CartController {
         };
       });
        await CartService.updateOne(cid, listProduct);
+       const result = await CartService.getByIdView(cid);
       return res.json({
         message: "Se actualizó la cantidad de los productos en el carrito exitosamente",
+        data: result,
       });
     } catch (err) {
       return res.status(400).json({
