@@ -26,7 +26,8 @@ const UserSchema = new mongoose.Schema({
           used: Boolean,
           createdAt: Date
         }
-      ]
+      ],
+    id: { type: Number},
 }, { timestamps: true})
 
 export default mongoose.model('User', UserSchema)

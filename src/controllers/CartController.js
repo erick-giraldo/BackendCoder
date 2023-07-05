@@ -29,7 +29,7 @@ export default class CartController {
   static async getCartById(req, res) {
     try {
       let { cid } = req.params;
-      const cartById = await CartService.getOne(cid);
+      const cartById = await CartService.getOneView(cid);
 
       if (!cartById)
         return res.status(404).json({ message: "Carrito no encontrado" });
@@ -48,18 +48,20 @@ export default class CartController {
 
   static async createCart(req, res) {
     try {
-      const result = await CartService.create({});
+      // const result = await CartService.create({});
+      const result = await CartService.create();
+      const findCart = await CartService.getCartById(result._id);
       return res.json({
         message: "El carrito fue agregado exitosamente",
-        data: result,
+        data: findCart,
       });
     } catch (err) {}
   }
 
   static async addProductCartById(req, res) {
     try {
-      const { pid } = req.params;
-      const cid = req.user.cart[0].id;
+      const { pid, cid } = req.params;
+      console.log("🚀 ~ file: CartController.js:64 ~ CartController ~ addProductCartById ~ req.params:", req.params)
       if (isNaN(cid)) {
         throw new Error(
           JSON.stringify({
@@ -138,9 +140,7 @@ export default class CartController {
 
   static async discountQuantityProductCartById(req, res) {
     try {
-      let { pid } = req.params;
-      let cid =
-        !isEmpty(req.user) && !isEmpty(req.user.cart) ? req.user.cart[0].id : 0;
+      let { pid, cid} = req.params;
       cid = Number(cid);
       if (isNaN(cid))
         throw new Error(
@@ -200,28 +200,7 @@ export default class CartController {
 
   static async deleteProductsByCartId(req, res) {
     try {
-      let { pid } = req.params;
-      let products = req.body.products;
-      const result = await CartService.deleteProducts(cid, pid);
-      if (result.nModified === 0)
-        return res.status(404).json({ message: "Carrito no encontrado" });
-
-      return res.json({
-        message: "Productos eliminados exitosamente",
-      });
-    } catch (e) {
-      return res.status(500).json({
-        message: e.message,
-      });
-    }
-    
-  }
-
-  static async deleteProductsByCartId(req, res) {
-    try {
-      let { pid } = req.params;
-      let cid =
-        !isEmpty(req.user) && !isEmpty(req.user.cart) ? req.user.cart[0].id : 0;
+      let { pid , cid } = req.params;
       cid = Number(cid);
       if (isNaN(cid))
         throw new Error(
@@ -251,8 +230,10 @@ export default class CartController {
         });
       }
       await CartService.updateOne(cid, listProduct);
+      const result = await CartService.getByIdView(cid);
       return res.json({
         message: "Se elimino producto del carrito exitosamente",
+        data: result,
       });
     } catch (err) {
       return res.status(400).json({
@@ -263,10 +244,10 @@ export default class CartController {
   }
 
   static async updateProductQuantityByCartId(req, res) {
+    console.log(`updateProductQuantityByCartId`)
       try {
-        let { pid } = req.params;
-        let cid =
-          !isEmpty(req.user) && !isEmpty(req.user.cart) ? req.user.cart[0].id : 0;
+        let { pid , cid } = req.params;
+        console.log("🚀 ~ file: CartController.js:250 ~ CartController ~ updateProductQuantityByCartId ~ req.params:", req.params)
         cid = Number(cid);
         if (isNaN(cid))
           throw new Error(
@@ -275,11 +256,13 @@ export default class CartController {
             })
           );
          let cartById = await CartService.getByIdView(cid);
+         //console.log("🚀 ~ file: CartController.js:258 ~ CartController ~ updateProductQuantityByCartId ~ cartById:", cartById)
         if (!cartById)
           return res
             .status(404)
             .json({ message: `No se encontró un carrito con el id ${cid}` });
          const productById = await ProductsService.getById({ _id: pid });
+         console.log("🚀 ~ file: CartController.js:263 ~ CartController ~ updateProductQuantityByCartId ~ productById:", productById)
         if (!productById)
           return res
             .status(404)

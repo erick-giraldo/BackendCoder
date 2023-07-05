@@ -77,14 +77,20 @@ paths:
         500:
           description: Error interno del servidor
 
-  /api/carts/product/{id}:
+  /api/carts/{cid}/product/{pid}:
     post:
-      summary: Agregar producto al Carrito || El id de carrito se obtiene del token de usuario
+      summary: Agregar producto al Carrito
       tags:
         - Carrito
       parameters:
         - in: path
-          name: id
+          name: cid
+          schema:
+            type: string
+          required: true
+          description: ID del Carrito
+        - in: path
+          name: pid
           schema:
             type: string
           required: true
@@ -104,12 +110,18 @@ paths:
           description: Error interno del servidor
 
     put:
-      summary: Descontar producto del Carrito || El id de carrito se obtiene del token de usuario
+      summary: Descontar producto del Carrito
       tags:
         - Carrito
       parameters:
         - in: path
-          name: id
+          name: cid
+          schema:
+            type: string
+          required: true
+          description: ID del Carrito
+        - in: path
+          name: pid
           schema:
             type: string
           required: true
@@ -133,12 +145,18 @@ paths:
           description: Error interno del servidor
 
     delete:
-      summary: Eliminar producto del Carrito || El id de carrito se obtiene del token de usuario
+      summary: Eliminar producto del Carrito
       tags:
         - Carrito
       parameters:
         - in: path
-          name: id
+          name: cid
+          schema:
+            type: string
+          required: true
+          description: ID del Carrito
+        - in: path
+          name: pid
           schema:
             type: string
           required: true
@@ -151,14 +169,20 @@ paths:
         500:
           description: Error interno del servidor
 
-  /api/carts/qty/product/{id}:
+  /api/carts/qty/{cid}/product/{pid}:
     put:
-      summary: Actualizar cantidad de producto en el Carrito || El id de carrito se obtiene del token de usuario
+      summary: Actualizar cantidad de producto en el Carrito
       tags:
         - Carrito
       parameters:
         - in: path
-          name: id
+          name: cid
+          schema:
+            type: string
+          required: true
+          description: ID del Carrito
+        - in: path
+          name: pid
           schema:
             type: string
           required: true
@@ -177,11 +201,16 @@ paths:
         500:
           description: Error interno del servidor
 
-/api/carts/qty/products:
+/api/carts/qty/{cid}/products:
     put:
-      summary: Actualizar todos los productos en el Carrito || El id de carrito se obtiene del token de usuario
-      tags:
-        - Carrito
+      summary: Actualizar todos los productos en el Carrito
+      parameters:
+        - in: path
+          name: cid
+          schema:
+            type: string
+          required: true
+          description: ID del Carrito
       requestBody:
         required: true
         content:
