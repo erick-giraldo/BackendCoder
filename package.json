@@ -5,7 +5,8 @@
   "main": "./src/server.js",
   "scripts": {
     "dev": "npx nodemon --exec \"node --experimental-modules -r dotenv/config\" .",
-    "start": "NODE_ENV=produccion npx nodemon --exec \"node --experimental-modules -r dotenv/config\" ."
+    "start": "NODE_ENV=produccion npx nodemon --exec \"node --experimental-modules -r dotenv/config\" .",
+    "test": "mocha ./test/*.test.js"
   },
   "keywords": [],
   "author": "Erick Giraldo",
@@ -39,5 +40,8 @@
     "twilio": "^4.11.1",
     "winston": "^3.9.0"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
 }
