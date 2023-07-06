@@ -10,7 +10,6 @@ export default class CartController {
   static async getAllCarts(req, res) {
     try {
       const cartById = await CartService.findAll();
-
       if (!cartById)
         return res.status(404).json({ message: "Carrito no encontrado" });
 
@@ -29,6 +28,13 @@ export default class CartController {
   static async getCartById(req, res) {
     try {
       let { cid } = req.params;
+      cid = Number(cid);
+      if (isNaN(cid))
+        throw new Error(
+          JSON.stringify({
+            detail: "El id del carrito tiene que ser de tipo numérico",
+          })
+        );
       const cartById = await CartService.getOneView(cid);
 
       if (!cartById)
@@ -60,8 +66,7 @@ export default class CartController {
 
   static async addProductCartById(req, res) {
     try {
-      const { pid, cid } = req.params;
-      console.log("🚀 ~ file: CartController.js:64 ~ CartController ~ addProductCartById ~ req.params:", req.params)
+      let { pid, cid } = req.params;
       if (isNaN(cid)) {
         throw new Error(
           JSON.stringify({
@@ -110,6 +115,7 @@ export default class CartController {
           quantity: 1,
         });
       }
+
       await CartService.updateOne(cid, listProduct);
       const result = await CartService.getByIdView(cid);
       return res.json({
@@ -126,12 +132,20 @@ export default class CartController {
 
   static async deleteCartById(req, res){
     try{
-        const { cid } = req.params;
-        const cartById = await CartService.getById(cid);
+        let { cid } = req.params;
+
+        cid = Number(cid);
+        if (isNaN(cid))
+        throw new Error(
+          JSON.stringify({
+            detail: "El id del carrito tiene que ser de tipo numérico",
+          })
+        );
+        const cartById = await CartService.getByIdView(cid);
         if(!cartById){
             return res.status(404).json({ message: `No se encontró un carrito con el id ${cid}` });
         }
-        await CartService.deleteById(cid);
+        await CartService.deleteByIdView(cid);
         return res.json({ message: `El carrito con el id ${cid} fue eliminado exitosamente` });
     }catch(err){
         return res.status(400).json({ message: "Error al eliminar el carrito", error: err.message });
@@ -244,10 +258,8 @@ export default class CartController {
   }
 
   static async updateProductQuantityByCartId(req, res) {
-    console.log(`updateProductQuantityByCartId`)
       try {
         let { pid , cid } = req.params;
-        console.log("🚀 ~ file: CartController.js:250 ~ CartController ~ updateProductQuantityByCartId ~ req.params:", req.params)
         cid = Number(cid);
         if (isNaN(cid))
           throw new Error(
@@ -256,13 +268,11 @@ export default class CartController {
             })
           );
          let cartById = await CartService.getByIdView(cid);
-         //console.log("🚀 ~ file: CartController.js:258 ~ CartController ~ updateProductQuantityByCartId ~ cartById:", cartById)
         if (!cartById)
           return res
             .status(404)
             .json({ message: `No se encontró un carrito con el id ${cid}` });
          const productById = await ProductsService.getById({ _id: pid });
-         console.log("🚀 ~ file: CartController.js:263 ~ CartController ~ updateProductQuantityByCartId ~ productById:", productById)
         if (!productById)
           return res
             .status(404)
@@ -315,9 +325,9 @@ export default class CartController {
           .status(404)
           .json({ message: `No se encontró un carrito con el id ${cid}` });
        let listProduct = products.map((product) => {
-        const { id, quantity } = product;
+        const { _id, quantity } = product;
         return {
-          _id: id,
+          _id,
           quantity: parseInt(quantity),
         };
       });

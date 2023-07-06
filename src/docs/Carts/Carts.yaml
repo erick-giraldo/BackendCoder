@@ -24,7 +24,7 @@ paths:
         - Carrito
       responses:
         200:
-          descripton: Lista de Carritos
+          description: Lista de Carritos
           content:
             application/json:
               schema:
@@ -34,14 +34,14 @@ paths:
         500:
           description: Error interno del servidor
 
-  /api/carts/{id}:
+  /api/carts/{cid}:
     get:
       summary: Obtener un Carrito por ID
       tags:
         - Carrito
       parameters:
         - in: path
-          name: id
+          name: cid
           schema:
             type: string
           required: true
@@ -64,11 +64,11 @@ paths:
         - Carrito
       parameters:
         - in: path
-          name: id
+          name: cid
           schema:
             type: string
           required: true
-          description: ID del Producto
+          description: ID del Carrito
       responses:
         200:
           description: Carrito eliminado
@@ -103,7 +103,7 @@ paths:
               $ref: '#/components/schemas/cart'
       responses:
         200:
-          description: Prodiucto agregado al carrito exitosamente
+          description: Producto agregado al carrito exitosamente
         404:
           description: Carrito no encontrado
         500:
@@ -134,7 +134,7 @@ paths:
               $ref: '#/components/schemas/cart'
       responses:
         200:
-          description: Se desconto Productos del carrito exitosamente
+          description: Se descontaron Productos del carrito exitosamente
           content:
             application/json:
               schema:
@@ -201,7 +201,7 @@ paths:
         500:
           description: Error interno del servidor
 
-/api/carts/qty/{cid}/products:
+  /api/carts/qty/{cid}/products:
     put:
       summary: Actualizar todos los productos en el Carrito
       parameters:
@@ -219,7 +219,7 @@ paths:
               $ref: '#/components/requestBody/updateProductCart'
       responses:
         200:
-          description: Se actualizo la cantidad de productos del carrito exitosamente
+          description: Se actualizó la cantidad de productos del carrito exitosamente
           content:
             application/json:
               schema:
@@ -239,11 +239,11 @@ components:
           description: Productos agregados al carrito
         id:
           type: number
-          description: ID del carriro
+          description: ID del carrito
       example:
         _id: "64a4dafd797ee88bb74e82dc"
         products: []
-        id: 4
+        id: 40
   requestBody:
     qtyProduct:
       type: object
@@ -263,12 +263,12 @@ components:
         products: 
               [
                   {
-                      "_id" : "6426439d69f571391d2dcbd6",
-                      "quantity" : 5
+                      "_id": "6426439d69f571391d2dcbd6",
+                      "quantity": 7
                   },
                   {
-                      "_id" : "6426434a69f571391d2dcbd4",
-                      "quantity" : 1
+                      "_id": "6426439d69f571391d2dcbd6",
+                      "quantity": 4
                   }
               ]
         

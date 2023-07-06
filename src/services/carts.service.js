@@ -48,4 +48,8 @@ export default class CartService {
   static deleteById(id) {
     return CartModel.deleteOne({ _id: id });
   }
+
+  static deleteByIdView(id) {
+    return CartModel.deleteOne({ id: id });
+  }
 }
