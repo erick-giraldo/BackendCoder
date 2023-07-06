@@ -61,7 +61,6 @@ export default class CartController {
   static async addProductCartById(req, res) {
     try {
       const { pid, cid } = req.params;
-      console.log("🚀 ~ file: CartController.js:64 ~ CartController ~ addProductCartById ~ req.params:", req.params)
       if (isNaN(cid)) {
         throw new Error(
           JSON.stringify({

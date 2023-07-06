@@ -1,5 +1,5 @@
 import ProductsModel from '../dao/models/products.js'
-
+import ProductDTO from '../dto/ProductDTO.js';
 
 export default class ProductsService {
 

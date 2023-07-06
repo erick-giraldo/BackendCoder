@@ -15714,3 +15714,321 @@ debug: Server running in http://localhost:8080/ in produccion environment. {"tim
   label: 'right meow!',
   timestamp: '2023-07-05 00:11:32'
 }
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 10:07:38'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 10:07:38'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 11:21:42'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 11:21:42'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 11:32:42'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 11:32:42'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 11:32:55'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 11:32:55'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 11:34:17'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 11:34:17'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 11:35:04'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 11:35:05'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 11:35:17'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 11:35:17'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 12:23:14'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 12:23:14'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-05 12:27:20'
+}
+{
+  statusCode: 403,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-05 12:27:27'
+}
+{
+  success: false,
+  message: 'Forbidden',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-05 12:27:27'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 12:27:56'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 12:27:56'
+}
+{
+  message: 'Usuario egiraldom7@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-05 13:13:35'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 13:15:47'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 13:15:47'
+}
+{
+  message: {
+    body: 'Sent from your Twilio trial account - Hola. Cómo estás? Gracias por unirte a nuestro ecommerce.',
+    numSegments: '2',
+    direction: 'outbound-api',
+    from: '+13253097273',
+    to: '+51945970045',
+    dateUpdated: 2023-07-05T18:15:53.000Z,
+    price: null,
+    errorMessage: null,
+    uri: '/2010-04-01/Accounts/AC897eb7ee07353d4158ff1272272935be/Messages/SM86b04e97de9586bfe53e6ff72eef1d97.json',
+    accountSid: 'AC897eb7ee07353d4158ff1272272935be',
+    numMedia: '0',
+    status: 'queued',
+    messagingServiceSid: null,
+    sid: 'SM86b04e97de9586bfe53e6ff72eef1d97',
+    dateSent: null,
+    dateCreated: 2023-07-05T18:15:53.000Z,
+    errorCode: null,
+    priceUnit: 'USD',
+    apiVersion: '2010-04-01',
+    subresourceUris: {
+      media: '/2010-04-01/Accounts/AC897eb7ee07353d4158ff1272272935be/Messages/SM86b04e97de9586bfe53e6ff72eef1d97/Media.json'
+    }
+  },
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-05 13:15:53'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 13:17:09'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 13:17:09'
+}
+{
+  message: {
+    body: 'Sent from your Twilio trial account - Hola. buenas tardes, estare esperando elpago el dia de hoy. Gracias. Erick',
+    numSegments: '1',
+    direction: 'outbound-api',
+    from: '+13253097273',
+    to: '+51945970045',
+    dateUpdated: 2023-07-05T18:17:30.000Z,
+    price: null,
+    errorMessage: null,
+    uri: '/2010-04-01/Accounts/AC897eb7ee07353d4158ff1272272935be/Messages/SM250bc724a4fd27d4d7882dd900620478.json',
+    accountSid: 'AC897eb7ee07353d4158ff1272272935be',
+    numMedia: '0',
+    status: 'queued',
+    messagingServiceSid: null,
+    sid: 'SM250bc724a4fd27d4d7882dd900620478',
+    dateSent: null,
+    dateCreated: 2023-07-05T18:17:30.000Z,
+    errorCode: null,
+    priceUnit: 'USD',
+    apiVersion: '2010-04-01',
+    subresourceUris: {
+      media: '/2010-04-01/Accounts/AC897eb7ee07353d4158ff1272272935be/Messages/SM250bc724a4fd27d4d7882dd900620478/Media.json'
+    }
+  },
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-05 13:17:30'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 13:17:52'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 13:17:52'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 13:18:11'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 13:18:11'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 13:24:46'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-05 13:24:46'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-06 12:40:33'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-06 12:40:33'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-06 12:40:47'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-06 12:57:30'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-06 12:57:30'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-06 13:00:50'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-06 13:00:50'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-06 13:03:36'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-06 13:03:36'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-06 13:03:58'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-06 13:03:58'
+}
