@@ -29,7 +29,7 @@ class SessionsController {
         });
       }
       logger.info(`me: ${JSON.stringify(user)}.`);
-      return res.status(200).json(user);
+      return res.send({status:"success",data:user})
     } catch (error) {
       console.error(error);
       return res
