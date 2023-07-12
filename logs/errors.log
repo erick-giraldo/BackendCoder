@@ -17712,3 +17712,5561 @@ debug: Server running in http://localhost:8080/ in produccion environment. {"tim
   label: 'right meow!',
   timestamp: '2023-07-11 18:20:32'
 }
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:30:15'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:30:15'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:30:51'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:30:51'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:31:33'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:31:33'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:31:33'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:31:33'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:31:34'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:31:34'
+}
+{
+  message: 'Usuario egiraldom1689132694013@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:31:34'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689132694013@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:31:35'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:31:35'
+}
+{
+  message: 'Usuario egiraldom1689132742766@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:32:23'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689132742766@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:32:23'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:32:23'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:37:38'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:37:38'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:38:13'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:38:13'
+}
+{
+  message: 'Usuario egiraldom1689133098767@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:38:20'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133098767@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:38:20'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:38:20'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:39:28'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:39:28'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:39:48'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:39:48'
+}
+{
+  message: 'Usuario egiraldom1689133200194@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:40:01'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133200194@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:40:01'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:40:01'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:40:24'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:40:24'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:40:53'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:40:53'
+}
+{
+  message: 'Usuario egiraldom1689133254823@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:40:55'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133254823@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:40:56'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:40:56'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:41:26'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:41:26'
+}
+{
+  message: 'Usuario egiraldom1689133286938@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:41:28'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133286938@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:41:28'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:41:28'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:42:10'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:42:10'
+}
+{
+  message: 'Usuario egiraldom1689133336595@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:42:17'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133336595@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:42:17'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:42:17'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:42:33'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:42:33'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:42:41'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:42:41'
+}
+{
+  message: 'Usuario egiraldom1689133362710@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:42:43'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133362710@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:42:43'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:42:44'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:43:18'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:43:18'
+}
+{
+  message: 'Usuario egiraldom1689133403231@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:43:24'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133403231@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:43:24'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:43:24'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:43:38'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:43:38'
+}
+{
+  message: 'Usuario egiraldom1689133418954@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:43:40'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133418954@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:43:41'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:43:41'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:44:53'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:44:53'
+}
+{
+  message: 'Usuario egiraldom1689133493676@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:44:55'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133493676@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:44:55'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:44:55'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:45:56'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:45:56'
+}
+{
+  message: 'Usuario egiraldom1689133556519@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:45:58'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133556519@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:45:58'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:45:58'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:46:34'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:46:34'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:47:35'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:47:35'
+}
+{
+  message: 'Usuario egiraldom1689133656457@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:47:37'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133656457@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:47:37'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:47:37'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:47:52'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:47:52'
+}
+{
+  message: 'Usuario egiraldom1689133675161@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:47:56'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133675161@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:47:56'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:47:56'
+}
+{
+  message: 'Usuario egiraldom1689133704150@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:48:25'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133704150@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:48:25'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:48:25'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:49:19'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:49:19'
+}
+{
+  message: 'Usuario egiraldom1689133759859@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:49:20'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133759859@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:49:21'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:49:21'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:49:59'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:49:59'
+}
+{
+  message: 'Usuario egiraldom1689133800580@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:50:01'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133800580@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:50:01'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:50:02'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:50:37'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:50:37'
+}
+{
+  message: 'Usuario egiraldom1689133837278@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:50:39'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133837278@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:50:39'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:50:39'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:51:22'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:51:22'
+}
+{
+  message: 'Usuario egiraldom1689133889585@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:51:30'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133889585@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:51:30'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:51:30'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:52:31'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:52:31'
+}
+{
+  message: 'Usuario egiraldom1689133953890@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:52:34'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133953890@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:52:35'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:52:35'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:52:53'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:52:53'
+}
+{
+  message: 'Usuario egiraldom1689133976324@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:52:57'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689133976324@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:52:57'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:52:57'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:53:36'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:53:36'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:53:49'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:53:49'
+}
+{
+  message: 'Usuario egiraldom1689134032711@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:53:53'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689134032711@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:53:53'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:53:54'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:56:52'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:56:52'
+}
+{
+  message: 'Usuario egiraldom1689134221972@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:57:03'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689134221972@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:57:03'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:57:03'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:57:44'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:57:44'
+}
+{
+  message: 'Usuario egiraldom1689134264167@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:57:45'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689134264167@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:57:45'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:57:45'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:58:03'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:58:03'
+}
+{
+  message: 'Usuario egiraldom1689134283420@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:58:05'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689134283420@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:58:05'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:58:05'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:58:41'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 22:58:41'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:09:10'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:09:10'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:12:23'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:12:23'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:13:14'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:13:14'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:13:14'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:13:14'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:15:03'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:15:03'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:16:04'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:16:04'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:16:08'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:16:08'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:16:08'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:16:08'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:16:26'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:16:26'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:16:57'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:16:57'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:17:11'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:17:11'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:17:13'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:17:13'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:17:34'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:17:34'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:17:34'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:17:34'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:17:34'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:17:34'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:17:34'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:17:34'
+}
+{
+  message: 'Usuario egiraldom1689135454079@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:17:34'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689135454079@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:17:35'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:17:35'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:29'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:29'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:32'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:32'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:33'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:33'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:33'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:33'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:33'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:33'
+}
+{
+  message: 'Usuario egiraldom1689135513051@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:33'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689135513051@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:34'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:34'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:58'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:58'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:58'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:58'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:58'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:58'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:58'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:58'
+}
+{
+  message: 'Usuario egiraldom1689135538529@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:59'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689135538529@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:59'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:18:59'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:20:35'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:20:35'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:20:51'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:20:51'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:21:57'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:21:57'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:21:57'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:21:57'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:21:57'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:21:57'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:21:57'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:21:57'
+}
+{
+  message: 'Usuario egiraldom1689135717807@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:21:58'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689135717807@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:21:58'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:21:58'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:27:28'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:27:28'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:30:53'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:30:53'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:30:58'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:30:58'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:31:11'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:31:11'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:31:12'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:31:12'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:31:12'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:31:12'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:31:12'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:31:12'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:31:12'
+}
+{
+  message: 'Usuario egiraldom1689136272777@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:31:13'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689136272777@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:31:13'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:31:13'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:32:23'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:33:14'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:33:14'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:33:15'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:33:15'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:33:15'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:34:23'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:34:23'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:35:38'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:35:38'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:35:41'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:36:04'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:36:04'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:36:09'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:36:41'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:36:41'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:36:42'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:37:32'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:37:32'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:37:42'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:37:42'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:37:45'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:38:07'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:38:07'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:38:16'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:39:28'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:39:28'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:39:35'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:41:09'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:45:52'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:45:55'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:45:55'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:46:00'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:46:00'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:46:48'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:46:48'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:47:11'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:47:11'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:47:31'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:47:31'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:47:32'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:48:21'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:48:21'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:48:22'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:48:35'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:48:35'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:48:47'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:49:57'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:49:57'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:49:59'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:51:21'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:51:21'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:51:24'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:52:19'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:52:19'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:52:23'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:52:24'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:52:26'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:52:52'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:52:52'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:52:53'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:53:11'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:53:12'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:53:13'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:53:26'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:53:26'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:53:28'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:53:44'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:53:44'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:53:47'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:54:15'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:54:15'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:54:19'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:54:19'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:54:20'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:54:45'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:54:45'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:54:53'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:54:53'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:54:54'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:55:34'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:55:34'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:56:10'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:56:10'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:56:16'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:56:36'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:56:36'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:57:26'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:57:26'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:57:28'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:57:50'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:57:50'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:58:08'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:58:08'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:58:09'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:58:48'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:58:48'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:58:49'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:59:08'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:59:08'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:59:10'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:59:29'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:59:29'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:59:32'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:59:33'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:59:52'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:59:52'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-11 23:59:58'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:00:34'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:00:34'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:00:36'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:00:50'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:00:50'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:00:51'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:01:15'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:01:15'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:01:17'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:03:03'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:03:03'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:03:42'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:03:42'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:03:48'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:03:48'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:04:01'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:04:01'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:04:05'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:04:20'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:04:20'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:04:22'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:04:47'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:04:47'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:05:12'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:05:12'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:05:14'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:05:34'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:05:34'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:05:37'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:06:27'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:06:27'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:07:08'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:07:08'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:07:08'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:07:34'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:07:34'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:07:35'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:08:00'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:08:00'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:08:10'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:10:37'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:10:37'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:11:44'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:11:44'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:11:46'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:12:27'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:12:27'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:12:29'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:14:29'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:14:29'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:14:30'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:14:47'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:14:47'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:14:48'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:15:40'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:15:40'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:15:45'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:15:45'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:15:55'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:16:51'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:16:51'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:17:04'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:17:04'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:17:18'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:17:18'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:17:28'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:19:00'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:19:00'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:19:10'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:19:10'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:19:12'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:19:31'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:19:31'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:19:56'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:19:56'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:20:00'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:20:12'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:20:12'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:20:52'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:20:52'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:20:57'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:23:56'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:23:56'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:24:01'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:24:01'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:24:06'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:24:06'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:24:06'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:24:52'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:24:52'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:25:19'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:25:19'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:25:21'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:25:30'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:25:30'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:25:35'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:25:52'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:25:52'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:25:53'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:26:14'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:26:14'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:27:44'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:27:44'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:27:45'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:32:20'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:32:20'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:32:49'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:32:49'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:35:10'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:35:10'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:42:47'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:42:47'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:42:57'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:46:31'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:46:31'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:47:13'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:47:13'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:47:41'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:47:41'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:47:46'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:47:46'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:47:46'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:48:13'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:48:13'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:50:18'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:50:18'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:50:51'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:50:51'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:51:36'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:51:36'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:52:26'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:52:26'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:53:00'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:53:00'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:53:30'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:53:30'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:53:37'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:54:36'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:54:36'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:55:32'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:55:32'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:55:34'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:55:34'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:55:34'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:55:56'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:55:56'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:56:11'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:56:11'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:56:13'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:57:38'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:57:38'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:57:39'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:58:11'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:58:11'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:58:17'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:59:11'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 00:59:11'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:00:29'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:00:29'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:00:31'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:00:41'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:00:41'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:00:43'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:02:06'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:02:06'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:02:42'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:02:42'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:02:48'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:02:48'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:02:59'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:03:16'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:03:16'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:03:21'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:03:21'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:03:22'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:04:55'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:04:55'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:04:57'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:06:56'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:06:56'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:08:10'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:08:10'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:08:17'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:08:17'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:08:18'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:08:49'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:08:50'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:08:51'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:08:51'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:08:51'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:09:24'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:09:24'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:09:27'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:09:32'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:10:26'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:10:26'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:10:27'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:11:52'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:11:52'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:12:06'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:12:06'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:12:09'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:12:44'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:12:44'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:13:51'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:13:51'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:14:18'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:14:18'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:14:29'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:14:29'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:14:53'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:14:53'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:15:56'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:15:56'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:16:24'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:16:24'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:17:27'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:17:27'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:17:43'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:17:43'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:18:04'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:18:04'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:18:29'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:18:29'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:18:54'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:18:54'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:19:07'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:19:07'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:19:39'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:19:39'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:19:44'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:19:44'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:20:38'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:20:38'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:20:44'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:21:49'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:21:49'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:22:54'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:22:54'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:22:56'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:34:15'
+}
+{
+  message: 'Esto es un mensaje de debug',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:34:22'
+}
+{
+  message: 'Esto es un mensaje de http',
+  level: 'http',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:34:22'
+}
+{
+  message: 'Esto es un mensaje informativo',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:34:22'
+}
+{
+  message: 'Esto es una advertencia',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:34:22'
+}
+{
+  message: 'Esto es un error',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:34:22'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:34:39'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : undefined\n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:34:39'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:35:09'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : \n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:35:09'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:40:07'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:40:07'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:41:19'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : \n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:41:19'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:41:21'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : \n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:41:21'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:43:16'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : undefined\n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:43:16'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:45:29'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:45:29'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:45:33'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : undefined\n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:45:33'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:46:27'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:46:27'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:46:30'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : undefined\n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:46:30'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:47:26'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:47:26'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:47:28'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : undefined\n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:47:28'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:48:14'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:48:14'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:48:16'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : undefined\n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:48:16'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:48:19'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : undefined\n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:48:19'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:48:34'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:48:34'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:49:03'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:49:03'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:49:13'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : undefined\n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:49:13'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:49:47'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:49:47'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:49:51'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:49:51'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:49:54'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : undefined\n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:49:54'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:50:13'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:50:13'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:50:16'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : undefined\n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:50:16'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:50:37'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:50:37'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:50:41'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : undefined\n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:50:41'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:51:48'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:51:48'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:52:18'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:52:18'
+}
+{
+  message: {},
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:52:21'
+}
+{
+  message: { success: false, message: undefined },
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:52:21'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:52:39'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:52:39'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:53:38'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:53:38'
+}
+{
+  message: {},
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:53:42'
+}
+{
+  message: { success: false, message: undefined },
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:53:42'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:54:00'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:54:00'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:54:01'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : undefined\n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:54:01'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:54:39'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:54:39'
+}
+{
+  message: 'El campo code es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:54:44'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:54:44'
+}
+{
+  success: false,
+  message: 'El campo code es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:54:44'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:55:31'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:55:31'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:55:40'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:55:40'
+}
+{
+  message: {},
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:55:41'
+}
+{
+  message: { success: false, message: undefined },
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:55:41'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:56:28'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:56:28'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:56:45'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:56:45'
+}
+{
+  message: {},
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:56:49'
+}
+{
+  message: { success: false, message: undefined },
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:56:49'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:57:29'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:57:29'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:57:31'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : undefined\n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:57:31'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:58:20'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:58:20'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:58:29'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : undefined\n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:58:29'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:58:57'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:58:57'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:58:57'
+}
+{
+  success: false,
+  message: 'El campo code es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 01:58:57'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:00:10'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:00:10'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:00:14'
+}
+{
+  success: false,
+  message: 'El campo code es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:00:14'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:00:17'
+}
+{
+  success: false,
+  message: 'El campo code es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:00:17'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:00:23'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:00:23'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:01:01'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:01:01'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:01:04'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : undefined\n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:01:04'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:01:22'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:01:22'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:01:27'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : undefined\n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:01:27'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:01:41'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:01:41'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:01:45'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : undefined\n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:01:45'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:02:12'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:02:12'
+}
+{
+  name: 'Product creating error',
+  code: 2,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:02:24'
+}
+{
+  '0': 'One or more of the following fields are invalid or incomplete.\n' +
+    '  List of required fields:\n' +
+    '  - name        : Fat Boy™\n' +
+    '  - description  : Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\n' +
+    '  - code         : undefined\n' +
+    '  - price        : 457\n' +
+    '  - status       : true\n' +
+    '  - stock        : 3\n' +
+    '  - category     : Sports\n' +
+    '  - image        : https://picsum.photos/seed/UATvGWR/640/480\n' +
+    '    ',
+  level: 'error',
+  message: 'MiddlewareError ====>',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:02:24'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:02:46'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:02:46'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:03:05'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:03:05'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:06:35'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:06:35'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:07:58'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:07:58'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:08:26'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:08:26'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:09:05'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:09:05'
+}
+{
+  message: 'El campo code es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:09:08'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:09:08'
+}
+{
+  success: false,
+  message: 'El campo code es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:09:08'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:09:46'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:09:46'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:09:58'
+}
+{
+  statusCode: 401,
+  url: undefined,
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:09:58'
+}
+{
+  success: false,
+  message: 'Unauthorized',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:09:58'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:10:22'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:10:22'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:11:03'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:11:03'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:11:15'
+}
+{
+  message: 'El campo code es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:11:15'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:11:15'
+}
+{
+  success: false,
+  message: 'El campo code es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:11:15'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:11:40'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:11:40'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:11:42'
+}
+{
+  message: 'El campo code es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:11:42'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:11:42'
+}
+{
+  success: false,
+  message: 'El campo code es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:11:42'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:12:39'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:12:39'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:12:47'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:12:47'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:12:57'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:12:57'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:12:58'
+}
+{
+  message: 'El campo code es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:12:58'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:12:58'
+}
+{
+  success: false,
+  message: 'El campo code es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:12:58'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:15:09'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:15:09'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:15:18'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:15:18'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:15:23'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:15:25'
+}
+{
+  message: 'El campo code es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:15:26'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:15:26'
+}
+{
+  success: false,
+  message: 'El campo code es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:15:26'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:15:47'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:15:47'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:15:50'
+}
+{
+  message: 'El campo code es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:15:50'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:15:50'
+}
+{
+  success: false,
+  message: 'El campo code es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:15:50'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:16:05'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:16:05'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:16:06'
+}
+{
+  message: 'El campo code es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:16:06'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:16:06'
+}
+{
+  success: false,
+  message: 'El campo code es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:16:06'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:16:26'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:16:26'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:16:33'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:16:33'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:16:37'
+}
+{
+  message: 'El campo code es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:16:37'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:16:37'
+}
+{
+  success: false,
+  message: 'El campo code es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:16:37'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:17:54'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:17:55'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:18:39'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:18:39'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:18:40'
+}
+{
+  message: 'El campo code es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:18:40'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:18:40'
+}
+{
+  success: false,
+  message: 'El campo code es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:18:40'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:19:59'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:19:59'
+}
+{
+  message: 'El campo [ code ] es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:20:00'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:20:00'
+}
+{
+  success: false,
+  message: 'El campo [ code ] es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:20:00'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:20:54'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:20:54'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:20:58'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:20:58'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:20:59'
+}
+{
+  message: 'El campo [ code ] es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:21:00'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:21:00'
+}
+{
+  success: false,
+  message: 'El campo [ code ] es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:21:00'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:21:10'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:21:10'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:21:20'
+}
+{
+  message: 'El campo [ code ] es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:21:21'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:21:21'
+}
+{
+  success: false,
+  message: 'El campo [ code ] es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:21:21'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:21:39'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:21:39'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:21:49'
+}
+{
+  message: 'El campo [ code ] es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:21:49'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:21:49'
+}
+{
+  success: false,
+  message: 'El campo [ code ] es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:21:49'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:22:00'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:22:01'
+}
+{
+  message: 'El campo [ code ] es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:22:02'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:22:02'
+}
+{
+  success: false,
+  message: 'El campo [ code ] es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:22:02'
+}
+{
+  message: 'Usuario egiraldom1689146522216@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:22:03'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689146522216@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:22:03'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:22:03'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:22:24'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:22:24'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:22:36'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:22:36'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:22:52'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:22:52'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:23:11'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:23:11'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:23:15'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:23:16'
+}
+{
+  message: 'El campo [ code ] es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:23:16'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:23:16'
+}
+{
+  success: false,
+  message: 'El campo [ code ] es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:23:16'
+}
+{
+  message: 'Usuario egiraldom1689146596288@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:23:17'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689146596288@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:23:17'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:23:17'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:24:46'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:26:28'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:26:28'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:26:36'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:26:36'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:26:41'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:26:41'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:26:44'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:26:45'
+}
+{
+  message: 'El campo [ code ] es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:26:45'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:26:45'
+}
+{
+  success: false,
+  message: 'El campo [ code ] es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:26:45'
+}
+{
+  message: 'Usuario egiraldom1689146805360@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:26:46'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689146805360@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:26:46'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:26:46'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:28:25'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:28:25'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:28:27'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:28:28'
+}
+{
+  message: 'El campo [ code ] es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:28:29'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:28:29'
+}
+{
+  success: false,
+  message: 'El campo [ code ] es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:28:29'
+}
+{
+  message: 'Usuario egiraldom1689146909175@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:28:30'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689146909175@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:28:30'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:28:30'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:28:36'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:28:36'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:28:59'
+}
+{
+  message: 'Usuario egiraldom1@outlook.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:29:00'
+}
+{
+  message: 'El campo [ code ] es obligatorio',
+  level: 'warning',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:29:00'
+}
+{
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:29:00'
+}
+{
+  success: false,
+  message: 'El campo [ code ] es obligatorio',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:29:00'
+}
+{
+  message: 'Usuario egiraldom1689146940945@gmail.com logueado correctamente.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:29:01'
+}
+{
+  message: 'me: {"name":"Erick Giraldo","email":"egiraldom1689146940945@gmail.com","age":25}.',
+  level: 'info',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:29:02'
+}
+{
+  message: 'Usuario noexiste@example.com no encontrado, por favor intente nuevamente',
+  level: 'error',
+  label: 'right meow!',
+  timestamp: '2023-07-12 02:29:02'
+}

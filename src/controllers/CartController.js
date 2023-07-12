@@ -29,19 +29,24 @@ export default class CartController {
   static async getCartById(req, res) {
     try {
       let { cid } = req.params;
+      if (isNaN(cid)) {
+        throw new Error(
+          JSON.stringify("El id del carrito tiene que ser de tipo numérico")
+        );
+      }
       const cartById = await CartService.getOneView(cid);
 
       if (!cartById)
         return res.status(404).json({ message: "Carrito no encontrado" });
 
-      return res.json({
+      return res.status(200).json({
         message: "Carrito encontrado",
         data: cartById,
       });
     } catch (err) {
       return res.status(400).json({
         message: "Error al buscar el carrito",
-        error: err.message,
+        error: JSON.parse(err.message),
       });
     }
   }
@@ -300,7 +305,7 @@ export default class CartController {
   static async updateProductsCartById(req, res) {
     try {
       let { products } = req.body;
-      let cid = req.user.cart[0].id;
+      let { cid } = req.params;
       cid = Number(cid);
       if (isNaN(cid))
         throw new Error(
@@ -314,9 +319,9 @@ export default class CartController {
           .status(404)
           .json({ message: `No se encontró un carrito con el id ${cid}` });
        let listProduct = products.map((product) => {
-        const { id, quantity } = product;
+        const { _id, quantity } = product;
         return {
-          _id: id,
+          _id: _id,
           quantity: parseInt(quantity),
         };
       });

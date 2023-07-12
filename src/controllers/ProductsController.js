@@ -22,7 +22,13 @@ export default class ProductController {
   static async getProductById(req, res) {
     try {
       let { pid } = req.params;
-      const productById = await ProductsService.getOne( pid );
+      const productById = await ProductsService.getOne( pid ).catch(() => {
+        throw new Error(
+          JSON.stringify({
+            message: "El tipo de dato no es correcto o el código ya existe",
+          })
+        );
+      });
       if (!productById)
         return res.status(404).json({ message: "Producto no encontrado" });
       return res.json({

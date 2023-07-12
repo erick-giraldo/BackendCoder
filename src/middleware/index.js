@@ -17,8 +17,8 @@ const logger = getLogger();
 const validateFields = (requiredFields, data) => {
   for (const field of requiredFields) {
     if (!data[field]) {
-      logger.warning(`El campo ${field} es obligatorio`);
-      throw new Error(`El campo ${field} es obligatorio`);
+      logger.warning(`El campo [ ${field} ] es obligatorio`);
+      throw new Error(`El campo [ ${field} ] es obligatorio`);
     }
   }
 };
@@ -194,7 +194,7 @@ export const validAddProduct = async (req, res, next) => {
       "image",
     ];
     const { ...data } = req.body;
-    validateFieldsProducts(requiredFields, data);
+    validateFields(requiredFields, data); // validateFieldsProducts(requiredFields, data);
     next();
   } catch (err) {
     next(err);
