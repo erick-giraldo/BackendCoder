@@ -49,12 +49,12 @@ describe("Supertest", function () {
     });
 
     it("Current debe mostrar los datos del usuario actual.", async function () {
-      const { statusCode, ok, _body: { data }} = await request.get("/api/auth/current").set("Cookie", `${cookie.name}=${cookie.value}`);
-     
+      const { statusCode, ok, _body: { data } } = await request.get("/api/auth/current").set("Cookie", `${cookie.name}=${cookie.value}`);
+
       expect(ok).to.equal(true);
       expect(statusCode).to.equal(200);
       expect(data.email).to.be.ok.and.to.equal(email);
-      console.log("current", data);
+      //console.log("current", data);
     });
 
     it("Debe mostrar un error si el usuario no existe.", async function () {
@@ -68,17 +68,22 @@ describe("Supertest", function () {
         _body: body,
       } = await request.post("/api/auth/login").send(credentialsMock);
 
-      console.log("Login Failure", {
-        statusCode,
-        ok,
-        body,
-      });
-
-      expect(ok).to.equal(false);
-      expect(statusCode).to.equal(500);
-      expect(body.message).to.equal(
-        "Usuario no encontrado, por favor intente nuevamente"
-      );
-    });
+    expect(ok).to.equal(false);
+    expect(statusCode).to.equal(500);
+    expect(body.message).to.equal(
+      "Usuario no encontrado, por favor intente nuevamente"
+    );
   });
+
+  it("Debe Listar todos los usuarios y esperamos que el resultado de llamado a la función get sea un array ", async function () {
+    const { statusCode, ok, _body: data } = await request.get("/api/users/").set("Cookie", `${cookie.name}=${cookie.value}`);
+    expect(ok).to.equal(true);
+    expect(statusCode).to.equal(200);
+    expect(Array.isArray(data)).to.be.equal(true);
+    expect(Array.isArray(data)).to.be.ok;
+    //console.log("_body", data);
+  });
+
+
+});
 });

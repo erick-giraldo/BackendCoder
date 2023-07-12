@@ -8,7 +8,7 @@ class UserController {
             const users = await UsersService.get().catch(() => {
                 throw new Error(JSON.stringify({ detail: 'No se encontro usuarios' }))
             })
-            return res.json(users);
+            return res.status(200).json(users);
         } catch (err) {
             return res.status(400).json({
                 message: 'Error al obtener los usuarios',
