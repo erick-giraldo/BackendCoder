@@ -28,6 +28,9 @@ const UserSchema = new mongoose.Schema({
         }
       ],
     id: { type: Number},
+    documents:{ type: String, default: [] },
+    last_connection:{ type: Date, default: Date.now },
+    history_connection:{ type: Date, default: [] },
 }, { timestamps: true})
 
 export default mongoose.model('User', UserSchema)
