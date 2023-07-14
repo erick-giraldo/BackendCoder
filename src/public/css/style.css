@@ -464,7 +464,7 @@ td.price {
 }
 
 .pb-doc{
-  padding-bottom: 1rem!important;
+  padding-bottom: 3rem!important;
 }
 .social-links li a {
   padding-top: 5px;
@@ -939,4 +939,9 @@ li {
 
 .form-check-input:before{
   content:none!important
+}
+
+.text-muted{
+  display: flex;
+  flex-direction: column;
 }

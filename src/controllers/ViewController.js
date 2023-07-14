@@ -291,8 +291,8 @@ export default class ViewController {
       return res.render("profile", {
         style: "style.css",
         user: {
-          first_name: user.first_name,
-          last_name: user.last_name,
+          id:user.id,
+          name: user.name,
           email: user.email,
           age: user.age,
           avatar:

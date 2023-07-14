@@ -2,12 +2,13 @@ import UsersService from "../services/users.service.js";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
+import __dirname from "../config/utils.js";
 
-// Configuración de Multer
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
       const { id } = req.params;
-      const { type } = req.query;
+      const { type} = req.body;
       let folder;
       if (type === "profile") {
         folder = "profiles";
@@ -16,8 +17,8 @@ const storage = multer.diskStorage({
       } else {
         folder = "documents";
       }
-      const destinationFolder = `uploads/${folder}/${id}`;
-      // Crear la carpeta de destino si no existe
+      const destinationFolder = path.join(__dirname, '../public/uploads', folder, id);
+      
       fs.mkdirSync(destinationFolder, { recursive: true });
       cb(null, destinationFolder);
     },
@@ -77,7 +78,9 @@ class UserController {
   static async uploadDocuments(req, res) {
     try {
       const { id } = req.params;
-      const { type } = req.query;
+      const { type} = req.body;
+     
+      
       upload.array("files")(req, res, async (err) => {
         if (err) {
           throw new Error(err.message);
@@ -93,11 +96,11 @@ class UserController {
             };
         });
 
-        await UsersService.updateDocumentStatus(id, payload).catch(
-          () => {
-            throw new Error("Error al actualizar el status del documento");
-          }
-        );
+        // await UsersService.updateDocumentStatus(id, payload).catch(
+        //   () => {
+        //     throw new Error("Error al actualizar el status del documento");
+        //   }
+        // );
 
         return res.status(200).json({
           message: "Documentos subidos exitosamente",

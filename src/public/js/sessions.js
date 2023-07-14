@@ -6,6 +6,7 @@ const successMessages = {
   LOGOUT: "La sesión se cerró correctamente",
   UPDATEPASS:"Se cambio la contraseña correctamente",
   RESET: "Se ha generado un link para restablecer la contraseña. Revisa tu correo electrónico.",
+  DOCUMENTS: "Se subio el documento correctamente"
 };
 
 const errorMessages = {
@@ -15,7 +16,8 @@ const errorMessages = {
   RESET:
     "No se ha podido generar el link para restablecer la contraseña. Por favor, intenta de nuevo más tarde",
   LOGOUT: "No se ha podido cerrar la sesión.",
-  UPDATEPASS:"No se ha podido cambiar su clave"
+  UPDATEPASS:"No se ha podido cambiar su clave",
+  DOCUMENTS: "No se ha podido subir el documento"
 };
 
 const postRequest = async (url, body, method = "GET") => {
@@ -162,4 +164,30 @@ const logout = async () => {
   }
 };
 
-export { login, register, resetPassword, forgotPassword, logout };
+const uploadDocuments = async ( type , userId, files ) => {                      
+  const { success, error } = await postRequest(`api/users/${userId}/documents`,
+  {
+    type,
+    files,
+  }, "POST");
+  if (success) {
+    Swal.fire({
+      icon: "success",
+      title: "Files ok!!!",
+      text: successMessages.DOCUMENTS,
+      showConfirmButton: false,
+    });
+    setTimeout(() => {
+      localtion.reload();
+    }, 2000);
+  } else {
+    Swal.fire({
+      icon: "error",
+      title: "Logout error!!!",
+      text: error?.message || errorMessages.DOCUMENTS,
+      showConfirmButton: false,
+    });
+  }
+};
+
+export { login, register, resetPassword, forgotPassword, logout, uploadDocuments };
