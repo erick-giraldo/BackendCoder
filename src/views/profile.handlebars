@@ -1,11 +1,15 @@
 {{#if message}}
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js">
-</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
 <script>
   Swal.fire({
-    icon: 'error', title: 'No tiene Permiso para acceder a esta
-    página', text: '{{ message }}', showConfirmButton: false }); setTimeout(() =>
-    { window.location.replace("/login"); }, 1000);
+    icon: 'error',
+    title: 'No tiene Permiso para acceder a esta página',
+    text: '{{ message }}',
+    showConfirmButton: false
+  });
+  setTimeout(() => {
+    window.location.replace("/login");
+  }, 1000);
 </script>
 {{else}}
 <div class="content">
@@ -17,28 +21,36 @@
         <div class="text-center card-box">
           <div class="member-card pt-2 pb-2">
             <div class="avatar">
-              <div class="thumb-lg member-thumb mx-auto"><img src={{user.avatar}} class="rounded-circle img-thumbnail"
-                  alt="profile-image" /></div>
-              <div class="power-off"><a id="btn-logout" class="p-off" data-placement="top" data-toggle="tooltip"
-                  class="tooltips" href="#" onclick="logout()" data-original-title="Facebook"><i
-                    class="fa fa-power-off"></i></a></div>
+              <div class="thumb-lg member-thumb mx-auto">
+                <img src="{{user.avatar}}" class="rounded-circle img-thumbnail" alt="profile-image" />
+              </div>
+              <div class="power-off">
+                <a id="btn-logout" class="p-off" data-placement="top" data-toggle="tooltip" href="#"
+                  data-original-title="Facebook"><i class="fa fa-power-off"></i></a>
+              </div>
             </div>
             <div class="">
-              <h4> {{user.first_name}} {{user.last_name}} </h4>
+              <h4>{{user.name}}</h4>
               <p class="text-muted">Ingeniero de Sistemas
                 <span><a href="#" class="text-pink">{{user.email}}</a></span>
               </p>
             </div>
             <ul class="social-links list-inline">
-              <li class="list-inline-item"><a title="" class="facebook" data-placement="top" data-toggle="tooltip"
-                  class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
-              <li class="list-inline-item"><a title="" class="twitter" data-placement="top" data-toggle="tooltip"
-                  class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
-              <li class="list-inline-item"><a title="" class="instagram" data-placement="top" data-toggle="tooltip"
-                  class="tooltips" href="" data-original-title="Instagram"><i class="fa fa-instagram"></i></a></li>
+              <li class="list-inline-item">
+                <a title="" class="facebook" data-placement="top" data-toggle="tooltip" href=""
+                  data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a title="" class="twitter" data-placement="top" data-toggle="tooltip" href=""
+                  data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a title="" class="instagram" data-placement="top" data-toggle="tooltip" href=""
+                  data-original-title="Instagram"><i class="fa fa-instagram"></i></a>
+              </li>
             </ul>
-            <button type="button" class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">Message
-              Now</button>
+            <button type="button"
+              class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">Message Now</button>
             <div class="mt-4">
               <div class="row socials-row">
                 <div class="col-4">
@@ -83,42 +95,37 @@
           <div class="member-card pt-2 pb-doc">
             <div class="doc">
               <h2>Subir Documentos</h2>
-              <form action="/64ae2c4b0f7c0b9b0f512a65/documents?type=profiles" method="POST" enctype="multipart/form-data">
-                <div class="form-group from-doc">
-                  <label for="documentTypes">Tipos de Documentos</label>
-                  <div class="type-doc">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="profile" name="documentTypes" value="profile" />
-                      <label class="form-check-label" for="profile">Perfil</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="product" name="documentTypes" value="product" />
-                      <label class="form-check-label" for="product">Producto</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="document" name="documentTypes" value="document"/>
-                      <label class="form-check-label" for="document">Documento</label>
-                    </div>
+              <div class="form-group from-doc">
+                <label for="documentTypes">Tipos de Documentos</label>
+                <div class="type-doc">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="profile" name="documentTypes" value="profiles" />
+                    <label class="form-check-label" for="profile">Perfil</label>
                   </div>
-
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="product" name="documentTypes" value="products" />
+                    <label class="form-check-label" for="product">Producto</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="document" name="documentTypes" value="documents" />
+                    <label class="form-check-label" for="document">Documento</label>
+                  </div>
                 </div>
-                <div class="form-group file-doc">
-                  <input type="file" class="form-control-file" id="documents" name="documents" multiple />
-                </div>
-                <button type="submit" id='btnEnviar' class="btn btn-primary">Subir Documentos</button>
-              </form>
+              </div>
+              <div class="form-group file-doc">
+                <input type="file" class="form-control-file" id="documents" key='files' name="files" multiple />
+              </div>
+              <button type="button" value={{user.id}} id="btn-enviar" class="btn btn-primary">Subir Documentos</button>
             </div>
           </div>
         </div>
       </div>
       <!-- end col -->
-
     </div>
-
     <!-- end row -->
   </div>
   <!-- container -->
 </div>
 {{/if}}
-<script type="module" src="/js/logout.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
+<script type="module" src="/js/logout.js"></script>
