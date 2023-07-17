@@ -19,7 +19,7 @@
       <!-- end col -->
       <div class="col-lg-4">
         <div class="text-center card-box">
-          <div class="member-card pt-2 pb-2">
+          <div class="member-card-item member-card pt-2 pb-2">
             <div class="avatar">
               <div class="thumb-lg member-thumb mx-auto">
                 <img src="{{user.avatar}}" class="rounded-circle img-thumbnail" alt="profile-image" />
@@ -74,29 +74,31 @@
               </div>
             </div>
           </div>
-          <div class="member-card pt-2 pb-file">
-            <h2>Documentos</h2>
+          <div class="member-card-item member-card pt-2 pb-file">
+            <h2>Estados de envio de Documentos</h2>
             <ul>
-              <label for="documentTypes">Estados de envio de Documentos</label>
               <li>
                 <h3>Perfil</h3>
-                <p>Estado: {{profileStatus}}</p>
+                <h5>Estado: </h5>
+                <p>Pendiente {{profileStatus}}</p>
               </li>
               <li>
                 <h3>Producto</h3>
-                <p>Estado: {{productStatus}}</p>
+                <h5>Estado: </h5>
+                <p>Pendiente {{productStatus}}</p>
               </li>
               <li>
                 <h3>Documento</h3>
-                <p>Estado: {{documentStatus}}</p>
+                <h5>Estado: </h5>
+                <p>Pendiente {{documentStatus}}</p>
               </li>
             </ul>
           </div>
-          <div class="member-card pt-2 pb-doc">
+          <div class="member-card-item member-card pt-2 pb-doc">
             <div class="doc">
               <h2>Subir Documentos</h2>
               <div class="form-group from-doc">
-                <label for="documentTypes">Tipos de Documentos</label>
+                <h4 for="documentTypes">Tipos de Documentos</h4>
                 <div class="type-doc">
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="profile" name="documentTypes" value="profiles" />
@@ -113,9 +115,9 @@
                 </div>
               </div>
               <div class="form-group file-doc">
-                <input type="file" class="form-control-file" id="documents" key='files' name="files" multiple />
+                <input type="file" class="form-control-file" id="documents"  name="files" multiple />
               </div>
-              <button type="button" value={{user.id}} id="btn-enviar" class="btn btn-primary">Subir Documentos</button>
+              <button type="button" value={{user.id}} id="btn-enviar" class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">Subir Documentos</button>
             </div>
           </div>
         </div>

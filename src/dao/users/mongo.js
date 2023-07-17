@@ -34,6 +34,10 @@ export default class User {
     return UserModel.updateOne( {_id : id }, { $set: { ticket: body } });
   }
 
+  updateDoc(id, body) {
+    return UserModel.updateOne( {_id : id }, { $set: { documents: body } });
+  }
+
   updateById(id, data) {
     return UserModel.updateOne({ _id: id }, { $set: data })
   }

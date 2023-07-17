@@ -934,7 +934,7 @@ li {
 
 .pb-file ul{
   padding: 0;
-  margin: 0 4rem 2rem;
+  margin: 0 4rem;
 }
 
 .form-check-input:before{
@@ -945,3 +945,13 @@ li {
   display: flex;
   flex-direction: column;
 }
+.profile {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.member-card-item {
+  width: 100%;
+}
+

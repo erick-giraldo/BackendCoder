@@ -4,30 +4,34 @@ import path from "path";
 import fs from "fs";
 import __dirname from "../config/utils.js";
 
-
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-      const { id } = req.params;
-      const { type} = req.body;
-      let folder;
-      if (type === "profile") {
-        folder = "profiles";
-      } else if (type === "product") {
-        folder = "products";
-      } else {
-        folder = "documents";
-      }
-      const destinationFolder = path.join(__dirname, '../public/uploads', folder, id);
-      
-      fs.mkdirSync(destinationFolder, { recursive: true });
-      cb(null, destinationFolder);
-    },
-    filename: (req, file, cb) => {
-      const extension = path.extname(file.originalname);
-      const filename = `${Date.now()}${extension}`;
-      cb(null, filename);
-    },
-  });
+  destination: (req, file, cb) => {
+    const { id } = req.params;
+    const { type } = req.query;
+    let folder;
+    if (type === "profile") {
+      folder = "profiles";
+    } else if (type === "product") {
+      folder = "products";
+    } else {
+      folder = "documents";
+    }
+    const destinationFolder = path.join(
+      __dirname,
+      "../public/uploads",
+      folder,
+      id
+    );
+
+    fs.mkdirSync(destinationFolder, { recursive: true });
+    cb(null, destinationFolder);
+  },
+  filename: (req, file, cb) => {
+    const extension = path.extname(file.originalname);
+    const filename = `${Date.now()}${extension}`;
+    cb(null, filename);
+  },
+});
 
 const upload = multer({ storage });
 
@@ -78,32 +82,36 @@ class UserController {
   static async uploadDocuments(req, res) {
     try {
       const { id } = req.params;
-      const { type} = req.body;
-     
-      
+      const { type } = req.query;
       upload.array("files")(req, res, async (err) => {
         if (err) {
           throw new Error(err.message);
         }
-
         const fileType = getFiletype(type);
-
-        const payload = req.files.map((file) => {
-            return {
-                name: file.filename,
-                path: file.path,
-                type: fileType,
-            };
-        });
-
-        // await UsersService.updateDocumentStatus(id, payload).catch(
-        //   () => {
-        //     throw new Error("Error al actualizar el status del documento");
-        //   }
-        // );
-
+  
+        // Obtén el documento existente del usuario
+        let user = req.user || (await UsersService.getById(id));
+  
+        // Inicializa user.documents como un array vacío si no existe
+        if (!user.documents) {
+          user.documents = [];
+        }
+       // cambiar el metodo some por find 
+        // Verifica si el tipo de archivo ya está agregado en el array de documentos
+        const documentExists = user.documents.some((doc) => doc.name === fileType.name);
+        console.log("🚀 ~ file: UserController.js:97 ~ upload.array ~ documentExists:", documentExists)
+  
+        // Si no existe, agrégalo al array de documentos
+        if (!documentExists) {
+          user.documents.push(fileType);
+        }
+  
+        // Actualiza el documento en la base de datos
+        const updatedUser = await UsersService.updateUserDoc(id, user.documents);
+  
         return res.status(200).json({
           message: "Documentos subidos exitosamente",
+          user: updatedUser,
         });
       });
     } catch (err) {
@@ -113,17 +121,26 @@ class UserController {
       });
     }
   }
+  
+
+
 }
 
 // Función auxiliar para obtener el tipo del archivo
 function getFiletype(type) {
   switch (type) {
     case "profiles":
-      return "profiles";
+      return {
+        "name": "profile",
+      };
     case "products":
-      return "producto";
+      return {
+        "name": "product",
+      };
     default:
-      return "documents";
+      return {
+        "name": "document",
+      };
   }
 }
 

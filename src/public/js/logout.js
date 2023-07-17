@@ -14,7 +14,6 @@ const checkboxes = document.querySelectorAll('input[name="documentTypes"]');
 checkboxes.forEach((checkbox) => {
   checkbox.addEventListener('change', (event) => {
     handleCheckboxChange(event.target.id, () => {
-      getValueTypes(valueTypes);
     });
   });
 });
@@ -35,17 +34,20 @@ function handleCheckboxChange(checkboxId, callback) {
     }
   });
 }
+btnEnviar.addEventListener("click", (e) => {
+  try {
+    const fileInput = document.getElementById('documents');
+    const files = Array.from(fileInput.files);
+  
+    const formData = new FormData();
+    files.forEach((file, index) => {
+      formData.append('files[]', file);
+    });
 
+    const userId = btnEnviar.value;
+    uploadDocuments(valueTypes, userId, formData);
+  } catch (error) {
+    
+  }
 
-function getValueTypes(value) {
-  // Lógica para manejar el valor de los tipos de documentos seleccionados
-  console.log(value);
-  btnEnviar.addEventListener("click", (e) => {
-
-    let inputFiles = document.getElementById('documents');
-    const files = inputFiles.files[0];
-
-    const userId = btnEnviar.value
-    uploadDocuments(value, userId , files)
-  });
-}
+});
