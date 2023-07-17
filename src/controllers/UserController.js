@@ -88,22 +88,27 @@ class UserController {
           throw new Error(err.message);
         }
         const fileType = getFiletype(type);
-  
         // Obtén el documento existente del usuario
-        let user = req.user || (await UsersService.getById(id));
+        let user = await UsersService.getById(id);
   
         // Inicializa user.documents como un array vacío si no existe
         if (!user.documents) {
           user.documents = [];
         }
-       // cambiar el metodo some por find 
+  
         // Verifica si el tipo de archivo ya está agregado en el array de documentos
-        const documentExists = user.documents.some((doc) => doc.name === fileType.name);
-        console.log("🚀 ~ file: UserController.js:97 ~ upload.array ~ documentExists:", documentExists)
+        const documentExists = user.documents.find((doc) => doc.name === fileType.name);
   
         // Si no existe, agrégalo al array de documentos
         if (!documentExists) {
           user.documents.push(fileType);
+        } else if (fileType.name !== documentExists.name) {
+          // Si existe pero es de un tipo diferente, agrega el nuevo tipo al array
+          user.documents.push(fileType);
+        } else{
+          return res.json({
+            message: "Ya se cargo un archivo para esa opción",
+          });
         }
   
         // Actualiza el documento en la base de datos
