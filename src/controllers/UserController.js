@@ -80,6 +80,8 @@ class UserController {
   }
 
   static async uploadDocuments(req, res) {
+    console.log("🚀 ~ file: UserController.js:83 ~ UserController ~ uploadDocuments ~ req:", req.body)
+    return
     try {
       const { id } = req.params;
       const { type } = req.query;
@@ -90,30 +92,38 @@ class UserController {
         const fileType = getFiletype(type);
         // Obtén el documento existente del usuario
         let user = await UsersService.getById(id);
-  
+
         // Inicializa user.documents como un array vacío si no existe
         if (!user.documents) {
           user.documents = [];
         }
-  
+
         // Verifica si el tipo de archivo ya está agregado en el array de documentos
-        const documentExists = user.documents.find((doc) => doc.name === fileType.name);
-  
+        const documentExists = user.documents.find(
+          (doc) => doc.name === fileType.name
+        );
+
         // Si no existe, agrégalo al array de documentos
         if (!documentExists) {
+          // Agrega la propiedad "reference" con la ruta del archivo al objeto fileType
+          fileType.reference = req.files.map((file) => file.path);
+          console.log("🚀 ~ file: UserController.js:112 ~ UserController ~ upload.array ~ fileType:", fileType)
           user.documents.push(fileType);
         } else if (fileType.name !== documentExists.name) {
           // Si existe pero es de un tipo diferente, agrega el nuevo tipo al array
+          fileType.reference = req.files.map((file) => file.path);
+          console.log("🚀 ~ file: UserController.js:112 ~ UserController ~ upload.array ~ fileType:", fileType)
+
           user.documents.push(fileType);
-        } else{
+        } else {
           return res.json({
-            message: "Ya se cargo un archivo para esa opción",
+            message: "Ya se cargó un archivo para esa opción",
           });
         }
-  
+
         // Actualiza el documento en la base de datos
         const updatedUser = await UsersService.updateUserDoc(id, user.documents);
-  
+
         return res.status(200).json({
           message: "Documentos subidos exitosamente",
           user: updatedUser,
@@ -126,9 +136,6 @@ class UserController {
       });
     }
   }
-  
-
-
 }
 
 // Función auxiliar para obtener el tipo del archivo
@@ -136,15 +143,15 @@ function getFiletype(type) {
   switch (type) {
     case "profiles":
       return {
-        "name": "profile",
+        name: "profile",
       };
     case "products":
       return {
-        "name": "product",
+        name: "product",
       };
     default:
       return {
-        "name": "document",
+        name: "document",
       };
   }
 }

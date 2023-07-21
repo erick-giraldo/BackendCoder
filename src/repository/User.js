@@ -35,6 +35,14 @@ export default class User {
   updateDoc(id, body){
     return this.dao.updateDoc( id, body )
   }
+
+  updateCart(id, body){
+    return this.dao.updateUser( id, body )
+  }
+
+  updateLastConnection(id, body){
+    return this.dao.updateLastConnection( id, body )
+  }
   
   deleteById(id) {
     return this.dao.deleteById(id)

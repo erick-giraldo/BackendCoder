@@ -19,21 +19,12 @@ const errorMessages = {
   DOCUMENTS: "No se ha podido subir el documento"
 };
 
-const postRequest = async (url, body, method = "GET") => {
+const postRequest = async (url, body, method = "GET", header) => {
   try {
-    const headers = body.formData instanceof FormData
-      ? { "Content-Type": "multipart/form-data" } 
-      : { "Content-Type": "application/json" };
-
-    const requestBody = body.formData instanceof FormData
-      ? body
-      : JSON.stringify(body);
-      console.log("🚀 ~ file: sessions.js:29 ~ postRequest ~ requestBody:", requestBody)
-
     const response = await fetch(url, {
       method,
-      headers,
-      body: JSON.stringify(requestBody),
+      headers: header || { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
     });
     if (response.ok) {
       return { success: true, data: await response.json() };
@@ -140,10 +131,17 @@ const logout = async () => {
 };
 
 const uploadDocuments = async (type, userId, formData) => {
-  const { success, error } = await postRequest(`api/users/${userId}/documents`, {
+    // Convertir FormData a un objeto regular para mostrar en la consola
+    const formDataObject = {};
+    for (const key of formData.keys()) {
+      formDataObject[key] = formData.getAll(key);
+    }
+
+    console.log("Contenido de FormData:", formDataObject);
+
+  const { success, error } = await postRequest(`api/users/${userId}/documents?type=${type}`, {
     formData,
-    type
-  }, "POST");
+  }, "POST", { "Content-Type": "multipart/form-data; boundary=----WebKitFormBoundaryS8c4lA5nqjYMcQe6a" });
   if (success) {
     showSuccessMessage("Files ok!!!", successMessages.DOCUMENTS);
     setTimeout(() => {

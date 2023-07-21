@@ -26,7 +26,7 @@ export default class UsersService {
   }
 
   static async updateUserCart(id, body) {
-    return userRepository.updateOne(id, body);
+    return userRepository.updateCart(id, body);
   }
 
   static async updateUserDoc(id, body) {
@@ -35,6 +35,10 @@ export default class UsersService {
 
   static async updateTicket(id, body) {
     return userRepository.updateTicket(id, body);
+  }
+
+  static async updateLastConnection(id, body) {
+    return userRepository.updateLastConnection(id, body);
   }
 
   static delete(id) {

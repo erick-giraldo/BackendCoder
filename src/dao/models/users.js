@@ -20,6 +20,8 @@ const UserSchema = new mongoose.Schema({
         default: []
     },
     role: { type: String, default: 'user', enum: ['user', 'admin', 'premium']},
+     documents: { type: Array,  default: [],
+    },
     passwordResetTokens: [
         {
           token: String,
@@ -28,8 +30,8 @@ const UserSchema = new mongoose.Schema({
         }
       ],
     id: { type: Number},
-    last_connection:{ type: Date, default: Date.now },
-    history_connection:{ type: Date, default: [] },
+    last_connection: { type: Date, default: Date.now },
+    // history_connection:{ type: Date, default: [] },
 }, { timestamps: true})
 
 export default mongoose.model('User', UserSchema)

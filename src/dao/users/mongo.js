@@ -26,6 +26,11 @@ export default class User {
     return UserModel.updateOne( {_id : id }, { $set: { cart: body } });
   }
 
+  updateLastConnection(id, body) {
+    return UserModel.updateOne( {_id : id }, { $set: { last_connection: body } });
+  }
+
+
   updateOne(id, body) {
     return UserModel.updateOne( {_id : id }, { $set: { cart: body } });
   }

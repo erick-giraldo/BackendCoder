@@ -34,16 +34,20 @@ function handleCheckboxChange(checkboxId, callback) {
     }
   });
 }
+
 btnEnviar.addEventListener("click", (e) => {
   try {
     const fileInput = document.getElementById('documents');
     const files = Array.from(fileInput.files);
+    console.log("🚀 ~ file: logout.js:42 ~ btnEnviar.addEventListener ~ files:", files)
   
     const formData = new FormData();
     files.forEach((file, index) => {
-      formData.append('files[]', file);
-    });
+    console.log("🚀 ~ file: logout.js:48 ~ files.forEach ~ file:", file)
 
+      formData.append('files', file);
+    });
+  
     const userId = btnEnviar.value;
     uploadDocuments(valueTypes, userId, formData);
   } catch (error) {
