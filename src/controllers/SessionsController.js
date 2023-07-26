@@ -4,6 +4,7 @@ import {
   tokenGeneratorPass,
   tokenGenerator,
   createHash,
+  isValidToken
 } from "../utils/hash.js";
 import isEmpty from "is-empty";
 import getLogger from "../utils/logger.js";
@@ -44,6 +45,7 @@ class SessionsController {
       let user = await UsersService.getOne(email);
       user = JSON.parse(JSON.stringify(user));
       const token = tokenGenerator(user);
+      await UsersService.updateLastConnection(user._id,  new Date() );
       res
         .cookie("token", token, {
           maxAge: 60 * 60 * 1000,
@@ -88,13 +90,17 @@ class SessionsController {
 
   static logout = async (req, res) => {
     try {
-      if (req.cookies.token) {
+       const currentCookie = req.cookies.token
+       const decodeToken = isValidToken(currentCookie)
+      if (currentCookie) {
+        await UsersService.updateLastConnection(decodeToken.id,  new Date() );
         res
           .clearCookie("token")
           .sendSuccess({ message: "El usuario a sido deslogueado." });
       } else {
         res.sendSuccess({ message: "El usuario ya está deslogueado." });
       }
+      
     } catch (err) {
       console.error(err);
       res.sendServerError({ message: `${err} - Error del servidor` });

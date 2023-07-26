@@ -4,25 +4,26 @@ const successMessages = {
   LOGIN: "Bienvenido",
   REGISTER: (email) => `Bienvenido ${email}`,
   LOGOUT: "La sesión se cerró correctamente",
-  UPDATEPASS:"Se cambio la contraseña correctamente",
-  RESET: "Se ha generado un link para restablecer la contraseña. Revisa tu correo electrónico.",
+  UPDATEPASS: "Se cambió la contraseña correctamente",
+  RESET: "Se ha generado un enlace para restablecer la contraseña. Revisa tu correo electrónico.",
+  DOCUMENTS: "Se subió el documento correctamente"
 };
 
 const errorMessages = {
   DEFAULT: "Ha ocurrido un error. Por favor, intenta de nuevo más tarde.",
   LOGIN: "No se ha podido iniciar sesión con los datos proporcionados.",
   REGISTER: "No se ha podido crear la cuenta con los datos proporcionados.",
-  RESET:
-    "No se ha podido generar el link para restablecer la contraseña. Por favor, intenta de nuevo más tarde",
+  RESET: "No se ha podido generar el enlace para restablecer la contraseña. Por favor, intenta de nuevo más tarde.",
   LOGOUT: "No se ha podido cerrar la sesión.",
-  UPDATEPASS:"No se ha podido cambiar su clave"
+  UPDATEPASS: "No se ha podido cambiar su clave",
+  DOCUMENTS: "No se ha podido subir el documento"
 };
 
-const postRequest = async (url, body, method = "GET") => {
+const postRequest = async (url, body, method = "GET", header) => {
   try {
     const response = await fetch(url, {
       method,
-      headers: { "Content-Type": "application/json" },
+      headers: header || { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     });
     if (response.ok) {
@@ -35,28 +36,36 @@ const postRequest = async (url, body, method = "GET") => {
   }
 };
 
+const showSuccessMessage = (title, text) => {
+  Swal.fire({
+    icon: "success",
+    title,
+    text,
+    showConfirmButton: false,
+  });
+};
+
+const showErrorMessage = (title, text) => {
+  Swal.fire({
+    icon: "error",
+    title,
+    text,
+    showConfirmButton: false,
+  });
+};
+
 const login = async (email, password) => {
   const { success, error, data } = await postRequest(`${API_URL}/login`, {
     email,
     password,
   }, "POST");
   if (success) {
-    Swal.fire({
-      icon: "success",
-      title: "Login ok!!!",
-      text: successMessages.LOGIN,
-      showConfirmButton: false,
-    });
+    showSuccessMessage("Login ok!!!", successMessages.LOGIN);
     setTimeout(() => {
       window.location.replace("/products");
     }, 2000);
   } else {
-    Swal.fire({
-      icon: "error",
-      title: "Login error!!!",
-      text: error?.message || errorMessages.LOGIN,
-      showConfirmButton: false,
-    });
+    showErrorMessage("Login error!!!", error?.message || errorMessages.LOGIN);
   }
 };
 
@@ -70,22 +79,12 @@ const register = async (email, password, role) => {
     role,
   }, "POST");
   if (success) {
-    Swal.fire({
-      icon: "success",
-      title: "Registro ok!!!",
-      text: successMessages.REGISTER(email),
-      confirmButtonText: "OK",
-    });
+    showSuccessMessage("Registro ok!!!", successMessages.REGISTER(email));
     setTimeout(() => {
       window.location.replace("/login");
     }, 2000);
   } else {
-    Swal.fire({
-      icon: "error",
-      title: "Registro error!!!",
-      text: error?.message || errorMessages.REGISTER,
-      confirmButtonText: "OK",
-    });
+    showErrorMessage("Registro error!!!", error?.message || errorMessages.REGISTER);
   }
 };
 
@@ -94,72 +93,70 @@ const forgotPassword = async (email) => {
     email
   }, "POST");
   if (success) {
-    Swal.fire({
-      icon: "success",
-      title: "Send Link Ok!!!",
-      text: successMessages.RESET,
-      showConfirmButton: false,
-    });
+    showSuccessMessage("Send Link Ok!!!", successMessages.RESET);
     setTimeout(() => {
       window.location.replace("/login");
     }, 3000);
   } else {
-    Swal.fire({
-      icon: "error",
-      title: "Login error!!!",
-      text: error?.message || errorMessages.RESET,
-      showConfirmButton: false,
-    });
+    showErrorMessage("Login error!!!", error?.message || errorMessages.RESET);
   }
 };
 
-
 const resetPassword = async (email, password, token) => {
   const { success, error } = await postRequest(`${API_URL}/reset-password`, {
-    email, 
+    email,
     password,
     token
   }, "PUT");
   if (success) {
-    Swal.fire({
-      icon: "success",
-      title: "Pass OK!!",
-      text: successMessages.UPDATEPASS,
-      showConfirmButton: false,
-    });
+    showSuccessMessage("Pass OK!!", successMessages.UPDATEPASS);
     setTimeout(() => {
       window.location.replace("/login");
     }, 3000);
   } else {
-    Swal.fire({
-      icon: "error",
-      title: "Reset Password error!!!",
-      text: error?.message || errorMessages.UPDATEPASS,
-      showConfirmButton: false,
-    });
+    showErrorMessage("Reset Password error!!!", error?.message || errorMessages.UPDATEPASS);
   }
 };
 
-const logout = async () => {                      
+const logout = async () => {
   const { success, error } = await postRequest(`${API_URL}/logout`);
   if (success) {
-    Swal.fire({
-      icon: "success",
-      title: "Logout ok!!!",
-      text: successMessages.LOGOUT,
-      showConfirmButton: false,
-    });
+    showSuccessMessage("Logout ok!!!", successMessages.LOGOUT);
     setTimeout(() => {
       window.location.replace("/");
     }, 2000);
   } else {
-    Swal.fire({
-      icon: "error",
-      title: "Logout error!!!",
-      text: error?.message || errorMessages.LOGOUT,
-      showConfirmButton: false,
-    });
+    showErrorMessage("Logout error!!!", error?.message || errorMessages.LOGOUT);
   }
 };
 
-export { login, register, resetPassword, forgotPassword, logout };
+const uploadDocuments = async (type, userId, formData) => {
+    // Convertir FormData a un objeto regular para mostrar en la consola
+    const formDataObject = {};
+    for (const key of formData.keys()) {
+      formDataObject[key] = formData.getAll(key);
+    }
+
+    console.log("Contenido de FormData:", formDataObject);
+
+  const { success, error } = await postRequest(`api/users/${userId}/documents?type=${type}`, {
+    formData,
+  }, "POST", { "Content-Type": "multipart/form-data; boundary=----WebKitFormBoundaryS8c4lA5nqjYMcQe6a" });
+  if (success) {
+    showSuccessMessage("Files ok!!!", successMessages.DOCUMENTS);
+    setTimeout(() => {
+      location.reload();
+    }, 2000);
+  } else {
+    showErrorMessage("Logout error!!!", error?.message || errorMessages.DOCUMENTS);
+  }
+};
+
+export {
+  login,
+  register,
+  resetPassword,
+  forgotPassword,
+  logout,
+  uploadDocuments
+};
