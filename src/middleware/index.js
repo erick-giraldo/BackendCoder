@@ -328,7 +328,7 @@ const isDocumentLoaded = (documents, docName) => documents.some(doc => doc.name 
 // Función para validar si todos los documentos están cargados
 const validateDocuments = (user) => {
   return new Promise((resolve, reject) => {
-    const requiredDocuments = ['product', 'profile', 'documents'];
+    const requiredDocuments = ['Identificación', 'Comprobante de domicilio', 'Comprobante de estado de cuenta'];
     const missingDocuments = [];
 
     requiredDocuments.forEach(docName => {
@@ -340,7 +340,7 @@ const validateDocuments = (user) => {
     if (missingDocuments.length === 0) {
       resolve({ isValid: true, missingDocuments: [] });
     } else {
-      resolve({ isValid: false, missingDocuments }); // Cambiamos 'resolve' por 'reject'
+      resolve({ isValid: false, missingDocuments });
     }
   });
 };
@@ -354,11 +354,14 @@ export const authenticateAndAuthorize = async (req, res, next) => {
     throw new Error("Se produjo un error al obtener token.");
   }
   let user = await UsersService.getOne(isToken.email);
-  const validatedocs = await validateDocuments(user)
-  if (!validatedocs.isValid) {
-    throw new Error(`Documentos que faltan:, [ ${validatedocs.missingDocuments} ]`);
+  if(user.role.toUpperCase() === "USER" && role === "PREMIUM") {
+    const validatedocs = await validateDocuments(user)
+    if (!validatedocs.isValid) {
+      throw new Error(`Documentos que faltan subir al ususario:, [ ${validatedocs.missingDocuments} ]`);
+    }
   }
-const userRoles = ["ADMIN", "PREMIUM"]; // Obtén los roles del usuario
+ 
+const userRoles = ["ADMIN", "PREMIUM"];
 if (!userRoles.includes(role)) {
   return res.status(401).json({
     message: "Solo se puede Cambiar roles por Admin o premium",

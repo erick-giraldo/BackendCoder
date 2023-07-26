@@ -3,28 +3,48 @@ import multer from "multer";
 import path from "path";
 import fs from "fs";
 import __dirname from "../config/utils.js";
+import isEmpty from "is-empty";
 
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
+  destination: async (req, file, cb) => {
     const { id } = req.params;
     const { type } = req.query;
-    let folder;
-    if (type === "profile") {
-      folder = "profiles";
-    } else if (type === "product") {
-      folder = "products";
-    } else {
-      folder = "documents";
-    }
-    const destinationFolder = path.join(
-      __dirname,
-      "../public/uploads",
-      folder,
-      id
-    );
 
-    fs.mkdirSync(destinationFolder, { recursive: true });
-    cb(null, destinationFolder);
+    try {
+      const user = await UsersService.getById(id);
+      const newName = file.originalname.split('.')[0];
+      const isDuplicate = user.documents.some(doc => doc.name === newName);
+      
+      if (isDuplicate) {
+        return cb({
+          status: "Archivo repetido",
+          statusCode: 400,
+        });
+      }
+
+      let folder;
+      if (type === "profile") {
+        folder = "profiles";
+      } else if (type === "product") {
+        folder = "products";
+      } else {
+        folder = "documents";
+      }
+      const destinationFolder = path.join(
+        __dirname,
+        "../public/uploads",
+        folder,
+        id
+      );
+
+      fs.mkdirSync(destinationFolder, { recursive: true });
+      cb(null, destinationFolder);
+    } catch (err) {
+      return cb({
+        status: "Error al obtener el usuario",
+        statusCode: 500,
+      });
+    }
   },
   filename: (req, file, cb) => {
     const extension = path.extname(file.originalname);
@@ -32,6 +52,7 @@ const storage = multer.diskStorage({
     cb(null, filename);
   },
 });
+
 
 const upload = multer({ storage });
 
@@ -80,53 +101,53 @@ class UserController {
   }
 
   static async uploadDocuments(req, res) {
-    console.log("🚀 ~ file: UserController.js:83 ~ UserController ~ uploadDocuments ~ req:", req.body)
-    return
     try {
       const { id } = req.params;
       const { type } = req.query;
       upload.array("files")(req, res, async (err) => {
         if (err) {
-          throw new Error(err.message);
+          return res.status(err.statusCode).json({
+            message: err.status,
+          });
         }
         const fileType = getFiletype(type);
-        // Obtén el documento existente del usuario
         let user = await UsersService.getById(id);
-
-        // Inicializa user.documents como un array vacío si no existe
+        if (isEmpty(user)) {
+          return res.status(404).json({
+            message: "Usuario no encontrado, por favor intente nuevamente.",
+          });
+        }
         if (!user.documents) {
           user.documents = [];
         }
+        
 
-        // Verifica si el tipo de archivo ya está agregado en el array de documentos
-        const documentExists = user.documents.find(
-          (doc) => doc.name === fileType.name
-        );
-
-        // Si no existe, agrégalo al array de documentos
-        if (!documentExists) {
-          // Agrega la propiedad "reference" con la ruta del archivo al objeto fileType
-          fileType.reference = req.files.map((file) => file.path);
-          console.log("🚀 ~ file: UserController.js:112 ~ UserController ~ upload.array ~ fileType:", fileType)
-          user.documents.push(fileType);
-        } else if (fileType.name !== documentExists.name) {
-          // Si existe pero es de un tipo diferente, agrega el nuevo tipo al array
-          fileType.reference = req.files.map((file) => file.path);
-          console.log("🚀 ~ file: UserController.js:112 ~ UserController ~ upload.array ~ fileType:", fileType)
-
-          user.documents.push(fileType);
-        } else {
-          return res.json({
-            message: "Ya se cargó un archivo para esa opción",
-          });
-        }
-
-        // Actualiza el documento en la base de datos
+        const uploadedFiles = req.files.map((file) => {
+          const newName = file.originalname.split('.')[0];
+          const isDuplicate = user.documents.some(doc => doc.name === newName);
+          if (isDuplicate) {
+            return {
+              name: newName,
+              status: "Archivo repetido",
+            };
+          } else {
+            user.documents.push({
+              name: newName,
+              reference: `/uploads/${fileType.name}/${file.filename}`
+            });
+            return {
+              name: newName,
+              status: "Archivo subido exitosamente",
+            };
+          }
+        });
+  
         const updatedUser = await UsersService.updateUserDoc(id, user.documents);
-
+  
         return res.status(200).json({
           message: "Documentos subidos exitosamente",
           user: updatedUser,
+          documentsStatus: uploadedFiles,
         });
       });
     } catch (err) {
@@ -141,18 +162,12 @@ class UserController {
 // Función auxiliar para obtener el tipo del archivo
 function getFiletype(type) {
   switch (type) {
-    case "profiles":
-      return {
-        name: "profile",
-      };
-    case "products":
-      return {
-        name: "product",
-      };
+    case "profile":
+      return  "profile";
+    case "product":
+      return "product";
     default:
-      return {
-        name: "document",
-      };
+      return "document";
   }
 }
 
