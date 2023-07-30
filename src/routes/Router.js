@@ -80,7 +80,7 @@ export default class CustomerRouter {
     res.sendSuccess = (payload) =>
       res.status(200).json({ success: true, payload });
     res.sendServerError = (error) =>
-      res.status(500).json({ success: false, error , message: error.message});
+      res.status(500).json({ success: false, error });
     res.sendUserError = (error) =>
       res.status(400).json({ success: false, error });
     next();

@@ -31,7 +31,14 @@ const UserSchema = new mongoose.Schema({
       ],
     id: { type: Number},
     last_connection: { type: Date, default: Date.now },
-    // history_connection:{ type: Date, default: [] },
 }, { timestamps: true})
+
+UserSchema.pre('save', function (next) {
+    if (this.documents.length === 0) {
+      this.documents.push({ name: "Pendiente subir documentos" });
+    }
+    next();
+  });
+  
 
 export default mongoose.model('User', UserSchema)

@@ -9,6 +9,10 @@ export default class UsersService {
     return userRepository.get();
   }
 
+  static getDTO() {
+    return userRepository.getDTO();
+  }
+
   static getById(id) {
     return userRepository.getById(id);
   }
@@ -43,6 +47,10 @@ export default class UsersService {
 
   static delete(id) {
     return userRepository.deleteOne(id);
+  }
+
+  static deleteMany(data) {
+    return userRepository.deleteMany(data);
   }
   
   static updateOne(id, payload, extradata = {}) {

@@ -321,51 +321,56 @@ export const authenticatedUser = (req, res, next) => {
   next();
 };
 
-// documentValidator.js
 
-const isDocumentLoaded = (documents, docName) => documents.some(doc => doc.name === docName);
+const isDocumentLoaded = (documents = [], docName) => {
+  return documents.some(doc => doc.name === docName);
+};
 
-// Función para validar si todos los documentos están cargados
-const validateDocuments = (user) => {
-  return new Promise((resolve, reject) => {
-    const requiredDocuments = ['Identificación', 'Comprobante de domicilio', 'Comprobante de estado de cuenta'];
-    const missingDocuments = [];
+const validateDocuments = async (user) => {
+  const requiredDocuments = ['Identificación', 'Comprobante de domicilio', 'Comprobante de estado de cuenta'];
+  const missingDocuments = [];
 
-    requiredDocuments.forEach(docName => {
-      if (!isDocumentLoaded(user.documents, docName)) {
-        missingDocuments.push(docName);
-      }
-    });
-
-    if (missingDocuments.length === 0) {
-      resolve({ isValid: true, missingDocuments: [] });
-    } else {
-      resolve({ isValid: false, missingDocuments });
+  requiredDocuments.forEach(docName => {
+    if (!isDocumentLoaded(user.documents, docName)) {
+      missingDocuments.push(docName);
     }
   });
+
+  if (missingDocuments.length === 0) {
+    return { isValid: true, missingDocuments: [] };
+  } else {
+    return { isValid: false, missingDocuments };
+  }
 };
 
 export const authenticateAndAuthorize = async (req, res, next) => {
   const token = req.cookies.token;
   const role = req.body.role.toUpperCase();
+  const { id } = req.params;
   const isToken = isValidToken(token);
   if (isEmpty(isToken)) {
     logger.warning("Se produjo un error al obtener token.");
     throw new Error("Se produjo un error al obtener token.");
   }
-  let user = await UsersService.getOne(isToken.email);
+
+  const user = await UsersService.getById(id);
+  if (isEmpty(user)) {
+    throw new Error(
+      JSON.stringify({ detail: "El usuario no fue encontrado" })
+    );
+  }
+
   if(user.role.toUpperCase() === "USER" && role === "PREMIUM") {
+    console.log("acaaaa")
     const validatedocs = await validateDocuments(user)
     if (!validatedocs.isValid) {
-      throw new Error(`Documentos que faltan subir al ususario:, [ ${validatedocs.missingDocuments} ]`);
+      const missingDocsString = validatedocs.missingDocuments.join(', ');
+      throw new Error(`Debes subir estos documentos para poder cambiar el rol:, [ ${missingDocsString} ]`);
     }
   }
- 
 const userRoles = ["ADMIN", "PREMIUM"];
 if (!userRoles.includes(role)) {
-  return res.status(401).json({
-    message: "Solo se puede Cambiar roles por Admin o premium",
-  });
+  throw new Error("Solo se puede Cambiar roles por Admin o premium");
 }
 next();
 };

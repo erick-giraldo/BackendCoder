@@ -91,7 +91,7 @@
           <li>
             <a class="dropdown-item" href="/users-admin">Admin Users</a>
           </li>
-          <li>
+           <li>
             <a class="dropdown-item" href="/mailing">Mailing</a>
           </li>
           <li>
@@ -111,61 +111,52 @@
 <div class="container-fluid padre">
   <div class="row hijo">
     <div class="col-lg-10 col-md-12 col-sm-12 main-container">
-      <div class="row nosotros-contenido">
-        <h1>Productos</h1>
+      <div class="row nosotros-contenido users-content">
+        <h1>Usuarios</h1>
         <div class="productos-container">
           <table class="table table-sm table-products">
-            <nav aria-label="..." class="Paginator" id="pagination">
-              <ul class="pagination">
-                <li class="page-item {{#if products.hasPrevPage}} {{else}} disabled {{/if}}"><a class="page-link"
-                    href={{products.prevLink}}>Previous</a></li>
-                <li class="page-item  {{#if this.active}} active {{else}} {{/if}}"><a class="page-link"
-                    href={{this.link}}>{{products.page}}</a></li>
-                <li class="page-item {{#if products.hasNextPage}} {{else}} disabled {{/if}}"><a class="page-link"
-                    href={{products.nextLink}}>Next</a></li>
-              </ul>
-            </nav>
             <thead>
               <tr>
                 <th scope="colIdth>
-                <th scope=" col">Id</th>
-                <th scope="col">Categoria</th>
-                <th scope="col">Código</th>
+                {{!-- <th scope=" col">Id</th> --}}
+                <th scope="col">Avatar</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Imagen</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Stock</th>
-                <th scope="col">Status</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Email</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Documentos</th>
+                <th scope="col">Ultima Conexi[on</th>
                 <th scope="col">Acciones</th>
               </tr>
             </thead>
             <tbody>
-              {{#each products.payload}}
-              {{this.page}}
+            {{#each data}}
               <tr>
-                <th scope="row">{{this.id}}</th>
-                <td>{{this.category}}</td>
-                <td>{{this.code}}</td>
-                <td>{{this.name}}</td>
-                <td>{{this.description}}</td>
-                <td><img style="width: 15rem;" src={{this.image}} /></td>
-                <td>{{this.price}}</td>
-                <td>{{this.stock}}</td>
-                <td>{{this.status}}</td>
-                <td>
-                  <div class="actions">
-                    {{!-- <a href="#" id="add" rel="noopener noreferrer" title="Agregar"><span
-                        class="material-symbols-outlined">add_circle</span></a>
-                    <a href="#" id="edit" rel="noopener noreferrer" title="Editar"><span
-                        class="material-symbols-outlined">edit</span></a>
-                    <a href="#" id="delete" rel="noopener noreferrer" title="Eliminar"><span
-                        class="material-symbols-outlined">delete</span></a> --}}
-                    <a href="#" id="addCart" rel="noopener noreferrer" title="Cart"
-                      onclick="addProductCart(`{{this._id}}`)"><span class="fa fa-cart-plus"></span></a>
-                  </div>
-                  </i>
-                </td>
+                <td><img style="width: 5rem;" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" /></td>
+                <td>{{this._doc.first_name}}</td>
+                <td>{{this._doc.last_name}}</td>
+                <td>{{this._doc.email}}</td>
+                <td>{{this._doc.age}}</td>
+                <td>{{this._doc.role}}</td>
+                <td>{{#each this._doc.documents}}
+                  {{this.name}}{{#unless @last}}, {{/unless}}
+                {{/each}}</td>
+                <td>{{this._doc.last_connection}}</td>
+                 <td>
+                    <div class="actions">
+                      {{!-- <a href="#" id="add" rel="noopener noreferrer" title="Agregar"><span
+                          class="material-symbols-outlined">add_circle</span></a>
+                      
+                      <a href="#" id="delete" rel="noopener noreferrer" title="Eliminar"><span
+                          class="material-symbols-outlined">delete</span></a> --}}
+                      <a href="#" id="addCart" rel="noopener noreferrer" title="Eliminar Usuario"
+                        onclick="addProductCart(`{{this._id}}`)"><span class="fa fa-trash"></span></a>
+                      <a href="#" id="edit" rel="noopener noreferrer" title="Editar Rol"><span
+                        onclick="addProductCart(`{{this._id}}`)"><span class="fa fa-edit"></span></a>
+                    </div>
+                    </i>
+                  </td>
               </tr>
               {{/each}}
             </tbody>

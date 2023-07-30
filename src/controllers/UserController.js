@@ -12,8 +12,8 @@ const storage = multer.diskStorage({
 
     try {
       const user = await UsersService.getById(id);
-      const newName = file.originalname.split('.')[0];
-      const isDuplicate = user.documents.some(doc => doc.name === newName);
+      const newName = file.originalname.split(".")[0];
+      const isDuplicate = user.documents.some((doc) => doc.name === newName);
       
       if (isDuplicate) {
         return cb({
@@ -53,18 +53,17 @@ const storage = multer.diskStorage({
   },
 });
 
-
 const upload = multer({ storage });
 
 class UserController {
   static async getAllUsers(req, res) {
     try {
-      const users = await UsersService.get().catch(() => {
+      const users = await UsersService.getDTO().catch(() => {
         throw new Error(
           JSON.stringify({ detail: "No se encontraron usuarios" })
         );
       });
-      return res.status(200).json(users);
+      return res.sendSuccess(users);
     } catch (err) {
       return res.status(400).json({
         message: "Error al obtener los usuarios",
@@ -83,18 +82,50 @@ class UserController {
       });
       const role = req.body.role.toLowerCase();
       if (user.role === role) {
-        return res.json({
-          message: "El rol del usuario no puede ser el mismo",
-        });
+        throw new Error(
+          JSON.stringify({ detail: "El rol del usuario no puede ser el mismo" })
+        );
       }
       user.role = role;
       await user.save();
-      return res.json({
+      return res.sendSuccess({
         message: "El rol del usuario fue actualizado exitosamente",
       });
     } catch (err) {
-      return res.status(400).json({
+      return res.sendUserError({
         message: "Error al actualizar el rol del usuario",
+        error: JSON.parse(err.message),
+      });
+    }
+  }
+
+  static async deleteInactiveUsers(req, res) {
+    try {
+      const dosDiasAtras = new Date(Date.now() - 2 * 24 * 60 * 60 * 1000);
+      const user = await UsersService.get().catch(() => {
+        throw new Error(
+          JSON.stringify({ detail: "No se encontraron usuarios" })
+        );
+      });
+      console.log("🚀 ~ file: UserController.js:110 ~ UserController ~ deleteInactiveUsers ~ user:", user)
+      let inactiveUsers = user.filter( (user) => user.last_connection < dosDiasAtras );
+
+      const emailsInactiveUsers = inactiveUsers.map((user) => user.email);
+
+      if (isEmpty(inactiveUsers)) {
+        throw new Error(
+          JSON.stringify({ detail: "No se encontraron usuarios inactivos" })
+        );
+      }
+      await UsersService.deleteMany({
+        last_connection: { $lte: dosDiasAtras },
+      });
+      return res.sendSuccess({
+        message: `Los siguentes usuarios: [ ${emailsInactiveUsers} ]  fueron eliminados por 2 dias de inactividad:  `,
+      });
+    } catch (err) {
+      return res.sendUserError({
+        message: "Error al eliminar los usuarios inactivos",
         error: JSON.parse(err.message),
       });
     }
@@ -120,11 +151,15 @@ class UserController {
         if (!user.documents) {
           user.documents = [];
         }
-        
-
+  
+        const pendingDoc = user.documents.findIndex((doc) => doc.name === "Pendiente subir documentos");
+        if (pendingDoc !== -1) {
+          user.documents.splice(pendingDoc, 1);
+        }
+  
         const uploadedFiles = req.files.map((file) => {
           const newName = file.originalname.split('.')[0];
-          const isDuplicate = user.documents.some(doc => doc.name === newName);
+          const isDuplicate = user.documents.some((doc) => doc.name === newName);
           if (isDuplicate) {
             return {
               name: newName,
@@ -133,7 +168,7 @@ class UserController {
           } else {
             user.documents.push({
               name: newName,
-              reference: `/uploads/${fileType.name}/${file.filename}`
+              reference: `/uploads/${fileType.name}/${file.filename}`,
             });
             return {
               name: newName,
@@ -157,13 +192,14 @@ class UserController {
       });
     }
   }
+  
 }
 
 // Función auxiliar para obtener el tipo del archivo
 function getFiletype(type) {
   switch (type) {
     case "profile":
-      return  "profile";
+      return "profile";
     case "product":
       return "product";
     default:

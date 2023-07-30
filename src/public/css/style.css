@@ -25,6 +25,10 @@
   margin-bottom: 3rem;
   padding: 2rem;
 }
+
+.main-container .users-content {
+  height: 100%;
+}
 .payment-summary span {
   font-weight: 600;
 }
@@ -80,11 +84,6 @@ button.pay-button {
 
 .card-title {
   margin-bottom: var(--bs-card-title-spacer-y);
-}
-
-.main-container .nosotros-contenido p {
-  line-height: 32px;
-  text-align: justify;
 }
 
 .productos-container .productos-section .card-body .card-inv {
@@ -219,6 +218,7 @@ ul li {
 .table-products td .actions {
   display: flex;
   justify-content: center;
+  gap: 1rem;
 
 }
 

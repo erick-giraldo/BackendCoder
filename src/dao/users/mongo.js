@@ -51,4 +51,7 @@ export default class User {
     return UserModel.deleteOne({ _id: id });
   }
 
+  deleteMany(data) {
+    return UserModel.deleteMany(data);
+  }
 }

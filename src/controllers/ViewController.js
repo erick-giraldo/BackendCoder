@@ -1,5 +1,6 @@
 import ProductsService from "../services/products.service.js";
 import CartService from "../services/carts.service.js";
+import UsersService from "../services/users.service.js";
 import CommonsUtil from "../utils/commons.js";
 import isEmpty from "is-empty";
 import TicketsController from "./TicketsController.js";
@@ -78,6 +79,52 @@ export default class ViewController {
       });
     }
   }
+
+  static async usersAdmin(req, res) {
+    try {
+      const user = req.user;
+      const data = await UsersService.get();
+  
+      if (!data || data.length === 0) {
+        throw new Error(JSON.stringify({ detail: "No se encontraron usuarios" }));
+      }
+  
+      const newData = data.map((obj) => {
+        const documents = obj.documents.map((doc) => {
+          if (typeof doc === 'object') {
+            return JSON.stringify(doc);
+          }
+          return { doc };
+        });
+  
+        return { ...obj, newDocuments: documents };
+      });
+  
+      const path = !isEmpty(user) && !isEmpty(user.cart)
+        ? `/cart/${user.cart[0].id}`
+        : "#";
+  
+      return res.render("users-admin", {
+        style: "style.css",
+        data: newData,
+        user: {
+          name: user.name,
+          email: user.email,
+          occupation: user.occupation,
+          role: user.role,
+          age: user.age,
+          cart: path,
+          avatar: user.avatar || "https://mdbcdn.b-cdn.net/img/new/avatars/2.webp",
+        },
+      });
+    }catch (err) {
+      return res.status(400).json({
+        message: "Error al listar productos",
+        error: err.message,
+      });
+    }
+  }
+
 
   static async getCart(req, res) {
     try {

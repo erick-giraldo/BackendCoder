@@ -71,8 +71,9 @@ class SessionsController {
       } else {
         cartBody = [{ _id: createCart._id, id: 0 }];
       }
-      const user = await UsersService.create(req.body);
-      await UsersService.updateUserCart(user._id, cartBody);
+      let user = await UsersService.create(req.body);
+      const id = user[0]._id;
+      const updateCart = await UsersService.updateUserCart(id, cartBody);
       if (!user) {
         return res
           .status(401)

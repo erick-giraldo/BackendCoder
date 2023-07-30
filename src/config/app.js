@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import handlebars from "express-handlebars";
+import exphbs from "express-handlebars";
 import cookieParser from "cookie-parser";
 import passport from "passport";
 import config from './index.js'
@@ -22,7 +22,15 @@ if (config.presistanceType === 'mongodb') {
 }
 
 // Configuración de vistas con Handlebars
-app.engine("handlebars", handlebars.engine());
+// Configuración de Handlebars con opciones
+const hbs = exphbs.create({
+  runtimeOptions: {
+    allowProtoPropertiesByDefault: true,
+  },
+});
+
+// Configuración de vistas con Handlebars
+app.engine("handlebars", hbs.engine);
 app.set("views", dirname + "/../views");
 app.set("view engine", "handlebars");
 
