@@ -955,3 +955,6 @@ li {
   width: 100%;
 }
 
+.table>tbody {
+  vertical-align: baseline!important;
+}

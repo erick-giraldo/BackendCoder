@@ -20,7 +20,6 @@ export default class ViewRouter extends CustomerRouter {
 
 
     this.post("/carts/product/:pid", ['USER','ADMIN', 'PREMIUM'], viewAddProductCart, ViewController.addProductById)
-    
     this.delete("/deletecarts/product/:pid", ['USER','ADMIN', 'PREMIUM'], ViewController.deleteProductCartById)
 
 

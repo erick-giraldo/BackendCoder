@@ -45,8 +45,8 @@ export default class UsersService {
     return userRepository.updateLastConnection(id, body);
   }
 
-  static delete(id) {
-    return userRepository.deleteOne(id);
+  static deleteById(id) {
+    return userRepository.deleteById(id);
   }
 
   static deleteMany(data) {

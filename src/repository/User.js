@@ -52,7 +52,7 @@ export default class User {
   }
   
   deleteById(id) {
-    return this.dao.deleteById(id)
+    return this.dao.deleteOne(id)
   }
 
   deleteMany(data) {

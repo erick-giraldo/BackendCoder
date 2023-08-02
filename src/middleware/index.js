@@ -299,6 +299,26 @@ export const validateDeleteCart = async (req, res, next) => {
     res.status(500).json({ message: err.message });
   }
 };
+export const validateDeleteUser = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const userId = await UsersService.getById(id);
+    const currentUserId = req.user;
+
+    if (isEmpty(userId) || isEmpty(currentUserId)) {
+      throw new Error ( "Invalid user ID or current user ID" );
+    }
+
+    if (userId._id.equals(currentUserId.id)) {
+      console.log("true")
+      throw new Error ("No se puede eliminar asimismo" );
+    }
+    next();
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 
 export const authHome = (req, res, next) => {
   res.redirect("/login");
@@ -327,7 +347,7 @@ const isDocumentLoaded = (documents = [], docName) => {
 };
 
 const validateDocuments = async (user) => {
-  const requiredDocuments = ['Identificación', 'Comprobante de domicilio', 'Comprobante de estado de cuenta'];
+  const requiredDocuments = ['Identificación', 'Comprobante de domicilio', 'Comprobante de estado de cuenta'];
   const missingDocuments = [];
 
   requiredDocuments.forEach(docName => {
@@ -343,9 +363,8 @@ const validateDocuments = async (user) => {
   }
 };
 
-export const authenticateAndAuthorize = async (req, res, next) => {
+export const authenticateChangeRole = async (req, res, next) => {
   const token = req.cookies.token;
-  const role = req.body.role.toUpperCase();
   const { id } = req.params;
   const isToken = isValidToken(token);
   if (isEmpty(isToken)) {
@@ -360,20 +379,34 @@ export const authenticateAndAuthorize = async (req, res, next) => {
     );
   }
 
-  if(user.role.toUpperCase() === "USER" && role === "PREMIUM") {
-    console.log("acaaaa")
-    const validatedocs = await validateDocuments(user)
+  const newRole = getNewRole(user.role); // Obtener el nuevo rol basado en el rol actual
+  if (!newRole) {
+    throw new Error("Solo se puede cambiar roles por 'user' o 'premium'");
+  }
+
+  // Resto del código para la validación de documentos si se cambia de user a premium
+  if (user.role.toUpperCase() === "USER" && newRole.toUpperCase() === "PREMIUM") {
+    const validatedocs = await validateDocuments(user);
     if (!validatedocs.isValid) {
-      const missingDocsString = validatedocs.missingDocuments.join(', ');
-      throw new Error(`Debes subir estos documentos para poder cambiar el rol:, [ ${missingDocsString} ]`);
+      const missingDocsString = validatedocs.missingDocuments.join(", ");
+      throw new Error(
+        `Debes subir estos documentos para poder cambiar el rol: <strong> [ ${missingDocsString} ] </strong>`
+      );
     }
   }
-const userRoles = ["ADMIN", "PREMIUM"];
-if (!userRoles.includes(role)) {
-  throw new Error("Solo se puede Cambiar roles por Admin o premium");
-}
-next();
+
+  next();
 };
+
+// Función para obtener el nuevo rol basado en el rol actual
+const getNewRole = (currentRole) =>{
+  const roleMap = {
+    USER: "PREMIUM",
+    PREMIUM: "USER",
+  };
+  return roleMap[currentRole.toUpperCase()] || null;
+}
+
 
 export const viewAddProductCart = async (req, res, next) => {
   try {

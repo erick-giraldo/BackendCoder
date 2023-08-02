@@ -5,6 +5,174 @@ import fs from "fs";
 import __dirname from "../config/utils.js";
 import isEmpty from "is-empty";
 
+
+class UserController {
+  static async getAllUsers(req, res) {
+    try {
+      const users = await UsersService.getDTO().catch(() => {
+        throw new Error(
+          JSON.stringify({ detail: "No se encontraron usuarios" })
+        );
+      });
+      return res.sendSuccess(users);
+    } catch (err) {
+      return res.status(400).json({
+        message: "Error al obtener los usuarios",
+        error: err.message,
+      });
+    }
+  }
+
+  static async updateRoleById(req, res) {
+    try {
+      const { id } = req.params;
+      const user = await UsersService.getById(id).catch(() => {
+        throw new Error(
+          JSON.stringify({ detail: "El usuario no fue encontrado" })
+        );
+      });
+      const newRole = getNewRole(user.role).toLowerCase(); // Obtener el nuevo rol basado en el rol actual
+      if (!newRole) {
+        throw new Error(
+          JSON.stringify({ detail: "El rol del usuario no puede ser el mismo" })
+        );
+      }
+  
+      user.role = newRole;
+      await user.save();
+      return res.sendSuccess({
+        message: "El rol del usuario fue actualizado exitosamente",
+      });
+    } catch (err) {
+      return res.sendUserError({
+        message: "Error al actualizar el rol del usuario",
+        error: err.message,
+      });
+    }
+  }
+  
+  static async deleteInactiveUsers(req, res) {
+    try {
+      const dosDiasAtras = new Date(Date.now() - 2 * 24 * 60 * 60 * 1000);
+      const user = await UsersService.get().catch(() => {
+        throw new Error(
+          JSON.stringify({ detail: "No se encontraron usuarios" })
+        );
+      });
+      let inactiveUsers = user.filter( (user) => user.last_connection < dosDiasAtras );
+
+      const emailsInactiveUsers = inactiveUsers.map((user) => user.email);
+
+      if (isEmpty(inactiveUsers)) {
+        throw new Error(
+          JSON.stringify({ detail: "No se encontraron usuarios inactivos" })
+        );
+      }
+      await UsersService.deleteMany({
+        last_connection: { $lte: dosDiasAtras },
+      });
+      return res.sendSuccess({
+        message: `Los siguentes usuarios: [ ${emailsInactiveUsers} ]  fueron eliminados por 2 dias de inactividad:  `,
+      });
+    } catch (err) {
+      return res.sendUserError({
+        message: "Error al eliminar los usuarios inactivos",
+        error: JSON.parse(err.message),
+      });
+    }
+  }
+
+  static async deleteUserByID(req, res) {
+    try {
+      const { id } = req.params;
+      await UsersService.getById(id).catch(() => {
+        throw new Error(
+          JSON.stringify({ detail: "El usuario no fue encontrado" })
+        );
+      });
+      await UsersService.deleteById({ _id: id });
+      return res.sendSuccess({
+        message: "El usuario fue eliminado exitosamente",
+      });
+    } catch (err) {
+      return res.sendUserError({
+        message: "Error al eliminar el usuario",
+        error: JSON.parse(err.message),
+      });
+    }
+  }
+
+  static async uploadDocuments(req, res) {
+    try {
+      const { id } = req.params;
+      const { type } = req.query;
+      upload.array("files")(req, res, async (err) => {
+        if (err) {
+          return res.status(err.statusCode).json({
+            message: err.status,
+          });
+        }
+        const fileType = getFiletype(type);
+        let user = await UsersService.getById(id);
+        if (isEmpty(user)) {
+          return res.status(404).json({
+            message: "Usuario no encontrado, por favor intente nuevamente.",
+          });
+        }
+        if (!user.documents) {
+          user.documents = [];
+        }
+  
+        const pendingDoc = user.documents.findIndex((doc) => doc.name === "Pendiente subir documentos");
+        if (pendingDoc !== -1) {
+          user.documents.splice(pendingDoc, 1);
+        }
+
+        if (!req.files || req.files.length === 0) {
+          return res.status(400).json({
+            message: "No files were uploaded.",
+          });
+        }
+
+        const uploadedFiles = req.files.map((file) => {
+          const newName = file.originalname.split('.')[0];
+          const isDuplicate = user.documents.some((doc) => doc.name === newName);
+          if (isDuplicate) {
+            return {
+              name: newName,
+              status: "Archivo repetido",
+            };
+          } else {
+            user.documents.push({
+              name: newName,
+              reference: `/uploads/${fileType}/${file.filename}`,
+            });
+            return {
+              name: newName,
+              status: "Archivo subido exitosamente",
+            };
+          }
+        });
+  
+        const updatedUser = await UsersService.updateUserDoc(id, user.documents);
+  
+        return res.status(200).json({
+          message: "Documentos subidos exitosamente",
+          user: updatedUser,
+          documentsStatus: uploadedFiles,
+        });
+      });
+    } catch (err) {
+      return res.status(400).json({
+        message: "Error al subir los documentos",
+        error: err.message,
+      });
+    }
+  }
+  
+}
+
+
 const storage = multer.diskStorage({
   destination: async (req, file, cb) => {
     const { id } = req.params;
@@ -54,149 +222,7 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
-
-class UserController {
-  static async getAllUsers(req, res) {
-    try {
-      const users = await UsersService.getDTO().catch(() => {
-        throw new Error(
-          JSON.stringify({ detail: "No se encontraron usuarios" })
-        );
-      });
-      return res.sendSuccess(users);
-    } catch (err) {
-      return res.status(400).json({
-        message: "Error al obtener los usuarios",
-        error: err.message,
-      });
-    }
-  }
-
-  static async updateRoleById(req, res) {
-    try {
-      const { id } = req.params;
-      const user = await UsersService.getById(id).catch(() => {
-        throw new Error(
-          JSON.stringify({ detail: "El usuario no fue encontrado" })
-        );
-      });
-      const role = req.body.role.toLowerCase();
-      if (user.role === role) {
-        throw new Error(
-          JSON.stringify({ detail: "El rol del usuario no puede ser el mismo" })
-        );
-      }
-      user.role = role;
-      await user.save();
-      return res.sendSuccess({
-        message: "El rol del usuario fue actualizado exitosamente",
-      });
-    } catch (err) {
-      return res.sendUserError({
-        message: "Error al actualizar el rol del usuario",
-        error: JSON.parse(err.message),
-      });
-    }
-  }
-
-  static async deleteInactiveUsers(req, res) {
-    try {
-      const dosDiasAtras = new Date(Date.now() - 2 * 24 * 60 * 60 * 1000);
-      const user = await UsersService.get().catch(() => {
-        throw new Error(
-          JSON.stringify({ detail: "No se encontraron usuarios" })
-        );
-      });
-      console.log("🚀 ~ file: UserController.js:110 ~ UserController ~ deleteInactiveUsers ~ user:", user)
-      let inactiveUsers = user.filter( (user) => user.last_connection < dosDiasAtras );
-
-      const emailsInactiveUsers = inactiveUsers.map((user) => user.email);
-
-      if (isEmpty(inactiveUsers)) {
-        throw new Error(
-          JSON.stringify({ detail: "No se encontraron usuarios inactivos" })
-        );
-      }
-      await UsersService.deleteMany({
-        last_connection: { $lte: dosDiasAtras },
-      });
-      return res.sendSuccess({
-        message: `Los siguentes usuarios: [ ${emailsInactiveUsers} ]  fueron eliminados por 2 dias de inactividad:  `,
-      });
-    } catch (err) {
-      return res.sendUserError({
-        message: "Error al eliminar los usuarios inactivos",
-        error: JSON.parse(err.message),
-      });
-    }
-  }
-
-  static async uploadDocuments(req, res) {
-    try {
-      const { id } = req.params;
-      const { type } = req.query;
-      upload.array("files")(req, res, async (err) => {
-        if (err) {
-          return res.status(err.statusCode).json({
-            message: err.status,
-          });
-        }
-        const fileType = getFiletype(type);
-        let user = await UsersService.getById(id);
-        if (isEmpty(user)) {
-          return res.status(404).json({
-            message: "Usuario no encontrado, por favor intente nuevamente.",
-          });
-        }
-        if (!user.documents) {
-          user.documents = [];
-        }
-  
-        const pendingDoc = user.documents.findIndex((doc) => doc.name === "Pendiente subir documentos");
-        if (pendingDoc !== -1) {
-          user.documents.splice(pendingDoc, 1);
-        }
-  
-        const uploadedFiles = req.files.map((file) => {
-          const newName = file.originalname.split('.')[0];
-          const isDuplicate = user.documents.some((doc) => doc.name === newName);
-          if (isDuplicate) {
-            return {
-              name: newName,
-              status: "Archivo repetido",
-            };
-          } else {
-            user.documents.push({
-              name: newName,
-              reference: `/uploads/${fileType.name}/${file.filename}`,
-            });
-            return {
-              name: newName,
-              status: "Archivo subido exitosamente",
-            };
-          }
-        });
-  
-        const updatedUser = await UsersService.updateUserDoc(id, user.documents);
-  
-        return res.status(200).json({
-          message: "Documentos subidos exitosamente",
-          user: updatedUser,
-          documentsStatus: uploadedFiles,
-        });
-      });
-    } catch (err) {
-      return res.status(400).json({
-        message: "Error al subir los documentos",
-        error: err.message,
-      });
-    }
-  }
-  
-}
-
-// Función auxiliar para obtener el tipo del archivo
-function getFiletype(type) {
+const getFiletype = (type) => {
   switch (type) {
     case "profile":
       return "profile";
@@ -205,6 +231,15 @@ function getFiletype(type) {
     default:
       return "document";
   }
+}
+
+
+const getNewRole = (currentRole) =>{
+  const roleMap = {
+    USER: "PREMIUM",
+    PREMIUM: "USER",
+  };
+  return roleMap[currentRole.toUpperCase()] || null;
 }
 
 export default UserController;
