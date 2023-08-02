@@ -11,6 +11,11 @@
   }, 1000); 
 </script>
 {{else}}
+<div class="btn-prod">
+  <button class="styled-button" onclick="redirectToProducts()">
+    Ir a la Productos
+  </button>
+</div>
 <div class="container-fluid padre">
   <div class="row hijo">
     <div class="col-lg-10 col-md-12 col-sm-12 main-container cart-flex">
@@ -91,11 +96,12 @@
           <h2 style="text-align: center">Resumen</h2>
           <ul>
             <li id="subtotal"><span>Subtotal</span> {{subtotal}}</li>
-            <li  id="igv"><span>IGV</span> {{igv}}</li>
+            <li id="igv"><span>IGV</span> {{igv}}</li>
             <li id="shippingCost"><span>Gastos de envío</span> {{shippingCost}}</li>
           </ul>
           <tr></tr>
-          <td><button id="total" class="pay-button" onclick="pagar( {{path}},{{total}} )">$ {{total}}</button></td>
+          <td><button id="total" class="pay-button" onclick="pagar( {{path}},{{total}} )">Pagar: $ {{total}}</button>
+          </td>
           </tr>
         </div>
       </div>
