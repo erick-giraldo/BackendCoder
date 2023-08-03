@@ -974,3 +974,9 @@ li {
   display: flex;
   justify-content: flex-end;
 }
+
+label.form-check-label {
+  color: red;
+  font-style: oblique;
+  font-size: 13px;
+}

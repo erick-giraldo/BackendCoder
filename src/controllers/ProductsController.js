@@ -2,6 +2,8 @@ import isEmpty from "is-empty";
 import ProductsService from "../services/products.service.js";
 import CommonsUtil from "../utils/commons.js";
 import { isValidToken } from "../utils/hash.js";
+import UsersService from "../services/users.service.js";
+import MessageController from "./MailingController.js";
 export default class ProductController {
   static async getProducts(req, res) {
     try {
@@ -104,9 +106,14 @@ export default class ProductController {
       let { pid } = req.params;
       const token = await isValidToken(req.cookies.token);
       let productById = await ProductsService.getOne(pid);
-  
       if (token.role === "premium" && token.email !== productById.owner) {
         throw new Error(JSON.stringify( `El producto fue registrado por otro usuario`));
+      }
+      const userDetails = await UsersService.getOne(productById.owner);
+      if (!isEmpty(userDetails) && userDetails.role === 'premium') {
+          const fullName = `${userDetails.first_name} ${userDetails.last_name}`;
+          const sendEmail = await MessageController.sendEmailDeleteProduct(userDetails.email, fullName , productById.name);
+          if (!sendEmail) throw new Error(JSON.stringify({ detail: 'Ocurrio un error al enviar el correo' }))
       }
       await ProductsService.deleteById(pid);
       return res.json({

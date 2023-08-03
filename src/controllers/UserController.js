@@ -4,8 +4,7 @@ import path from "path";
 import fs from "fs";
 import __dirname from "../config/utils.js";
 import isEmpty from "is-empty";
-
-
+import MailingController from "./MailingController.js";
 class UserController {
   static async getAllUsers(req, res) {
     try {
@@ -31,13 +30,13 @@ class UserController {
           JSON.stringify({ detail: "El usuario no fue encontrado" })
         );
       });
-      const newRole = getNewRole(user.role).toLowerCase(); // Obtener el nuevo rol basado en el rol actual
+      const newRole = getNewRole(user.role).toLowerCase();
       if (!newRole) {
         throw new Error(
           JSON.stringify({ detail: "El rol del usuario no puede ser el mismo" })
         );
       }
-  
+
       user.role = newRole;
       await user.save();
       return res.sendSuccess({
@@ -50,29 +49,54 @@ class UserController {
       });
     }
   }
-  
+
   static async deleteInactiveUsers(req, res) {
     try {
       const dosDiasAtras = new Date(Date.now() - 2 * 24 * 60 * 60 * 1000);
-      const user = await UsersService.get().catch(() => {
+      const usuarios = await UsersService.get().catch(() => {
         throw new Error(
           JSON.stringify({ detail: "No se encontraron usuarios" })
         );
       });
-      let inactiveUsers = user.filter( (user) => user.last_connection < dosDiasAtras );
+      const usuariosInactivos = usuarios.filter(
+        (usuario) => new Date(usuario.last_connection) < dosDiasAtras
+      );
 
-      const emailsInactiveUsers = inactiveUsers.map((user) => user.email);
+      const correosUsuariosInactivos = usuariosInactivos.map(
+        (usuario) => usuario.email
+      );
 
-      if (isEmpty(inactiveUsers)) {
+      if (isEmpty(usuariosInactivos)) {
         throw new Error(
           JSON.stringify({ detail: "No se encontraron usuarios inactivos" })
         );
       }
-      await UsersService.deleteMany({
+   
+      const deleteInactiveUsers = await UsersService.deleteMany({
         last_connection: { $lte: dosDiasAtras },
       });
+
+      if (deleteInactiveUsers.deletedCount > 0) {
+        for (const usuario of usuariosInactivos) {
+          const fullName = `${usuario.first_name} ${usuario.last_name}`;
+          const sendEmail = await MailingController.sendEmailDeleteUsers(
+            usuario.email,
+            fullName
+          );
+          if (!sendEmail) throw new Error(JSON.stringify({ detail: 'Ocurrio un error al enviar el correo' }))
+        }
+      }else{
+        throw new Error(
+          JSON.stringify({
+            detail: "No se pudieron eliminar los usuarios inactivos",
+          })
+        );
+      }
+  
       return res.sendSuccess({
-        message: `Los siguentes usuarios: [ ${emailsInactiveUsers} ]  fueron eliminados por 2 dias de inactividad:  `,
+        message: `Los siguientes usuarios: [ ${correosUsuariosInactivos.join(
+          ", "
+        )} ] fueron eliminados debido a 2 días de inactividad.`,
       });
     } catch (err) {
       return res.sendUserError({
@@ -122,8 +146,10 @@ class UserController {
         if (!user.documents) {
           user.documents = [];
         }
-  
-        const pendingDoc = user.documents.findIndex((doc) => doc.name === "Pendiente subir documentos");
+
+        const pendingDoc = user.documents.findIndex(
+          (doc) => doc.name === "Pendiente subir documentos"
+        );
         if (pendingDoc !== -1) {
           user.documents.splice(pendingDoc, 1);
         }
@@ -135,8 +161,10 @@ class UserController {
         }
 
         const uploadedFiles = req.files.map((file) => {
-          const newName = file.originalname.split('.')[0];
-          const isDuplicate = user.documents.some((doc) => doc.name === newName);
+          const newName = file.originalname.split(".")[0];
+          const isDuplicate = user.documents.some(
+            (doc) => doc.name === newName
+          );
           if (isDuplicate) {
             return {
               name: newName,
@@ -153,9 +181,12 @@ class UserController {
             };
           }
         });
-  
-        const updatedUser = await UsersService.updateUserDoc(id, user.documents);
-  
+
+        const updatedUser = await UsersService.updateUserDoc(
+          id,
+          user.documents
+        );
+
         return res.status(200).json({
           message: "Documentos subidos exitosamente",
           user: updatedUser,
@@ -169,9 +200,7 @@ class UserController {
       });
     }
   }
-  
 }
-
 
 const storage = multer.diskStorage({
   destination: async (req, file, cb) => {
@@ -182,7 +211,7 @@ const storage = multer.diskStorage({
       const user = await UsersService.getById(id);
       const newName = file.originalname.split(".")[0];
       const isDuplicate = user.documents.some((doc) => doc.name === newName);
-      
+
       if (isDuplicate) {
         return cb({
           status: "Archivo repetido",
@@ -222,6 +251,7 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
+
 const getFiletype = (type) => {
   switch (type) {
     case "profile":
@@ -231,15 +261,14 @@ const getFiletype = (type) => {
     default:
       return "document";
   }
-}
+};
 
-
-const getNewRole = (currentRole) =>{
+const getNewRole = (currentRole) => {
   const roleMap = {
     USER: "PREMIUM",
     PREMIUM: "USER",
   };
   return roleMap[currentRole.toUpperCase()] || null;
-}
+};
 
 export default UserController;

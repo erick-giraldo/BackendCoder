@@ -113,7 +113,7 @@ class SessionsController {
       const { email } = req.body;
       const user = await UsersService.getOne(email);
       const token = tokenGeneratorPass(user);
-      const sendEmail = await MailingController.email(email, token);
+      const sendEmail = await MailingController.sendEmailResetPass(email, token);
       if (!sendEmail) {
         return res.sendServerError({
           message: "Error al enviar el correo electrónico.",
