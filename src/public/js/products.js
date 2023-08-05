@@ -51,8 +51,8 @@ const showErrorMessage = (title, message) => {
   // }, 1000);
 };
 
-const addProductCart = async (_id) => {
-  const { success, error } = await fetchApi(`/carts/product/${_id}`, "POST");
+const addProductCart = async (id) => {
+  const { success, error } = await fetchApi(`/carts/product/${id}`, "POST");
   if (success) {
     showSuccessMessage("¡Bien Hecho!", "El producto fue Agregado al Carrito");
   } else {

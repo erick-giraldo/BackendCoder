@@ -5,17 +5,17 @@ import fs from "fs";
 import __dirname from "../config/utils.js";
 import isEmpty from "is-empty";
 import MailingController from "./MailingController.js";
+
 class UserController {
   static async getAllUsers(req, res) {
     try {
-      const users = await UsersService.getDTO().catch(() => {
-        throw new Error(
-          JSON.stringify({ detail: "No se encontraron usuarios" })
-        );
-      });
+      const users = await UsersService.getDTO();
+      if (isEmpty(users)) {
+        throw new Error("No se encontraron usuarios");
+      }
       return res.sendSuccess(users);
     } catch (err) {
-      return res.status(400).json({
+      return res.sendServerError({
         message: "Error al obtener los usuarios",
         error: err.message,
       });
@@ -25,25 +25,18 @@ class UserController {
   static async updateRoleById(req, res) {
     try {
       const { id } = req.params;
-      const user = await UsersService.getById(id).catch(() => {
-        throw new Error(
-          JSON.stringify({ detail: "El usuario no fue encontrado" })
-        );
-      });
+      const user = await UsersService.getById(id);
       const newRole = getNewRole(user.role).toLowerCase();
       if (!newRole) {
-        throw new Error(
-          JSON.stringify({ detail: "El rol del usuario no puede ser el mismo" })
-        );
+        throw new Error("El rol del usuario no puede ser el mismo");
       }
-
       user.role = newRole;
       await user.save();
       return res.sendSuccess({
         message: "El rol del usuario fue actualizado exitosamente",
       });
     } catch (err) {
-      return res.sendUserError({
+      return res.sendServerError({
         message: "Error al actualizar el rol del usuario",
         error: err.message,
       });
@@ -53,11 +46,7 @@ class UserController {
   static async deleteInactiveUsers(req, res) {
     try {
       const dosDiasAtras = new Date(Date.now() - 2 * 24 * 60 * 60 * 1000);
-      const usuarios = await UsersService.get().catch(() => {
-        throw new Error(
-          JSON.stringify({ detail: "No se encontraron usuarios" })
-        );
-      });
+      const usuarios = await UsersService.get();
       const usuariosInactivos = usuarios.filter(
         (usuario) => new Date(usuario.last_connection) < dosDiasAtras
       );
@@ -67,9 +56,7 @@ class UserController {
       );
 
       if (isEmpty(usuariosInactivos)) {
-        throw new Error(
-          JSON.stringify({ detail: "No se encontraron usuarios inactivos" })
-        );
+        throw new Error("No se encontraron usuarios inactivos");
       }
    
       const deleteInactiveUsers = await UsersService.deleteMany({
@@ -83,14 +70,12 @@ class UserController {
             usuario.email,
             fullName
           );
-          if (!sendEmail) throw new Error(JSON.stringify({ detail: 'Ocurrio un error al enviar el correo' }))
+          if (!sendEmail) {
+            throw new Error("Ocurrió un error al enviar el correo");
+          }
         }
-      }else{
-        throw new Error(
-          JSON.stringify({
-            detail: "No se pudieron eliminar los usuarios inactivos",
-          })
-        );
+      } else {
+        throw new Error("No se pudieron eliminar los usuarios inactivos");
       }
   
       return res.sendSuccess({
@@ -99,7 +84,7 @@ class UserController {
         )} ] fueron eliminados debido a 2 días de inactividad.`,
       });
     } catch (err) {
-      return res.sendUserError({
+      return res.sendServerError({
         message: "Error al eliminar los usuarios inactivos",
         error: JSON.parse(err.message),
       });
@@ -109,17 +94,16 @@ class UserController {
   static async deleteUserByID(req, res) {
     try {
       const { id } = req.params;
-      await UsersService.getById(id).catch(() => {
-        throw new Error(
-          JSON.stringify({ detail: "El usuario no fue encontrado" })
-        );
-      });
+      const user = await UsersService.getById(id);
+      if (isEmpty(user)) {
+        throw new Error("El usuario no fue encontrado");
+      }
       await UsersService.deleteById({ _id: id });
       return res.sendSuccess({
-        message: "El usuario fue eliminado exitosamente",
+        message: `El usuario  ${user.email}fue eliminado exitosamente`
       });
     } catch (err) {
-      return res.sendUserError({
+      return res.sendServerError({
         message: "Error al eliminar el usuario",
         error: JSON.parse(err.message),
       });
@@ -137,26 +121,27 @@ class UserController {
           });
         }
         const fileType = getFiletype(type);
-        let user = await UsersService.getById(id);
+        const user = await UsersService.getById(id);
         if (isEmpty(user)) {
-          return res.status(404).json({
+          return res.sendUserError({
             message: "Usuario no encontrado, por favor intente nuevamente.",
           });
         }
+
         if (!user.documents) {
           user.documents = [];
         }
 
-        const pendingDoc = user.documents.findIndex(
+        const pendingDocIndex = user.documents.findIndex(
           (doc) => doc.name === "Pendiente subir documentos"
         );
-        if (pendingDoc !== -1) {
-          user.documents.splice(pendingDoc, 1);
+        if (pendingDocIndex !== -1) {
+          user.documents.splice(pendingDocIndex, 1);
         }
 
-        if (!req.files || req.files.length === 0) {
-          return res.status(400).json({
-            message: "No files were uploaded.",
+        if (isEmpty(req.files)) {
+          return res.sendUserError({
+            message: "No se subieron archivos.",
           });
         }
 
@@ -182,21 +167,20 @@ class UserController {
           }
         });
 
-        const updatedUser = await UsersService.updateUserDoc(
+        await UsersService.updateUserDoc(
           id,
           user.documents
         );
 
         return res.status(200).json({
           message: "Documentos subidos exitosamente",
-          user: updatedUser,
           documentsStatus: uploadedFiles,
         });
       });
-    } catch (err) {
-      return res.status(400).json({
+    } catch (error) {
+      return res.sendServerError({
         message: "Error al subir los documentos",
-        error: err.message,
+        error: error.message,
       });
     }
   }

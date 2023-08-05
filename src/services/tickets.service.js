@@ -2,7 +2,7 @@ import TicketModel from '../dao/models/tickets.js'
 
 
 export default class TicketsService {
-  static create(body , products) {
+  static create(body) {
      return TicketModel.create(body);
   }
 
@@ -19,11 +19,6 @@ export default class TicketsService {
       "products._id"
     );
   }
-
-  // static getOne(id) {
-  //   return TicketModel.findOne({ id });
-  // }
-
 
   static async updateOne(id, body) {
     return TicketModel.updateOne({ id }, { $set: { products: body } });

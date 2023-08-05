@@ -1,11 +1,11 @@
-import SessionsController from "../controllers/SessionsController.js";
+import SessionsController from "../../controllers/SessionsController.js";
 import {
   validLogin,
   validRegister,
   validForgotPassword,
   validResetPassword
-} from "../middleware/index.js";
-import CustomerRouter from "./Router.js";
+} from "../../middleware/index.js";
+import CustomerRouter from "../Router.js";
 
 export default class AuthRouter extends CustomerRouter {
   init() {
