@@ -1,5 +1,5 @@
 class CommonsUtil {
-  static buidResponse(data) {
+  static buildResponse(data) {
     let sortQueryParam = ''
     if (data.sort) {
       sortQueryParam = `&sort=${data.sort}`

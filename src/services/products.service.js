@@ -11,8 +11,8 @@ export default class ProductsService {
     return ProductsModel.findById(id);
   }
 
-  static getOne(id) {
-    return ProductsModel.findOne({ _id : id });
+  static getOne(value) {
+    return ProductsModel.findOne( value);
   }
 
   static getCode(code) {
@@ -28,8 +28,8 @@ export default class ProductsService {
     return ProductsModel.updateOne({ _id: id }, { $set: body });
   }
 
-  static deleteById(id) {
-    return ProductsModel.deleteOne({ _id: id });
+  static deleteById(value) {
+    return ProductsModel.deleteOne(value);
   }
 
   static paginate(query, opts) {

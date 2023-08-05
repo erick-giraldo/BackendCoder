@@ -54,7 +54,7 @@ export default class ViewController {
           ? `/cart/${user.cart[0].id}`
           : "#";
 
-      const newResponse = JSON.stringify(CommonsUtil.buidResponse(response));
+      const newResponse = JSON.stringify(CommonsUtil.buildResponse(response));
       response = JSON.parse(newResponse);
       return res.render("products", {
         style: "style.css",
@@ -234,7 +234,6 @@ export default class ViewController {
           message: `El producto ${productById.name} no cuenta con suficiente stock`,
         });
       }
-      // Validar stock antes de agregar el producto
       if (existingProduct && existingProduct.quantity >= productById.stock) {
         return res.status(400).json({
           message: `El producto ${productById.name} ya está agregado al carrito y no hay suficiente stock`,

@@ -14,11 +14,12 @@ export default class cartProducts extends CustomerRouter {
 
         this.post("/:cid/product/:pid", ['USER','ADMIN', 'PREMIUM'], CartController.addProductCartById);
         this.put("/:cid/product/:pid", ['USER','ADMIN'], CartController.discountQuantityProductCartById);
+        
         this.delete("/:cid/product/:pid", ['USER','ADMIN'], CartController.deleteProductsByCartId);
         this.put("/qty/:cid/product/:pid", ['USER','ADMIN'], CartController.updateProductQuantityByCartId);
         this.put("/qty/:cid/products", ['USER','ADMIN'], CartController.updateProductsCartById);
 
-        this.post("/:cid/purchase/:total", ['USER','ADMIN'], CartController.createOrder)
-        this.post("/:cid/ticket", ['USER'], TicketsController.createTicket)
+        this.post("/:cid/purchase/:total", ['USER','ADMIN', 'PREMIUM'], CartController.createOrder)
+        this.post("/:cid/ticket", ['USER', 'PREMIUM'], TicketsController.createTicket)
     }
   }

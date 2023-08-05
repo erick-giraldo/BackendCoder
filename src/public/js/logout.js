@@ -9,7 +9,6 @@ buttonLogout.addEventListener("click", (e) => {
 
 let valueTypes = '';
 
-// Obtener los checkboxes por su clase o selector
 const checkboxes = document.querySelectorAll('input[name="documentTypes"]');
 checkboxes.forEach((checkbox) => {
   checkbox.addEventListener('change', (event) => {

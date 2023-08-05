@@ -19,7 +19,6 @@ const TicketSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Middleware para autogenerar el parámetro 'code' de manera consecutiva
 TicketSchema.pre("save", async function (next) {
   if (!this.isNew) {
     return next();

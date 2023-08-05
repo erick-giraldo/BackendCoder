@@ -77,12 +77,9 @@ export default class CustomerRouter {
    * @description This method will add some custom methods to the response object
    */
   generateCustomResponse = (req, res, next) => {
-    res.sendSuccess = (payload) =>
-      res.status(200).json({ success: true, payload });
-    res.sendServerError = (error) =>
-      res.status(500).json({ success: false, error });
-    res.sendUserError = (error) =>
-      res.status(400).json({ success: false, error });
+    res.sendSuccess = (payload) => res.status(200).json({ success: true, payload });
+    res.sendServerError = (error) => res.status(500).json({ success: false, error });
+    res.sendUserError = (error) => res.status(400).json({ success: false, error });
     next();
   };
 

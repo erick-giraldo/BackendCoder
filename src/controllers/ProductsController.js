@@ -4,43 +4,37 @@ import CommonsUtil from "../utils/commons.js";
 import { isValidToken } from "../utils/hash.js";
 import UsersService from "../services/users.service.js";
 import MessageController from "./MailingController.js";
+
 export default class ProductController {
   static async getProducts(req, res) {
     try {
-      const {
-        query: { limit = 3, page = 1 },
-      } = req;
-      const opts = { limit, page };
-      const products = await ProductsService.paginate({}, opts);
-      return res.json(CommonsUtil.buidResponse(products));
-    } catch (err) {
-      return res.status(400).json({
+      const { limit = 3, page = 1 } = req.query;
+      const paginationOptions = { limit, page };
+      const products = await ProductsService.paginate({}, paginationOptions);
+      return res.sendSuccess(CommonsUtil.buildResponse(products));
+    } catch (error) {
+      return res.sendUserError({
         message: "Error al listar productos",
-        error: err.message,
+        error: error.message,
       });
     }
   }
 
   static async getProductById(req, res) {
     try {
-      let { pid } = req.params;
-      const productById = await ProductsService.getOne( pid ).catch(() => {
-        throw new Error(
-          JSON.stringify({
-            message: "El tipo de dato no es correcto o el código ya existe",
-          })
-        );
-      });
-      if (!productById)
+      const { pid } = req.params;
+      const productById = await ProductsService.getOne({ _id: pid });
+      if (!productById) {
         return res.status(404).json({ message: "Producto no encontrado" });
-      return res.json({
+      }
+      return res.sendSuccess({
         message: "Producto encontrado",
         data: productById,
       });
-    } catch (err) {
-      return res.status(400).json({
+    } catch (error) {
+      return res.sendServerError({
         message: "Error al buscar el producto",
-        error: JSON.parse(err.message),
+        error: error.message,
       });
     }
   }
@@ -49,22 +43,23 @@ export default class ProductController {
     try {
       const productData = req.body;
       const token = await isValidToken(req.cookies.token);
-      const newProductData = {
-        ...productData,
-        owner: token.role === "admin" ? "admin" : token.email,
-      };
-      const result = await ProductsService.create(newProductData).catch(() => {
-        throw new Error(
-          JSON.stringify({
-            detail: "El tipo de dato no es correcto o el código ya existe",
-          })
-        );
+      const owner = token.role === "premium" ? token.email : "admin";
+      const existingProduct = await ProductsService.getOne({
+        code: productData.code,
       });
-      return res.json({ message: "El producto fue agregado exitosamente" , data: result});
-    } catch (err) {
-      return res.status(400).json({
+      if (existingProduct) {
+        throw new Error("El código del producto ya se encuentra registrado");
+      }
+      const newProductData = { ...productData, owner };
+      const result = await ProductsService.create(newProductData);
+      return res.sendSuccess({
+        message: "El producto fue agregado exitosamente",
+        data: result,
+      });
+    } catch (error) {
+      return res.sendServerError({
         message: "Error al agregar el producto",
-        error: JSON.parse(err.message),
+        error: error.message,
       });
     }
   }
@@ -73,56 +68,56 @@ export default class ProductController {
     try {
       let { pid } = req.params;
       const productData = req.body;
-      let productById = await ProductsService.getOne(pid);
+      let productById = await ProductsService.getOne({ _id: pid });
       const token = await isValidToken(req.cookies.token);
       if (token.role === "premium" && token.email !== productById.owner) {
-        throw new Error(
-          JSON.stringify({
-            detail: `El producto fue registrado por otro usuario`,
-          })
-        );
+        throw new Error("El producto fue registrado por otro usuario");
       }
-       await ProductsService.updateOne(pid, productData).catch(() => {
-        throw new Error(
-          JSON.stringify({ detail: "El tipo de dato no es correcto" })
-        );
-      });
-      const result = await ProductsService.getOne( pid );
-
-      return res.json({
+      await ProductsService.updateOne(pid, productData);
+      const result = await ProductsService.getOne({ _id: pid });
+      return res.sendSuccess({
         message: "El producto fue actualizado exitosamente",
         data: result,
       });
-    } catch (err) {
-      return res.status(400).json({
+    } catch (error) {
+      return res.sendServerError({
         message: "Error al actualizar el producto",
-        error: JSON.parse(err.message),
+        error: error.message,
       });
     }
   }
 
   static async deleteProduct(req, res) {
     try {
-      let { pid } = req.params;
+      const { pid } = req.params;
       const token = await isValidToken(req.cookies.token);
-      let productById = await ProductsService.getOne(pid);
+      const productById = await ProductsService.getOne({ _id: pid });
       if (token.role === "premium" && token.email !== productById.owner) {
-        throw new Error(JSON.stringify( `El producto fue registrado por otro usuario`));
+        throw new Error("El producto fue registrado por otro usuario");
       }
+
       const userDetails = await UsersService.getOne(productById.owner);
-      if (!isEmpty(userDetails) && userDetails.role === 'premium') {
-          const fullName = `${userDetails.first_name} ${userDetails.last_name}`;
-          const sendEmail = await MessageController.sendEmailDeleteProduct(userDetails.email, fullName , productById.name);
-          if (!sendEmail) throw new Error(JSON.stringify({ detail: 'Ocurrio un error al enviar el correo' }))
+      const deleteProduct =  await ProductsService.deleteById({ _id: pid });
+      if ( deleteProduct && !isEmpty(userDetails) && userDetails.role === "premium") {
+        const fullName = `${userDetails.first_name} ${userDetails.last_name}`;
+        const sendEmail = await MessageController.sendEmailDeleteProduct(
+          userDetails.email,
+          fullName,
+          productById.name
+        );
+        if (!sendEmail) {
+          throw new Error(
+            JSON.stringify({ detail: "Ocurrió un error al enviar el correo" })
+          );
+        }
       }
-      await ProductsService.deleteById(pid);
-      return res.json({
+      return res.sendSuccess({
         message: "El producto fue eliminado exitosamente",
       });
-    } catch (err) {
-      return res.status(400).json({
+    } catch (error) {
+      return res.sendServerError({
         message: "Error al eliminar el producto",
-        error: err.message,
+        error: error.message,
       });
     }
   }
@@ -132,7 +127,7 @@ export default class ProductController {
       const product = await ProductsService.getById(pid);
       let stock = product.stock;
       stock -= qty;
-      const result = await ProductsService.updateOne(product.id, { stock });
+      await ProductsService.updateOne(product.id, { stock });
       return true;
     } catch (error) {
       return false;

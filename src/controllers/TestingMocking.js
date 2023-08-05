@@ -10,9 +10,9 @@ export default class TestingMocking {
       for (let i = 0; i < count; i++) {
         products.push(generateProduct(i));
       }
-      res.status(200).json({ status: true, payload: products });
+      res.sendSuccess( { message: "Productos creados" , data: products });
     } catch (error) {
-      next(error);
+      return res.sendServerError({ message: "An error occurred during registration." });
     }
   };
 
@@ -24,10 +24,9 @@ export default class TestingMocking {
       logger.warning("Esto es una advertencia");
       logger.error("Esto es un error");
       logger.fatal("Esto es un error fatal");
-
-      res.status(200).json({ status: true, payload: "Logs generados" });
+      res.sendSuccess({message: "Log's generados"});
     } catch (error) {
-      logger.error("Se produjo un error al generar los logs");
+      return res.sendServerError({ message: "Se produjo un error al generar los logs." });
     }
   };
 }

@@ -5,7 +5,7 @@ export default class UserDTO {
     if (Array.isArray(user)) {
       this.users = this.getAll(user);
     } else if (typeof user === 'object') {
-      this.users = [this._createUser(user)]; // If you want to keep this line, modify it as shown below
+      this.users = [this._createUser(user)];
     } else {
       throw new Error("El constructor solo acepta un objeto o un array de objetos.");
     }
