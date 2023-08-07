@@ -363,7 +363,7 @@ export const validateDeleteUser = async (req, res, next) => {
     const currentUserId = req.user;
 
     if (isEmpty(userId) || isEmpty(currentUserId)) {
-      throw new Error ( "Invalid user ID or current user ID" );
+      throw new Error ( "Usuario Invalido" );
     }
 
     if (userId._id.equals(currentUserId.id)) {

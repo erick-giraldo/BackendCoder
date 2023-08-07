@@ -204,6 +204,8 @@ paths:
   /api/carts/qty/{cid}/products:
     put:
       summary: Actualizar todos los productos en el Carrito
+      tags:
+        - Carrito
       parameters:
         - in: path
           name: cid

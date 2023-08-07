@@ -86,7 +86,7 @@ class UserController {
     } catch (err) {
       return res.sendServerError({
         message: "Error al eliminar los usuarios inactivos",
-        error: JSON.parse(err.message),
+        error: err.message,
       });
     }
   }
@@ -95,17 +95,18 @@ class UserController {
     try {
       const { id } = req.params;
       const user = await UsersService.getById(id);
+      console.log("🚀 ~ file: UserController.js:98 ~ UserController ~ deleteUserByID ~ user:", user)
       if (isEmpty(user)) {
         throw new Error("El usuario no fue encontrado");
       }
       await UsersService.deleteById({ _id: id });
       return res.sendSuccess({
-        message: `El usuario  ${user.email}fue eliminado exitosamente`
+        message: `El usuario  ${user.email} fue eliminado exitosamente`
       });
     } catch (err) {
       return res.sendServerError({
         message: "Error al eliminar el usuario",
-        error: JSON.parse(err.message),
+        error: err.message,
       });
     }
   }
@@ -116,11 +117,15 @@ class UserController {
       const { type } = req.query;
       upload.array("files")(req, res, async (err) => {
         if (err) {
-          return res.status(err.statusCode).json({
-            message: err.status,
+          const statusCode = err.statusCode || 500;
+          const errorMessage = err.status || "Error interno del servidor";
+
+          return res.status(statusCode).json({
+            message: errorMessage,
           });
         }
         const fileType = getFiletype(type);
+        console.log("🚀 ~ file: UserController.js:127 ~ UserController ~ upload.array ~ fileType:", fileType)
         const user = await UsersService.getById(id);
         if (isEmpty(user)) {
           return res.sendUserError({

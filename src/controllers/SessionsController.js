@@ -16,6 +16,7 @@ class SessionsController {
   static login = async (req, res) => {
     try {
       const { email, password } = req.body;
+      console.log("🚀 ~ file: SessionsController.js:19 ~ SessionsController ~ login= ~ req.body:", req.body)
       const user = await UsersService.getOne(email);
       const token = tokenGenerator(user);
       await UsersService.updateLastConnection(user._id, new Date());
