@@ -9,6 +9,7 @@ export default class UserDTO {
     this.role = user.role;
     this.cart = [];
     this.password = createHash(user.password);
+    this.documents = [];
   }
   current() {
     const user = {

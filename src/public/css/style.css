@@ -435,8 +435,37 @@ td.price {
   border-radius: 3px;
   margin-bottom: 30px;
   background-color: #fff;
+  align-items: flex-start;
+  justify-content: center;
+}
+.text-center{
+  display: flex;
+  flex-direction: row;
 }
 
+.from-doc{
+  display: flex;
+  flex-direction: column;
+}
+
+.type-doc{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 2rem 0 3.5rem 2rem;
+}
+
+.file-doc{
+  margin-left: 2rem;
+}
+
+.doc {
+  padding: 0rem;
+}
+
+.pb-doc{
+  padding-bottom: 3rem!important;
+}
 .social-links li a {
   padding-top: 5px;
   border-radius: 50%;
@@ -500,6 +529,10 @@ h4 {
   display: flex;
   justify-content: center;
   margin-top: 5rem;
+}
+
+.profile .col-lg-4{
+  width: calc(100% - 0rem);
 }
 
 .p-off {
@@ -877,3 +910,48 @@ span.fa.fa-cart-plus {
   flex-direction: row;
   align-content: flex-start;
 }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.document-status {
+  font-style: italic;
+}
+
+.socials-row{
+  flex-wrap: initial!important;
+}
+
+.pb-file{
+  padding-bottom: 1rem!important;
+}
+
+.pb-file ul{
+  padding: 0;
+  margin: 0 4rem;
+}
+
+.form-check-input:before{
+  content:none!important
+}
+
+.text-muted{
+  display: flex;
+  flex-direction: column;
+}
+.profile {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.member-card-item {
+  width: 100%;
+}
+

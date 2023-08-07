@@ -26,12 +26,21 @@ export default class User {
     return UserModel.updateOne( {_id : id }, { $set: { cart: body } });
   }
 
+  updateLastConnection(id, body) {
+    return UserModel.updateOne( {_id : id }, { $set: { last_connection: body } });
+  }
+
+
   updateOne(id, body) {
     return UserModel.updateOne( {_id : id }, { $set: { cart: body } });
   }
 
   updateTicket(id, body) {
     return UserModel.updateOne( {_id : id }, { $set: { ticket: body } });
+  }
+
+  updateDoc(id, body) {
+    return UserModel.updateOne( {_id : id }, { $set: { documents: body } });
   }
 
   updateById(id, data) {
