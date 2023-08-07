@@ -24383,3 +24383,87 @@ debug: Server running in http://localhost:8080/ in produccion environment. {"tim
   label: 'right meow!',
   timestamp: '2023-07-13 17:47:51'
 }
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-08-07 17:13:33'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-08-07 17:13:33'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-08-07 17:13:57'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-08-07 17:13:57'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-08-07 17:14:12'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-08-07 17:14:12'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-08-07 17:28:03'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-08-07 17:28:03'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-08-07 17:28:11'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-08-07 17:28:11'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-08-07 17:29:36'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-08-07 17:29:36'
+}
+{
+  message: 'Database connected.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-08-07 17:32:21'
+}
+{
+  message: 'Server running in http://localhost:8080/ in produccion environment.',
+  level: 'debug',
+  label: 'right meow!',
+  timestamp: '2023-08-07 17:32:21'
+}
