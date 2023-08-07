@@ -95,7 +95,6 @@ class UserController {
     try {
       const { id } = req.params;
       const user = await UsersService.getById(id);
-      console.log("🚀 ~ file: UserController.js:98 ~ UserController ~ deleteUserByID ~ user:", user)
       if (isEmpty(user)) {
         throw new Error("El usuario no fue encontrado");
       }
