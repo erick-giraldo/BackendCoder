@@ -1,6 +1,6 @@
 export default {
   presistanceType: process.env.PERSISTENCE_TYPE || "memory",
   mongodbUri: process.env.MONGODB_URI || "mongodb://localhost:27017/contacts",
-  port: process.env.PORT || 8080,
+  port: process.env.PORT,
   nodeEnv: process.env.NODE_ENV || "desarrollo",
 };
