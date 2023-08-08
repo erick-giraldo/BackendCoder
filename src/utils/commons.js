@@ -13,10 +13,10 @@ class CommonsUtil {
       page: data.page,
       hasPrevPage: data.hasPrevPage,
       hasNextPage: data.hasNextPage,
-      prevLink: !data.hasPrevPage ? null : `${process.env.BASE_URL}/products?limit=${data.limit}&page=${data.prevPage}${sortQueryParam}`,
-      nextLink: !data.hasNextPage ? null : `${process.env.BASE_URL}/products?limit=${data.limit}&page=${data.nextPage}${sortQueryParam}`,
+      prevLink: !data.hasPrevPage ? null : `/products?limit=${data.limit}&page=${data.prevPage}${sortQueryParam}`,
+      nextLink: !data.hasNextPage ? null : `/products?limit=${data.limit}&page=${data.nextPage}${sortQueryParam}`,
       sort: data.sort,
-      sortLink: `${process.env.BASE_URL}/api/products?page=${data.page}&limit=${data.limit}&sort=${data.sort === 'asc' ? 'desc' : 'asc'}`
+      sortLink: `/api/products?page=${data.page}&limit=${data.limit}&sort=${data.sort === 'asc' ? 'desc' : 'asc'}`
     }
   }
   static getFilter(query = {}) {
