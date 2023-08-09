@@ -16,7 +16,6 @@ class SessionsController {
   static login = async (req, res) => {
     try {
       const { email, password } = req.body;
-      console.log("🚀 ~ file: SessionsController.js:19 ~ SessionsController ~ login= ~ req.body:", req.body)
       const user = await UsersService.getOne(email);
       const token = tokenGenerator(user);
       await UsersService.updateLastConnection(user._id, new Date());
@@ -35,7 +34,7 @@ class SessionsController {
   static register = async (req, res) => {
     try {
       const createCart = await CartService.create();
-      const findCart = await CartService.getCartById(createCart._id);
+      const findCart = await CartService.getById(createCart._id);
       const cartBody = findCart && findCart.id ? [{ _id: createCart._id, id: findCart.id }] : [{ _id: createCart._id, id: 0 }];
       const user = await UsersService.create(req.body);
       const id = user[0]._id;

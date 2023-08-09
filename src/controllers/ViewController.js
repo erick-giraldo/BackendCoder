@@ -135,7 +135,7 @@ export default class ViewController {
       if (isNaN(cid)) {
         throw new Error(JSON.stringify({ detail: "El id tiene que ser de tipo numérico" }));
       }
-      const cartById = await CartService.getOneView(cid);
+      const cartById = await CartService.getByIdView(cid); //getOneView
       if (isEmpty(cartById)) {
         throw new Error(JSON.stringify({ detail: `No se encontró un carrito con el id ${cid}` }));
       }
@@ -206,7 +206,7 @@ export default class ViewController {
           })
         );
       }
-      const cartById = await CartService.getByIdView(cid);
+      const cartById = await CartService.findOne(cid);
       if (!cartById) {
         throw new Error(`No se encontró un carrito con el id ${cartId}`);
       }
@@ -240,7 +240,7 @@ export default class ViewController {
           quantity: 1,
         });
       }
-      await CartService.updateOne(cid, listProduct);
+      await CartService.updateOne({ id: cid } , { products: listProduct});
       return res.sendSuccess({
         message: "El producto se agregó al carrito exitosamente",
       });
@@ -258,7 +258,7 @@ export default class ViewController {
       if (isNaN(cid)){
         throw new Error("El id del carrito tiene que ser de tipo numérico");
       }
-      let cartById = await CartService.getByIdView(cid);
+      let cartById = await CartService.findOne(cid);
       if (!cartById) {
         throw new Error(`No se encontró un carrito con el id ${cartId}`);
       }
@@ -290,7 +290,7 @@ export default class ViewController {
           message: `El producto con el id ${pid} no se encuentra en el carrito`,
         });
       }
-      await CartService.updateOne(cid, listProduct);
+      await CartService.updateOne({ id: cid } , { products: listProduct});
       return res.json({
         message:
           "La cantidad del producto en el carrito se disminuyó exitosamente",

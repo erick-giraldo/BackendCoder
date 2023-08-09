@@ -1,40 +1,55 @@
-export default class Cart{
+export default class Cart {
   constructor(dao) {
     this.dao = dao
   }
-
-  async get() {
-    return await this.dao.get()
+  
+  async create(data) {
+    return await this.dao.create(data)
   }
 
-  create(data) {
-    return this.dao.create(cart)
+  async getById(id) {
+    return await this.dao.getById(id)
   }
 
-  getById(id) {
-    return this.dao.getById(id)
+  async getAll() {
+    return await this.dao.getAll()
   }
 
-  async current(id) {
-    const data = await this.dao.getById(id)
-    const cartDto = new CartDTO(data).current()
-    return cartDto
+  async findOnePulopate(id) {
+    return  await this.dao.findOnePulopate( id );
   }
 
-  updateById(id, data) {
-    const cartDto = new CartDTO(data)
-    return this.dao.updateById(id, cartDto)
+  async findOne(id) {
+    return  await this.dao.findOne( id );
   }
 
-  updateProducts(id, body){
-    return this.dao.updateProducts( id, body )
-  }
-
-  deleteById(id) {
+  deleteOne(id) {
     return this.dao.deleteOne(id)
   }
 
-  deleteMany(data) {
-    return this.dao.deleteMany(data)
+  async updateOne(id, body) {
+    return await this.dao.updateOne( id, body );
   }
-}
+ 
+
+//   async current(id) {
+//     const data = await this.dao.getById(id)
+//     const cartDto = new CartDTO(data).current()
+//     return cartDto
+//   }
+
+//   updateById(id, data) {
+//     const cartDto = new CartDTO(data)
+//     return this.dao.updateById(id, cartDto)
+//   }
+
+//   updateProducts(id, body){
+//     return this.dao.updateProducts( id, body )
+//   }
+
+
+
+//   deleteMany(data) {
+//     return this.dao.deleteMany(data)
+//   }
+ }
