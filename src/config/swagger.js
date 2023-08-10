@@ -16,9 +16,10 @@ const options = {
     },
     servers: [
       {
-        url: `https://backendcoder-production-7038.up.railway.app:${PORT}`,
+        url: `https://backendcoder-production-7038.up.railway.app`,
       },
     ],
+    host: `backendcoder-production-7038.up.railway.app`,
   },
   apis: [path.join(__dirname, "..", "docs", "**", "*.yaml")],
 };
