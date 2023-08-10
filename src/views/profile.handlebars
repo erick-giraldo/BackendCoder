@@ -95,7 +95,7 @@
             </ul>
           </div>
           <div class="member-card-item member-card pt-2 pb-doc">
-            <div class="doc">
+            <form name="profile-form" class="doc">
               <h2>Subir Documentos</h2>
               <div class="form-group from-doc">
                 <h4 for="documentTypes">Tipos de Documentos</h4>
@@ -117,8 +117,8 @@
               <div class="form-group file-doc">
                 <input type="file" class="form-control-file" id="documents"  name="files" multiple />
               </div>
-              <button type="button" value={{user.id}} id="btn-enviar" class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">Subir Documentos</button>
-            </div>
+              <button type="submit" data-user-id={{user.id}} id="btn-enviar" class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">Subir Documentos</button>
+            </form>
           </div>
         </div>
       </div>

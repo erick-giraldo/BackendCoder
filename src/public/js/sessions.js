@@ -19,13 +19,17 @@ const errorMessages = {
   DOCUMENTS: "No se ha podido subir el documento"
 };
 
-const postRequest = async (url, body, method = "GET", header) => {
+const postRequest = async (url, body, method = "GET", headers = {"Content-Type":"application/json"}) => {
   try {
+    if (body instanceof FormData)
+      delete headers['Content-Type']
+
     const response = await fetch(url, {
       method,
-      headers: header || { "Content-Type": "application/json" },
-      body: header?.["Content-Type"] === "multipart/form-data" ? body : JSON.stringify(body),
-    });
+      headers,
+      body: body instanceof FormData ? body : JSON.stringify(body)
+    })
+
     if (response.ok) {
       return { success: true, data: await response.json() };
     } else {

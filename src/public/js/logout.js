@@ -34,20 +34,14 @@ function handleCheckboxChange(checkboxId, callback) {
   });
 }
 
-btnEnviar.addEventListener("click", (e) => {
-  try {
-    const fileInput = document.getElementById('documents');
-    const files = fileInput.files;
-    const formData = new FormData();
-    for (let i = 0; i < files.length; i++) {
-      const file = files[i];
-      formData.append('files[]', file);
-      console.log("🚀 ~ file: index.js:151 ~ btnEnviar.addEventListener ~ file", file)
-    }
-    const userId = btnEnviar.value;
-    uploadDocuments(valueTypes, userId, formData);
-  } catch (error) {
-    
-  }
+document.querySelector('[name="profile-form"]').addEventListener('submit', e => {
+  e.preventDefault()
 
-});
+  const formData = new FormData(e.target)
+  const button = e.target[4]
+  const userId = button.dataset.userId
+
+  formData.delete('documentTypes')
+
+  uploadDocuments(valueTypes, userId, formData)
+})
