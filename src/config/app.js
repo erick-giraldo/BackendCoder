@@ -51,10 +51,6 @@ app.use(passport.initialize());
 
 app.use(cors());
 
-app.use(cors({
-  origin: "http://localhost:7493"
-}));
-
 swagger(app);
 
 // Configuración de rutas
