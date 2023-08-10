@@ -4,13 +4,20 @@ export default class User {
     this.dao = dao
   }
 
-  get() {
-    return this.dao.get()
+  async getDTO() {
+    const data = await this.dao.get()
+    const usertDto = new UserDTO(data)
+    return usertDto
+  }
+
+  async get() {
+    return await this.dao.get()
   }
 
   create(data) {
     const usertDto = new UserDTO(data)
-    return this.dao.create(usertDto)
+    const user = usertDto.users.map((u) =>  u = { ...u, cart: [], documents: [], ticket: [], last_connection: new Date()});
+    return this.dao.create(user)
   }
 
   getById(id) {
@@ -45,11 +52,15 @@ export default class User {
   }
   
   deleteById(id) {
-    return this.dao.deleteById(id)
+    return this.dao.deleteOne(id)
   }
 
-  findOne(email){
-    return this.dao.findOne(email)
+  deleteMany(data) {
+    return this.dao.deleteMany(data)
+  }
+
+  findOne(value){
+    return this.dao.findOne(value)
   }
 
 }

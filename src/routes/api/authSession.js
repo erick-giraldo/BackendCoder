@@ -1,11 +1,11 @@
-import SessionsController from "../controllers/SessionsController.js";
+import SessionsController from "../../controllers/SessionsController.js";
 import {
   validLogin,
   validRegister,
   validForgotPassword,
   validResetPassword
-} from "../middleware/index.js";
-import CustomerRouter from "./Router.js";
+} from "../../middleware/index.js";
+import CustomerRouter from "../Router.js";
 
 export default class AuthRouter extends CustomerRouter {
   init() {
@@ -14,6 +14,6 @@ export default class AuthRouter extends CustomerRouter {
     this.get("/logout", ["USER", "ADMIN", "PREMIUM"], SessionsController.logout);
     this.post("/forgot-password", ["PUBLIC"], validForgotPassword, SessionsController.forgotPassword);
     this.put("/reset-password", ["PUBLIC"], validResetPassword, SessionsController.resetPassword);
-    this.get("/current", ["USER", "ADMIN"], SessionsController.current);
+    this.get("/current", ["USER", "ADMIN", "PREMIUM"], SessionsController.current);
   }
 }

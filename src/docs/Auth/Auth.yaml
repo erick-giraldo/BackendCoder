@@ -1,0 +1,219 @@
+paths:
+  /api/auth/login:
+    post:
+      summary: Iniciar Sesión
+      tags:
+        - Autenticación
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBody/login'
+      responses:
+        200:
+          description: Sesión iniciada exitosamente
+        400:
+          description: Correo electrónico o contraseña incorrectos
+        500:
+          description: Error interno del servidor
+  
+  /api/auth/register:
+    post:
+      summary: Registrar Usuario
+      tags:
+        - Autenticación
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBody/register'
+      responses:
+        200:
+          description: Usuario registrado exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    description: Token de sesión
+        400:
+          description: Correo electrónico ya registrado
+        500:
+          description: Error interno del servidor
+
+  /api/auth/logout:
+    get:
+      summary: Cerrar Sesión
+      tags:
+        - Autenticación
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Sesión cerrada exitosamente
+        500:
+          description: Error interno del servidor
+
+  /api/auth/current:
+    get:
+      summary: Obtener Usuario Actual
+      tags:
+        - Autenticación
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Usuario actual obtenido exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: ID del usuario
+                  email:
+                    type: string
+                    description: Correo electrónico del usuario
+                  name:
+                    type: string
+                    description: Nombre del usuario
+                  lastname:
+                    type: string
+                    description: Apellido del usuario
+                  phone:
+                    type: string
+                    description: Teléfono del usuario
+                  address:
+                    type: string
+                    description: Dirección del usuario
+                  role:
+                    type: string
+                    description: Rol del usuario
+                  last_login:
+                    type: string
+                    description: Último inicio de sesión del usuario
+        500:
+          description: Error interno del servidor
+
+  /api/auth/forgot-password:
+    post:
+      summary: Olvidar Contraseña
+      tags:
+        - Autenticación
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBody/forgotPassword'
+      responses:
+        200:
+          description: Correo electrónico enviado exitosamente
+        400:
+          description: Correo electrónico no registrado
+        500:
+          description: Error interno del servidor
+
+  /api/auth/reset-password:
+    put:
+      summary: Restablecer Contraseña
+      tags:
+        - Autenticación
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBody/resetPassword'
+      responses:
+        200:
+          description: Contraseña restablecida exitosamente
+        400:
+          description: Token de restablecimiento de contraseña inválido
+        500:
+          description: Error interno del servidor 
+
+components:
+  requestBody:      
+    login:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          description: Correo electrónico del usuario
+        password:
+          type: string
+          description: Contraseña del usuario
+      example:
+        {
+          "email": "egiraldom7@gmail.com",
+          "password": "Coder123@"
+          }
+    register:
+      type: object
+      required:
+        - email
+        - password
+        - name
+        - lastname
+      properties:
+        email:
+          type: string
+          description: Correo electrónico del usuario
+        password:
+          type: string
+          description: Contraseña del usuario
+        name:
+          type: string
+          description: Nombre del usuario
+        lastname:
+          type: string
+          description: Apellido del usuario
+        age:
+          type: number
+          description: Edad del usuario  
+      example:
+        {
+          "email": "egiraldom77@gmail.com",
+          "password": "abc123@",
+          "first_name": "Erick",
+          "last_name": "Giraldo",
+          "age": 22
+        }
+    forgotPassword:
+      type: object
+      required:
+        - email
+      properties:
+        email:
+          type: string
+          description: Correo electrónico del usuario
+      example:
+        {
+          "email": "egiraldom7@gmail.com"
+        }
+    resetPassword:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          description: Correo electrónico del usuario
+        password:
+          type: string
+          description: Contraseña del usuario
+      example:
+        {
+          "email": "egiraldom7@gmail.com",
+          "password": "Coder123@"
+          }

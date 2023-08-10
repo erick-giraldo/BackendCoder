@@ -1,55 +1,31 @@
-import CartModel from '../dao/models/carts.js'
-
+import { cartRepository } from "../repository/index.js";
 
 export default class CartService {
-  static findAll(body) {
-    return CartModel.find(body)
-  }
-
-  static create(body) {
-    return CartModel.create(body);
-  }
-
-  static get(query) {
-    return CartModel.find(query);
+  static create(data) {
+    return cartRepository.create(data);
   }
 
   static getById(id) {
-    return CartModel.findOne({ _id : id });
+    return cartRepository.getById( id );
   }
 
-  static getByIdView(id) {
-    return CartModel.findOne({ id });
-  }
-
-  static getCartById(id) {
-    return CartModel.findById( id );
-  }
-  
-  static getOne(id) {
-    return CartModel.findOne({ _id: id }).populate(
-      "products._id"
-    );
-  }
-  static getOneView(id) {
-    return CartModel.findOne({ id }).populate(
-      "products._id"
-    );
-  }
-
-  static async updateOne(id, body) {
-    return CartModel.updateOne({ id }, { $set: { products: body } });
-  }
-
-  static async updateOneQuantity(cid, pid, quantity) {
-    return CartModel.updateOne({ id : cid , "products._id":pid}, { $set: {  "products.$.quantity": quantity,} });
+  static findAll(body) {
+    return cartRepository.getAll(body);
   }
 
   static deleteById(id) {
-    return CartModel.deleteOne({ _id: id });
+    return cartRepository.deleteOne( id );
   }
 
-  static deleteByIdView(id) {
-    return CartModel.deleteOne({ id: id });
+  static findOne(id) {
+    return cartRepository.findOne( id );
+  }
+
+  static getByIdView(id) {
+    return cartRepository.findOnePulopate(id);
+  }
+
+  static async updateOne(id, body) {
+    return cartRepository.updateOne(id, body);
   }
 }

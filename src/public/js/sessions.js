@@ -1,7 +1,7 @@
 const API_URL = "/api/auth";
 
 const successMessages = {
-  LOGIN: "Bienvenido",
+  LOGIN: (email) => `Bienvenido ${email}`,
   REGISTER: (email) => `Bienvenido ${email}`,
   LOGOUT: "La sesión se cerró correctamente",
   UPDATEPASS: "Se cambió la contraseña correctamente",
@@ -60,7 +60,7 @@ const login = async (email, password) => {
     password,
   }, "POST");
   if (success) {
-    showSuccessMessage("Login ok!!!", successMessages.LOGIN);
+    showSuccessMessage("Login ok!!!", successMessages.LOGIN(email));
     setTimeout(() => {
       window.location.replace("/products");
     }, 2000);
@@ -131,7 +131,6 @@ const logout = async () => {
 };
 
 const uploadDocuments = async (type, userId, formData) => {
-    // Convertir FormData a un objeto regular para mostrar en la consola
     const formDataObject = {};
     for (const key of formData.keys()) {
       formDataObject[key] = formData.getAll(key);

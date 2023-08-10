@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import handlebars from "express-handlebars";
+import exphbs from "express-handlebars";
 import cookieParser from "cookie-parser";
 import passport from "passport";
 import config from './index.js'
@@ -10,6 +10,7 @@ import  dirname  from "./utils.js";
 import initPassport from "./passport.config.js";
 import errorMiddleware from '../utils/errors/MiddlewareError.js'
 import swagger from "./swagger.js";
+import cors from 'cors'
 
 const app = express();
 
@@ -22,7 +23,15 @@ if (config.presistanceType === 'mongodb') {
 }
 
 // Configuración de vistas con Handlebars
-app.engine("handlebars", handlebars.engine());
+// Configuración de Handlebars con opciones
+const hbs = exphbs.create({
+  runtimeOptions: {
+    allowProtoPropertiesByDefault: true,
+  },
+});
+
+// Configuración de vistas con Handlebars
+app.engine("handlebars", hbs.engine);
 app.set("views", dirname + "/../views");
 app.set("view engine", "handlebars");
 
@@ -40,14 +49,17 @@ app.use(cookieParser());
 initPassport();
 app.use(passport.initialize());
 
+app.use(cors());
 
+app.use(cors({
+  origin: "http://localhost:8080"
+}));
 
 swagger(app);
 
 // Configuración de rutas
 RouterController.routes(app);
 // Manejador de errores
-app.use(errorMiddleware)
-
+app.use(errorMiddleware);
 
 export default app;

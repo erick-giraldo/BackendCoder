@@ -1,37 +1,35 @@
-import UserModel from '../models/users.js'
+import CartModel from '../models/carts.js'
 
 export default class User {
 
   create(data) {
-    return UserModel.create(data)
-  }
-
-  get() {
-    return UserModel.find()
+    return CartModel.create(data);
   }
 
   getById(id) {
-    return UserModel.findById(id)
+    return CartModel.findById(id)
+  }
+
+  getAll() {
+    return CartModel.find()
   }
 
   findOne(id) {
-    return UserModel.findOne(id)
+    return CartModel.findOne({ id });
   }
 
- getOne(id) {
-    return UserModel.findOne(id)
+  findOnePulopate(id) {
+    return CartModel.findOne({ id }).populate(
+      "products._id"
+    );
+  }
+  
+  deleteOne(id) {
+    return CartModel.deleteOne( id );
   }
 
   updateOne(id, body) {
-    return UserModel.updateOne( {_id : id }, { $set: { cart: body } });
+     return CartModel.updateOne( id, body);
   }
 
-  updateById(id, data) {
-    return UserModel.updateOne({ _id: id }, { $set: data })
-  }
-
-  static deleteOne(id) {
-    return UserModel.deleteOne({ _id: id });
-  }
-
-}
+ }

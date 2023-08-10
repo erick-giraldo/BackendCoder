@@ -9,6 +9,10 @@ export default class UsersService {
     return userRepository.get();
   }
 
+  static getDTO() {
+    return userRepository.getDTO();
+  }
+
   static getById(id) {
     return userRepository.getById(id);
   }
@@ -17,8 +21,8 @@ export default class UsersService {
     return userRepository.current(id);
   }
 
-  static getOne(email) {
-    return userRepository.findOne( email );
+  static getOne(value) {
+    return userRepository.findOne( value );
   }
 
   static async update(email, user) {
@@ -41,8 +45,12 @@ export default class UsersService {
     return userRepository.updateLastConnection(id, body);
   }
 
-  static delete(id) {
-    return userRepository.deleteOne(id);
+  static deleteById(id) {
+    return userRepository.deleteById(id);
+  }
+
+  static deleteMany(data) {
+    return userRepository.deleteMany(data);
   }
   
   static updateOne(id, payload, extradata = {}) {

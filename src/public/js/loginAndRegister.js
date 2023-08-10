@@ -41,7 +41,7 @@ function handleRegister(e) {
   const email = document.querySelector("#user-reg").value;
   const password = document.querySelector("#pass-reg").value;
   const admin = document.getElementById("role");
-  const role = admin.checked ? "admin" : undefined;
+  const role = admin.checked ? "admin" : "premium";
   register(email, password, role);
 }
 

@@ -1,37 +1,25 @@
-import UserModel from '../models/users.js'
+import ProductsModel from '../models/products.js'
 
 export default class User {
+  paginate(query, opts) {
+    return ProductsModel.paginate(query, opts);
+  }
+
+  getOne(value) {
+    return ProductsModel.findOne(value);
+  }
 
   create(data) {
-    return UserModel.create(data)
+    return ProductsModel.create(data);
   }
 
-  get() {
-    return UserModel.find()
+  updateOne(id, body){
+    console.log("🚀 ~ file: mongo.js:17 ~ User ~ updateOne ~ id:", id)
+    console.log("🚀 ~ file: mongo.js:17 ~ User ~ updateOne ~ body:", body)
+    return ProductsModel.updateOne( id, body )
   }
 
-  getById(id) {
-    return UserModel.findById(id)
+  deleteOne(id) {
+    return ProductsModel.deleteOne(id);
   }
-
-  findOne(id) {
-    return UserModel.findOne(id)
-  }
-
- getOne(id) {
-    return UserModel.findOne(id)
-  }
-
-  updateOne(id, body) {
-    return UserModel.updateOne( {_id : id }, { $set: { cart: body } });
-  }
-
-  updateById(id, data) {
-    return UserModel.updateOne({ _id: id }, { $set: data })
-  }
-
-  static deleteOne(id) {
-    return UserModel.deleteOne({ _id: id });
-  }
-
 }
