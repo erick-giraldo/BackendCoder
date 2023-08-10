@@ -16,7 +16,7 @@ const options = {
     },
     servers: [
       {
-        url: `http://localhost:${PORT}`,
+        url: `https://backendcoder-production-7038.up.railway.app:${PORT}`,
       },
     ],
   },
