@@ -3,6 +3,7 @@ import { Strategy as LocalStrategy } from "passport-local";
 import { Strategy as GithubStrategy } from "passport-github2";
 import UserModel from "../dao/models/users.js";
 import { createHash, validatePassword } from "../utils/index.js";
+import config from '../config/index.js'
 
 const initPassport = () => {
   const registerOptions = {
@@ -15,9 +16,9 @@ const initPassport = () => {
   };
 
   const githubOptions = {
-    clientID: process.env.GITHUB_CLIENT_ID,
-    clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: process.env.GITHUB_CALLBACK,
+    clientID: config.gitHubClientId,
+    clientSecret: config.gitHubClientSecret,
+    callbackURL: config.gitHubCallback,
   };
 
   passport.use(
@@ -46,15 +47,15 @@ const initPassport = () => {
     new LocalStrategy(loginOptions, async (email, password, done, req) => {
       try {
         const isAdminUser =
-          email === process.env.ADMIN_EMAIL &&
-          password === process.env.ADMIN_PASSWORD;
+          email === config.adminEmail &&
+          password === config.adminPassword;
         let user = isAdminUser
           ? {
-              first_name: process.env.ADMIN_NAME,
+              first_name: config.adminName,
               last_name: "",
               role: "admin",
-              email: process.env.ADMIN_EMAIL,
-              password: createHash(process.env.ADMIN_PASSWORD),
+              email: config.adminEmail,
+              password: createHash(config.adminPassword),
             }
           : await UserModel.findOne({ email });
         if (!isAdminUser) {

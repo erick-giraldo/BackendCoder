@@ -1,0 +1,804 @@
+{
+	"info": {
+		"_postman_id": "a44be89c-aba8-4632-8e28-df6ea3afc267",
+		"name": "Coder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17914300"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "get Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Product by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/6426439d69f571391d2dcbd6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"6426439d69f571391d2dcbd6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Fat Boy™\",\n    \"description\": \"Quo quos exercitationem atque. Distinctio eveniet iste. Occaecati amet architecto fugit quasi rerum maiores.\",\n    \"code\": \"CCSHsZsss\",\n    \"price\": 457,\n    \"status\": true,\n    \"stock\": 3,\n    \"category\": \"Sports\",\n    \"image\": \"https://picsum.photos/seed/UATvGWR/640/480\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"name\": \"Cruiser™2\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/64cd65c3bde7fdf91c989770",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"64cd65c3bde7fdf91c989770"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Products by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/64d451df65ef974e71f090c2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"64d451df65ef974e71f090c2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Add Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Cart's",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cart by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carts/22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cart by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carts/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product  by Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carts/22/product/64ae4b197eae34ebc0e4f109",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts",
+								"22",
+								"product",
+								"64ae4b197eae34ebc0e4f109"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Discount Product  by Cart",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carts/22/product/64ae4b197eae34ebc0e4f109",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts",
+								"22",
+								"product",
+								"64ae4b197eae34ebc0e4f109"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product by Cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carts/22/product/64ae4b197eae34ebc0e4f109",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts",
+								"22",
+								"product",
+								"64ae4b197eae34ebc0e4f109"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Product Quantity By Cart Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n       \"quantity\": 10\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carts/qty/22/product/64ae4b197eae34ebc0e4f109",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts",
+								"qty",
+								"22",
+								"product",
+								"64ae4b197eae34ebc0e4f109"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Quantity Products By Cart",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"products\":[\r\n        {\r\n            \"_id\" : \"6426439d69f571391d2dcbd6\",\r\n            \"quantity\" : 5\r\n        },\r\n        {\r\n            \"_id\" : \"6426434a69f571391d2dcbd4\",\r\n            \"quantity\" : 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carts/qty/10/products/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts",
+								"qty",
+								"10",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Current",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/auth/current",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"current"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVnaXJhbGRvbTRAb3V0bG9vay5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTY4NDI5ODYzNiwiZXhwIjoxNjg0MzAyMjM2fQ.VgrSHxblE_87NH7wvn58mxbJEfTF8Sp3UcA5bGdbz4Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"egiraldom7@gmail.com\",\n    \"password\":\"Coder1234@\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "authorization",
+									"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVnaXJhbGRvbTJAb3V0bG9vay5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTY4NDAwNTUyNSwiZXhwIjoxNjg0MDA5MTI1fQ.Z92TmoBN3kVt18nWZpCS6HRn_sa_Xyxt5A5hjFvXhr4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\":\"Erick\",\n    \"last_name\":\"Giraldo\",\n    \"age\":40,\n    \"email\":\"egiraldom31112@outlook.com\",\n    \"password\":\"Coder123@\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"egiraldom31112@outlook.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"egiraldom31112@outlook.com\",\n    \"password\": \"Erick123@\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Y2M3ZjIwM2U2MWNjMjI4NzdkYjAyYyIsIm5hbWUiOiJKb3JnZSBQZXJleiIsImVtYWlsIjoiZWdpcmFsZG9tM0BvdXRsb29rLmNvbSIsImNhcnQiOlt7Il9pZCI6IjY0Y2M3ZjIwM2U2MWNjMjI4NzdkYjAyOSIsImlkIjowfV0sInRpY2tldCI6W10sInJvbGUiOiJhZG1pbiIsImlhdCI6MTY5MTEyOTIxMywiZXhwIjoxNjkxMjE1NjEzfQ.ZHxrwZNLNCKbyVR57FMZRGMsLlIOF1lSIhYeRyq4l5g\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVnaXJhbGRvbTRAb3V0bG9vay5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTY4NDI5ODYzNiwiZXhwIjoxNjg0MzAyMjM2fQ.VgrSHxblE_87NH7wvn58mxbJEfTF8Sp3UcA5bGdbz4Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \n  \"amount\": 15000,\n  \"purchaser\": \"egiraldom1@outlook.com\",\n  \"products\":[\n        {\n            \"_id\" : \"642643b869f571391d2dcbd8\",\n            \"quantity\" : 5\n        },\n        {\n            \"_id\" : \"6426434a69f571391d2dcbd4\",\n            \"quantity\" : 1\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carts/1/ticket",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts",
+								"1",
+								"ticket"
+							],
+							"query": [
+								{
+									"key": "authorization",
+									"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVnaXJhbGRvbTJAb3V0bG9vay5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTY4NDAwNTUyNSwiZXhwIjoxNjg0MDA5MTI1fQ.Z92TmoBN3kVt18nWZpCS6HRn_sa_Xyxt5A5hjFvXhr4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload documentos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/Users/erick/Desktop/public/Comprobante de domicilio.pdf"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"/Users/erick/Desktop/public/Comprobante de estado de cuenta.pdf",
+										"/Users/erick/Desktop/public/Comprobante de domicilio.pdf"
+									],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/64cc74c40ddf93191605a499/documents?type=product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"64cc74c40ddf93191605a499",
+								"documents"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "product"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Role",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/premium/64cd8d58d3be8e7e5b2cf41f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"premium",
+								"64cd8d58d3be8e7e5b2cf41f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User by Inactivity",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/delete/64cc96f905aa0277465ed6ed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"delete",
+								"64cc96f905aa0277465ed6ed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mocking",
+			"item": [
+				{
+					"name": "Add Products - Fake",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/mockingproducts?count=50",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"mockingproducts"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loggerTest",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/loggerTest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"loggerTest"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

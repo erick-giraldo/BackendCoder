@@ -1,19 +1,19 @@
 import nodemailer from 'nodemailer'
-
+import config from '../config/index.js';
 class messageService {
   constructor() {
     this.transporter = nodemailer.createTransport({
       service: 'outlook',
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: config.emailUser,
+        pass: config.emailPass,
       },
     })
   }
 
   sendEmail(to, subject, html, attachments = []) {
     return this.transporter.sendMail({
-      from: process.env.EMAIL_USER,
+      from: config.emailUser,
       to,
       subject,
       html,
