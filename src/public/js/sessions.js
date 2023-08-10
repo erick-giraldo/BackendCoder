@@ -24,7 +24,7 @@ const postRequest = async (url, body, method = "GET", header) => {
     const response = await fetch(url, {
       method,
       headers: header || { "Content-Type": "application/json" },
-      body: header["Content-Type"] === "multipart/form-data" ? body : JSON.stringify(body),
+      body: header?.["Content-Type"] === "multipart/form-data" ? body : JSON.stringify(body),
     });
     if (response.ok) {
       return { success: true, data: await response.json() };
@@ -131,13 +131,6 @@ const logout = async () => {
 };
 
 const uploadDocuments = async (type, userId, formData) => {
-    const formDataObject = {};
-    for (const key of formData.keys()) {
-      formDataObject[key] = formData.getAll(key);
-    }
-
-    console.log("Contenido de FormData:", formDataObject);
-
   const { success, error } = await postRequest(`api/users/${userId}/documents?type=${type}`, 
     formData
   , "POST", { "Content-Type": "multipart/form-data" });

@@ -37,11 +37,13 @@ function handleCheckboxChange(checkboxId, callback) {
 btnEnviar.addEventListener("click", (e) => {
   try {
     const fileInput = document.getElementById('documents');
-    const files = Array.from(fileInput.files);  
+    const files = fileInput.files;
     const formData = new FormData();
-    files.forEach((file, index) => {
-      formData.append('files', file);
-    });
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      formData.append('files[]', file);
+      console.log("🚀 ~ file: index.js:151 ~ btnEnviar.addEventListener ~ file", file)
+    }
     const userId = btnEnviar.value;
     uploadDocuments(valueTypes, userId, formData);
   } catch (error) {
