@@ -11,6 +11,6 @@ const server = http.createServer(app)
 const logger = getLogger();
 init(server)
 
-server.listen(PORT, () => {
+server.listen(PORT, "0.0.0.0", () => {
   logger.debug(`Server running in http://localhost:${PORT}/ in ${ENV} environment.`)
 })
