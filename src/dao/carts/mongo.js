@@ -32,10 +32,4 @@ export default class User {
      return CartModel.updateOne( id, body);
   }
 
-//   updateById(id, data) {
-//     return CartModel.updateOne({ _id: id }, { $set: data })
-//   }
-
-
-
  }

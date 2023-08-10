@@ -144,7 +144,7 @@ export default class ViewController {
         if (!product._id) {
           continue;
         }  
-        const productData = await ProductsService.getById(product._id);
+        const productData = await ProductsService.getOne({ _id:product._id });
         const newProduct = {
           ...product._id._doc,
           quantity: product._doc.quantity,
@@ -210,7 +210,7 @@ export default class ViewController {
       if (!cartById) {
         throw new Error(`No se encontró un carrito con el id ${cartId}`);
       }
-      const productById = await ProductsService.getById({ _id: pid });
+      const productById = await ProductsService.getOne({ _id: pid });
       if (!productById) {
         throw new Error(`No se encontró un producto con el id ${pid}`);
       }
@@ -263,7 +263,7 @@ export default class ViewController {
         throw new Error(`No se encontró un carrito con el id ${cartId}`);
       }
 
-      const productById = await ProductsService.getById({ _id: pid });
+      const productById = await ProductsService.getOne({ _id: pid });
       if (!productById){
         throw new Error(`No se encontró un producto con el id ${pid}`);
       }

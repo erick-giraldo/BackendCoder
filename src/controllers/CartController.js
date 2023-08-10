@@ -13,7 +13,7 @@ export default class CartController {
       if(!result){
         throw new Error("No se pudo crear el carrito")
       }
-      const findCart = await CartService.getById(result._id);
+      const findCart = await CartService.getById({ _id: result._id });
       return res.sendSuccess({
         message: "El carrito fue agregado exitosamente",
         data: findCart,
@@ -101,7 +101,7 @@ export default class CartController {
           .status(404)
           .json({ message: `No se encontró un carrito con el id ${cid}` });
       }
-      const productById = await ProductsService.getById({ _id: pid });
+      const productById = await ProductsService.getOne({ _id: pid });
       if (!productById) {
         return res
           .status(404)
@@ -161,7 +161,7 @@ export default class CartController {
       if (!cartById){
         throw new Error(`No se encontró un carrito con el id ${cid}`);
       }
-      const productById = await ProductsService.getById({ _id: pid });
+      const productById = await ProductsService.getOne({ _id: pid });
       if (!productById){
         throw new Error(`No se encontró un producto con el id ${pid}`);
       }
@@ -209,7 +209,7 @@ export default class CartController {
       if (!cartById){
         throw new Error(`No se encontró un carrito con el id ${cid}`);
       }
-      const productById = await ProductsService.getById({ _id: pid });
+      const productById = await ProductsService.getOne({ _id: pid });
       if (!productById){
         throw new Error(`No se encontró un producto con el id ${pid}`);
       }
@@ -246,7 +246,7 @@ export default class CartController {
       if (!cartById){
         throw new Error(`No se encontró un carrito con el id ${cid}`);
       }
-      const productById = await ProductsService.getById({ _id: pid });
+      const productById = await ProductsService.getOne({ _id: pid });
       if (!productById){
         throw new Error(`No se encontró un producto con el id ${pid}`);
       }
@@ -315,7 +315,7 @@ export default class CartController {
 
   static async updateCartBeforeBuy(cid, products) {
     try {
-      await CartService.updateOne(cid, products);
+      await CartService.updateOne({ id: cid } , { products: products});
       return true;
     } catch (e) {
       return false;
@@ -353,11 +353,13 @@ export default class CartController {
 
       // descontar stock
       if (available) {
-        const user = await UsersService.getOne(purchaser);
+        const user = await UsersService.getOne({ email : purchaser });
         ticket = await TicketsController.createTicket(payload);
         const body = [{ _id: ticket._id }];
         const result = await UsersService.updateTicket(user._id, body);
         available.map(async (e) => {
+        console.log("🚀 ~ file: CartController.js:363 ~ CartController ~ available.map ~ e:", e)
+
           await ProductController.discountStockProduct(e._id, e.quantity);
         });
       }

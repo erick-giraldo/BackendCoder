@@ -30,7 +30,7 @@ export const validLogin = async (req, res, next) => {
     const requiredFields = ["email", "password"];
     validateFields(requiredFields, req.body);
 
-    const user = await UsersService.getOne(email);
+    const user = await UsersService.getOne({ email });
 
     if (isEmpty(user)) {
       logger.error(
@@ -66,7 +66,7 @@ export const validRegister = async (req, res, next) => {
 
     validateFields(requiredFields, req.body);
 
-    const user = await UsersService.getOne(email);
+    const user = await UsersService.getOne({ email });
     if (user) {
       logger.warning(`usuario ${email} ya existe`);
       throw new Error("usuario ya existe");
@@ -84,7 +84,7 @@ export const validResetPassword = async (req, res, next) => {
     const requiredFields = ["email", "password"];
     validateFields(requiredFields, req.body);
 
-    const user = await UsersService.getOne(email);
+    const user = await UsersService.getOne({ email });
 
     if (isEmpty(user)) {
       logger.warning(`Usuario no encontrado, por favor intente nuevamente`);
@@ -110,7 +110,7 @@ export const validForgotPassword = async (req, res, next) => {
     const requiredFields = ["email"];
     validateFields(requiredFields, req.body);
 
-    const user = await UsersService.getOne(email);
+    const user = await UsersService.getOne({ email });
 
     if (isEmpty(user)) {
       logger.warning(`Usuario no encontrado, por favor intente nuevamente`);
@@ -157,7 +157,7 @@ export const viewResetPassword = async (req, res, next) => {
         throw new Error("El enlace ha expirado. Por favor, genere uno nuevo.");
       }
 
-      const user = await UsersService.getOne(isToken.email);
+      const user = await UsersService.getOne({ email: isToken.email });
       req.user = user;
       next();
     }
@@ -317,7 +317,7 @@ export const validateDeleteCart = async (req, res, next) => {
 export const viewAddProductCart = async (req, res, next) => {
   try {
     const { pid } = req.params;
-    const productById = await ProductsService.getById({ _id: pid });
+    const productById = await ProductsService.getOne({ _id: pid });
     const token = await isValidToken(req.cookies.token);
     if (token.role === "premium" && token.email !== productById.owner) {
       logger.warning("`No puedes agregar un producto que no te pertenece.");

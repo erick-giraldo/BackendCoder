@@ -1,38 +1,22 @@
-import ProductsModel from '../dao/models/products.js'
-import ProductDTO from '../dto/ProductDTO.js';
-
+import { productRepository } from "../repository/index.js";
 export default class ProductsService {
-
-  static get() {
-    return ProductsModel.find().lean();
-  }
-
-  static getById(id) {
-    return ProductsModel.findById(id);
+  static paginate(query, opts) {
+    return productRepository.paginate(query, opts);
   }
 
   static getOne(value) {
-    return ProductsModel.findOne( value);
+    return productRepository.getOne(value);
   }
 
-  static getCode(code) {
-    return ProductsModel.findOne({ code });
+  static create(data) {
+    return productRepository.create(data);
   }
 
-  
-  static async create(body) {
-    return ProductsModel.create( body);
+  static updateOne(id, body){
+    return productRepository.updateOne( id, body )
   }
 
-  static async updateOne(id, body) {
-    return ProductsModel.updateOne({ _id: id }, { $set: body });
-  }
-
-  static deleteById(value) {
-    return ProductsModel.deleteOne(value);
-  }
-
-  static paginate(query, opts) {
-    return ProductsModel.paginate(query, opts);
+  static deleteById(id) {
+    return productRepository.deleteOne(id);
   }
 }

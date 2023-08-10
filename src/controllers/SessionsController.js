@@ -16,7 +16,7 @@ class SessionsController {
   static login = async (req, res) => {
     try {
       const { email, password } = req.body;
-      const user = await UsersService.getOne(email);
+      const user = await UsersService.getOne({ email });
       const token = tokenGenerator(user);
       await UsersService.updateLastConnection(user._id, new Date());
       res.cookie("token", token, {
@@ -65,7 +65,7 @@ class SessionsController {
   static forgotPassword = async (req, res) => {
     try {
       const { email } = req.body;
-      const user = await UsersService.getOne(email);
+      const user = await UsersService.getOne({ email });
       const token = tokenGeneratorPass(user);
       const sendEmail = await MailingController.sendEmailResetPass(email, token);
 
@@ -87,7 +87,7 @@ class SessionsController {
       }
       
       const { email, password, token } = req.body;
-      const user = await UsersService.getOne(email);
+      const user = await UsersService.getOne({ email});
       const tokens = user.passwordResetTokens.map((tokenObj) => tokenObj.token);
       const tokenExists = tokens.includes(token);
       

@@ -59,8 +59,8 @@ export default class User {
     return this.dao.deleteMany(data)
   }
 
-  findOne(id){
-    return this.dao.findOne(id)
+  findOne(value){
+    return this.dao.findOne(value)
   }
 
 }

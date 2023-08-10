@@ -12,7 +12,7 @@ import {
   plantillaForgotPass,
   plantillaDeleteUsers,
   plantillaDeleteProducts,
-} from "./plantillaMailHtml.js";
+} from "../templates/plantillaMailHtml.js";
 
 const logger = getLogger();
 export default class MailingController {

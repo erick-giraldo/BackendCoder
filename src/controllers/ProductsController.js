@@ -43,7 +43,7 @@ export default class ProductController {
     try {
       const productData = req.body;
       const token = await isValidToken(req.cookies.token);
-      const owner = token.role === "premium" ? token.email : "admin";
+      const owner = token.email;
       const existingProduct = await ProductsService.getOne({
         code: productData.code,
       });
@@ -68,12 +68,12 @@ export default class ProductController {
     try {
       let { pid } = req.params;
       const productData = req.body;
-      let productById = await ProductsService.getOne({ _id: pid });
+      const productById = await ProductsService.getOne({ _id: pid });
       const token = await isValidToken(req.cookies.token);
       if (token.role === "premium" && token.email !== productById.owner) {
         throw new Error("El producto fue registrado por otro usuario");
       }
-      await ProductsService.updateOne(pid, productData);
+      await ProductsService.updateOne({ _id: pid }, { $set: productData });
       const result = await ProductsService.getOne({ _id: pid });
       return res.sendSuccess({
         message: "El producto fue actualizado exitosamente",
@@ -96,7 +96,10 @@ export default class ProductController {
         throw new Error("El producto fue registrado por otro usuario");
       }
 
-      const userDetails = await UsersService.getOne(productById.owner);
+      const userDetails = await UsersService.getOne({ email: productById.owner });
+      if (!userDetails) {
+        throw new Error("El usuario no existe");
+      }
       const deleteProduct =  await ProductsService.deleteById({ _id: pid });
       if ( deleteProduct && !isEmpty(userDetails) && userDetails.role === "premium") {
         const fullName = `${userDetails.first_name} ${userDetails.last_name}`;
@@ -112,7 +115,7 @@ export default class ProductController {
         }
       }
       return res.sendSuccess({
-        message: "El producto fue eliminado exitosamente",
+        message: `El producto ${productById.name} fue eliminado exitosamente`,
       });
     } catch (error) {
       return res.sendServerError({
@@ -124,10 +127,12 @@ export default class ProductController {
 
   static async discountStockProduct(pid, qty) {
     try {
-      const product = await ProductsService.getById(pid);
-      let stock = product.stock;
-      stock -= qty;
-      await ProductsService.updateOne(product.id, { stock });
+      const product = await ProductsService.getOne({ _id: pid });
+      if (!product) {
+        throw new Error("Producto no encontrado");
+      }
+      product.stock -= qty;
+      await product.save();
       return true;
     } catch (error) {
       return false;

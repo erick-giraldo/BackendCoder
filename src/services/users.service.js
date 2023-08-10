@@ -21,8 +21,8 @@ export default class UsersService {
     return userRepository.current(id);
   }
 
-  static getOne(id) {
-    return userRepository.findOne( id );
+  static getOne(value) {
+    return userRepository.findOne( value );
   }
 
   static async update(email, user) {

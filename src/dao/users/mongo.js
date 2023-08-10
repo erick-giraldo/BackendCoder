@@ -14,8 +14,8 @@ export default class User {
     return UserModel.findById(id)
   }
 
-  findOne(email) {
-    return UserModel.findOne({ email });
+  findOne(value) {
+    return UserModel.findOne( value );
   }
 
  getOne(id) {

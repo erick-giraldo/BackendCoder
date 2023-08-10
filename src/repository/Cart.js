@@ -30,26 +30,4 @@ export default class Cart {
   async updateOne(id, body) {
     return await this.dao.updateOne( id, body );
   }
- 
-
-//   async current(id) {
-//     const data = await this.dao.getById(id)
-//     const cartDto = new CartDTO(data).current()
-//     return cartDto
-//   }
-
-//   updateById(id, data) {
-//     const cartDto = new CartDTO(data)
-//     return this.dao.updateById(id, cartDto)
-//   }
-
-//   updateProducts(id, body){
-//     return this.dao.updateProducts( id, body )
-//   }
-
-
-
-//   deleteMany(data) {
-//     return this.dao.deleteMany(data)
-//   }
  }

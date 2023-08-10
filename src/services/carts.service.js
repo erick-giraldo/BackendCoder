@@ -6,7 +6,7 @@ export default class CartService {
   }
 
   static getById(id) {
-    return cartRepository.getById({ _id: id });
+    return cartRepository.getById( id );
   }
 
   static findAll(body) {
@@ -28,25 +28,4 @@ export default class CartService {
   static async updateOne(id, body) {
     return cartRepository.updateOne(id, body);
   }
-
-  // static async updateOneQuantity(cid, pid, quantity) {
-  //   return cartRepository.updateOne(
-  //     { id: cid, "products._id": pid },
-  //     { $set: { "products.$.quantity": quantity } }
-  //   );
-  // }
-
-  // static deleteByIdView(id) {
-  //   return cartRepository.deleteOne({ id: id });
-  // }
-
-  // static getCartById(id) {
-  //   return cartRepository.findById( id );
-  // }
-
-  // static getOne(id) {
-  //   return cartRepository.findOne({ _id: id }).populate(
-  //     "products._id"
-  //   );
-  // }
 }

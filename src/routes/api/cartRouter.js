@@ -20,6 +20,5 @@ export default class cartProducts extends CustomerRouter {
         this.put("/qty/:cid/products", ['USER','ADMIN'], CartController.updateProductsCartById);
 
         this.post("/:cid/purchase/:total", ['USER','ADMIN', 'PREMIUM'], CartController.createOrder)
-        this.post("/:cid/ticket", ['USER', 'PREMIUM'], TicketsController.createTicket)
     }
   }
