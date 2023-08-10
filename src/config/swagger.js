@@ -16,10 +16,10 @@ const options = {
     },
     servers: [
       {
-        url: `https://backendcoder-production-7038.up.railway.app`,
+        url: config.swaggerServer,
       },
     ],
-    host: `backendcoder-production-7038.up.railway.app`,
+    host: `config.swaggerHost`,
   },
   apis: [path.join(__dirname, "..", "docs", "**", "*.yaml")],
 };
