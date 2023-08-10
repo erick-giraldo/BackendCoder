@@ -49,7 +49,14 @@ app.use(cookieParser());
 initPassport();
 app.use(passport.initialize());
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://backendcoder-production-7038.up.railway.app', // Reemplaza con la URL de Swagger
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+};
+
+// Usar CORS middleware
+app.use(cors(corsOptions));
+
 
 swagger(app);
 
