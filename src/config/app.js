@@ -10,7 +10,6 @@ import  dirname  from "./utils.js";
 import initPassport from "./passport.config.js";
 import errorMiddleware from '../utils/errors/MiddlewareError.js'
 import swagger from "./swagger.js";
-import cors from 'cors'
 
 const app = express();
 
@@ -48,12 +47,6 @@ app.use(cookieParser());
 // Configuración de Passport
 initPassport();
 app.use(passport.initialize());
-
-app.use(cors());
-
-app.use(cors({
-  origin: "http://localhost:8080"
-}));
 
 swagger(app);
 
