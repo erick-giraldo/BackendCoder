@@ -1,5 +1,5 @@
 export default {
-    port: process.env.PORT,
+    port: process.env.PORT || 8080,
     nodeEnv: process.env.NODE_ENV || 'desarrollo',
     mongodbUri: process.env.MONGODB_URI,
     gitHubClientId: process.env.GITHUB_CLIENT_ID,

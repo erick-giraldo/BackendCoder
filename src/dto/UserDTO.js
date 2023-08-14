@@ -17,7 +17,7 @@ export default class UserDTO {
       last_name: user.last_name,
       email: user.email,
       age: user.age,
-      role: user.role,
+      role: user.role || "user",
       cart: user.cart,
       password: createHash(user.password),
       documents: [],
