@@ -15,6 +15,6 @@ export default {
     twilioAuthToken: process.env.TWILIO_AUTH_TOKEN,
     twilioPhoneNumber: process.env.TWILIO_PHONE_NUMBER,
     presistanceType: process.env.PERSISTENCE_TYPE || 'mongodb',
-    swaggerServer: process.env.SWAGGER_SERVER || 'http://localhost:${process.env.PORT}',
+    swaggerServer: process.env.SWAGGER_SERVER || `http://localhost:${process.env.PORT}`,
     swaggerHost: process.env.SWAGGER_HOST || 'localhost',
 };
