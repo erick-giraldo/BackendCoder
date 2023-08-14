@@ -1,4 +1,4 @@
-import { login, register, forgotPassword } from "./sessions.js";
+import { login, register, forgotPassword , gitHubLogin } from "./sessions.js";
 
 const loginId = document.querySelector("#login");
 const registerId = document.querySelector("#register");
@@ -56,7 +56,8 @@ function handleReset(e) {
 }
 
 function handleGitHub() {
-  window.location.replace("/api/sessions/auth/github");
+  console.log("GitHub")
+  gitHubLogin();
 }
 
 function viewLogin() {
