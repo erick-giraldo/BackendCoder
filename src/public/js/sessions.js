@@ -73,19 +73,6 @@ const login = async (email, password) => {
   }
 };
 
-const gitHubLogin = async () => {
-  const { success, error, data } = await postRequest(`${API_URL}/github`, {}, "GET");
-  if (success) {
-    showSuccessMessage("Login ok!!!", successMessages.LOGIN(email));
-    setTimeout(() => {
-      window.location.replace("/products");
-    }, 2000);
-  } else {
-    showErrorMessage("Login error!!!", error?.message || errorMessages.LOGIN);
-  }
-};
-
-
 const register = async (email, password, role) => {
   const { success, error } = await postRequest(`${API_URL}/register`, {
     password,
@@ -167,6 +154,5 @@ export {
   resetPassword,
   forgotPassword,
   logout,
-  uploadDocuments,
-  gitHubLogin
+  uploadDocuments
 };

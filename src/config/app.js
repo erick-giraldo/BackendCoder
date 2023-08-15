@@ -10,6 +10,7 @@ import  dirname  from "./utils.js";
 import initPassport from "./passport.config.js";
 import errorMiddleware from '../utils/errors/MiddlewareError.js'
 import swagger from "./swagger.js";
+import session  from 'express-session';
 
 const app = express();
 
@@ -49,6 +50,13 @@ initPassport();
 app.use(passport.initialize());
 
 swagger(app);
+
+app.use(session({
+  secret:  process.env.JWT_SECRET,
+  resave: false,
+  saveUninitialized: true
+}));
+
 
 // Configuración de rutas
 RouterController.routes(app);

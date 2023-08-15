@@ -16,11 +16,12 @@ export default class AuthRouter extends CustomerRouter {
     this.post("/forgot-password", ["PUBLIC"], validForgotPassword, SessionsController.forgotPassword);
     this.put("/reset-password", ["PUBLIC"], validResetPassword, SessionsController.resetPassword);
     this.get("/current", ["USER", "ADMIN", "PREMIUM"], SessionsController.current);
-    this.get('/github',  passport.authenticate('github', { scope: [ 'user:email' ] }))
-    this.get('/github/callback', (req, res) => {
-        req.user
-        res.redirect('/products')
-         })
-
+    this.get('/github', ["PUBLIC"],  passport.authenticate('github', { scope: [ 'user:email' ] }))
+    this.get('/github/callback', ["PUBLIC"], passport.authenticate('github', {
+      failureRedirect: '/login',
+    }), (req, res) => {
+      console.log("User from GitHub:", req.user);
+      res.redirect('/products');
+    });
   }
 }
