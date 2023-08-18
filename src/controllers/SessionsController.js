@@ -68,6 +68,7 @@ class SessionsController {
       const user = await UsersService.getOne({ email });
       const token = tokenGeneratorPass(user);
       const sendEmail = await MailingController.sendEmailResetPass(email, token);
+      console.log("🚀 ~ file: SessionsController.js:71 ~ SessionsController ~ forgotPassword= ~ sendEmail:", sendEmail)
 
       if (!sendEmail) {
         return res.sendServerError({ message: "Error sending reset password email." });
