@@ -358,7 +358,6 @@ export default class CartController {
         const body = [{ _id: ticket._id }];
         const result = await UsersService.updateTicket(user._id, body);
         available.map(async (e) => {
-        console.log("🚀 ~ file: CartController.js:363 ~ CartController ~ available.map ~ e:", e)
 
           await ProductController.discountStockProduct(e._id, e.quantity);
         });

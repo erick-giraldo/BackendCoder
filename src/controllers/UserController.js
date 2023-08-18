@@ -124,7 +124,6 @@ class UserController {
           });
         }
         const fileType = getFiletype(type);
-        console.log("🚀 ~ file: UserController.js:127 ~ UserController ~ upload.array ~ fileType:", fileType)
         const user = await UsersService.getById(id);
         if (isEmpty(user)) {
           return res.sendUserError({

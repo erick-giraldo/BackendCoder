@@ -31,6 +31,7 @@ export default class MailingController {
       plantillaForgotPass(resetLink)
       // attachments
     );
+    console.log("🚀 ~ file: MailingController.js:34 ~ MailingController ~ sendEmailResetPass= ~ result:", result)
     logger.info(result);
     return true;
   };

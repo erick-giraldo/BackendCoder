@@ -20,8 +20,6 @@ export default class Products {
   }
 
   async updateOne(id, body){
-    console.log("🚀 ~ file: Products.js:23 ~ Products ~ updateOne ~ id:", id)
-    console.log("🚀 ~ file: Products.js:23 ~ Products ~ updateOne ~ body:", body)
     return await this.dao.updateOne( id, body )
   }
 

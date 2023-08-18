@@ -14,8 +14,6 @@ export default class User {
   }
 
   updateOne(id, body){
-    console.log("🚀 ~ file: mongo.js:17 ~ User ~ updateOne ~ id:", id)
-    console.log("🚀 ~ file: mongo.js:17 ~ User ~ updateOne ~ body:", body)
     return ProductsModel.updateOne( id, body )
   }
 

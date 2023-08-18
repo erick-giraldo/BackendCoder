@@ -79,7 +79,6 @@ export default class CustomerRouter {
   generateCustomResponse = (req, res, next) => {
     res.sendSuccess = (payload) => res.status(200).json({ success: true, payload });
     res.sendServerError = (error) => {
-      console.log("🚀 ~ file: Router.js:82 ~ CustomerRouter ~ error:", error)
       return res.status(500).json({ success: false, error })
     }
     res.sendUserError = (error) => res.status(400).json({ success: false, error });
