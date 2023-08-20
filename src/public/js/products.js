@@ -84,12 +84,13 @@ const deleteProductCartById = async (_id) => {
     );
   }
 };
-
 const pagar = async (cid, total) => {
+  document.getElementById("loading").style.display = "flex";
   const { success, error } = await fetchApi(
     `/api/carts/${cid}/purchase/${total}`,
     "POST"
   );
+  document.getElementById("loading").style.display = "none";
   if (success) {
     showSuccessMessage("¡Bien hecho!", "Pedido generado exitosamente", false);
     setTimeout(() => {
