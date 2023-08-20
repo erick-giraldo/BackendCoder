@@ -12,7 +12,7 @@ export default class ViewRouter extends CustomerRouter {
     this.get('/chat', ['USER'] , chatController.chatRouter)
     this.get('/home', ['USER'], ViewController.home)
     this.get('/realtimeproducts', ['USER', 'PREMIUM'], ViewController.realtimeproducts)
-    this.get('/profile', ['ADMIN'], ViewController.profile)
+    this.get('/profile', ['USER','ADMIN'], ViewController.profile)
     this.get('/cart/:cid', ['USER','ADMIN', 'PREMIUM'], ViewController.getCart)
     this.get('/login' ,['PUBLIC'], isLoged, ViewController.login)
     this.get('/invoice' , ['USER','ADMIN', 'PREMIUM'], ViewController.invoice)

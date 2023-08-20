@@ -5,7 +5,7 @@ import CartService from "../services/carts.service.js";
 import ProductController from "./ProductsController.js";
 import TicketsController from "./TicketsController.js";
 import UsersService from "../services/users.service.js";
-
+import MailingController from "./MailingController.js";
 export default class CartController {
   static async createCart(req, res) {
     try {
@@ -332,6 +332,7 @@ export default class CartController {
 
       let ticket;
       const purchaser = req.user.email;
+      const purchaserName = req.user.name;
       const response = await CartService.getByIdView(cid); //getOneView
       const products = JSON.parse(JSON.stringify(response.products));
       const newProducts = products.map((product) => {
@@ -339,9 +340,10 @@ export default class CartController {
           _id: product._id._id,
           quantity: product.quantity,
           available: product._id.stock >= product.quantity,
+          name: product._id.name,
+          price: product._id.price,
         };
       });
-
       const available = newProducts.filter((product) => product.available);
       const notAvailable = newProducts.filter((product) => !product.available);
 
@@ -376,6 +378,7 @@ export default class CartController {
         });
       }
       await CartController.updateCartBeforeBuy(cid, carrito);
+      await MailingController.sendPurchaserProducts (purchaser, purchaserName, newProducts);
   
       res
         .cookie("ticket", ticketID, {

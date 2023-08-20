@@ -12,6 +12,7 @@ import {
   plantillaForgotPass,
   plantillaDeleteUsers,
   plantillaDeleteProducts,
+  plantillaPurchaserProducts,
 } from "../templates/plantillaMailHtml.js";
 
 const logger = getLogger();
@@ -31,7 +32,6 @@ export default class MailingController {
       plantillaForgotPass(resetLink)
       // attachments
     );
-    console.log("🚀 ~ file: MailingController.js:34 ~ MailingController ~ sendEmailResetPass= ~ result:", result)
     logger.info(result);
     return true;
   };
@@ -51,6 +51,16 @@ export default class MailingController {
       `${email}`,
       "Eliminación de producto",
       plantillaDeleteProducts(fullName, productName)
+    );
+    logger.info(result);
+    return true;
+  }
+
+  static async sendPurchaserProducts(email, fullName, newProducts) {
+    const result = await messageService.sendEmail(
+      `${email}`,
+      "Su Compra a sido satisfactoria",
+      await plantillaPurchaserProducts(fullName, newProducts)
     );
     logger.info(result);
     return true;
